@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012-2015 The MoKee OpenSource Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+ 
+    <!-- About version and support -->
+    <string name="mokee_version">MoKee version</string>
+    <string name="mokee_version_default">Unknown</string>
+    <string name="mokee_support">Community support</string>
+    <string name="mokee_support_default">Unknown</string>
+
+    <!-- Animation Settings -->
+    <string name="animation_settings_title">Animations</string>
+
+    <!-- ListView animation -->
+    <string name="listview_animation_title">ListView animation</string>
+    <string name="listview_off">Off</string>
+    <string name="listview_wave_left">Wave (left)</string>
+    <string name="listview_wave_right">Wave (right)</string>
+    <string name="listview_alpha">Alpha</string>
+    <string name="listview_scale">Scale</string> 
+    <string name="listview_stack_top">Stack (top)</string>
+    <string name="listview_stack_bottom">Stack (bottom)</string>
+    <string name="listview_unfold">Unfold</string>
+    <string name="listview_fold">Fold</string> 
+    <string name="listview_translate_left">Translate (left)</string>
+    <string name="listview_translate_right">Translate (right)</string>
+    <string name="listview_rotate">Rotate</string>
+
+    <!-- ListView interpolator -->
+    <string name="listview_interpolator_title">ListView interpolator</string>
+    <string name="listview_accelerate_interpolator">Accelerate</string>
+    <string name="listview_decelerate_interpolator">Decelerate</string>
+    <string name="listview_accelerate_decelerate_interpolator">Accelerate decelerate</string>
+    <string name="listview_anticipate_interpolator">Anticipate</string>
+    <string name="listview_overshoot_interpolator">Overshoot</string>
+    <string name="listview_anticipate_overshoot_interpolator">Anticipate overshoot</string>
+    <string name="listview_bounce_interpolator">Bounce</string>
+
+    <!-- BlackList Ext -->
+    <string name="blacklist_all_numbers_title">All numbers</string>
+    <string name="blacklist_all_numbers_summary">Block all calls</string>
+
+    <!-- Smart Control -->
+    <string name="smartcontrol_settings_title">Smart Control</string>
+
+    <!-- Custom navigation bar height -->
+    <string name="navigation_bar_height">Button height</string>
+    <string name="navigation_bar_height_48">48dp (default)</string>
+    <string name="navigation_bar_height_44" translatable="false">44dp</string>
+    <string name="navigation_bar_height_40" translatable="false">40dp</string>
+    <string name="navigation_bar_height_36" translatable="false">36dp</string>
+    <string name="navigation_bar_height_32" translatable="false">32dp</string>
+    <string name="navigation_bar_height_28" translatable="false">28dp</string>
+    <string name="navigation_bar_height_24" translatable="false">24dp</string>
+    <string name="navigation_bar_height_20" translatable="false">20dp</string>
+    <string name="navigation_bar_height_0">hide</string>
+
+    <!-- Navigation Bar -->
+    <string name="navigation_bar_category">Navigation bar</string>
+
+    <!-- AP/PM Indicator -->
+    <string name="status_bar_am_pm_title">AM/PM style</string>
+
+    <!-- Show network speed -->
+    <string name="show_network_speed_title">Network speed</string>
+    <string name="show_network_speed_summary">Show network speed in status bar</string>
+    <string name="status_bar_network_traffic_style_disable">Disabled</string>
+    <string name="status_bar_network_traffic_style_up">Outgoing</string>
+    <string name="status_bar_network_traffic_style_down">Incoming</string>
+    <string name="status_bar_network_traffic_style_all">Outgoing and incoming</string>
+
+    <!-- Show carrier label and custom -->
+    <string name="show_status_bar_carrier_title">Status bar carrier</string>
+    <string name="show_status_bar_carrier_summary">Show carrier in status bar</string>
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
+
+    <!-- quick reboot menu and screenshot -->
+    <string name="hardware_keys_action_screenshot">screenshot</string>
+    <string name="hardware_keys_action_reboot_menu">reboot menu</string>
+
+    <!-- The volume key answer -->
+    <string name="volume_answer_call_title">Volume key Answer</string>
+    <string name="volume_answer_call_summary">Volume up key Answer</string>
+
+</resources>
