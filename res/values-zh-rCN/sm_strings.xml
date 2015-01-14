@@ -17,4 +17,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="suda_version">SudaMod版本</string>
   <string name="suda_version_default">未知</string>
+  <string name="wat">天气时钟</string>
+  <string name="wats">天气时钟插件快捷入口</string>     
 </resources>
