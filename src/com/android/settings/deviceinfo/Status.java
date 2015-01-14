@@ -43,6 +43,7 @@ import android.telephony.PhoneNumberUtils;
 import android.telephony.PhoneStateListener;
 import android.telephony.ServiceState;
 import android.telephony.TelephonyManager;
+import android.telephony.SubscriptionManager;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
@@ -306,6 +307,11 @@ public class Status extends PreferenceActivity {
                 removePreferenceFromScreen(key);
             }
         } else {
+            if (SubscriptionManager.getActiveSubInfoCount() == 0) {
+                for (String key : PHONE_RELATED_ENTRIES) {
+                    removePreferenceFromScreen(key);
+                }
+            }
             // NOTE "imei" is the "Device ID" since it represents
             //  the IMEI in GSM and the MEID in CDMA
             if (mPhone.getPhoneName().equals("CDMA")) {
@@ -674,7 +680,7 @@ public class Status extends PreferenceActivity {
     }
 
     private boolean isMultiSimEnabled() {
-        return (TelephonyManager.getDefault().getPhoneCount() > 1);
+        return (SubscriptionManager.getActiveSubInfoCount() > 1);
     }
 
     private String getSerialNumber() {

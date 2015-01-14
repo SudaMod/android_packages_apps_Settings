@@ -49,7 +49,7 @@ public class SelectSubscription extends  TabActivity {
     public static final String PACKAGE = "PACKAGE";
     public static final String TARGET_CLASS = "TARGET_CLASS";
 
-    private String[] tabLabel = {"SUB 1", "SUB 2", "SUB 3"};
+    private String[] tabLabel = {"SIM 1", "SIM 2", "SIM 3"};
 
     private TabSpec subscriptionPref;
 
@@ -85,7 +85,7 @@ public class SelectSubscription extends  TabActivity {
 
             log("Creating SelectSub activity = " + i + " displayName = " + displayName);
 
-            subscriptionPref = tabHost.newTabSpec(displayName);
+            subscriptionPref = tabHost.newTabSpec(Integer.toString(i));
             subscriptionPref.setIndicator(displayName);
 
             intent = new Intent().setClassName(pkg, targetClass)
