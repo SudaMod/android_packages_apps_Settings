@@ -15,13 +15,22 @@
 */
 package com.android.settings.cyanogenmod;
 
+import android.app.AlertDialog;
 import android.content.ContentResolver;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.preference.SwitchPreference;
+import android.telephony.TelephonyManager;
+import android.text.Spannable;
+import android.text.TextUtils;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -32,6 +41,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String TAG = "StatusBar";
 
     private static final String STATUS_BAR_NETWORK_TRAFFIC_STYLE = "status_bar_network_traffic_style";
+    private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
+    private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
 
@@ -39,8 +51,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
 
     private ListPreference mStatusBarNetworkTraffic;
+    private SwitchPreference mStatusBarCarrier;
+    private PreferenceScreen mCustomCarrierLabel;
+
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarBatteryShowPercent;
+
+    private String mCustomCarrierLabelText;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -55,6 +72,18 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarNetworkTraffic.setValue(String.valueOf(networkTrafficStyle));
         mStatusBarNetworkTraffic.setSummary(mStatusBarNetworkTraffic.getEntry());
         mStatusBarNetworkTraffic.setOnPreferenceChangeListener(this);
+
+        mStatusBarCarrier = (SwitchPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
+        mStatusBarCarrier.setChecked((Settings.System.getInt(resolver, Settings.System.STATUS_BAR_CARRIER, 0) == 1));
+        mStatusBarCarrier.setOnPreferenceChangeListener(this);
+        mCustomCarrierLabel = (PreferenceScreen) prefSet.findPreference(CUSTOM_CARRIER_LABEL);
+        if (TelephonyManager.getDefault().isMultiSimEnabled()) {
+            prefSet.removePreference(mStatusBarCarrier);
+            prefSet.removePreference(mCustomCarrierLabel);
+        } else {
+            updateCustomLabelTextSummary();
+        }
+
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         mStatusBarBatteryShowPercent =
                 (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
@@ -71,6 +100,18 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
         enableStatusBarBatteryDependents(batteryStyle);
         mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
+
+    }
+
+    private void updateCustomLabelTextSummary() {
+        mCustomCarrierLabelText = Settings.System.getString(
+            getActivity().getContentResolver(), Settings.System.CUSTOM_CARRIER_LABEL);
+
+        if (TextUtils.isEmpty(mCustomCarrierLabelText)) {
+            mCustomCarrierLabel.setSummary(R.string.custom_carrier_label_notset);
+        } else {
+            mCustomCarrierLabel.setSummary(mCustomCarrierLabelText);
+        }
     }
 
     @Override
@@ -98,8 +139,49 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             Settings.System.putInt(resolver, Settings.System.STATUS_BAR_NETWORK_TRAFFIC_STYLE, networkTrafficStyle);
             mStatusBarNetworkTraffic.setSummary(mStatusBarNetworkTraffic.getEntries()[index]);
             return true;
+        } else if (preference == mStatusBarCarrier) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_CARRIER, value ? 1 : 0);
+            return true;
         }
         return false;
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
+            final Preference preference) {
+        final ContentResolver resolver = getActivity().getContentResolver();
+        if (preference.getKey().equals(CUSTOM_CARRIER_LABEL)) {
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+            alert.setTitle(R.string.custom_carrier_label_title);
+            alert.setMessage(R.string.custom_carrier_label_explain);
+            LinearLayout parent = new LinearLayout(getActivity());
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+            parent.setLayoutParams(params);
+            // Set an EditText view to get user input
+            final EditText input = new EditText(getActivity());
+            input.setText(TextUtils.isEmpty(mCustomCarrierLabelText) ? "" : mCustomCarrierLabelText);
+            input.setSelection(input.getText().length());
+            params.setMargins(60, 0, 60, 0);
+            input.setLayoutParams(params);
+            parent.addView(input);
+            alert.setView(parent);
+            alert.setPositiveButton(getString(android.R.string.ok),
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            String value = ((Spannable) input.getText()).toString().trim();
+                            Settings.System.putString(resolver, Settings.System.CUSTOM_CARRIER_LABEL, value);
+                            updateCustomLabelTextSummary();
+                            Intent i = new Intent();
+                            i.setAction(Intent.ACTION_CUSTOM_CARRIER_LABEL_CHANGED);
+                            getActivity().sendBroadcast(i);
+                }
+            });
+            alert.setNegativeButton(getString(android.R.string.cancel), null);
+            alert.show();
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     private void enableStatusBarBatteryDependents(int batteryIconStyle) {
