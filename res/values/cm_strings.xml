@@ -95,7 +95,9 @@
     <!-- Profile network mode -->
     <string name="profile_networkmode_2g">2G</string>
     <string name="profile_networkmode_3g">3G</string>
+    <string name="profile_networkmode_4g">4G</string>
     <string name="profile_networkmode_2g3g">2G/3G</string>
+    <string name="profile_networkmode_2g3g4g">2G/3G/4G</string>
 
     <!-- Profile Config screen PreferenceGroup titles -->
     <string name="profile_connectionoverrides_title">Connection overrides</string>
@@ -160,6 +162,7 @@
     <string name="toggleData">Mobile Data</string>
     <string name="toggleSync">Auto-sync data</string>
     <string name="toggle2g3g">2G/3G</string>
+    <string name="toggle2g3g4g">2G/3G/4G</string>
     <string name="toggleWimax">WiMAX</string>
     <string name="toggleNfc">NFC</string>
 
@@ -950,4 +953,7 @@
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
     <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
     <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
+
+    <string name="link_volume_option_title">Link ringtone &amp; notification volumes</string>
+    <string name="notification_volume_option_title">Notification volume</string>
 </resources>
