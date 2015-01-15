@@ -15,24 +15,25 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="suda_version">SudaMod版本</string>
+  <string name="suda_version">SudaMod Version</string>
   <string name="suda_version_default">未知</string>
   <string name="wat">天气时钟</string>
   <string name="wats">天气时钟插件快捷入口</string> 
   <string name="gesture_title">手势</string>
+  
   <!-- Advanced Device Info -->
-  <string name="advanced_device_info_title">高级信息</string>
-  <string name="advanced_device_info_summary">CPU、GPU等。</string>
+  <string name="advanced_device_info_title">Advanced information</string>
+  <string name="advanced_device_info_summary">Information about CPU, GPU etc.</string>
   <!-- CPU -->
   <string name="cpu_info">CPU</string>
-  <string name="cpu_features">处理器特性</string>
+  <string name="cpu_features">Processor features</string>
   <!-- Memory -->
-  <string name="mem_info">运行内存</string>
+  <string name="mem_info">Memory</string>
   <!-- GPU -->
   <string name="gpu_title" translatable="false">GPU / OpenGL</string>
-  <string name="gpu_vendor">GPU供应商</string>
-  <string name="gpu_renderer">GPU渲染器</string>
-  <string name="gpu_gl_version">OpenGL版本</string>
-  <string name="gpu_gl_extensions">OpenGL扩展</string>
-  <string name="gpu_shader_version">Shader版本</string>       
+  <string name="gpu_vendor">GPU vendor</string>
+  <string name="gpu_renderer">GPU renderer</string>
+  <string name="gpu_gl_version">OpenGL version</string>
+  <string name="gpu_gl_extensions">OpenGL extensions</string>
+  <string name="gpu_shader_version">Shader version</string>       
 </resources>
