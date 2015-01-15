@@ -18,5 +18,6 @@
   <string name="suda_version">SudaMod版本</string>
   <string name="suda_version_default">未知</string>
   <string name="wat">天气时钟</string>
-  <string name="wats">天气时钟插件快捷入口</string>     
+  <string name="wats">天气时钟插件快捷入口</string> 
+  <string name="gesture_title">手势</string>       
 </resources>

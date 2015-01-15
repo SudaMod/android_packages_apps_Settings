@@ -19,6 +19,8 @@
 -keep class com.android.settings.privacyguard.*
 -keep class com.android.settings.voicewakeup.*
 
+-keep class com.android.settings.sudamod.**
+
 # Keep click responders
 -keepclassmembers class com.android.settings.inputmethod.UserDictionaryAddWordActivity {
   *** onClick*(...);

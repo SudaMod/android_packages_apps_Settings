@@ -92,6 +92,13 @@
                 android:icon="@drawable/ic_settings_statusbar"
                 />
 
+ 	<!-- Gestures -->
+	<dashboard-tile
+		android:id="@+id/gesture_settings"
+		android:title="@string/gesture_title"
+		android:fragment="com.android.settings.sudamod.GestureSettings"
+		android:icon="@drawable/ic_settings_gestures"
+		/>
 
     </dashboard-category>
 
