@@ -35,5 +35,9 @@
   <string name="gpu_renderer">GPU renderer</string>
   <string name="gpu_gl_version">OpenGL version</string>
   <string name="gpu_gl_extensions">OpenGL extensions</string>
-  <string name="gpu_shader_version">Shader version</string>       
+  <string name="gpu_shader_version">Shader version</string>
+
+  <!-- Superuser indicator-->
+  <string name="su_indicator">Superuser indicator</string>
+  <string name="su_indicator_summary">Show superuser indicator when a session is active</string>         
 </resources>
