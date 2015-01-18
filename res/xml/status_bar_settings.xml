@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (C) 2014 The CyanogenMod Project
+<!-- Copyright (C) 2014-2015 The CyanogenMod Project
      Copyright (C) 2014-2015 The MoKee OpenSource Project
      Copyright (C) 2015 The SudaMod Project
-     
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -46,36 +46,6 @@
         android:title="@string/custom_carrier_label_title"
         android:dependency="status_bar_carrier" />
 
-    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
- 	android:key="show_su_icon"
- 	android:title="@string/su_indicator"
- 	android:summary="@string/su_indicator_summary"
- 	android:defaultValue="true" />
-
-    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-        android:key="status_bar_brightness_control"
-        android:title="@string/status_bar_toggle_brightness"
-        android:summary="@string/status_bar_toggle_brightness_summary"
-        android:defaultValue="false" />
-
-    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-        android:key="status_bar_quick_qs_pulldown"
-        android:title="@string/status_bar_quick_qs_pulldown_title"
-        android:summary="@string/status_bar_quick_qs_pulldown_summary"
-        android:defaultValue="true" />
-
-    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-        android:key="status_bar_notif_count"
-        android:title="@string/status_bar_notif_count_title"
-        android:summary="@string/status_bar_notif_count_summary"
-        android:defaultValue="false" />
-
-    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-        android:key="status_bar_show_weather"
-        android:title="@string/status_bar_show_weather_title"
-        android:summary="@string/status_bar_show_weather_summary"
-        android:defaultValue="true" />
-
     <ListPreference
         android:key="status_bar_battery_style"
         android:title="@string/status_bar_battery_style_title"
@@ -89,5 +59,23 @@
         android:dialogTitle="@string/status_bar_battery_percentage_title"
         android:entries="@array/status_bar_battery_percentage_entries"
         android:entryValues="@array/status_bar_battery_percentage_values" />
+
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+ 	android:key="show_su_icon"
+ 	android:title="@string/su_indicator"
+ 	android:summary="@string/su_indicator_summary"
+ 	android:defaultValue="true" />
+
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="status_bar_brightness_control"
+        android:title="@string/status_bar_toggle_brightness"
+        android:summary="@string/status_bar_toggle_brightness_summary"
+        android:defaultValue="false" />
+
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="status_bar_notif_count"
+        android:title="@string/status_bar_notif_count_title"
+        android:summary="@string/status_bar_notif_count_summary"
+        android:defaultValue="false" />
 
 </PreferenceScreen>
