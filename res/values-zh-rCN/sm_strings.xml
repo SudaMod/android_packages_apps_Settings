@@ -15,6 +15,14 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="wat">天气时钟</string>
+  <string name="wats">天气时钟插件快捷入口</string> 
+  <string name="gesture_title">手势</string>
+  <string name="look_up_location">查询</string>
+  <string name="phonelocation">归属地查询</string>
+  <string name="phonelocation_tip">归属地：</string>
+  <string name="phone_tip">请输入电话号码</string>
+  <string name="location_unknow">未知</string>  
   <string name="suda_version">SudaMod版本</string>
   <string name="suda_version_default">未知</string>
   <string name="wat">天气时钟</string>
