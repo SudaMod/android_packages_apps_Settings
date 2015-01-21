@@ -19,6 +19,6 @@
   <string-array name="entries_status_bar_am_pm">
     <item>正常</item>
     <item>小</item>
-    <item>无</item>
+    <item>隐藏</item>
   </string-array>
 </resources>
