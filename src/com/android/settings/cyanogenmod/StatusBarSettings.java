@@ -1,18 +1,19 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014-2015 The CyanogenMod Project
+ * Copyright (C) 2014-2015 The SudaMod Project 
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.android.settings.cyanogenmod;
 
 import android.app.AlertDialog;
@@ -20,6 +21,7 @@ import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.ContentObserver;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -33,6 +35,8 @@ import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.text.format.DateFormat;
+import android.view.View;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -54,6 +58,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
 
+    private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
 
@@ -65,6 +70,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private SwitchPreference mStatusBarCarrier;
     private PreferenceScreen mCustomCarrierLabel;
 
+    private ListPreference mStatusBarClock;
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarBatteryShowPercent;
 
@@ -105,12 +111,21 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         } else {
             updateCustomLabelTextSummary();
         }
+        mStatusBarClock = (ListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
 
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         mStatusBarBatteryShowPercent =
                 (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
 
-        int batteryStyle = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_BATTERY_STYLE, 0);
+        int clockStyle = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CLOCK, 1);
+        mStatusBarClock.setValue(String.valueOf(clockStyle));
+        mStatusBarClock.setSummary(mStatusBarClock.getEntry());
+        mStatusBarClock.setOnPreferenceChangeListener(this);
+
+        int batteryStyle = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, 0);
+				
         mStatusBarBattery.setValue(String.valueOf(batteryStyle));
         mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
         mStatusBarBattery.setOnPreferenceChangeListener(this);
@@ -135,9 +150,28 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        // Adjust clock position for RTL if necessary
+        Configuration config = getResources().getConfiguration();
+        if (config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
+                mStatusBarClock.setEntries(getActivity().getResources().getStringArray(
+                        R.array.status_bar_clock_style_entries_rtl));
+                mStatusBarClock.setSummary(mStatusBarClock.getEntry());
+        }
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mStatusBarBattery) {
+        if (preference == mStatusBarClock) {
+            int clockStyle = Integer.parseInt((String) newValue);
+            int index = mStatusBarClock.findIndexOfValue((String) newValue);
+            Settings.System.putInt(
+                    resolver, STATUS_BAR_CLOCK_STYLE, clockStyle);
+            mStatusBarClock.setSummary(mStatusBarClock.getEntries()[index]);
+            return true;
+        }  else if (preference == mStatusBarBattery) {
             int batteryStyle = Integer.valueOf((String) newValue);
             int index = mStatusBarBattery.findIndexOfValue((String) newValue);
             Settings.System.putInt(
