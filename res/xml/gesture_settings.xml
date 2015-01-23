@@ -17,7 +17,7 @@
   -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/gesture_title">
+    android:title="@string/gesture_direct_title">
 <!--
     <Preference
         android:key="device_specific_gesture_settings"
@@ -29,6 +29,9 @@
             android:targetClass="com.cyanogenmod.settings.device.TouchscreenGestureSettings" />
     </Preference>
 -->
+    <PreferenceCategory
+        android:key="gesture"
+        android:title="@string/gesture_title" >
 
     <SwitchPreference
         android:key="double_tap_wake_gesture"
@@ -39,5 +42,23 @@
         android:title="@string/double_tap_to_sleep_title"
         android:summary="@string/double_tap_to_sleep_summary"
         android:defaultValue="true" />
+	
+    </PreferenceCategory>		
+	
+    <PreferenceCategory
+        android:key="direct_control"
+        android:title="@string/direct_control_title" >
+
+        <SwitchPreference
+            android:key="direct_call_for_dialer"
+            android:summary="@string/direct_call_for_dialer_summary"
+            android:title="@string/direct_call_for_dialer_title" />
+
+        <SwitchPreference
+            android:key="direct_call_for_mms"
+            android:summary="@string/direct_call_for_mms_summary"
+            android:title="@string/direct_call_for_mms_title" />
+
+    </PreferenceCategory>	
 
 </PreferenceScreen>

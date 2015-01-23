@@ -17,6 +17,8 @@
 
 package com.android.settings.sudamod;
 
+import android.content.ContentResolver;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -25,6 +27,7 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
+import android.provider.Settings;
 import android.util.Log;
 
 import com.android.settings.R;
@@ -40,8 +43,13 @@ public class GestureSettings extends SettingsPreferenceFragment {
 
     private static final String KEY_GESTURES = "device_specific_gesture_settings";
     private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
+    private static final String DIRECT_CALL_FOR_DIALER = "direct_call_for_dialer";
+    private static final String DIRECT_CALL_FOR_MMS = "direct_call_for_mms";
+
 
     private SwitchPreference mTapToWake;
+    private SwitchPreference mDirectCallForDialer;
+    private SwitchPreference mDirectCallForMms;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,31 +63,57 @@ public class GestureSettings extends SettingsPreferenceFragment {
         final PreferenceCategory category = (PreferenceCategory) findPreference(CATEGORY_GESTURES);
 
         mTapToWake = (SwitchPreference) findPreference(KEY_TAP_TO_WAKE);
+
         if (!isTapToWakeSupported()) {
             category.removePreference(mTapToWake);
             mTapToWake = null;
         }
+
+        mDirectCallForDialer = (SwitchPreference) findPreference(DIRECT_CALL_FOR_DIALER);
+        mDirectCallForMms = (SwitchPreference) findPreference(DIRECT_CALL_FOR_MMS);
     }
 
     @Override
     public void onResume() {
         super.onResume();
 
+	ContentResolver resolver = getActivity().getContentResolver();
+
         if (mTapToWake != null) {
             mTapToWake.setChecked(TapToWake.isEnabled());
         }
+		
+        mDirectCallForDialer.setChecked((Settings.System.getInt(resolver,
+                Settings.System.DIRECT_CALL_FOR_DIALER, 0) == 1));
+        
+	mDirectCallForMms.setChecked((Settings.System.getInt(resolver,
+                Settings.System.DIRECT_CALL_FOR_MMS, 0) == 1));		
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        ContentResolver resolver = getActivity().getContentResolver();
+		
         if (preference == mTapToWake) {
             final SharedPreferences prefs =
                     PreferenceManager.getDefaultSharedPreferences(getActivity());
             prefs.edit().putBoolean(KEY_TAP_TO_WAKE, mTapToWake.isChecked()).apply();
             return TapToWake.setEnabled(mTapToWake.isChecked());
+        } else if (preference == mDirectCallForDialer) {
+			if (mDirectCallForDialer.isChecked()){
+            	Settings.System.putInt(resolver, Settings.System.DIRECT_CALL_FOR_DIALER, 1);
+			}else{
+            	Settings.System.putInt(resolver, Settings.System.DIRECT_CALL_FOR_DIALER, 0);
+			}
+        } else if (preference == mDirectCallForMms) {
+			if (mDirectCallForMms.isChecked()){
+            	Settings.System.putInt(resolver, Settings.System.DIRECT_CALL_FOR_MMS, 1);
+			}else{
+            	Settings.System.putInt(resolver, Settings.System.DIRECT_CALL_FOR_MMS, 0);
+			}
         }
 
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+		return false;
     }
 
     private static boolean isTapToWakeSupported() {
