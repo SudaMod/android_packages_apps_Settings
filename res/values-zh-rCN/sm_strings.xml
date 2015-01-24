@@ -87,5 +87,10 @@
   <string name="direct_call_for_dialer_title">拨号界面体感拨号</string>
   <string name="direct_call_for_dialer_summary">手机放在耳边时将自动拨打当前拨号器输入的电话号码</string>
   <string name="direct_call_for_mms_title">短信界面体感拨号</string>
-  <string name="direct_call_for_mms_summary">手机放在耳边时将自动拨打当前的短信联系者电话号码</string>           
+  <string name="direct_call_for_mms_summary">手机放在耳边时将自动拨打当前的短信联系者电话号码</string>
+  <string name="power_save_setting_title">省电模式</string>
+  <string name="power_save_setting_summary">选择你的节能模式</string>
+  <string name="power_save_setting_off">关闭</string>
+  <string name="power_save_setting_always_open">一直开启</string>
+  <string name="power_save_setting_screen_saving">熄屏节能</string>  
 </resources>

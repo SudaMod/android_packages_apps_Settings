@@ -125,4 +125,13 @@
   <!-- Superuser indicator-->
   <string name="su_indicator">Superuser indicator</string>
   <string name="su_indicator_summary">Show superuser indicator when a session is active</string>         
+
+  <!-- power save setting-->
+  <string name="battery_save_mode">Smart power</string>
+  <string name="power_save_setting_title">Energy saving mode</string>
+  <string name="power_save_setting_summary">The choice of energy-saving mode you want</string>
+  <string name="power_save_setting_off">Closed</string> 
+  <string name="power_save_setting_always_open">Always Open</string>
+  <string name="power_save_setting_screen_saving">Off Screen Saving</string>
+
 </resources>
