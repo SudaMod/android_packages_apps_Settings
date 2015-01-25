@@ -81,6 +81,7 @@ import android.widget.TabWidget;
 import com.android.internal.util.ImageUtils;
 import com.android.internal.util.UserIcons;
 import com.android.settings.UserSpinnerAdapter.UserDetails;
+import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.dashboard.DashboardCategory;
 import com.android.settings.dashboard.DashboardTile;
 import com.android.settings.drawable.CircleFramedDrawable;
@@ -230,14 +231,9 @@ public final class Utils {
      *      {@link #META_DATA_PREFERENCE_SUMMARY}
      */
     public static boolean updatePreferenceToSpecificActivityFromMetaDataOrRemove(Context context,
-            Object parentPreferenceGroup, String preferenceKey) {
+            PreferenceGroup parentPreferenceGroup, String preferenceKey) {
 
-        Preference preference = null;
-        if (parentPreferenceGroup instanceof PreferenceScreen) {
-            preference = ((PreferenceScreen) parentPreferenceGroup).findPreference(preferenceKey);
-        } else if (parentPreferenceGroup instanceof PreferenceCategory) {
-            preference = ((PreferenceCategory) parentPreferenceGroup).findPreference(preferenceKey);
-        }
+        Preference preference = parentPreferenceGroup.findPreference(preferenceKey);
         if (preference == null) {
             return false;
         }
@@ -300,11 +296,7 @@ public final class Utils {
         }
 
         // Did not find a matching activity, so remove the preference
-        if (parentPreferenceGroup instanceof PreferenceScreen) {
-            ((PreferenceScreen) parentPreferenceGroup).removePreference(preference);
-        } else  {
-            ((PreferenceCategory) parentPreferenceGroup).removePreference(preference);
-        }
+        parentPreferenceGroup.removePreference(preference);
 
         return false;
     }
@@ -849,7 +841,12 @@ public final class Utils {
     public static Intent onBuildStartFragmentIntent(Context context, String fragmentName,
             Bundle args, int titleResId, CharSequence title, boolean isShortcut) {
         Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.setClass(context, SubSettings.class);
+        if (BluetoothSettings.class.getName().equals(fragmentName)) {
+            intent.setClass(context, SubSettings.BluetoothSubSettings.class);
+            intent.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT_AS_SUBSETTING, true);
+        } else {
+            intent.setClass(context, SubSettings.class);
+        }
         intent.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT, fragmentName);
         intent.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT_ARGUMENTS, args);
         intent.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT_TITLE_RESID, titleResId);
