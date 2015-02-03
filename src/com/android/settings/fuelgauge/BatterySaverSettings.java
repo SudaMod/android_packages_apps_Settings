@@ -66,7 +66,7 @@ public class BatterySaverSettings extends SettingsPreferenceFragment
                     resolver, Settings.System.POWER_SAVE_SETTINGS, PowerSaveSettings);
             mPowerSaveSettings.setSummary(mPowerSaveSettings.getEntries()[index]);
             Settings.Global.putInt(resolver,
-                Settings.Global.LOW_POWER_MODE_TRIGGER_LEVEL, 0);
+                    Settings.Global.LOW_POWER_MODE_TRIGGER_LEVEL,(PowerSaveSettings == 3 ? 1 : 0));
             return true;
         }
         return false;

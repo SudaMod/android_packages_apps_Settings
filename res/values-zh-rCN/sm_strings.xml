@@ -92,5 +92,6 @@
   <string name="power_save_setting_summary">选择你的节能模式</string>
   <string name="power_save_setting_off">关闭</string>
   <string name="power_save_setting_always_open">一直开启</string>
-  <string name="power_save_setting_screen_saving">熄屏节能</string>  
+  <string name="power_save_setting_screen_saving">熄屏节能</string>
+  <string name="low_save_setting_saving">低电量启动</string>    
 </resources>
