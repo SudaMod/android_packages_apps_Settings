@@ -799,13 +799,14 @@
     <string name="sim_enabled">enabled</string>
     <string name="sim_disabled">disabled</string>
     <string name="sim_missing">missing or faulty</string>
-    <string name="sim_enabler_need_disable_sim">SIM card will be deactivated. Do you want to continue?</string>
+    <string name="sim_enabler_need_disable_sim">Deactivate SIM card?</string>
     <string name="sim_enabler_airplane_on">Unable to perform the operation while airplane mode is on.</string>
     <string name="sim_enabler_in_call">Unable to perform the operation while in call.</string>
     <string name="sim_enabler_both_inactive">Can\'t disable all SIM cards</string>
     <string name="sim_enabler_sim">SIM</string>
-    <string name="sim_enabler_enabling">Activating\u2026</string>
-    <string name="sim_enabler_disabling">Deactivating\u2026</string>
+    <string name="sim_enabler_enabling">Activating <xliff:g id="name">%s</xliff:g>\u2026</string>
+    <string name="sim_enabler_disabling">Deactivating <xliff:g id="name">%s</xliff:g>\u2026</string>
+    <string name="sim_enabler_deactivate">Deactivate</string>
     <string name="sub_activate_success">SIM activated.</string>
     <string name="sub_deactivate_success">SIM deactivated.</string>
 
@@ -1004,4 +1005,17 @@
     <string name="lockscreen_default_target">Default</string>
     <string name="lockscreen_message">Tap an icon on the left or right to reassign a lock screen shortcut.</string>
     <string name="lockscreen_choose_action_title">Choose action</string>
+<<<<<<< HEAD
+=======
+
+    <!-- WhisperPush -->
+    <string name="whisperpush_title">WhisperPush</string>
+    <string name="whisperpush_summary">Manage secure SMS settings</string>
+    <string name="whisperpush_registration_title">Register</string>
+    <string name="whisperpush_registration_summary">Register for WhisperPush to enable encrypted SMS.</string>
+    <string name="whisperpush_identitykey_title">Review identity keys</string>
+
+    <string name="navigation_ring_title">Navigation ring targets</string>
+    <string name="navigation_ring_message">Tap the edit icon to open the navigation ring for editing.\n\nSelect a target to configure its behavior.\n\nTap the check mark icon to save your changes, or restore to reset the settings to defaults.</string>
+>>>>>>> 4ca4b7d77d8ee4dfddc38e09b5e67c56eeddacc2
 </resources>
