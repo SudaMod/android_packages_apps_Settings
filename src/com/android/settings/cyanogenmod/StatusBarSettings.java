@@ -67,6 +67,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String STATUS_BAR_NETWORK_TRAFFIC_STYLE = "status_bar_network_traffic_style";
     private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+	private static final String CARRIER_SIZE_STYLE = "carrier_size_style";
 
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
@@ -83,7 +84,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private ListPreference mStatusBarClock;
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarBatteryShowPercent;
-
+ 	private ListPreference mCarrierSize;
+ 
     private String mCustomCarrierLabelText;
 
     @Override
@@ -111,7 +113,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarNetworkTraffic.setSummary(mStatusBarNetworkTraffic.getEntry());
         mStatusBarNetworkTraffic.setOnPreferenceChangeListener(this);
 
-        mStatusBarCarrier = (SwitchPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
+		mCarrierSize = (ListPreference) findPreference(CARRIER_SIZE_STYLE);
+		int CarrierSize = Settings.System.getInt(resolver,
+					 Settings.System.CARRIER_SIZE, 0);
+		mCarrierSize.setValue(String.valueOf(CarrierSize));
+		mCarrierSize.setSummary(mCarrierSize.getEntry());
+		mCarrierSize.setOnPreferenceChangeListener(this);
+        
+		mStatusBarCarrier = (SwitchPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
         mStatusBarCarrier.setChecked((Settings.System.getInt(resolver, Settings.System.STATUS_BAR_CARRIER, 0) == 1));
         mStatusBarCarrier.setOnPreferenceChangeListener(this);
         mCustomCarrierLabel = (PreferenceScreen) prefSet.findPreference(CUSTOM_CARRIER_LABEL);
@@ -212,8 +221,22 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         } else if (preference == mStatusBarCarrier) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver, Settings.System.STATUS_BAR_CARRIER, value ? 1 : 0);
-            return true;
-        }
+            Intent i = new Intent();
+			i.setAction(Intent.ACTION_CUSTOM_CARRIER_LABEL_CHANGED);
+			getActivity().sendBroadcast(i);
+			return true;
+        } else if (preference == mCarrierSize) {
+			int CarrierSize = Integer.valueOf((String) newValue);
+			int index = mCarrierSize.findIndexOfValue((String) newValue);
+			Settings.System.putInt(resolver,
+			Settings.System.CARRIER_SIZE, CarrierSize);
+			mCarrierSize.setSummary(mCarrierSize.getEntries()[index]);
+			Intent i = new Intent();
+			i.setAction(Intent.ACTION_CUSTOM_CARRIER_LABEL_CHANGED);
+			getActivity().sendBroadcast(i);
+			return true;
+		}
+		
         return false;
     }
 

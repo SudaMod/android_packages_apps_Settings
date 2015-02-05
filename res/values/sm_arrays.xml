@@ -124,19 +124,32 @@
         <item>3</item>
     </string-array>
 	
-	<!-- power save setting -->
-	<string-array name="power_save_setting_entries" translatable="false">
-		<item>@string/power_save_setting_off</item>
-		<item>@string/power_save_setting_always_open</item>
-		<item>@string/power_save_setting_screen_saving</item>
-		<item>@string/low_save_setting_saving</item>		
-	</string-array>
+    <!-- power save setting -->
+    <string-array name="power_save_setting_entries" translatable="false">
+    	<item>@string/power_save_setting_off</item>
+	<item>@string/power_save_setting_always_open</item>
+	<item>@string/power_save_setting_screen_saving</item>
+	<item>@string/low_save_setting_saving</item>		
+    </string-array>
 	
-	<string-array name="power_save_setting_values" translatable="false">
-		<item>0</item>
-		<item>1</item>
-		<item>2</item>
-		<item>3</item>		
-	</string-array>
+    <string-array name="power_save_setting_values" translatable="false">
+    	<item>0</item>
+	<item>1</item>
+	<item>2</item>
+	<item>3</item>		
+    </string-array>
+	
+    <!-- carrier size -->	
+    <string-array name="entries_carrier_size_style" translatable="false">
+	 <item>@string/carrier_size_style_normal</item>
+	 <item>@string/carrier_size_style_small</item>
+	 <item>@string/carrier_size_style_big</item>
+    </string-array>
+	
+    <string-array name="values_carrier_size_style" translatable="false">
+ 	<item>5</item>
+ 	<item>4</item>
+ 	<item>6</item>
+ </string-array>
 
 </resources>

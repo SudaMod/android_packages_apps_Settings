@@ -93,5 +93,9 @@
   <string name="power_save_setting_off">关闭</string>
   <string name="power_save_setting_always_open">一直开启</string>
   <string name="power_save_setting_screen_saving">熄屏节能</string>
-  <string name="low_save_setting_saving">低电量启动</string>    
+  <string name="low_save_setting_saving">低电量启动</string>
+  <string name="show_carrier_speed_title">运营商字体大小</string>
+  <string name="carrier_size_style_normal">正常</string>
+  <string name="carrier_size_style_small">小</string>
+  <string name="carrier_size_style_big">大</string>      
 </resources>
