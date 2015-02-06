@@ -67,12 +67,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String STATUS_BAR_NETWORK_TRAFFIC_STYLE = "status_bar_network_traffic_style";
     private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
-	private static final String CARRIER_SIZE_STYLE = "carrier_size_style";
+    private static final String CARRIER_SIZE_STYLE = "carrier_size_style";
 
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
-	private static final String KEY_DATE_SECOND = "date_second";
+    private static final String KEY_DATE_SECOND = "date_second";
 
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
@@ -85,8 +85,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private ListPreference mStatusBarClock;
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarBatteryShowPercent;
- 	private ListPreference mCarrierSize;
- 	private SwitchPreference mDateScond;
+    private ListPreference mCarrierSize;
+    private SwitchPreference mDateScond;
  
     private String mCustomCarrierLabelText;
 
@@ -115,14 +115,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarNetworkTraffic.setSummary(mStatusBarNetworkTraffic.getEntry());
         mStatusBarNetworkTraffic.setOnPreferenceChangeListener(this);
 
-		mCarrierSize = (ListPreference) findPreference(CARRIER_SIZE_STYLE);
-		int CarrierSize = Settings.System.getInt(resolver,
-					 Settings.System.CARRIER_SIZE, 0);
-		mCarrierSize.setValue(String.valueOf(CarrierSize));
-		mCarrierSize.setSummary(mCarrierSize.getEntry());
-		mCarrierSize.setOnPreferenceChangeListener(this);
+	mCarrierSize = (ListPreference) findPreference(CARRIER_SIZE_STYLE);
+	int CarrierSize = Settings.System.getInt(resolver,
+				Settings.System.CARRIER_SIZE, 0);
+	mCarrierSize.setValue(String.valueOf(CarrierSize));
+	mCarrierSize.setSummary(mCarrierSize.getEntry());
+	mCarrierSize.setOnPreferenceChangeListener(this);
         
-		mStatusBarCarrier = (SwitchPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
+	mStatusBarCarrier = (SwitchPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
         mStatusBarCarrier.setChecked((Settings.System.getInt(resolver, Settings.System.STATUS_BAR_CARRIER, 0) == 1));
         mStatusBarCarrier.setOnPreferenceChangeListener(this);
         mCustomCarrierLabel = (PreferenceScreen) prefSet.findPreference(CUSTOM_CARRIER_LABEL);
@@ -144,10 +144,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarClock.setSummary(mStatusBarClock.getEntry());
         mStatusBarClock.setOnPreferenceChangeListener(this);
 
-		mDateScond = (SwitchPreference) findPreference(KEY_DATE_SECOND);
-		mDateScond.setChecked((Settings.System.getInt(resolver,
-		Settings.System.CLOCK_USE_SECOND, 0) == 1));
-		mDateScond.setOnPreferenceChangeListener(this);
+	mDateScond = (SwitchPreference) findPreference(KEY_DATE_SECOND);
+	mDateScond.setChecked((Settings.System.getInt(resolver,
+	Settings.System.CLOCK_USE_SECOND, 0) == 1));
+	mDateScond.setOnPreferenceChangeListener(this);
 
         int batteryStyle = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_BATTERY_STYLE, 0);
