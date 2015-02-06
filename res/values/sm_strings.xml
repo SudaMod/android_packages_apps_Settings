@@ -139,4 +139,7 @@
   <string name="power_save_setting_screen_saving">Off Screen Saving</string>
   <string name="low_save_setting_saving">Low battery start</string>
  
+  <!-- date second-->
+  <string name="date_second_title">Time display seconds</string>
+  <string name="date_second_summary">Let the time accurate to seconds</string>
 </resources>

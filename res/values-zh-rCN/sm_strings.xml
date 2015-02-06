@@ -97,5 +97,7 @@
   <string name="show_carrier_speed_title">运营商字体大小</string>
   <string name="carrier_size_style_normal">正常</string>
   <string name="carrier_size_style_small">小</string>
-  <string name="carrier_size_style_big">大</string>      
+  <string name="carrier_size_style_big">大</string>
+  <string name="date_second_title">时间显示秒</string>
+  <string name="date_second_summary">让时间精确到秒</string>        
 </resources>
