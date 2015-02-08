@@ -142,4 +142,12 @@
   <!-- date second-->
   <string name="date_second_title">Time display seconds</string>
   <string name="date_second_summary">Let the time accurate to seconds</string>
+  
+  <!-- night mode-->
+  <string name="night_mode">Night Mode</string>
+  <string name="night_mode_color">Night Mode Color</string>
+  <string name="night_mode_color_black">black</string>
+  <string name="night_mode_color_red">red</string>
+  <string name="night_mode_color_yellow">yellow</string>
+  
 </resources>

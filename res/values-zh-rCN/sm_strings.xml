@@ -99,5 +99,10 @@
   <string name="carrier_size_style_small">小</string>
   <string name="carrier_size_style_big">大</string>
   <string name="date_second_title">时间显示秒</string>
-  <string name="date_second_summary">让时间精确到秒</string>        
+  <string name="date_second_summary">让时间精确到秒</string>
+  <string name="night_mode">夜间模式</string>
+  <string name="night_mode_color">夜间模式颜色</string>
+  <string name="night_mode_color_black">黑色</string>
+  <string name="night_mode_color_red">红色</string>
+  <string name="night_mode_color_yellow">黄色</string>          
 </resources>

@@ -36,11 +36,13 @@ import android.app.Dialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ContentResolver;
 import android.content.Context;
+import com.android.settings.sudamod.NightMode;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Build;
@@ -125,6 +127,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
 
+	private SwitchPreference nightSwitch;
+	private ListPreference nightColor;
     private ContentObserver mAccelerometerRotationObserver =
             new ContentObserver(new Handler()) {
         @Override
@@ -186,6 +190,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mFontSizePref.setOnPreferenceChangeListener(this);
         mFontSizePref.setOnPreferenceClickListener(this);
 
+        nightSwitch = (SwitchPreference) findPreference("nightswitch");
+		nightSwitch.setChecked(getActivity().getApplicationContext().getSharedPreferences("com.android.settings_preferences", 0).getBoolean("nightswitch", false));
+	    nightSwitch.setOnPreferenceChangeListener(this);
+
+        nightColor = (ListPreference) findPreference("nightcolor");
+        nightColor.setDefaultValue(getActivity().getApplicationContext().getSharedPreferences("com.android.settings_preferences", 0).getString("nightColor", "0"));
+        nightColor.setSummary(nightColor.getEntry());
+        nightColor.setOnPreferenceChangeListener(this);
+		
         if (isAutomaticBrightnessAvailable(getResources())) {
             mAutoBrightnessPreference = (SwitchPreference) findPreference(KEY_AUTO_BRIGHTNESS);
             mAutoBrightnessPreference.setOnPreferenceChangeListener(this);
@@ -250,6 +263,21 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
     }
 
+	
+    private void setColor(int bri, int colorR, int colorG, int colorB)
+    {
+        getActivity().getApplicationContext().getSharedPreferences("eye", 0).edit().putInt("bri", bri).commit();
+        getActivity().getApplicationContext().getSharedPreferences("eye", 0).edit().putInt("red", colorR).commit();
+        getActivity().getApplicationContext().getSharedPreferences("eye", 0).edit().putInt("green",  colorG).commit();
+        getActivity().getApplicationContext().getSharedPreferences("eye", 0).edit().putInt("blue", colorB).commit();
+    }
+		
+
+    public void restartNightModIntent(Intent it){  
+    	 getActivity().stopService(it);
+         getActivity().startService(it);
+     }
+	 
     private static boolean allowAllRotations(Context context) {
         return Resources.getSystem().getBoolean(
                 com.android.internal.R.bool.config_allowAllRotations);
@@ -539,6 +567,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+		Intent nightModIntent = new Intent(getActivity().getApplicationContext(), NightMode.class);	
         final String key = preference.getKey();
         if (KEY_SCREEN_TIMEOUT.equals(key)) {
             try {
@@ -574,7 +603,33 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     listviewinterpolator);
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
             return true; 
-         }
+         } else if(preference == nightSwitch){
+		    boolean value = (Boolean) objValue;
+
+            if (value){
+                getActivity().startService(nightModIntent);
+            }else{
+                getActivity().stopService(nightModIntent);
+            }
+            return true;
+
+	}else if(preference==nightColor) {
+		
+		 int Color = Integer.valueOf((String) objValue);
+		if(Color==0){
+			setColor(200,0,0,0);
+			restartNightModIntent(nightModIntent);
+		}else if(Color==1){
+			setColor(100, 255, 0, 0);
+			restartNightModIntent(nightModIntent);
+		}else if(Color==2) {
+			setColor(80, 255, 255, 0);
+			restartNightModIntent(nightModIntent);
+		}
+		nightColor.setSummary(nightColor.getEntries()[Color]);
+		return true;
+			
+		}
         return true;
     }
 
