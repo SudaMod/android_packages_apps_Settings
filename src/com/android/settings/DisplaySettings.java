@@ -191,11 +191,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mFontSizePref.setOnPreferenceClickListener(this);
 
         nightSwitch = (SwitchPreference) findPreference("nightswitch");
-		nightSwitch.setChecked(getActivity().getApplicationContext().getSharedPreferences("com.android.settings_preferences", 0).getBoolean("nightswitch", false));
-	    nightSwitch.setOnPreferenceChangeListener(this);
+	nightSwitch.setChecked(getActivity().getApplicationContext()
+	.getSharedPreferences("com.android.settings_preferences", 0).getBoolean("nightswitch", false));
+	nightSwitch.setOnPreferenceChangeListener(this);
 
         nightColor = (ListPreference) findPreference("nightcolor");
-        nightColor.setDefaultValue(getActivity().getApplicationContext().getSharedPreferences("com.android.settings_preferences", 0).getString("nightColor", "0"));
+        nightColor.setDefaultValue(getActivity().getApplicationContext()
+	.getSharedPreferences("com.android.settings_preferences", 0).getString("nightColor", "0"));
         nightColor.setSummary(nightColor.getEntry());
         nightColor.setOnPreferenceChangeListener(this);
 		

@@ -31,7 +31,7 @@ public class NightMode extends Service {
 	private View view;	
 	
 	int bri = 0;
-    int red = 0;
+    	int red = 0;
 	int green = 0;
 	int yellow = 0 ;
 	
@@ -41,8 +41,9 @@ public class NightMode extends Service {
 		
 	    bri = getApplicationContext().getSharedPreferences("eye", 0).getInt("bri", 0);
 	    red = getApplicationContext().getSharedPreferences("eye", 0).getInt("red", 0);
-		green = getApplicationContext().getSharedPreferences("eye", 0).getInt("green", 0);
-		yellow = getApplicationContext().getSharedPreferences("eye", 0).getInt("yellow", 00);
+            green = getApplicationContext().getSharedPreferences("eye", 0).getInt("green", 0);
+	    yellow = getApplicationContext().getSharedPreferences("eye", 0).getInt("yellow", 00);
+
 	    super.onStart(paramIntent, paramInt);
 	    view.setBackgroundColor(Color.argb(bri ,red,green, yellow));
 	
