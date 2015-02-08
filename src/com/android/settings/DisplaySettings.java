@@ -691,6 +691,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Log.d(TAG, "Color enhancement settings restored.");
             }
         }
+		
+		if(ctx.getSharedPreferences("com.android.settings_preferences", 0).getBoolean("nightswitch", false)){
+				Intent nightModIntent = new Intent(ctx, NightMode.class);	
+                ctx.startService(nightModIntent);
+		}
+
     }
 
     private boolean isPostProcessingSupported() {
