@@ -29,7 +29,7 @@
     </Preference>
 	
     <PreferenceCategory
-        android:key="gesture"
+        android:key="category_gestures"
         android:title="@string/gesture_title" >
 
     <SwitchPreference
