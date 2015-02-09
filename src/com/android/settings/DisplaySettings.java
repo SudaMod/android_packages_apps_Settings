@@ -619,7 +619,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 		
 		 int Color = Integer.valueOf((String) objValue);
 		if(Color==0){
-			setColor(200,0,0,0);
+			setColor(150,0,0,0);
 			restartNightModIntent(nightModIntent);
 		}else if(Color==1){
 			setColor(100, 255, 0, 0);
