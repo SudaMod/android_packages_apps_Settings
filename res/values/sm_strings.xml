@@ -56,6 +56,8 @@
   <!-- Custom navigation bar height -->
   <string name="navigation_bar_height">Button height</string>
   <string name="navigation_bar_height_48">48dp (default)</string>
+  <string name="navigation_bar_height_56" translatable="false">56dp</string>
+  <string name="navigation_bar_height_52" translatable="false">52dp</string>  
   <string name="navigation_bar_height_44" translatable="false">44dp</string>
   <string name="navigation_bar_height_40" translatable="false">40dp</string>
   <string name="navigation_bar_height_36" translatable="false">36dp</string>
@@ -149,5 +151,17 @@
   <string name="night_mode_color_black">black</string>
   <string name="night_mode_color_red">red</string>
   <string name="night_mode_color_yellow">yellow</string>
+  
+  <!-- Custom navigation bar height -->
+  <string name="navigation_bar_height">Button height</string>
+  <string name="navigation_bar_height_48">48dp (default)</string>
+  <string name="navigation_bar_height_44" translatable="false">44dp</string>
+  <string name="navigation_bar_height_40" translatable="false">40dp</string>
+  <string name="navigation_bar_height_36" translatable="false">36dp</string>
+  <string name="navigation_bar_height_32" translatable="false">32dp</string>
+  <string name="navigation_bar_height_28" translatable="false">28dp</string>
+  <string name="navigation_bar_height_24" translatable="false">24dp</string>
+  <string name="navigation_bar_height_20" translatable="false">20dp</string>
+  <string name="navigation_bar_height_0">hide</string>
   
 </resources>
