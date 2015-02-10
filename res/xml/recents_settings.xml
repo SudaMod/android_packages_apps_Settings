@@ -40,10 +40,10 @@
             android:defaultValue="3"
             android:dependency="show_clear_all_recents" />
 
-        <PreferenceScreen
-            android:id="@+id/omniswitch"
-            android:icon="@drawable/ic_dt_omniswitch"
-            android:title="@string/omniswitch_settings_title"
-            android:fragment="com.android.settings.bliss.OmniSwitch" />
+		<PreferenceScreen
+			android:id="@+id/omniswitch"
+			android:icon="@drawable/ic_dt_omniswitch"
+			android:title="@string/omniswitch_settings_title"
+			android:fragment="com.android.settings.bliss.OmniSwitch" />
 
 </PreferenceScreen>
