@@ -29,6 +29,17 @@
         android:dialogTitle="@string/button_backlight_title"
         android:persistent="false" />
 
+    <PreferenceCategory
+		android:key="recents_options"
+        android:title="@string/recents_options" >
+
+	<PreferenceScreen
+        android:key="recents_panel"
+        android:title="@string/recents_options_title"
+        android:fragment="com.android.settings.sudamod.RecentsSettings" />
+
+    </PreferenceCategory>
+
     <!-- Device Specific Bluetooth Input settings -->
     <Preference
         android:key="bluetooth_input_settings">
