@@ -155,6 +155,7 @@
   <string name="recents_clear_all_dismiss_all_title">清理所有任务</string>
   <string name="recents_clear_all_dismiss_all_summary">选择是否要忽略清理所有前台任务</string> 
   <string name="omniswitch_settings_title">OmniSwitch</string>
+  <string name="omniswitch_settings_title_summary">OmniSwitch快捷设置</string>  
   <string name="omniswitch_category">OmniSwitch</string>
   <string name="recents_use_omniswitch_title">替代系统最近任务</string>
   <string name="recents_use_omniswitch_summary">使用OmniSwitch代替系统最近任务</string>
