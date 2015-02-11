@@ -73,6 +73,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String KEY_DATE_SECOND = "date_second";
+	private static final String KEY_STATUS_BAR_GREETING = "status_bar_greeting";
 
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
@@ -81,6 +82,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private ListPreference mStatusBarNetworkTraffic;
     private SwitchPreference mStatusBarCarrier;
     private PreferenceScreen mCustomCarrierLabel;
+	private SwitchPreference mStatusBarGreeting;
 
     private ListPreference mStatusBarClock;
     private ListPreference mStatusBarBattery;
@@ -89,6 +91,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private SwitchPreference mDateScond;
  
     private String mCustomCarrierLabelText;
+	private String mCustomGreetingText = ""; 
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -121,7 +124,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment
 	mCarrierSize.setValue(String.valueOf(CarrierSize));
 	mCarrierSize.setSummary(mCarrierSize.getEntry());
 	mCarrierSize.setOnPreferenceChangeListener(this);
-        
+    
+        mStatusBarGreeting = (SwitchPreference) findPreference(KEY_STATUS_BAR_GREETING);
+        mCustomGreetingText = Settings.System.getString(resolver, Settings.System.STATUS_BAR_GREETING);
+        boolean greeting = mCustomGreetingText != null && !TextUtils.isEmpty(mCustomGreetingText);
+        mStatusBarGreeting.setChecked(greeting);        
+			    
 	mStatusBarCarrier = (SwitchPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
         mStatusBarCarrier.setChecked((Settings.System.getInt(resolver, Settings.System.STATUS_BAR_CARRIER, 0) == 1));
         mStatusBarCarrier.setOnPreferenceChangeListener(this);
@@ -284,10 +292,45 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             });
             alert.setNegativeButton(getString(android.R.string.cancel), null);
             alert.show();
-        }
+        } else  if (preference == mStatusBarGreeting) {
+           boolean enabled = mStatusBarGreeting.isChecked();
+           if (enabled) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+
+                alert.setTitle(R.string.status_bar_greeting_title);
+                alert.setMessage(R.string.status_bar_greeting_dialog);
+
+                // Set an EditText view to get user input
+                final EditText input = new EditText(getActivity());
+                input.setText(mCustomGreetingText != null ? mCustomGreetingText : "Welcome to SudaMod");
+                alert.setView(input);
+                alert.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        String value = ((Spannable) input.getText()).toString();
+                        Settings.System.putString(getActivity().getContentResolver(),
+                                Settings.System.STATUS_BAR_GREETING, value);
+                        updateCheckState(value);
+                    }
+                });
+                alert.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        // Canceled.
+                    }
+                });
+
+                alert.show();
+            } else {
+                Settings.System.putString(getActivity().getContentResolver(),
+                                Settings.System.STATUS_BAR_GREETING, "");
+            }
+		}	
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
+    private void updateCheckState(String value) {
+		if (value == null || TextUtils.isEmpty(value)) mStatusBarGreeting.setChecked(false);
+	}        
+	
     private void enableStatusBarBatteryDependents(int batteryIconStyle) {
         if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN ||
                 batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
