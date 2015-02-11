@@ -58,193 +58,216 @@ import android.provider.Settings.SettingNotFoundException;
 //import android.telephony.MSimTelephonyManager;
 import com.android.settings.Utils;
 
-public class StatusBarSettings extends SettingsPreferenceFragment
-        implements OnPreferenceChangeListener, Indexable {
+public class StatusBarSettings extends SettingsPreferenceFragment implements
+		OnPreferenceChangeListener, Indexable {
 
-    private static final String TAG = "StatusBar";
+	private static final String TAG = "StatusBar";
 
-    private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
-    private static final String STATUS_BAR_NETWORK_TRAFFIC_STYLE = "status_bar_network_traffic_style";
-    private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
-    private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
-    private static final String CARRIER_SIZE_STYLE = "carrier_size_style";
+	private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
+	private static final String STATUS_BAR_NETWORK_TRAFFIC_STYLE = "status_bar_network_traffic_style";
+	private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
+	private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+	private static final String CARRIER_SIZE_STYLE = "carrier_size_style";
 
-    private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
-    private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
-    private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
-    private static final String KEY_DATE_SECOND = "date_second";
+	private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
+	private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+	private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+	private static final String KEY_DATE_SECOND = "date_second";
 	private static final String KEY_STATUS_BAR_GREETING = "status_bar_greeting";
 
-    private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
-    private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
+	private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
+	private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
 
-    private ListPreference mStatusBarAmPm;
-    private ListPreference mStatusBarNetworkTraffic;
-    private SwitchPreference mStatusBarCarrier;
-    private PreferenceScreen mCustomCarrierLabel;
+	private ListPreference mStatusBarAmPm;
+	private ListPreference mStatusBarNetworkTraffic;
+	private SwitchPreference mStatusBarCarrier;
+	private PreferenceScreen mCustomCarrierLabel;
 	private SwitchPreference mStatusBarGreeting;
 
-    private ListPreference mStatusBarClock;
-    private ListPreference mStatusBarBattery;
-    private ListPreference mStatusBarBatteryShowPercent;
-    private ListPreference mCarrierSize;
-    private SwitchPreference mDateScond;
- 
-    private String mCustomCarrierLabelText;
-	private String mCustomGreetingText = ""; 
+	private ListPreference mStatusBarClock;
+	private ListPreference mStatusBarBattery;
+	private ListPreference mStatusBarBatteryShowPercent;
+	private ListPreference mCarrierSize;
+	private SwitchPreference mDateScond;
 
-    @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.status_bar_settings);
+	private String mCustomCarrierLabelText;
+	private String mCustomGreetingText = "";
 
-        PreferenceScreen prefSet = getPreferenceScreen();
-        ContentResolver resolver = getActivity().getContentResolver();
+	@Override
+	public void onCreate(Bundle icicle) {
+		super.onCreate(icicle);
+		addPreferencesFromResource(R.xml.status_bar_settings);
 
-        mStatusBarAmPm = (ListPreference) prefSet.findPreference(STATUS_BAR_AM_PM);
-        if (DateFormat.is24HourFormat(getActivity())) {
-            prefSet.removePreference(prefSet.findPreference(STATUS_BAR_AM_PM));
-        } else {
-            mStatusBarAmPm = (ListPreference) prefSet.findPreference(STATUS_BAR_AM_PM);
-            int statusBarAmPm = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_AM_PM, 0);
-            mStatusBarAmPm.setValue(String.valueOf(statusBarAmPm));
-            mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntry());
-            mStatusBarAmPm.setOnPreferenceChangeListener(this);
-        }
+		PreferenceScreen prefSet = getPreferenceScreen();
+		ContentResolver resolver = getActivity().getContentResolver();
 
-        mStatusBarNetworkTraffic = (ListPreference) prefSet.findPreference(STATUS_BAR_NETWORK_TRAFFIC_STYLE);
-        int networkTrafficStyle = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_NETWORK_TRAFFIC_STYLE, 3);
-        mStatusBarNetworkTraffic.setValue(String.valueOf(networkTrafficStyle));
-        mStatusBarNetworkTraffic.setSummary(mStatusBarNetworkTraffic.getEntry());
-        mStatusBarNetworkTraffic.setOnPreferenceChangeListener(this);
+		mStatusBarAmPm = (ListPreference) prefSet
+				.findPreference(STATUS_BAR_AM_PM);
+		if (DateFormat.is24HourFormat(getActivity())) {
+			prefSet.removePreference(prefSet.findPreference(STATUS_BAR_AM_PM));
+		} else {
+			mStatusBarAmPm = (ListPreference) prefSet
+					.findPreference(STATUS_BAR_AM_PM);
+			int statusBarAmPm = Settings.System.getInt(resolver,
+					Settings.System.STATUS_BAR_AM_PM, 0);
+			mStatusBarAmPm.setValue(String.valueOf(statusBarAmPm));
+			mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntry());
+			mStatusBarAmPm.setOnPreferenceChangeListener(this);
+		}
 
-	mCarrierSize = (ListPreference) findPreference(CARRIER_SIZE_STYLE);
-	int CarrierSize = Settings.System.getInt(resolver,
+		mStatusBarNetworkTraffic = (ListPreference) prefSet
+				.findPreference(STATUS_BAR_NETWORK_TRAFFIC_STYLE);
+		int networkTrafficStyle = Settings.System.getInt(resolver,
+				Settings.System.STATUS_BAR_NETWORK_TRAFFIC_STYLE, 3);
+		mStatusBarNetworkTraffic.setValue(String.valueOf(networkTrafficStyle));
+		mStatusBarNetworkTraffic
+				.setSummary(mStatusBarNetworkTraffic.getEntry());
+		mStatusBarNetworkTraffic.setOnPreferenceChangeListener(this);
+
+		mCarrierSize = (ListPreference) findPreference(CARRIER_SIZE_STYLE);
+		int CarrierSize = Settings.System.getInt(resolver,
 				Settings.System.CARRIER_SIZE, 0);
-	mCarrierSize.setValue(String.valueOf(CarrierSize));
-	mCarrierSize.setSummary(mCarrierSize.getEntry());
-	mCarrierSize.setOnPreferenceChangeListener(this);
-    
-        mStatusBarGreeting = (SwitchPreference) findPreference(KEY_STATUS_BAR_GREETING);
-        mCustomGreetingText = Settings.System.getString(resolver, Settings.System.STATUS_BAR_GREETING);
-        boolean greeting = mCustomGreetingText != null && !TextUtils.isEmpty(mCustomGreetingText);
-        mStatusBarGreeting.setChecked(greeting);        
-			    
-	mStatusBarCarrier = (SwitchPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
-        mStatusBarCarrier.setChecked((Settings.System.getInt(resolver, Settings.System.STATUS_BAR_CARRIER, 0) == 1));
-        mStatusBarCarrier.setOnPreferenceChangeListener(this);
-        mCustomCarrierLabel = (PreferenceScreen) prefSet.findPreference(CUSTOM_CARRIER_LABEL);
-        if (TelephonyManager.getDefault().isMultiSimEnabled()) {
-            prefSet.removePreference(mStatusBarCarrier);
-            prefSet.removePreference(mCustomCarrierLabel);
-        } else {
-            updateCustomLabelTextSummary();
-        }
-        mStatusBarClock = (ListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
+		mCarrierSize.setValue(String.valueOf(CarrierSize));
+		mCarrierSize.setSummary(mCarrierSize.getEntry());
+		mCarrierSize.setOnPreferenceChangeListener(this);
 
-        mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
-        mStatusBarBatteryShowPercent =
-                (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
+		mStatusBarGreeting = (SwitchPreference) findPreference(KEY_STATUS_BAR_GREETING);
+		mCustomGreetingText = Settings.System.getString(resolver,
+				Settings.System.STATUS_BAR_GREETING);
+		boolean greeting = mCustomGreetingText != null
+				&& !TextUtils.isEmpty(mCustomGreetingText);
+		mStatusBarGreeting.setChecked(greeting);
 
-        int clockStyle = Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_CLOCK, 1);
-        mStatusBarClock.setValue(String.valueOf(clockStyle));
-        mStatusBarClock.setSummary(mStatusBarClock.getEntry());
-        mStatusBarClock.setOnPreferenceChangeListener(this);
+		mStatusBarCarrier = (SwitchPreference) prefSet
+				.findPreference(STATUS_BAR_CARRIER);
+		mStatusBarCarrier.setChecked((Settings.System.getInt(resolver,
+				Settings.System.STATUS_BAR_CARRIER, 0) == 1));
+		mStatusBarCarrier.setOnPreferenceChangeListener(this);
+		mCustomCarrierLabel = (PreferenceScreen) prefSet
+				.findPreference(CUSTOM_CARRIER_LABEL);
+		if (TelephonyManager.getDefault().isMultiSimEnabled()) {
+			prefSet.removePreference(mStatusBarCarrier);
+			prefSet.removePreference(mCustomCarrierLabel);
+		} else {
+			updateCustomLabelTextSummary();
+		}
+		mStatusBarClock = (ListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
 
-	mDateScond = (SwitchPreference) findPreference(KEY_DATE_SECOND);
-	mDateScond.setChecked((Settings.System.getInt(resolver,
-	Settings.System.CLOCK_USE_SECOND, 0) == 1));
-	mDateScond.setOnPreferenceChangeListener(this);
+		mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
+		mStatusBarBatteryShowPercent = (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
 
-        int batteryStyle = Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_BATTERY_STYLE, 0);
-				
-        mStatusBarBattery.setValue(String.valueOf(batteryStyle));
-        mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
-        mStatusBarBattery.setOnPreferenceChangeListener(this);
+		int clockStyle = Settings.System.getInt(resolver,
+				Settings.System.STATUS_BAR_CLOCK, 1);
+		mStatusBarClock.setValue(String.valueOf(clockStyle));
+		mStatusBarClock.setSummary(mStatusBarClock.getEntry());
+		mStatusBarClock.setOnPreferenceChangeListener(this);
 
-        int batteryShowPercent = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
-        mStatusBarBatteryShowPercent.setValue(String.valueOf(batteryShowPercent));
-        mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
-        enableStatusBarBatteryDependents(batteryStyle);
-        mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
+		mDateScond = (SwitchPreference) findPreference(KEY_DATE_SECOND);
+		mDateScond.setChecked((Settings.System.getInt(resolver,
+				Settings.System.CLOCK_USE_SECOND, 0) == 1));
+		mDateScond.setOnPreferenceChangeListener(this);
 
-    }
+		int batteryStyle = Settings.System.getInt(resolver,
+				Settings.System.STATUS_BAR_BATTERY_STYLE, 0);
 
-    private void updateCustomLabelTextSummary() {
-        mCustomCarrierLabelText = Settings.System.getString(
-            getActivity().getContentResolver(), Settings.System.CUSTOM_CARRIER_LABEL);
+		mStatusBarBattery.setValue(String.valueOf(batteryStyle));
+		mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
+		mStatusBarBattery.setOnPreferenceChangeListener(this);
 
-        if (TextUtils.isEmpty(mCustomCarrierLabelText)) {
-            mCustomCarrierLabel.setSummary(R.string.custom_carrier_label_notset);
-        } else {
-            mCustomCarrierLabel.setSummary(mCustomCarrierLabelText);
-        }
-    }
+		int batteryShowPercent = Settings.System.getInt(resolver,
+				Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
+		mStatusBarBatteryShowPercent.setValue(String
+				.valueOf(batteryShowPercent));
+		mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent
+				.getEntry());
+		enableStatusBarBatteryDependents(batteryStyle);
+		mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        // Adjust clock position for RTL if necessary
-        Configuration config = getResources().getConfiguration();
-        if (config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
-                mStatusBarClock.setEntries(getActivity().getResources().getStringArray(
-                        R.array.status_bar_clock_style_entries_rtl));
-                mStatusBarClock.setSummary(mStatusBarClock.getEntry());
-        }
-    }
+	}
 
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mStatusBarClock) {
-            int clockStyle = Integer.parseInt((String) newValue);
-            int index = mStatusBarClock.findIndexOfValue((String) newValue);
-            Settings.System.putInt(
-                    resolver, STATUS_BAR_CLOCK_STYLE, clockStyle);
-            mStatusBarClock.setSummary(mStatusBarClock.getEntries()[index]);
-            return true;
-        }  else if (preference == mStatusBarBattery) {
-            int batteryStyle = Integer.valueOf((String) newValue);
-            int index = mStatusBarBattery.findIndexOfValue((String) newValue);
-            Settings.System.putInt(
-                    resolver, Settings.System.STATUS_BAR_BATTERY_STYLE, batteryStyle);
-            mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
-            enableStatusBarBatteryDependents(batteryStyle);
-            return true;
-        } else if (preference == mStatusBarBatteryShowPercent) {
-            int batteryShowPercent = Integer.valueOf((String) newValue);
-            int index = mStatusBarBatteryShowPercent.findIndexOfValue((String) newValue);
-            Settings.System.putInt(
-                    resolver, Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, batteryShowPercent);
-            mStatusBarBatteryShowPercent.setSummary(
-                    mStatusBarBatteryShowPercent.getEntries()[index]);
-            return true;
-        } else if (mStatusBarAmPm != null && preference == mStatusBarAmPm) {
-            int statusBarAmPm = Integer.valueOf((String) newValue);
-            int index = mStatusBarAmPm.findIndexOfValue((String) newValue);
-            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_AM_PM, statusBarAmPm);
-            mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntries()[index]);
-            return true;
-        } else if (preference == mStatusBarNetworkTraffic) {
-            int networkTrafficStyle = Integer.valueOf((String) newValue);
-            int index = mStatusBarNetworkTraffic.findIndexOfValue((String) newValue);
-            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_NETWORK_TRAFFIC_STYLE, networkTrafficStyle);
-            mStatusBarNetworkTraffic.setSummary(mStatusBarNetworkTraffic.getEntries()[index]);
-            return true;
-        } else if (preference == mStatusBarCarrier) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_CARRIER, value ? 1 : 0);
-            Intent i = new Intent();
+	private void updateCustomLabelTextSummary() {
+		mCustomCarrierLabelText = Settings.System.getString(getActivity()
+				.getContentResolver(), Settings.System.CUSTOM_CARRIER_LABEL);
+
+		if (TextUtils.isEmpty(mCustomCarrierLabelText)) {
+			mCustomCarrierLabel
+					.setSummary(R.string.custom_carrier_label_notset);
+		} else {
+			mCustomCarrierLabel.setSummary(mCustomCarrierLabelText);
+		}
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		// Adjust clock position for RTL if necessary
+		Configuration config = getResources().getConfiguration();
+		if (config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
+			mStatusBarClock
+					.setEntries(getActivity().getResources().getStringArray(
+							R.array.status_bar_clock_style_entries_rtl));
+			mStatusBarClock.setSummary(mStatusBarClock.getEntry());
+		}
+	}
+
+	@Override
+	public boolean onPreferenceChange(Preference preference, Object newValue) {
+		ContentResolver resolver = getActivity().getContentResolver();
+		if (preference == mStatusBarClock) {
+			int clockStyle = Integer.parseInt((String) newValue);
+			int index = mStatusBarClock.findIndexOfValue((String) newValue);
+			Settings.System
+					.putInt(resolver, STATUS_BAR_CLOCK_STYLE, clockStyle);
+			mStatusBarClock.setSummary(mStatusBarClock.getEntries()[index]);
+			return true;
+		} else if (preference == mStatusBarBattery) {
+			int batteryStyle = Integer.valueOf((String) newValue);
+			int index = mStatusBarBattery.findIndexOfValue((String) newValue);
+			Settings.System.putInt(resolver,
+					Settings.System.STATUS_BAR_BATTERY_STYLE, batteryStyle);
+			mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
+			enableStatusBarBatteryDependents(batteryStyle);
+			return true;
+		} else if (preference == mStatusBarBatteryShowPercent) {
+			int batteryShowPercent = Integer.valueOf((String) newValue);
+			int index = mStatusBarBatteryShowPercent
+					.findIndexOfValue((String) newValue);
+			Settings.System.putInt(resolver,
+					Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT,
+					batteryShowPercent);
+			mStatusBarBatteryShowPercent
+					.setSummary(mStatusBarBatteryShowPercent.getEntries()[index]);
+			return true;
+		} else if (mStatusBarAmPm != null && preference == mStatusBarAmPm) {
+			int statusBarAmPm = Integer.valueOf((String) newValue);
+			int index = mStatusBarAmPm.findIndexOfValue((String) newValue);
+			Settings.System.putInt(resolver, Settings.System.STATUS_BAR_AM_PM,
+					statusBarAmPm);
+			mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntries()[index]);
+			return true;
+		} else if (preference == mStatusBarNetworkTraffic) {
+			int networkTrafficStyle = Integer.valueOf((String) newValue);
+			int index = mStatusBarNetworkTraffic
+					.findIndexOfValue((String) newValue);
+			Settings.System.putInt(resolver,
+					Settings.System.STATUS_BAR_NETWORK_TRAFFIC_STYLE,
+					networkTrafficStyle);
+			mStatusBarNetworkTraffic.setSummary(mStatusBarNetworkTraffic
+					.getEntries()[index]);
+			return true;
+		} else if (preference == mStatusBarCarrier) {
+			boolean value = (Boolean) newValue;
+			Settings.System.putInt(resolver,
+					Settings.System.STATUS_BAR_CARRIER, value ? 1 : 0);
+			Intent i = new Intent();
 			i.setAction(Intent.ACTION_CUSTOM_CARRIER_LABEL_CHANGED);
 			getActivity().sendBroadcast(i);
 			return true;
-        } else if (preference == mCarrierSize) {
+		} else if (preference == mCarrierSize) {
 			int CarrierSize = Integer.valueOf((String) newValue);
 			int index = mCarrierSize.findIndexOfValue((String) newValue);
-			Settings.System.putInt(resolver,
-			Settings.System.CARRIER_SIZE, CarrierSize);
+			Settings.System.putInt(resolver, Settings.System.CARRIER_SIZE,
+					CarrierSize);
 			mCarrierSize.setSummary(mCarrierSize.getEntries()[index]);
 			Intent i = new Intent();
 			i.setAction(Intent.ACTION_CUSTOM_CARRIER_LABEL_CHANGED);
@@ -252,113 +275,131 @@ public class StatusBarSettings extends SettingsPreferenceFragment
 			return true;
 		} else if (preference == mDateScond) {
 			boolean value = (Boolean) newValue;
-			Settings.System.putInt(resolver, Settings.System.CLOCK_USE_SECOND, value ? 1 : 0);
+			Settings.System.putInt(resolver, Settings.System.CLOCK_USE_SECOND,
+					value ? 1 : 0);
 			return true;
 		}
-		
-        return false;
-    }
 
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            final Preference preference) {
-        final ContentResolver resolver = getActivity().getContentResolver();
-        if (preference.getKey().equals(CUSTOM_CARRIER_LABEL)) {
-            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-            alert.setTitle(R.string.custom_carrier_label_title);
-            alert.setMessage(R.string.custom_carrier_label_explain);
-            LinearLayout parent = new LinearLayout(getActivity());
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-            parent.setLayoutParams(params);
-            // Set an EditText view to get user input
-            final EditText input = new EditText(getActivity());
-            input.setText(TextUtils.isEmpty(mCustomCarrierLabelText) ? "" : mCustomCarrierLabelText);
-            input.setSelection(input.getText().length());
-            params.setMargins(60, 0, 60, 0);
-            input.setLayoutParams(params);
-            parent.addView(input);
-            alert.setView(parent);
-            alert.setPositiveButton(getString(android.R.string.ok),
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int whichButton) {
-                            String value = ((Spannable) input.getText()).toString().trim();
-                            Settings.System.putString(resolver, Settings.System.CUSTOM_CARRIER_LABEL, value);
-                            updateCustomLabelTextSummary();
-                            Intent i = new Intent();
-                            i.setAction(Intent.ACTION_CUSTOM_CARRIER_LABEL_CHANGED);
-                            getActivity().sendBroadcast(i);
-                }
-            });
-            alert.setNegativeButton(getString(android.R.string.cancel), null);
-            alert.show();
-        } else  if (preference == mStatusBarGreeting) {
-           boolean enabled = mStatusBarGreeting.isChecked();
-           if (enabled) {
-                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+		return false;
+	}
 
-                alert.setTitle(R.string.status_bar_greeting_title);
-                alert.setMessage(R.string.status_bar_greeting_dialog);
+	@Override
+	public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
+			final Preference preference) {
+		final ContentResolver resolver = getActivity().getContentResolver();
+		if (preference.getKey().equals(CUSTOM_CARRIER_LABEL)) {
+			AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+			alert.setTitle(R.string.custom_carrier_label_title);
+			alert.setMessage(R.string.custom_carrier_label_explain);
+			LinearLayout parent = new LinearLayout(getActivity());
+			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+					LinearLayout.LayoutParams.MATCH_PARENT,
+					LinearLayout.LayoutParams.MATCH_PARENT);
+			parent.setLayoutParams(params);
+			// Set an EditText view to get user input
+			final EditText input = new EditText(getActivity());
+			input.setText(TextUtils.isEmpty(mCustomCarrierLabelText) ? ""
+					: mCustomCarrierLabelText);
+			input.setSelection(input.getText().length());
+			params.setMargins(60, 0, 60, 0);
+			input.setLayoutParams(params);
+			parent.addView(input);
+			alert.setView(parent);
+			alert.setPositiveButton(getString(android.R.string.ok),
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,
+								int whichButton) {
+							String value = ((Spannable) input.getText())
+									.toString().trim();
+							Settings.System
+									.putString(
+											resolver,
+											Settings.System.CUSTOM_CARRIER_LABEL,
+											value);
+							updateCustomLabelTextSummary();
+							Intent i = new Intent();
+							i.setAction(Intent.ACTION_CUSTOM_CARRIER_LABEL_CHANGED);
+							getActivity().sendBroadcast(i);
+						}
+					});
+			alert.setNegativeButton(getString(android.R.string.cancel), null);
+			alert.show();
+		} else if (preference == mStatusBarGreeting) {
+			boolean enabled = mStatusBarGreeting.isChecked();
+			if (enabled) {
+				AlertDialog.Builder alert = new AlertDialog.Builder(
+						getActivity());
 
-                // Set an EditText view to get user input
-                final EditText input = new EditText(getActivity());
-                input.setText(mCustomGreetingText != null ? mCustomGreetingText : "Welcome to SudaMod");
-                alert.setView(input);
-                alert.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        String value = ((Spannable) input.getText()).toString();
-                        Settings.System.putString(getActivity().getContentResolver(),
-                                Settings.System.STATUS_BAR_GREETING, value);
-                        updateCheckState(value);
-                    }
-                });
-                alert.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        // Canceled.
-                    }
-                });
+				alert.setTitle(R.string.status_bar_greeting_title);
+				alert.setMessage(R.string.status_bar_greeting_dialog);
 
-                alert.show();
-            } else {
-                Settings.System.putString(getActivity().getContentResolver(),
-                                Settings.System.STATUS_BAR_GREETING, "");
-            }
-		}	
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
+				// Set an EditText view to get user input
+				final EditText input = new EditText(getActivity());
+				input.setText(mCustomGreetingText != null ? mCustomGreetingText
+						: "Welcome to SudaMod");
+				alert.setView(input);
+				alert.setPositiveButton(getResources().getString(R.string.ok),
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int whichButton) {
+								String value = ((Spannable) input.getText())
+										.toString();
+								Settings.System.putString(getActivity()
+										.getContentResolver(),
+										Settings.System.STATUS_BAR_GREETING,
+										value);
+								updateCheckState(value);
+							}
+						});
+				alert.setNegativeButton(
+						getResources().getString(R.string.cancel),
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int whichButton) {
+								// Canceled.
+							}
+						});
 
-    private void updateCheckState(String value) {
-		if (value == null || TextUtils.isEmpty(value)) mStatusBarGreeting.setChecked(false);
-	}        
-	
-    private void enableStatusBarBatteryDependents(int batteryIconStyle) {
-        if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN ||
-                batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
-            mStatusBarBatteryShowPercent.setEnabled(false);
-        } else {
-            mStatusBarBatteryShowPercent.setEnabled(true);
-        }
-    }
+				alert.show();
+			} else {
+				Settings.System.putString(getActivity().getContentResolver(),
+						Settings.System.STATUS_BAR_GREETING, "");
+			}
+		}
+		return super.onPreferenceTreeClick(preferenceScreen, preference);
+	}
 
-    public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider() {
-                @Override
-                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
-                                                                            boolean enabled) {
-                    ArrayList<SearchIndexableResource> result =
-                            new ArrayList<SearchIndexableResource>();
+	private void updateCheckState(String value) {
+		if (value == null || TextUtils.isEmpty(value))
+			mStatusBarGreeting.setChecked(false);
+	}
 
-                    SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.status_bar_settings;
-                    result.add(sir);
+	private void enableStatusBarBatteryDependents(int batteryIconStyle) {
+		if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN
+				|| batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
+			mStatusBarBatteryShowPercent.setEnabled(false);
+		} else {
+			mStatusBarBatteryShowPercent.setEnabled(true);
+		}
+	}
 
-                    return result;
-                }
+	public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER = new BaseSearchIndexProvider() {
+		@Override
+		public List<SearchIndexableResource> getXmlResourcesToIndex(
+				Context context, boolean enabled) {
+			ArrayList<SearchIndexableResource> result = new ArrayList<SearchIndexableResource>();
 
-                @Override
-                public List<String> getNonIndexableKeys(Context context) {
-                    ArrayList<String> result = new ArrayList<String>();
-                    return result;
-                }
-            };
+			SearchIndexableResource sir = new SearchIndexableResource(context);
+			sir.xmlResId = R.xml.status_bar_settings;
+			result.add(sir);
+
+			return result;
+		}
+
+		@Override
+		public List<String> getNonIndexableKeys(Context context) {
+			ArrayList<String> result = new ArrayList<String>();
+			return result;
+		}
+	};
 }
