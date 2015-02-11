@@ -35,6 +35,7 @@
     	
 	<SwitchPreference 
         	android:title="@string/night_mode"
+                android:summary="@string/night_mode_summary"		
         	android:defaultValue="false"
         	android:key="nightswitch"
 		/>
