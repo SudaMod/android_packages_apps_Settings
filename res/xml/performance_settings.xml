@@ -60,5 +60,15 @@
             android:title="@string/pref_force_highend_gfx_title"
             android:summary="@string/pref_force_highend_gfx_summary" />
     </PreferenceCategory>
-
+    
+    <!-- Device Control -->
+    <PreferenceScreen
+	android:id="@+id/device_control"
+	android:title="@string/device_control_title">
+    <intent
+	android:action="android.intent.action.MAIN"
+	android:targetPackage="org.namelessrom.devicecontrol"
+	android:targetClass="org.namelessrom.devicecontrol.MainActivity" />
+    </PreferenceScreen>
+    
 </PreferenceScreen>

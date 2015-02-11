@@ -252,4 +252,6 @@
     <string name="status_bar_greeting_summary">Display a custom greeting in the status bar after unlocking the device</string>
     <string name="status_bar_greeting_dialog">Set your greeting</string>   
 
+    <!-- Device Control -->
+    <string name="device_control_title">Device Control</string>
 </resources>
