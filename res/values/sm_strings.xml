@@ -15,143 +15,143 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <stringname="suda_version">SudaMod Version</string>
-    <stringname="suda_version_default">Unknow</string>
+    <string name="suda_version">SudaMod Version</string>
+    <string name="suda_version_default">Unknow</string>
   
     <!-- Animation Settings -->
-    <stringname="animation_settings_title">Animations</string>
+    <string name="animation_settings_title">Animations</string>
 
     <!-- ListView animation -->
-    <stringname="listview_animation_title">ListView animation</string>
-    <stringname="listview_off">Off</string>
-    <stringname="listview_wave_left">Wave (left)</string>
-    <stringname="listview_wave_right">Wave (right)</string>
-    <stringname="listview_alpha">Alpha</string>
-    <stringname="listview_scale">Scale</string> 
-    <stringname="listview_stack_top">Stack (top)</string>
-    <stringname="listview_stack_bottom">Stack (bottom)</string>
-    <stringname="listview_unfold">Unfold</string>
-    <stringname="listview_fold">Fold</string> 
-    <stringname="listview_translate_left">Translate (left)</string>
-    <stringname="listview_translate_right">Translate (right)</string>
-    <stringname="listview_rotate">Rotate</string>
+    <string name="listview_animation_title">ListView animation</string>
+    <string name="listview_off">Off</string>
+    <string name="listview_wave_left">Wave (left)</string>
+    <string name="listview_wave_right">Wave (right)</string>
+    <string name="listview_alpha">Alpha</string>
+    <string name="listview_scale">Scale</string> 
+    <string name="listview_stack_top">Stack (top)</string>
+    <string name="listview_stack_bottom">Stack (bottom)</string>
+    <string name="listview_unfold">Unfold</string>
+    <string name="listview_fold">Fold</string> 
+    <string name="listview_translate_left">Translate (left)</string>
+    <string name="listview_translate_right">Translate (right)</string>
+    <string name="listview_rotate">Rotate</string>
 
     <!-- ListView interpolator -->
-    <stringname="listview_interpolator_title">ListView interpolator</string>
-    <stringname="listview_accelerate_interpolator">Accelerate</string>
-    <stringname="listview_decelerate_interpolator">Decelerate</string>
-    <stringname="listview_accelerate_decelerate_interpolator">Accelerate decelerate</string>
-    <stringname="listview_anticipate_interpolator">Anticipate</string>
-    <stringname="listview_overshoot_interpolator">Overshoot</string>
-    <stringname="listview_anticipate_overshoot_interpolator">Anticipate overshoot</string>
-    <stringname="listview_bounce_interpolator">Bounce</string>
+    <string name="listview_interpolator_title">ListView interpolator</string>
+    <string name="listview_accelerate_interpolator">Accelerate</string>
+    <string name="listview_decelerate_interpolator">Decelerate</string>
+    <string name="listview_accelerate_decelerate_interpolator">Accelerate decelerate</string>
+    <string name="listview_anticipate_interpolator">Anticipate</string>
+    <string name="listview_overshoot_interpolator">Overshoot</string>
+    <string name="listview_anticipate_overshoot_interpolator">Anticipate overshoot</string>
+    <string name="listview_bounce_interpolator">Bounce</string>
 
     <!-- BlackList Ext -->
-    <stringname="blacklist_all_numbers_title">All numbers</string>
-    <stringname="blacklist_all_numbers_summary">Block all calls</string>
+    <string name="blacklist_all_numbers_title">All numbers</string>
+    <string name="blacklist_all_numbers_summary">Block all calls</string>
 
     <!-- Smart Control -->
-    <stringname="smartcontrol_settings_title">Smart Control</string>
+    <string name="smartcontrol_settings_title">Smart Control</string>
 
     <!-- Custom navigation bar height -->
-    <stringname="navigation_bar_height">Button height</string>
-    <stringname="navigation_bar_height_48">48dp (default)</string>
-    <stringname="navigation_bar_height_56" translatable="false">56dp</string>
-    <stringname="navigation_bar_height_52" translatable="false">52dp</string>  
-    <stringname="navigation_bar_height_44" translatable="false">44dp</string>
-    <stringname="navigation_bar_height_40" translatable="false">40dp</string>
-    <stringname="navigation_bar_height_36" translatable="false">36dp</string>
-    <stringname="navigation_bar_height_32" translatable="false">32dp</string>
-    <stringname="navigation_bar_height_28" translatable="false">28dp</string>
-    <stringname="navigation_bar_height_24" translatable="false">24dp</string>
-    <stringname="navigation_bar_height_20" translatable="false">20dp</string>
-    <stringname="navigation_bar_height_0">hide</string>
+    <string name="navigation_bar_height">Button height</string>
+    <string name="navigation_bar_height_48">48dp (default)</string>
+    <string name="navigation_bar_height_56" translatable="false">56dp</string>
+    <string name="navigation_bar_height_52" translatable="false">52dp</string>  
+    <string name="navigation_bar_height_44" translatable="false">44dp</string>
+    <string name="navigation_bar_height_40" translatable="false">40dp</string>
+    <string name="navigation_bar_height_36" translatable="false">36dp</string>
+    <string name="navigation_bar_height_32" translatable="false">32dp</string>
+    <string name="navigation_bar_height_28" translatable="false">28dp</string>
+    <string name="navigation_bar_height_24" translatable="false">24dp</string>
+    <string name="navigation_bar_height_20" translatable="false">20dp</string>
+    <string name="navigation_bar_height_0">hide</string>
 
     <!-- Navigation Bar -->
-    <stringname="navigation_bar_category">Navigation bar</string>
+    <string name="navigation_bar_category">Navigation bar</string>
 
     <!-- AP/PM Indicator -->
-    <stringname="status_bar_am_pm_title">AM/PM style</string>
+    <string name="status_bar_am_pm_title">AM/PM style</string>
 
     <!-- Show network speed -->
-    <stringname="show_network_speed_title">Network speed</string>
-    <stringname="show_network_speed_summary">Show network speed in status bar</string>
-    <stringname="status_bar_network_traffic_style_disable">Disabled</string>
-    <stringname="status_bar_network_traffic_style_up">Outgoing</string>
-    <stringname="status_bar_network_traffic_style_down">Incoming</string>
-    <stringname="status_bar_network_traffic_style_all">Outgoing and incoming</string>
+    <string name="show_network_speed_title">Network speed</string>
+    <string name="show_network_speed_summary">Show network speed in status bar</string>
+    <string name="status_bar_network_traffic_style_disable">Disabled</string>
+    <string name="status_bar_network_traffic_style_up">Outgoing</string>
+    <string name="status_bar_network_traffic_style_down">Incoming</string>
+    <string name="status_bar_network_traffic_style_all">Outgoing and incoming</string>
 
     <!-- Show carrier label and custom -->
-    <stringname="show_status_bar_carrier_title">Status bar carrier</string>
-    <stringname="show_status_bar_carrier_summary">Show carrier in status bar</string>
-    <stringname="custom_carrier_label_title">Custom carrier label</string>
-    <stringname="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
-    <stringname="custom_carrier_label_notset">Custom label currently not set</string>
-    <stringname="show_carrier_speed_title">Operators of font size</string>
-    <stringname="carrier_size_style_normal">Normal</string>
-    <stringname="carrier_size_style_small">Small</string>
-    <stringname="carrier_size_style_big">Big</string>
+    <string name="show_status_bar_carrier_title">Status bar carrier</string>
+    <string name="show_status_bar_carrier_summary">Show carrier in status bar</string>
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="show_carrier_speed_title">Operators of font size</string>
+    <string name="carrier_size_style_normal">Normal</string>
+    <string name="carrier_size_style_small">Small</string>
+    <string name="carrier_size_style_big">Big</string>
 
     <!-- Phonelocation -->  
-    <stringname="look_up_location">Look up</string>
-    <stringname="phonelocation">Phonelocation Look up</string>
-    <stringname="phonelocation_tip">Location：</string>
-    <stringname="phone_tip">Please Enter number</string>
-    <stringname="location_unknow">Unknow</string>
+    <string name="look_up_location">Look up</string>
+    <string name="phonelocation">Phonelocation Look up</string>
+    <string name="phonelocation_tip">Location：</string>
+    <string name="phone_tip">Please Enter number</string>
+    <string name="location_unknow">Unknow</string>
     
     <!-- cLock -->  
-    <stringname="wat">cLock</string>
-    <stringname="wats">Shortcut for cLock</string> 
+    <string name="wat">cLock</string>
+    <string name="wats">Shortcut for cLock</string> 
 
     <!-- Gesture and Direct Control -->  
-    <stringname="gesture_title">Gesture</string>
-    <stringname="gesture_direct_title">Gesture and Direct Control</string>  
-    <stringname="direct_control_title">Direct Control</string>
-    <stringname="direct_call_for_dialer_title">Direct Call in Dailer</string>
-    <stringname="direct_call_for_dialer_summary">Lift phone to ear after entering number in dialer to call directly</string>
-    <stringname="direct_call_for_mms_title">Direct Call in Mms</string>
-    <stringname="direct_call_for_mms_summary">Lift phone to ear will automatically call current contact</string>
+    <string name="gesture_title">Gesture</string>
+    <string name="gesture_direct_title">Gesture and Direct Control</string>  
+    <string name="direct_control_title">Direct Control</string>
+    <string name="direct_call_for_dialer_title">Direct Call in Dailer</string>
+    <string name="direct_call_for_dialer_summary">Lift phone to ear after entering number in dialer to call directly</string>
+    <string name="direct_call_for_mms_title">Direct Call in Mms</string>
+    <string name="direct_call_for_mms_summary">Lift phone to ear will automatically call current contact</string>
       
     <!-- Advanced Device Info -->
-    <stringname="advanced_device_info_title">Advanced information</string>
-    <stringname="advanced_device_info_summary">Information about CPU, GPU etc.</string>
+    <string name="advanced_device_info_title">Advanced information</string>
+    <string name="advanced_device_info_summary">Information about CPU, GPU etc.</string>
     <!-- CPU -->
-    <stringname="cpu_info">CPU</string>
-    <stringname="cpu_features">Processor features</string>
+    <string name="cpu_info">CPU</string>
+    <string name="cpu_features">Processor features</string>
     <!-- Memory -->
-    <stringname="mem_info">Memory</string>
+    <string name="mem_info">Memory</string>
     <!-- GPU -->
-    <stringname="gpu_title" translatable="false">GPU / OpenGL</string>
-    <stringname="gpu_vendor">GPU vendor</string>
-    <stringname="gpu_renderer">GPU renderer</string>
-    <stringname="gpu_gl_version">OpenGL version</string>
-    <stringname="gpu_gl_extensions">OpenGL extensions</string>
-    <stringname="gpu_shader_version">Shader version</string>
+    <string name="gpu_title" translatable="false">GPU / OpenGL</string>
+    <string name="gpu_vendor">GPU vendor</string>
+    <string name="gpu_renderer">GPU renderer</string>
+    <string name="gpu_gl_version">OpenGL version</string>
+    <string name="gpu_gl_extensions">OpenGL extensions</string>
+    <string name="gpu_shader_version">Shader version</string>
 
     <!-- Superuser indicator-->
-    <stringname="su_indicator">Superuser indicator</string>
-    <stringname="su_indicator_summary">Show superuser indicator when a session is active</string>         
+    <string name="su_indicator">Superuser indicator</string>
+    <string name="su_indicator_summary">Show superuser indicator when a session is active</string>         
 
     <!-- power save setting-->
-    <stringname="battery_save_mode">Smart power</string>
-    <stringname="power_save_setting_title">Energy saving mode</string>
-    <stringname="power_save_setting_summary">The choice of energy-saving mode you want</string>
-    <stringname="power_save_setting_off">Closed</string> 
-    <stringname="power_save_setting_always_open">Always Open</string>
-    <stringname="power_save_setting_screen_saving">Off Screen Saving</string>
-    <stringname="low_save_setting_saving">Low battery start</string>
+    <string name="battery_save_mode">Smart power</string>
+    <string name="power_save_setting_title">Energy saving mode</string>
+    <string name="power_save_setting_summary">The choice of energy-saving mode you want</string>
+    <string name="power_save_setting_off">Closed</string> 
+    <string name="power_save_setting_always_open">Always Open</string>
+    <string name="power_save_setting_screen_saving">Off Screen Saving</string>
+    <string name="low_save_setting_saving">Low battery start</string>
  
     <!-- date second-->
-    <stringname="date_second_title">Time display seconds</string>
-    <stringname="date_second_summary">Let the time accurate to seconds</string>
+    <string name="date_second_title">Time display seconds</string>
+    <string name="date_second_summary">Let the time accurate to seconds</string>
   
     <!-- night mode-->
-    <stringname="night_mode">Night Mode</string>
-    <stringname="night_mode_summary">Please turn off /"Night Mode/" when install a new app</string>  
-    <stringname="night_mode_color">Night Mode Color</string>
-    <stringname="night_mode_color_black">black</string>
-    <stringname="night_mode_color_red">red</string>
-    <stringname="night_mode_color_yellow">yellow</string>
+    <string name="night_mode">Night Mode</string>
+    <string name="night_mode_summary">Please turn off /"Night Mode/" when install a new app</string>  
+    <string name="night_mode_color">Night Mode Color</string>
+    <string name="night_mode_color_black">black</string>
+    <string name="night_mode_color_red">red</string>
+    <string name="night_mode_color_yellow">yellow</string>
   
     <!-- Lock Gesture settings -->
     <!-- Security & location settings screen, setting option name -->
