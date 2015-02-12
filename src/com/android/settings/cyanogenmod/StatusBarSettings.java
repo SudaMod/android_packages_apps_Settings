@@ -356,7 +356,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog,
 									int whichButton) {
-								// Canceled.
+								String value = "";
+								Settings.System.putString(getActivity()
+										.getContentResolver(),
+										Settings.System.STATUS_BAR_GREETING,
+										value);
+								updateCheckState(value);
+
 							}
 						});
 
