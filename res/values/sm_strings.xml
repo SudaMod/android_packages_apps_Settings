@@ -247,11 +247,6 @@
     <string name="omniswitch_first_time_title">Information</string>
     <string name="omniswitch_first_time_message">Make sure you have enabled OmniSwitch. You can do this by using \"Settings\" below</string>
 
-    <!-- Status bar greeting -->
-    <string name="status_bar_greeting_title">Greeting</string>
-    <string name="status_bar_greeting_summary">Display a custom greeting in the status bar after unlocking the device</string>
-    <string name="status_bar_greeting_dialog">Set your greeting</string>   
-
     <!-- Device Control -->
     <string name="device_control_title">Device Control</string>
 </resources>

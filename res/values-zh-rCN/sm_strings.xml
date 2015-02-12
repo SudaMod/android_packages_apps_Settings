@@ -163,7 +163,4 @@
   <string name="omniswitch_start_settings_summary">打开OmniSwitch设置</string>
   <string name="omniswitch_first_time_title">提示</string>
   <string name="omniswitch_first_time_message">请确保你已经启用了OmniSwitch。请在稍后进入\"设置\"启用</string>    
-  <string name="status_bar_greeting_title">问候语</string>
-  <string name="status_bar_greeting_summary">解锁后，状态栏显示问候</string>
-  <string name="status_bar_greeting_dialog">设置问候语</string> 
 </resources>
