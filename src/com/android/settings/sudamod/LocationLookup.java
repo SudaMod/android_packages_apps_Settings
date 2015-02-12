@@ -25,7 +25,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.kylin.location.PhoneLocation;
+import android.suda.location.PhoneLocation;
 import com.android.settings.R;
 
 public class LocationLookup extends Activity {
