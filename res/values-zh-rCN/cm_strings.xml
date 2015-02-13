@@ -254,7 +254,7 @@
   <string name="disable_navkeys_title">启用屏幕上的导航栏</string>
   <string name="disable_navkeys_summary">启用屏幕上导航栏并禁用硬件按钮</string>
   <string name="navigation_bar_category">导航栏</string>
-  <string name="navigation_bar_left_title">左利手模式</string>
+  <string name="navigation_bar_left_title">左手模式</string>
   <string name="navigation_bar_left_summary">横屏时在屏幕左侧显示虚拟键</string>
   <string name="navigation_bar_title">按键与布局</string>
   <string name="navigation_bar_help_text">如需修改，轻触修改图标来解锁导航栏。\n\n您可以轻触一个图标来修改快捷方式，或者长按图标来改变布局。\n\n轻触“保存”确认修改，“还原默认设置”重置到默认布局。</string>
