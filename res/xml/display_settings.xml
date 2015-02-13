@@ -126,7 +126,7 @@
                     android:key="screen_recorder"
                     android:title="@string/screen_recorder_title"
                     android:summary="@string/screen_recorder_summary"
-                    android:fragment="com.android.settings.mokee.ScreenRecorderSettings" />
+                    android:fragment="com.android.settings.sudamod.ScreenRecorderSettings" />
 
                 <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
                     android:key="proximity_on_wake"
