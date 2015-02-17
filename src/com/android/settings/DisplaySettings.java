@@ -794,6 +794,17 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
+                private boolean mHasSunlightEnhancement, mHasColorEnhancement;
+                private boolean mHasDisplayGamma, mHasDisplayColor;
+
+                @Override
+                public void prepare() {
+                    mHasSunlightEnhancement = isSunlightEnhancementSupported();
+                    mHasColorEnhancement = isColorEnhancementSupported();
+                    mHasDisplayGamma = DisplayGamma.isSupported();
+                    mHasDisplayColor = DisplayColor.isSupported();
+                }
+
                 @Override
                 public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
                         boolean enabled) {
@@ -826,7 +837,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                             com.android.internal.R.bool.config_proximityCheckOnWake)) {
                         result.add(KEY_PROXIMITY_WAKE);
                     }
-                    if (!isSunlightEnhancementSupported()) {
+                    if (!mHasSunlightEnhancement) {
                         result.add(KEY_SUNLIGHT_ENHANCEMENT);
                     }
                     if (!isColorEnhancementSupported()) {
