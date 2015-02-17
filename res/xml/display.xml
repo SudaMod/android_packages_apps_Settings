@@ -36,6 +36,21 @@
                 settings:keywords="@string/keywords_display_auto_brightness"
                 android:summary="@string/auto_brightness_summary"
                 android:persistent="false" />
+	<!-- NightMode -->    	
+	<SwitchPreference 
+        	android:title="@string/night_mode"
+		android:summary="@string/night_mode_summary"		
+        	android:defaultValue="false"
+        	android:key="nightswitch"
+		/>
+    
+	<ListPreference
+		android:title="@string/night_mode_color"  
+        	android:entries="@array/color_entries"
+        	android:entryValues="@array/color_values"
+		android:defaultValue="0"
+        	android:key="nightcolor"
+        	android:dependency="nightswitch"/>
 
         <!-- Rotation modes -->
         <PreferenceScreen
@@ -49,19 +64,6 @@
                 android:key="accelerometer"
                 android:title="@string/accelerometer_title"
                 settings:advanced="false"/>
-
-        <!-- Double tap to wake -->
-        <SwitchPreference
-                android:key="double_tap_wake_gesture"
-                android:title="@string/double_tap_to_wake_title"
-                android:summary="@string/double_tap_to_wake_summary" />
-
-        <!-- Double tap to sleep -->
-        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-                android:key="double_tap_sleep_gesture"
-                android:title="@string/double_tap_to_sleep_title"
-                android:summary="@string/double_tap_to_sleep_summary"
-                android:defaultValue="true" />
 
         <!-- Seconds before sleep -->
         <ListPreference
@@ -112,6 +114,28 @@
                 android:dialogTitle="@string/dialog_title_font_size" />
     </PreferenceCategory>
 
+        <PreferenceCategory
+            android:key="animation_prefs"
+            android:title="@string/animation_settings_title">
+
+            <ListPreference
+                android:key="listview_animation"
+                android:dialogTitle="@string/listview_animation_title"
+                android:title="@string/listview_animation_title"
+                android:entries="@array/listview_animation_entries"
+                android:entryValues="@array/listview_animation_values"
+                android:defaultValue="1" />
+
+            <ListPreference
+                android:key="listview_interpolator"
+                android:dialogTitle="@string/listview_interpolator_title"
+                android:title="@string/listview_interpolator_title"
+                android:entries="@array/listview_interpolator_entries"
+                android:entryValues="@array/listview_interpolator_values"
+                android:defaultValue="0" />
+
+        </PreferenceCategory>
+
     <PreferenceCategory
             android:key="lights"
             android:title="@string/category_lights">
@@ -134,6 +158,14 @@
             android:key="calibration"
             android:title="@string/category_calibration"
             settings:advanced="true">
+
+    <!-- Screen Recorder -->
+    <PreferenceScreen
+	android:key="screen_recorder"
+	android:title="@string/screen_recorder_title"
+	android:summary="@string/screen_recorder_summary"
+	android:fragment="com.android.settings.sudamod.ScreenRecorderSettings" />
+
         <!-- screen color -->
         <PreferenceScreen
                 android:persistent="false"

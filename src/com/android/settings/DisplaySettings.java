@@ -35,12 +35,7 @@ import android.app.Dialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ContentResolver;
 import android.content.Context;
-<<<<<<< HEAD
 import com.android.settings.sudamod.NightMode;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-=======
->>>>>>> c9e5e3b7b4fe868bb42d1df1e4894fe8d548fec1
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
@@ -132,17 +127,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mSunlightEnhancement;
     private SwitchPreference mColorEnhancement;
 
-<<<<<<< HEAD
     // ListView Animations Preference
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
 
 	private SwitchPreference nightSwitch;
 	private ListPreference nightColor;
-=======
+	
     private TwoStatePreference mNotificationPulse;
 
->>>>>>> c9e5e3b7b4fe868bb42d1df1e4894fe8d548fec1
     private ContentObserver mAccelerometerRotationObserver =
             new ContentObserver(new Handler()) {
         @Override
@@ -195,6 +188,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mListViewInterpolator.setValue(String.valueOf(listviewinterpolator));
         mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
         mListViewInterpolator.setOnPreferenceChangeListener(this);
+
 
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
         if (mScreenSaverPreference != null
@@ -283,17 +277,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             }
         }
 
-<<<<<<< HEAD
-        boolean proximityCheckOnWait = getResources().getBoolean(
-=======
-        mTapToWake = (SwitchPreference) findPreference(KEY_TAP_TO_WAKE);
-        if (displayPrefs != null && !isTapToWakeSupported()) {
-            displayPrefs.removePreference(mTapToWake);
-            mTapToWake = null;
-        }
 
         boolean proximityCheckOnWake = getResources().getBoolean(
->>>>>>> c9e5e3b7b4fe868bb42d1df1e4894fe8d548fec1
                 com.android.internal.R.bool.config_proximityCheckOnWake);
         if (calibrationPrefs != null && !proximityCheckOnWake) {
             calibrationPrefs.removePreference(findPreference(KEY_PROXIMITY_WAKE));
@@ -576,17 +561,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
     }
 
-<<<<<<< HEAD
-=======
-    private static boolean isTapToWakeSupported() {
-        try {
-            return TapToWake.isSupported();
-        } catch (NoClassDefFoundError e) {
-            // Hardware abstraction framework not installed
-            return false;
-        }
-    }
-
 
     // === Pulse notification light ===
 
@@ -605,7 +579,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
     }
 
->>>>>>> c9e5e3b7b4fe868bb42d1df1e4894fe8d548fec1
     /**
      * Reads the current font size and sets the value in the summary text
      */
@@ -852,9 +825,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     if (!context.getResources().getBoolean(
                             com.android.internal.R.bool.config_proximityCheckOnWake)) {
                         result.add(KEY_PROXIMITY_WAKE);
-                    }
-                    if (!isTapToWakeSupported()) {
-                        result.add(KEY_TAP_TO_WAKE);
                     }
                     if (!isSunlightEnhancementSupported()) {
                         result.add(KEY_SUNLIGHT_ENHANCEMENT);
