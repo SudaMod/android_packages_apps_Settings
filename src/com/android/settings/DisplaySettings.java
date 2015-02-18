@@ -134,9 +134,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     // ListView Animations Preference
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
-	
-	private SwitchPreference mNightSwitch;
-	private ListPreference mNightColor;
+    
+    //Night Mode
+    private SwitchPreference mNightSwitch;
+    private ListPreference mNightColor;
 	
     private TwoStatePreference mNotificationPulse;
 
@@ -214,18 +215,18 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mFontSizePref.setOnPreferenceChangeListener(this);
         mFontSizePref.setOnPreferenceClickListener(this);
 
-		mNightSwitch = (SwitchPreference) findPreference("nightswitch");
-		int NightMode = Settings.Global.getInt(
-				resolver, Settings.Global.NIGHT_MODE, 0);
-		mNightSwitch.setChecked(NightMode == 1);
-		mNightSwitch.setOnPreferenceChangeListener(this);
+	mNightSwitch = (SwitchPreference) findPreference("nightswitch");
+	int NightMode = Settings.Global.getInt(
+			resolver, Settings.Global.NIGHT_MODE, 0);
+	mNightSwitch.setChecked(NightMode == 1);
+	mNightSwitch.setOnPreferenceChangeListener(this);
 
-		mNightColor = (ListPreference) findPreference("nightcolor");
-		int NightColor = Settings.Global.getInt(
-				resolver, Settings.Global.NIGHT_MODE_COLOR, 0);
-		mNightColor.setValue(String.valueOf(NightColor));
-        mNightColor.setSummary(mNightColor.getEntry());
-        mNightColor.setOnPreferenceChangeListener(this);
+	mNightColor = (ListPreference) findPreference("nightcolor");
+	int NightColor = Settings.Global.getInt(
+			resolver, Settings.Global.NIGHT_MODE_COLOR, 0);
+	mNightColor.setValue(String.valueOf(NightColor));
+	mNightColor.setSummary(mNightColor.getEntry());
+	mNightColor.setOnPreferenceChangeListener(this);
 		
         if (isAutomaticBrightnessAvailable(getResources())) {
             mAutoBrightnessPreference = (SwitchPreference) findPreference(KEY_AUTO_BRIGHTNESS);
@@ -658,19 +659,18 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
             return true; 
          } else if (preference == mNightSwitch){
-			boolean auto = (Boolean) objValue;
-			Settings.Global.putInt(
-		    	getContentResolver(), Settings.Global.NIGHT_MODE, auto ? 1 : 0); 
+            boolean auto = (Boolean) objValue;
+            Settings.Global.putInt(
+            		getContentResolver(), Settings.Global.NIGHT_MODE, auto ? 1 : 0); 
             return true;
-		}else if (preference==mNightColor) {
-		
-			int NightColor = Integer.valueOf((String) objValue);
-			int index = mNightColor.findIndexOfValue((String) objValue);
-			Settings.Global.putInt(
-				getContentResolver(), Settings.Global.NIGHT_MODE_COLOR, NightColor);
-			mNightColor.setSummary(mNightColor.getEntries()[index]);
-			return true;
-		}
+         } else if (preference==mNightColor) {
+            int NightColor = Integer.valueOf((String) objValue);
+            int index = mNightColor.findIndexOfValue((String) objValue);
+            Settings.Global.putInt(
+            		getContentResolver(), Settings.Global.NIGHT_MODE_COLOR, NightColor);
+            mNightColor.setSummary(mNightColor.getEntries()[index]);
+            return true;
+         }
         return true;
     }
 
