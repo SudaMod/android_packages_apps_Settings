@@ -5,7 +5,6 @@
 
     <original-package android:name="com.android.settings" />
 
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -76,8 +75,7 @@
         android:name="cyanogenmod.permission.PROTECTED_APP"
         android:protectionLevel="signatureOrSystem" />
 
-    <application android:label="@string/settings_label"
-            android:persistent="true"		
+    <application android:label="@string/settings_label"	
             android:icon="@mipmap/ic_launcher_settings"
             android:taskAffinity=""
             android:theme="@style/Theme.Settings"
@@ -2214,8 +2212,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-		
-	<service android:name=".sudamod.NightMode" />   		
 		
     </application>
 </manifest>

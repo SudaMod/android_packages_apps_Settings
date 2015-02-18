@@ -35,7 +35,6 @@ import android.app.Dialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ContentResolver;
 import android.content.Context;
-import com.android.settings.sudamod.NightMode;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
@@ -58,6 +57,7 @@ import android.preference.SwitchPreference;
 import android.preference.TwoStatePreference;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.provider.Settings.Global;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -107,6 +107,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
 
+    // NightMode
+    private static final String KEY_NIGHT_MODE = "night_mode";
+    private static final String KEY_NIGHT_MODE_COLOR = "night_mode_color";
+
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
     private FontDialogPreference mFontSizePref;
@@ -130,9 +134,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     // ListView Animations Preference
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
-
-	private SwitchPreference nightSwitch;
-	private ListPreference nightColor;
+	
+	private SwitchPreference mNightSwitch;
+	private ListPreference mNightColor;
 	
     private TwoStatePreference mNotificationPulse;
 
@@ -210,16 +214,18 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mFontSizePref.setOnPreferenceChangeListener(this);
         mFontSizePref.setOnPreferenceClickListener(this);
 
-        nightSwitch = (SwitchPreference) findPreference("nightswitch");
-	nightSwitch.setChecked(getActivity().getApplicationContext()
-	.getSharedPreferences("com.android.settings_preferences", 0).getBoolean("nightswitch", false));
-	nightSwitch.setOnPreferenceChangeListener(this);
+		mNightSwitch = (SwitchPreference) findPreference("nightswitch");
+		int NightMode = Settings.Global.getInt(
+				resolver, Settings.Global.NIGHT_MODE, 0);
+		mNightSwitch.setChecked(NightMode == 1);
+		mNightSwitch.setOnPreferenceChangeListener(this);
 
-        nightColor = (ListPreference) findPreference("nightcolor");
-        nightColor.setDefaultValue(getActivity().getApplicationContext()
-	.getSharedPreferences("com.android.settings_preferences", 0).getString("nightColor", "0"));
-        nightColor.setSummary(nightColor.getEntry());
-        nightColor.setOnPreferenceChangeListener(this);
+		mNightColor = (ListPreference) findPreference("nightcolor");
+		int NightColor = Settings.Global.getInt(
+				resolver, Settings.Global.NIGHT_MODE_COLOR, 0);
+		mNightColor.setValue(String.valueOf(NightColor));
+        mNightColor.setSummary(mNightColor.getEntry());
+        mNightColor.setOnPreferenceChangeListener(this);
 		
         if (isAutomaticBrightnessAvailable(getResources())) {
             mAutoBrightnessPreference = (SwitchPreference) findPreference(KEY_AUTO_BRIGHTNESS);
@@ -297,21 +303,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         initPulse((PreferenceCategory) findPreference(KEY_CATEGORY_LIGHTS));
     }
 
-	
-    private void setColor(int bri, int colorR, int colorG, int colorB)
-    {
-        getActivity().getApplicationContext().getSharedPreferences("eye", 0).edit().putInt("bri", bri).commit();
-        getActivity().getApplicationContext().getSharedPreferences("eye", 0).edit().putInt("red", colorR).commit();
-        getActivity().getApplicationContext().getSharedPreferences("eye", 0).edit().putInt("green",  colorG).commit();
-        getActivity().getApplicationContext().getSharedPreferences("eye", 0).edit().putInt("blue", colorB).commit();
-    }
-		
-
-    public void restartNightModIntent(Intent it){  
-    	 getActivity().stopService(it);
-         getActivity().startService(it);
-     }
-	 
     private static boolean allowAllRotations(Context context) {
         return Resources.getSystem().getBoolean(
                 com.android.internal.R.bool.config_allowAllRotations);
@@ -630,8 +621,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-		Intent nightModIntent = new Intent(getActivity().getApplicationContext(), NightMode.class);	
+    public boolean onPreferenceChange(Preference preference, Object objValue) {	
         final String key = preference.getKey();
         if (KEY_SCREEN_TIMEOUT.equals(key)) {
             try {
@@ -667,32 +657,19 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     listviewinterpolator);
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
             return true; 
-         } else if(preference == nightSwitch){
-		    boolean value = (Boolean) objValue;
-
-            if (value){
-                getActivity().startService(nightModIntent);
-            }else{
-                getActivity().stopService(nightModIntent);
-            }
+         } else if (preference == mNightSwitch){
+			boolean auto = (Boolean) objValue;
+			Settings.Global.putInt(
+		    	getContentResolver(), Settings.Global.NIGHT_MODE, auto ? 1 : 0); 
             return true;
-
-	}else if(preference==nightColor) {
+		}else if (preference==mNightColor) {
 		
-		 int Color = Integer.valueOf((String) objValue);
-		if(Color==0){
-			setColor(150,0,0,0);
-			restartNightModIntent(nightModIntent);
-		}else if(Color==1){
-			setColor(100, 255, 0, 0);
-			restartNightModIntent(nightModIntent);
-		}else if(Color==2) {
-			setColor(80, 255, 255, 0);
-			restartNightModIntent(nightModIntent);
-		}
-		nightColor.setSummary(nightColor.getEntries()[Color]);
-		return true;
-			
+			int NightColor = Integer.valueOf((String) objValue);
+			int index = mNightColor.findIndexOfValue((String) objValue);
+			Settings.Global.putInt(
+				getContentResolver(), Settings.Global.NIGHT_MODE_COLOR, NightColor);
+			mNightColor.setSummary(mNightColor.getEntries()[index]);
+			return true;
 		}
         return true;
     }
@@ -753,12 +730,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Log.d(TAG, "Color enhancement settings restored.");
             }
         }
-		
-		if(ctx.getSharedPreferences("com.android.settings_preferences", 0).getBoolean("nightswitch", false)){
-				Intent nightModIntent = new Intent(ctx, NightMode.class);	
-                ctx.startService(nightModIntent);
-		}
-
     }
 
     private static boolean isPostProcessingSupported(Context context) {
