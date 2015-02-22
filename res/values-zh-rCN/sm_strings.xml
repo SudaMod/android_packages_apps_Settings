@@ -191,4 +191,5 @@
   <string name="battery_bar_center_mirrored">居中对称</string>
   <string name="captive_portal_detection">网络状况检测</string>
   <string name="captive_portal_detection_summary">如果状态栏有感叹号，可关闭网络状况检测</string>
+  <string name="mod_version_type">类型</string>
 </resources>
