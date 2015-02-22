@@ -314,5 +314,13 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
     <string name="color_default">Default</string>
-
+	
+	<!--Battery bar -->
+    <string name="battery_bar_hide">Hide</string>
+    <string name="battery_bar_statusbar">Statusbar</string>
+    <string name="battery_bar_top_of_navbar">Top of navbar</string>
+    <string name="battery_bar_bottom_of_navbar">Buttom of navbar</string>
+    <string name="battery_bar_regular">Regular</string>
+    <string name="battery_bar_center_mirrored">Center mirrored</string>	
+	
 </resources>

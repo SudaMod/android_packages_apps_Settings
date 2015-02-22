@@ -183,5 +183,10 @@
   <string name="press_color_to_apply">点击右侧颜色应用</string>
   <string name="set">设置</string>
   <string name="color_default">默认</string>
-
+  <string name="battery_bar_hide">隐藏</string>
+  <string name="battery_bar_statusbar">显示在状态栏</string>
+  <string name="battery_bar_top_of_navbar">显示在导航栏顶部</string>
+  <string name="battery_bar_bottom_of_navbar">显示在导航栏底部</string>
+  <string name="battery_bar_regular">常规</string>
+  <string name="battery_bar_center_mirrored">居中对称</string>	
 </resources>
