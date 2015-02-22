@@ -314,13 +314,17 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
     <string name="color_default">Default</string>
-	
-	<!--Battery bar -->
+
+    <!--Battery bar -->
     <string name="battery_bar_hide">Hide</string>
     <string name="battery_bar_statusbar">Statusbar</string>
     <string name="battery_bar_top_of_navbar">Top of navbar</string>
     <string name="battery_bar_bottom_of_navbar">Buttom of navbar</string>
     <string name="battery_bar_regular">Regular</string>
     <string name="battery_bar_center_mirrored">Center mirrored</string>	
-	
+
+    <!-- Captive Portal -->
+    <string name="captive_portal_detection">Captive portal detection</string>
+    <string name="captive_portal_detection_summary">If disabled, a connection to google servers is not required in order to detect data connection.</string>	
+
 </resources>
