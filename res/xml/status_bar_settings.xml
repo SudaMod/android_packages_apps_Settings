@@ -80,6 +80,12 @@
         android:entries="@array/status_bar_battery_percentage_entries"
         android:entryValues="@array/status_bar_battery_percentage_values" />
 
+    <PreferenceScreen
+        android:key="battery_bar"
+        android:fragment="com.android.settings.sudamod.BatteryBar"
+        android:title="@string/battery_bar"
+        android:summary="@string/battery_bar_summary" />
+
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
  	android:key="show_su_icon"
  	android:title="@string/su_indicator"

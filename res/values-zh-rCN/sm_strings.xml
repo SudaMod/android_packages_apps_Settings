@@ -170,5 +170,18 @@
   <string name="screen_recorder_record_audio_title">外部音频</string>
   <string name="screen_recorder_record_audio_summary">使用麦克风录制音频</string>
   <string name="screen_recorder_power_menu_summary">将屏幕录像添加到电源菜单</string> 
-  <string name="smupdate_settings_title">SudaMod 更新</string>       
+  <string name="smupdate_settings_title">SudaMod 更新</string> 
+  <string name="battery_bar_location">电池条位置</string>
+  <string name="battery_bar_color">电池条颜色</string>
+  <string name="battery_bar"><b>电池条自定义</b></string>
+  <string name="battery_bar_summary">电池条位置与颜色定制</string>
+  <string name="battery_bar_style_title">电池条样式</string>
+  <string name="battery_bar_thickness_title">电池条厚度</string>
+  <string name="battery_bar_animate_title">充电动画</string>
+  <string name="battery_bar_animate_summary">充电动画可能会导致用户体验不佳，请自行决定是否开启</string>
+  <string name="dialog_color_picker">颜色选择器</string>
+  <string name="press_color_to_apply">点击右侧颜色应用</string>
+  <string name="set">设置</string>
+  <string name="color_default">默认</string>
+
 </resources>
