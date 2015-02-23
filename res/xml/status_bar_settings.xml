@@ -33,6 +33,13 @@
         android:entries="@array/entries_status_bar_am_pm"
         android:entryValues="@array/values_status_bar_am_pm" />
 
+    <ListPreference
+        android:key="clock_size"
+        android:dialogTitle="@string/clock_size_style"
+        android:title="@string/clock_size_style"
+        android:entries="@array/entries_clock_size_style"
+        android:entryValues="@array/values_clock_size_style" />
+
     <SwitchPreference
         android:key="date_second"
 	android:title="@string/date_second_title"

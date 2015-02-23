@@ -68,6 +68,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 	private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
 	private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
 	private static final String CARRIER_SIZE_STYLE = "carrier_size_style";
+	private static final String CLOCK_SIZE_STYLE = "clock_size";
 
 	private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
 	private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
@@ -86,6 +87,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 	private ListPreference mStatusBarBattery;
 	private ListPreference mStatusBarBatteryShowPercent;
 	private ListPreference mCarrierSize;
+	private ListPreference mClockSize;
 	private SwitchPreference mDateScond;
 
 	private String mCustomCarrierLabelText;
@@ -120,6 +122,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 		mStatusBarNetworkTraffic
 				.setSummary(mStatusBarNetworkTraffic.getEntry());
 		mStatusBarNetworkTraffic.setOnPreferenceChangeListener(this);
+
+		mClockSize = (ListPreference) findPreference(CLOCK_SIZE_STYLE);
+		int ClockSize = Settings.System.getInt(resolver,
+				Settings.System.CLOCK_SIZE, 0);
+		mClockSize.setValue(String.valueOf(ClockSize));
+		mClockSize.setSummary(mClockSize.getEntry());
+		mClockSize.setOnPreferenceChangeListener(this);
 
 		mCarrierSize = (ListPreference) findPreference(CARRIER_SIZE_STYLE);
 		int CarrierSize = Settings.System.getInt(resolver,
@@ -268,7 +277,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 			Settings.System.putInt(resolver, Settings.System.CLOCK_USE_SECOND,
 					value ? 1 : 0);
 			return true;
-		}
+		} else if (preference == mClockSize) {
+			int ClockSize = Integer.valueOf((String) newValue);
+			int index = mClockSize.findIndexOfValue((String) newValue);
+			Settings.System.putInt(resolver, Settings.System.CLOCK_SIZE,
+					ClockSize);
+			mClockSize.setSummary(mClockSize.getEntries()[index]);
+			return true;
+		} 
 
 		return false;
 	}
