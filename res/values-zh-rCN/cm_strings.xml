@@ -618,6 +618,7 @@
   <string name="performance_settings_title">性能</string>
   <string name="io_scheds_title">I/O 调度器</string>
   <string name="io_sched_title">I/O 调度器</string>
+    <string name="perf_profile_title">性能模式</string>
   <string name="pref_force_highend_gfx_title">强制高端图形</string>
   <string name="pref_force_highend_gfx_summary">启用高端视觉特效，如透明状态栏/导航栏 (需要重启)</string>
   <string name="performance_settings_warning_title">请谨慎前进</string>
@@ -667,6 +668,7 @@
   <string name="qs_tile_hotspot">热点</string>
   <string name="qs_tile_adb_over_network">网络 ADB 调试</string>
   <string name="qs_tile_profiles">情景模式</string>
+    <string name="qs_tile_performance">性能模式</string>
   <string name="qs_tile_nfc">NFC</string>
   <string name="qs_tile_compass">指南针</string>
   <string name="qs_tile_lockscreen">锁屏</string>
@@ -727,4 +729,19 @@
   <string name="gestures_action_search">搜索</string>
   <string name="gestures_action_recent">最近应用</string>
   <string name="stylus_app_not_installed">%s 尚未被安装</string>
+    <string name="advanced">高级</string>
+    <string name="advanced_mode_title">高级模式</string>
+
+    <string name="category_misc">其他</string>
+    <string name="category_vibrate">振动</string>
+    <string name="category_volume">音量</string>
+    <string name="category_sounds">声音</string>
+    <string name="category_interface">界面</string>
+    <string name="category_calibration">高级设置</string>
+    <string name="display_and_lights">显示 &amp; 指示灯</string>
+    <string name="notification_manager">通知管理</string>
+    <string name="lockscreen_settings">锁屏</string>
+    <string name="category_lights">指示灯</string>
+    <string name="power_usage_history_title">电量使用情况</string>
+    <string name="recents_show_searchbar">最近任务菜单显示搜索栏</string>
 </resources>
