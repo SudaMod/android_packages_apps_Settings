@@ -192,4 +192,7 @@
   <string name="captive_portal_detection">网络状况检测</string>
   <string name="captive_portal_detection_summary">如果状态栏有感叹号，可关闭网络状况检测</string>
   <string name="mod_version_type">类型</string>
+  <string name="captive_portal_server">自定义验证服务器</string>
+  <string name="captive_portal_server_notset">未填写验证服务器</string>
+  <string name="captive_portal_server_explain">自定义验证服务器，修改完成需要重启或者关闭打开飞行模式</string>
 </resources>
