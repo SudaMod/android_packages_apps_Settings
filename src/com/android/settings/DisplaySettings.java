@@ -87,7 +87,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_SCREEN_SAVER = "screensaver";
-    private static final String KEY_LIFT_TO_WAKE = "lift_to_wake";
     private static final String KEY_DOZE = "doze";
     private static final String KEY_AUTO_BRIGHTNESS = "auto_brightness";
     private static final String KEY_ADAPTIVE_BACKLIGHT = "adaptive_backlight";
@@ -122,7 +121,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private ListPreference mScreenTimeoutPreference;
     private Preference mScreenSaverPreference;
     private SwitchPreference mAccelerometer;
-    private SwitchPreference mLiftToWakePreference;
     private SwitchPreference mDozePreference;
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mWakeWhenPluggedOrUnplugged;
@@ -138,7 +136,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     //Night Mode
     private SwitchPreference mNightSwitch;
     private ListPreference mNightColor;
-	
+
     private TwoStatePreference mNotificationPulse;
 
     private ContentObserver mAccelerometerRotationObserver =
@@ -215,19 +213,19 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mFontSizePref.setOnPreferenceChangeListener(this);
         mFontSizePref.setOnPreferenceClickListener(this);
 
-	mNightSwitch = (SwitchPreference) findPreference("nightswitch");
-	int NightMode = Settings.Global.getInt(
-			resolver, Settings.Global.NIGHT_MODE, 0);
-	mNightSwitch.setChecked(NightMode == 1);
-	mNightSwitch.setOnPreferenceChangeListener(this);
+        mNightSwitch = (SwitchPreference) findPreference("nightswitch");
+        int NightMode = Settings.Global.getInt(
+             resolver, Settings.Global.NIGHT_MODE, 0);
+        mNightSwitch.setChecked(NightMode == 1);
+        mNightSwitch.setOnPreferenceChangeListener(this);
 
-	mNightColor = (ListPreference) findPreference("nightcolor");
-	int NightColor = Settings.Global.getInt(
-			resolver, Settings.Global.NIGHT_MODE_COLOR, 0);
-	mNightColor.setValue(String.valueOf(NightColor));
-	mNightColor.setSummary(mNightColor.getEntry());
-	mNightColor.setOnPreferenceChangeListener(this);
-		
+        mNightColor = (ListPreference) findPreference("nightcolor");
+        int NightColor = Settings.Global.getInt(
+             resolver, Settings.Global.NIGHT_MODE_COLOR, 0);
+        mNightColor.setValue(String.valueOf(NightColor));
+        mNightColor.setSummary(mNightColor.getEntry());
+        mNightColor.setOnPreferenceChangeListener(this);
+
         mAutoBrightnessPreference = (SwitchPreference) findPreference(KEY_AUTO_BRIGHTNESS);
         if (mAutoBrightnessPreference != null && isAutomaticBrightnessAvailable(getResources())) {
             mAutoBrightnessPreference.setOnPreferenceChangeListener(this);
@@ -238,15 +236,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             }
         }
 
-        mLiftToWakePreference = (SwitchPreference) findPreference(KEY_LIFT_TO_WAKE);
-        if (mLiftToWakePreference != null && isLiftToWakeAvailable(activity)) {
-            mLiftToWakePreference.setOnPreferenceChangeListener(this);
-        } else {
-            if (displayPrefs != null && mLiftToWakePreference != null) {
-                displayPrefs.removePreference(mLiftToWakePreference);
-                mLiftToWakePreference = null;
-            }
-        }
 
         mAdaptiveBacklight = (SwitchPreference) findPreference(KEY_ADAPTIVE_BACKLIGHT);
         if (calibrationPrefs != null && !isAdaptiveBacklightSupported()) {
@@ -539,12 +528,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mAutoBrightnessPreference.setChecked(brightnessMode != SCREEN_BRIGHTNESS_MODE_MANUAL);
         }
 
-        // Update lift-to-wake if it is available.
-        if (mLiftToWakePreference != null) {
-            int value = Settings.Secure.getInt(getContentResolver(), WAKE_GESTURE_ENABLED, 0);
-            mLiftToWakePreference.setChecked(value != 0);
-        }
-
         // Update doze if it is available.
         if (mDozePreference != null) {
             int value = Settings.Secure.getInt(getContentResolver(), DOZE_ENABLED, 1);
@@ -628,7 +611,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {	
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
         if (KEY_SCREEN_TIMEOUT.equals(key)) {
             try {
@@ -644,9 +627,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             boolean auto = (Boolean) objValue;
             Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE,
                     auto ? SCREEN_BRIGHTNESS_MODE_AUTOMATIC : SCREEN_BRIGHTNESS_MODE_MANUAL);
-        } else if (preference == mLiftToWakePreference) {
-            boolean value = (Boolean) objValue;
-            Settings.Secure.putInt(getContentResolver(), WAKE_GESTURE_ENABLED, value ? 1 : 0);
         } else if (preference == mDozePreference) {
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), DOZE_ENABLED, value ? 1 : 0);
@@ -664,18 +644,18 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     listviewinterpolator);
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
             return true; 
-         } else if (preference == mNightSwitch){
+        } else if (preference == mNightSwitch){
             boolean auto = (Boolean) objValue;
             Settings.Global.putInt(
             		getContentResolver(), Settings.Global.NIGHT_MODE, auto ? 1 : 0); 
             return true;
-         } else if (preference==mNightColor) {
+        } else if (preference==mNightColor) {
             int NightColor = Integer.valueOf((String) objValue);
             int index = mNightColor.findIndexOfValue((String) objValue);
             Settings.Global.putInt(
             		getContentResolver(), Settings.Global.NIGHT_MODE_COLOR, NightColor);
             mNightColor.setSummary(mNightColor.getEntries()[index]);
-            return true;
+            return true; 
          }
         return true;
     }
@@ -817,23 +797,20 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     if (!mHasSunlightEnhancement) {
                         result.add(KEY_SUNLIGHT_ENHANCEMENT);
                     }
-                    if (!isColorEnhancementSupported()) {
+                    if (!mHasColorEnhancement) {
                         result.add(KEY_COLOR_ENHANCEMENT);
                     }
                     if (!isPostProcessingSupported(context)) {
                         result.add(KEY_SCREEN_COLOR_SETTINGS);
                     }
-                    if (!DisplayColor.isSupported()) {
+                    if (!mHasDisplayColor) {
                         result.add(KEY_DISPLAY_COLOR);
                     }
-                    if (!DisplayGamma.isSupported()) {
+                    if (!mHasDisplayGamma) {
                         result.add(KEY_DISPLAY_GAMMA);
                     }
                     if (!isAutomaticBrightnessAvailable(context.getResources())) {
                         result.add(KEY_AUTO_BRIGHTNESS);
-                    }
-                    if (!isLiftToWakeAvailable(context)) {
-                        result.add(KEY_LIFT_TO_WAKE);
                     }
                     if (!isDozeAvailable(context)) {
                         result.add(KEY_DOZE);

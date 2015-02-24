@@ -82,7 +82,7 @@
   <string name="su_indicator_summary">当Root权限激活时状态栏显示图标</string>
   <string name="gesture_direct_title">手势和体感</string>  
   <string name="gesture_title">手势</string>  
-  <string name="direct_control_title">体感控制</string>
+  <string name="direct_control_title">体感</string>
   <string name="direct_call_for_dialer_title">拨号界面体感拨号</string>
   <string name="direct_call_for_dialer_summary">手机放在耳边时将自动拨打当前拨号器输入的电话号码</string>
   <string name="direct_call_for_mms_title">短信界面体感拨号</string>
