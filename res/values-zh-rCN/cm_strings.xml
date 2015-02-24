@@ -217,6 +217,7 @@
   <string name="contributor_cloud_title">贡献者</string>
   <string name="phone_service_state">语音： <xliff:g id="voice_state">%1$s</xliff:g>，数据： <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">双击唤醒</string>
+    <string name="double_tap_to_wake_summary">双击屏幕唤醒设备</string>
   <string name="proximity_wake_title">防止意外唤醒</string>
   <string name="proximity_wake_summary">唤醒屏幕前检查距离传感器</string>
   <string name="privacy_settings_cyanogenmod_title">隐私</string>
@@ -246,6 +247,7 @@
   <string name="development_shortcut_title">开发快捷方式</string>
   <string name="development_shortcut_summary">在最近任务列表中启用应用管理快捷方式</string>
   <string name="double_tap_to_sleep_title">双击以睡眠</string>
+    <string name="double_tap_to_sleep_summary">双击状态栏关闭设备</string>
   <string name="wake_when_plugged_or_unplugged_title">连接或移除电源时唤醒</string>
   <string name="wake_when_plugged_or_unplugged_summary">连接或断开电源时点亮屏幕</string>
   <string name="kill_app_longpress_back">使用返回键强行关闭应用</string>
