@@ -199,5 +199,26 @@
   <string name="clock_size_style_normal">正常</string>
   <string name="clock_size_style_small">小</string>
   <string name="clock_size_style_big">大</string>
+  <string name="category_heads_up">浮动通知</string>
+  <string name="summary_heads_up_enabled">浮动通知已启用</string>
+  <string name="summary_heads_up_disabled">浮动通知已禁用</string>
+  <string name="add_heads_up_package">添加应用</string>
+  <string name="add_heads_up_dnd_summary">浮动通知将不显示在这些应用界面上</string>
+  <string name="add_heads_up_blacklist_summary">这些应用将不显示浮动通知</string>
+  <string name="heads_up_dnd_title">勿扰名单</string>
+  <string name="heads_up_blacklist_title">黑名单</string>
+  <string name="heads_up_disabled_notice">若想在屏幕顶端显示通知，请启用浮动通知。</string>
+  <string name="profile_choose_app">选择应用</string>
+  <string name="dialog_delete_title">删除</string>
+  <string name="dialog_delete_message">移除选中项目?</string>
+  <string name="heads_up_time_out_title">显示超时</string>
+  <string name="heads_up_time_out_summary">显示直到<xliff:g id="number">%d</xliff:g> 秒后</string>
+  <string name="heads_up_time_out_never_summary">显示直到手动移除</string>
+  <string name="heads_up_time_out_2sec"> 2 秒</string>
+  <string name="heads_up_time_out_4sec"> 4 秒</string>
+  <string name="heads_up_time_out_6sec"> 6 秒</string>
+  <string name="heads_up_time_out_8sec"> 8 秒</string>
+  <string name="heads_up_time_out_10sec"> 10 秒</string>
+  <string name="heads_up_time_out_never">从不</string>
 
 </resources>
