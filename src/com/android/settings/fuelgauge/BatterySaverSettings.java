@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2015 The New One Android
- * Copyright (C) 2015 The SudaMod Android
+ * Copyright (C) 2014 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,60 +16,202 @@
 
 package com.android.settings.fuelgauge;
 
+import static android.os.PowerManager.ACTION_POWER_SAVE_MODE_CHANGING;
+
+import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.res.Resources;
+import android.database.ContentObserver;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.preference.ListPreference;
-import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
-import android.provider.Settings;
+import android.os.Handler;
+import android.os.PowerManager;
 import android.provider.Settings.Global;
+import android.util.Log;
+import android.widget.Switch;
+
 import com.android.settings.R;
+import com.android.settings.SettingsActivity;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.notification.SettingPref;
+import com.android.settings.widget.SwitchBar;
 
-public class BatterySaverSettings extends SettingsPreferenceFragment 
-             implements OnPreferenceChangeListener {
-
+public class BatterySaverSettings extends SettingsPreferenceFragment
+        implements SwitchBar.OnSwitchChangeListener {
     private static final String TAG = "BatterySaverSettings";
+    private static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
+    private static final String KEY_TURN_ON_AUTOMATICALLY = "turn_on_automatically";
+    private static final long WAIT_FOR_SWITCH_ANIM = 500;
 
-    private static final String KEY_POWER_SAVE_SETTING = "power_save_setting";
+    private final Handler mHandler = new Handler();
+    private final SettingsObserver mSettingsObserver = new SettingsObserver(mHandler);
+    private final Receiver mReceiver = new Receiver();
 
-    private ListPreference mPowerSaveSettings;
+    private Context mContext;
+    private boolean mCreated;
+    private SettingPref mTriggerPref;
+    private SwitchBar mSwitchBar;
+    private Switch mSwitch;
+    private boolean mValidListener;
+    private PowerManager mPowerManager;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (mCreated) return;
+        mCreated = true;
         addPreferencesFromResource(R.xml.battery_saver_settings);
 
-        ContentResolver resolver = getActivity().getContentResolver();
+        mContext = getActivity();
+        mSwitchBar = ((SettingsActivity) mContext).getSwitchBar();
+        mSwitch = mSwitchBar.getSwitch();
+        mSwitchBar.show();
 
-        mPowerSaveSettings = (ListPreference) findPreference(KEY_POWER_SAVE_SETTING);
-        int PowerSaveSettings = Settings.System.getInt(
-                resolver, Settings.System.POWER_SAVE_SETTINGS, 0);
-        mPowerSaveSettings.setValue(String.valueOf(PowerSaveSettings));
-        mPowerSaveSettings.setSummary(mPowerSaveSettings.getEntry());
-        mPowerSaveSettings.setOnPreferenceChangeListener(this);
+        mTriggerPref = new SettingPref(SettingPref.TYPE_GLOBAL, KEY_TURN_ON_AUTOMATICALLY,
+                Global.LOW_POWER_MODE_TRIGGER_LEVEL,
+                0, /*default*/
+                getResources().getIntArray(R.array.battery_saver_trigger_values)) {
+            @Override
+            protected String getCaption(Resources res, int value) {
+                if (value > 0 && value < 100) {
+                    return res.getString(R.string.battery_saver_turn_on_automatically_pct, value);
+                }
+                return res.getString(R.string.battery_saver_turn_on_automatically_never);
+            }
+        };
+        mTriggerPref.init(this);
+
+        mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mSwitchBar.hide();
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        mSettingsObserver.setListening(true);
+        mReceiver.setListening(true);
+        if (!mValidListener) {
+            mSwitchBar.addOnSwitchChangeListener(this);
+            mValidListener = true;
+        }
+        updateSwitch();
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mPowerSaveSettings) {
-            int PowerSaveSettings = Integer.valueOf((String) newValue);
-            int index = mPowerSaveSettings.findIndexOfValue((String) newValue);
-            Settings.System.putInt(
-                    resolver, Settings.System.POWER_SAVE_SETTINGS, PowerSaveSettings);
-            mPowerSaveSettings.setSummary(mPowerSaveSettings.getEntries()[index]);
-            Settings.Global.putInt(resolver,
-                    Settings.Global.LOW_POWER_MODE_TRIGGER_LEVEL,(PowerSaveSettings == 3 ? 1 : 0));
-            return true;
+    public void onPause() {
+        super.onPause();
+        mSettingsObserver.setListening(false);
+        mReceiver.setListening(false);
+        if (mValidListener) {
+            mSwitchBar.removeOnSwitchChangeListener(this);
+            mValidListener = false;
         }
-        return false;
     }
 
-}
+    @Override
+    public void onSwitchChanged(Switch switchView, boolean isChecked) {
+        mHandler.removeCallbacks(mStartMode);
+        if (isChecked) {
+            mHandler.postDelayed(mStartMode, WAIT_FOR_SWITCH_ANIM);
+        } else {
+            if (DEBUG) Log.d(TAG, "Stopping low power mode from settings");
+            trySetPowerSaveMode(false);
+        }
+    }
 
+    private void trySetPowerSaveMode(boolean mode) {
+        if (!mPowerManager.setPowerSaveMode(mode)) {
+            if (DEBUG) Log.d(TAG, "Setting mode failed, fallback to current value");
+            mHandler.post(mUpdateSwitch);
+        }
+    }
+
+    private void updateSwitch() {
+        final boolean mode = mPowerManager.isPowerSaveMode();
+        if (DEBUG) Log.d(TAG, "updateSwitch: isChecked=" + mSwitch.isChecked() + " mode=" + mode);
+        if (mode == mSwitch.isChecked()) return;
+
+        // set listener to null so that that code below doesn't trigger onCheckedChanged()
+        if (mValidListener) {
+            mSwitchBar.removeOnSwitchChangeListener(this);
+        }
+        mSwitch.setChecked(mode);
+        if (mValidListener) {
+            mSwitchBar.addOnSwitchChangeListener(this);
+        }
+    }
+
+    private final Runnable mUpdateSwitch = new Runnable() {
+        @Override
+        public void run() {
+            updateSwitch();
+        }
+    };
+
+    private final Runnable mStartMode = new Runnable() {
+        @Override
+        public void run() {
+            AsyncTask.execute(new Runnable() {
+                @Override
+                public void run() {
+                    if (DEBUG) Log.d(TAG, "Starting low power mode from settings");
+                    trySetPowerSaveMode(true);
+                }
+            });
+        }
+    };
+
+    private final class Receiver extends BroadcastReceiver {
+        private boolean mRegistered;
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (DEBUG) Log.d(TAG, "Received " + intent.getAction());
+            mHandler.post(mUpdateSwitch);
+        }
+
+        public void setListening(boolean listening) {
+            if (listening && !mRegistered) {
+                mContext.registerReceiver(this, new IntentFilter(ACTION_POWER_SAVE_MODE_CHANGING));
+                mRegistered = true;
+            } else if (!listening && mRegistered) {
+                mContext.unregisterReceiver(this);
+                mRegistered = false;
+            }
+        }
+    }
+
+    private final class SettingsObserver extends ContentObserver {
+        private final Uri LOW_POWER_MODE_TRIGGER_LEVEL_URI
+                = Global.getUriFor(Global.LOW_POWER_MODE_TRIGGER_LEVEL);
+
+        public SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            if (LOW_POWER_MODE_TRIGGER_LEVEL_URI.equals(uri)) {
+                mTriggerPref.update(mContext);
+            }
+        }
+
+        public void setListening(boolean listening) {
+            final ContentResolver cr = getContentResolver();
+            if (listening) {
+                cr.registerContentObserver(LOW_POWER_MODE_TRIGGER_LEVEL_URI, false, this);
+            } else {
+                cr.unregisterContentObserver(this);
+            }
+        }
+    }
+}

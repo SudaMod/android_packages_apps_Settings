@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2009 The Android Open Source Project
+ * Copyright (C) 2015 The SudaMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -259,9 +260,9 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
                      int index = mPowerSaveSettings.findIndexOfValue((String) newValue);
                      Settings.System.putInt(getContentResolver(),
                              Settings.System.POWER_SAVE_SETTINGS, PowerSaveSettings);
-                     mPowerSaveSettings.setSummary(mPowerSaveSettings.getEntries()[index]);
                      Settings.Global.putInt(getContentResolver(),
-                             Settings.Global.LOW_POWER_MODE_TRIGGER_LEVEL,(PowerSaveSettings == 3 ? 1 : 0));
+                             Settings.Global.LOW_POWER_MODE_TRIGGER_LEVEL, 1);
+                     mPowerSaveSettings.setSummary(mPowerSaveSettings.getEntries()[index]);
                 return true;
            }
         }

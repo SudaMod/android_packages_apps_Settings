@@ -18,13 +18,11 @@
         android:title="@string/battery_saver"
         android:key="battery_saver">
 
-    <!-- power save setting -->
-	<ListPreference
-			android:key="power_save_setting"
-			android:title="@string/power_save_setting_title"
-			android:dialogTitle="@string/power_save_setting_title"
-			android:entries="@array/power_save_setting_entries"
-			android:entryValues="@array/power_save_setting_values"/>
+    <!-- Turn on automatically -->
+    <com.android.settings.notification.DropDownPreference
+            android:key="turn_on_automatically"
+            android:title="@string/battery_saver_turn_on_automatically_title"
+            android:persistent="false" />
 
     <!-- Feature description text -->
     <Preference
