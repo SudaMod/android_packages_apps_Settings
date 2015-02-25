@@ -261,5 +261,13 @@
   <string name="select_custom_app_title">选择一个应用</string>
   <string name="select_custom_activity_title">选择一个活动</string>
   <string name="profile_applist_title">应用</string>
+  <string name="volume_steps_title">音量总阀值</string>
+  <string name="volume_steps_alarm_title">闹钟</string>
+  <string name="volume_steps_dtmf_title">DTMF</string>
+  <string name="volume_steps_music_title">媒体</string>
+  <string name="volume_steps_notification_title">通知</string>
+  <string name="volume_steps_ring_title">铃声</string>
+  <string name="volume_steps_system_title">系统</string>
+  <string name="volume_steps_voice_call_title">语音通话</string>
 
 </resources>
