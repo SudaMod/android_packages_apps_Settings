@@ -47,6 +47,7 @@ import com.android.settings.voice.VoiceInputSettings;
 import com.android.settings.wifi.AdvancedWifiSettings;
 import com.android.settings.wifi.SavedAccessPointsWifiSettings;
 import com.android.settings.wifi.WifiSettings;
+import com.android.settings.sudamod.GestureSettings;
 
 import java.util.HashMap;
 
@@ -75,6 +76,7 @@ public final class Ranking {
     public static final int RANK_PRINTING = 19;
     public static final int RANK_DEVELOPEMENT = 20;
     public static final int RANK_DEVICE_INFO = 21;
+    public static final int RANK_GESTURE = 22;
 
     public static final int RANK_UNDEFINED = -1;
     public static final int RANK_OTHERS = 1024;
@@ -156,6 +158,9 @@ public final class Ranking {
 
         // Device infos
         sRankMap.put(DeviceInfoSettings.class.getName(), RANK_DEVICE_INFO);
+
+        // Gesture
+        sRankMap.put(GestureSettings.class.getName(), RANK_GESTURE);
 
         sBaseRankMap.put("com.android.settings", 0);
     }

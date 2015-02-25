@@ -47,7 +47,8 @@
         <PreferenceScreen
             android:key="gesture_anywhere"
             android:fragment="com.android.settings.sudamod.gestureanywhere.GestureAnywhereSettings"
-            android:title="@string/gesture_anywhere_title" />
+            android:title="@string/gesture_anywhere_title"
+            android:summary="@string/gesture_anywhere_summary"/>
 
     </PreferenceCategory>
 

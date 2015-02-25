@@ -225,6 +225,7 @@
   <string name="battery_category">电池</string>
   <string name="statusbar_other_category">其他</string>
   <string name="gesture_anywhere_title">全局手势</string>
+  <string name="gesture_anywhere_summary">无处不在的手势</string>
   <string name="gesture_anywhere_enabled_title">全局手势</string>
   <string name="gesture_anywhere_enabled_summary">启用全局手势</string>
   <string name="gesture_anywhere_position_title">位置</string>

@@ -115,7 +115,7 @@ public class GestureSettings extends SettingsPreferenceFragment implements
             return TapToWake.setEnabled(mTapToWake.isChecked());
         }
 
-        return false;
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
