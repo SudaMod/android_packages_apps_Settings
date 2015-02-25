@@ -220,8 +220,8 @@
   <string name="heads_up_time_out_8sec"> 8 秒</string>
   <string name="heads_up_time_out_10sec"> 10 秒</string>
   <string name="heads_up_time_out_never">从不</string>
-  <string name="clock_category"> 时钟</string>
-  <string name="carrier_category"> 运营商自定义</string>
+  <string name="clock_category">时钟</string>
+  <string name="carrier_category">运营商自定义</string>
   <string name="battery_category">电池</string>
   <string name="statusbar_other_category">其他</string>
 
