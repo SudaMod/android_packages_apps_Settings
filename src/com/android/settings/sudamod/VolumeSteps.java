@@ -154,6 +154,7 @@ public class VolumeSteps extends SettingsPreferenceFragment implements
                 settingsKey, steps);
 
         ((ListPreference)findPreference(settingsKey)).setSummary(String.valueOf(steps));
+        ((ListPreference)findPreference(settingsKey)).setValue(String.valueOf(steps));
 
         updateVolumeSteps(streamType, steps);
 
