@@ -70,6 +70,8 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
 
     private static final String BATTERY_HISTORY_FILE = "tmp_bat_history.bin";
 
+    private static final String KEY_POWER_SAVE_SETTING = "power_save_setting";
+
     private static final int MENU_STATS_TYPE = Menu.FIRST;
     private static final int MENU_STATS_REFRESH = Menu.FIRST + 1;
     private static final int MENU_BATTERY_SAVER = Menu.FIRST + 2;
@@ -93,6 +95,7 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
 
     private PowerManager mPowerManager;
     private ListPreference mPerfProfilePref;
+    private ListPreference mPowerSaveSettings;
     private String[] mPerfProfileEntries;
     private String[] mPerfProfileValues;
     private String mPerfProfileDefaultEntry;
@@ -144,6 +147,13 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.power_usage_summary);
         mAppListGroup = (PreferenceGroup) findPreference(KEY_APP_LIST);
         setHasOptionsMenu(true);
+
+        mPowerSaveSettings = (ListPreference) findPreference(KEY_POWER_SAVE_SETTING);
+        int PowerSaveSettings = Settings.System.getInt(
+                getContentResolver(), Settings.System.POWER_SAVE_SETTINGS, 0);
+        mPowerSaveSettings.setValue(String.valueOf(PowerSaveSettings));
+        mPowerSaveSettings.setSummary(mPowerSaveSettings.getEntry());
+        mPowerSaveSettings.setOnPreferenceChangeListener(this);
 
         mPerfProfilePref = (ListPreference) findPreference(KEY_PERF_PROFILE);
         if (mPerfProfilePref != null && !mPowerManager.hasPowerProfiles()) {
@@ -244,7 +254,16 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
                 mPowerManager.setPowerProfile(String.valueOf(newValue));
                 updatePerformanceSummary();
                 return true;
-            }
+            } else if (preference == mPowerSaveSettings) {
+                     int PowerSaveSettings = Integer.valueOf((String) newValue);
+                     int index = mPowerSaveSettings.findIndexOfValue((String) newValue);
+                     Settings.System.putInt(getContentResolver(),
+                             Settings.System.POWER_SAVE_SETTINGS, PowerSaveSettings);
+                     mPowerSaveSettings.setSummary(mPowerSaveSettings.getEntries()[index]);
+                     Settings.Global.putInt(getContentResolver(),
+                             Settings.Global.LOW_POWER_MODE_TRIGGER_LEVEL,(PowerSaveSettings == 3 ? 1 : 0));
+                return true;
+           }
         }
         return false;
     }
@@ -262,9 +281,6 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
         refresh.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
                 MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 
-		MenuItem batterySaver = menu.add(0, MENU_BATTERY_SAVER, 0, R.string.battery_saver);
-		batterySaver.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
-        
         String helpUrl;
         if (!TextUtils.isEmpty(helpUrl = getResources().getString(R.string.help_url_battery))) {
             final MenuItem help = menu.add(0, MENU_HELP, 0, R.string.help_label);
