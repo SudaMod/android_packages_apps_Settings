@@ -18,7 +18,7 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/gesture_direct_title">
-	
+
     <Preference
         android:key="device_specific_gesture_settings"
         android:title="@string/gesture_title">
@@ -27,24 +27,30 @@
             android:targetPackage="com.cyanogenmod.settings.device"
             android:targetClass="com.cyanogenmod.settings.device.TouchscreenGestureSettings" />
     </Preference>
-	
+
     <PreferenceCategory
         android:key="category_gestures"
         android:title="@string/gesture_title" >
 
-    <SwitchPreference
-        android:key="double_tap_wake_gesture"
-        android:title="@string/double_tap_to_wake_title"
-        android:summary="@string/double_tap_to_wake_summary" />
+        <SwitchPreference
+            android:key="double_tap_wake_gesture"
+            android:title="@string/double_tap_to_wake_title"
+            android:summary="@string/double_tap_to_wake_summary" />
 
-    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-        android:key="double_tap_sleep_gesture"
-        android:title="@string/double_tap_to_sleep_title"
-        android:summary="@string/double_tap_to_sleep_summary"
-        android:defaultValue="true" />
-	
-    </PreferenceCategory>		
-	
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_gesture"
+            android:title="@string/double_tap_to_sleep_title"
+            android:summary="@string/double_tap_to_sleep_summary"
+            android:defaultValue="true" />
+
+        <!-- Gesture anywhere -->
+        <PreferenceScreen
+            android:key="gesture_anywhere"
+            android:fragment="com.android.settings.sudamod.gestureanywhere.GestureAnywhereSettings"
+            android:title="@string/gesture_anywhere_title" />
+
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:key="direct_control"
         android:title="@string/direct_control_title" >
@@ -59,11 +65,11 @@
             android:summary="@string/direct_call_for_mms_summary"
             android:title="@string/direct_call_for_mms_title" />
 
-    <!-- Lift to wake -->
-    <SwitchPreference
-        android:key="lift_to_wake"
-        android:title="@string/lift_to_wake_title"
-        android:persistent="false" />
+        <!-- Lift to wake -->
+        <SwitchPreference
+            android:key="lift_to_wake"
+            android:title="@string/lift_to_wake_title"
+            android:persistent="false" />
 
     </PreferenceCategory>	
 

@@ -174,13 +174,13 @@
                     android:targetClass="com.cyanogenmod.settings.device.BluetoothInputSettings" />
         </dashboard-tile>
 
- 	<!-- Gestures -->
-	<dashboard-tile
-		android:id="@+id/gesture_settings"
-		android:title="@string/gesture_direct_title"
-		android:fragment="com.android.settings.sudamod.GestureSettings"
-		android:icon="@drawable/ic_settings_gestures"
-		/>
+        <!-- Gestures -->
+        <dashboard-tile
+                android:id="@+id/gesture_settings"
+                android:title="@string/gesture_direct_title"
+                android:fragment="com.android.settings.sudamod.GestureSettings"
+                android:icon="@drawable/ic_settings_gestures"
+                />
 
         <!-- Battery -->
         <dashboard-tile

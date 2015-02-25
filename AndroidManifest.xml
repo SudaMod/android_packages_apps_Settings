@@ -2208,16 +2208,21 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-	<!-- PhoneLocationLookup -->
+
+        <!-- GestureAnywhere -->
+        <activity android:name=".sudamod.gestureanywhere.GestureAnywhereBuilderActivity" />
+        <activity android:name=".sudamod.gestureanywhere.GestureAnywhereCreateGestureActivity" />
+
+        <!-- PhoneLocationLookup -->
         <activity android:name=".sudamod.LocationLookup"
-	       android:icon="@mipmap/ic_location"
-	       android:label="@string/phonelocation"
+               android:icon="@mipmap/ic_location"
+               android:label="@string/phonelocation"
                android:excludeFromRecents="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-		
+
     </application>
 </manifest>
