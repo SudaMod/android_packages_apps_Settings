@@ -152,8 +152,7 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
         mPowerSaveSettings = (ListPreference) findPreference(KEY_POWER_SAVE_SETTING);
         int PowerSaveSettings = Settings.System.getInt(
                 getContentResolver(), Settings.System.POWER_SAVE_SETTINGS, 0);
-        mPowerSaveSettings.setValue(String.valueOf(PowerSaveSettings));
-        mPowerSaveSettings.setSummary(mPowerSaveSettings.getEntry());
+        updatePowerSaveSettings(PowerSaveSettings);
         mPowerSaveSettings.setOnPreferenceChangeListener(this);
 
         mPerfProfilePref = (ListPreference) findPreference(KEY_PERF_PROFILE);
@@ -252,6 +251,20 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (newValue != null) {
             if (preference == mPerfProfilePref) {
+                int tmp = Integer.valueOf((String) newValue);
+                if (tmp == 0) {
+                     Settings.System.putInt(getContentResolver(),
+                             Settings.System.POWER_SAVE_SETTINGS, 1);
+                     updatePowerSaveSettings(1);
+                } else if (tmp == 1) {
+                     Settings.System.putInt(getContentResolver(),
+                             Settings.System.POWER_SAVE_SETTINGS, 2);
+                     updatePowerSaveSettings(2);
+                } else if (tmp == 2) {
+                     Settings.System.putInt(getContentResolver(),
+                             Settings.System.POWER_SAVE_SETTINGS, 0);
+                     updatePowerSaveSettings(0);
+                }
                 mPowerManager.setPowerProfile(String.valueOf(newValue));
                 updatePerformanceSummary();
                 return true;
@@ -261,10 +274,10 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
                      Settings.System.putInt(getContentResolver(),
                              Settings.System.POWER_SAVE_SETTINGS, PowerSaveSettings);
                      Settings.Global.putInt(getContentResolver(),
-                             Settings.Global.LOW_POWER_MODE_TRIGGER_LEVEL, 1);
+                             Settings.Global.LOW_POWER_MODE_TRIGGER_LEVEL,(PowerSaveSettings == 3 ? 1 : 0));
                      mPowerSaveSettings.setSummary(mPowerSaveSettings.getEntries()[index]);
                 return true;
-           }
+            }
         }
         return false;
     }
@@ -334,6 +347,11 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
             }
         }
         return false;
+    }
+
+    private void updatePowerSaveSettings(int i) {
+        mPowerSaveSettings.setValue(String.valueOf(i));
+        mPowerSaveSettings.setSummary(mPowerSaveSettings.getEntry());
     }
 
     private void updatePerformanceSummary() {
