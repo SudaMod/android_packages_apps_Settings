@@ -123,6 +123,9 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
+            int PowerSaveSettings = Settings.System.getInt(
+                getContentResolver(), Settings.System.POWER_SAVE_SETTINGS, 0);
+            updatePowerSaveSettings(PowerSaveSettings);
             updatePerformanceValue();
         }
     }
@@ -252,19 +255,7 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
         if (newValue != null) {
             if (preference == mPerfProfilePref) {
                 int tmp = Integer.valueOf((String) newValue);
-                if (tmp == 0) {
-                     Settings.System.putInt(getContentResolver(),
-                             Settings.System.POWER_SAVE_SETTINGS, 1);
-                     updatePowerSaveSettings(1);
-                } else if (tmp == 1) {
-                     Settings.System.putInt(getContentResolver(),
-                             Settings.System.POWER_SAVE_SETTINGS, 2);
-                     updatePowerSaveSettings(2);
-                } else if (tmp == 2) {
-                     Settings.System.putInt(getContentResolver(),
-                             Settings.System.POWER_SAVE_SETTINGS, 0);
-                     updatePowerSaveSettings(0);
-                }
+                performanceUpdatePowerSaveSettings(tmp);
                 mPowerManager.setPowerProfile(String.valueOf(newValue));
                 updatePerformanceSummary();
                 return true;
@@ -352,6 +343,19 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
     private void updatePowerSaveSettings(int i) {
         mPowerSaveSettings.setValue(String.valueOf(i));
         mPowerSaveSettings.setSummary(mPowerSaveSettings.getEntry());
+    }
+
+    private void performanceUpdatePowerSaveSettings(int mode) {
+                if (mode == 0) {
+                     Settings.System.putInt(getContentResolver(),
+                             Settings.System.POWER_SAVE_SETTINGS, 1);
+                } else if (mode == 1) {
+                     Settings.System.putInt(getContentResolver(),
+                             Settings.System.POWER_SAVE_SETTINGS, 2);
+                } else if (mode == 2) {
+                     Settings.System.putInt(getContentResolver(),
+                             Settings.System.POWER_SAVE_SETTINGS, 0);
+                }
     }
 
     private void updatePerformanceSummary() {
