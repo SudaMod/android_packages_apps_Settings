@@ -71,8 +71,6 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
 
     private static final String BATTERY_HISTORY_FILE = "tmp_bat_history.bin";
 
-    private static final String KEY_POWER_SAVE_SETTING = "power_save_setting";
-
     private static final int MENU_STATS_TYPE = Menu.FIRST;
     private static final int MENU_STATS_REFRESH = Menu.FIRST + 1;
     private static final int MENU_BATTERY_SAVER = Menu.FIRST + 2;
@@ -96,7 +94,6 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
 
     private PowerManager mPowerManager;
     private ListPreference mPerfProfilePref;
-    private ListPreference mPowerSaveSettings;
     private String[] mPerfProfileEntries;
     private String[] mPerfProfileValues;
     private String mPerfProfileDefaultEntry;
@@ -123,9 +120,6 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
-            int PowerSaveSettings = Settings.System.getInt(
-                getContentResolver(), Settings.System.POWER_SAVE_SETTINGS, 0);
-            updatePowerSaveSettings(PowerSaveSettings);
             updatePerformanceValue();
         }
     }
@@ -151,12 +145,6 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.power_usage_summary);
         mAppListGroup = (PreferenceGroup) findPreference(KEY_APP_LIST);
         setHasOptionsMenu(true);
-
-        mPowerSaveSettings = (ListPreference) findPreference(KEY_POWER_SAVE_SETTING);
-        int PowerSaveSettings = Settings.System.getInt(
-                getContentResolver(), Settings.System.POWER_SAVE_SETTINGS, 0);
-        updatePowerSaveSettings(PowerSaveSettings);
-        mPowerSaveSettings.setOnPreferenceChangeListener(this);
 
         mPerfProfilePref = (ListPreference) findPreference(KEY_PERF_PROFILE);
         if (mPerfProfilePref != null && !mPowerManager.hasPowerProfiles()) {
@@ -255,18 +243,9 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
         if (newValue != null) {
             if (preference == mPerfProfilePref) {
                 int tmp = Integer.valueOf((String) newValue);
-                performanceUpdatePowerSaveSettings(tmp);
+                updatePowerSaveSettings(tmp);
                 mPowerManager.setPowerProfile(String.valueOf(newValue));
                 updatePerformanceSummary();
-                return true;
-            } else if (preference == mPowerSaveSettings) {
-                     int PowerSaveSettings = Integer.valueOf((String) newValue);
-                     int index = mPowerSaveSettings.findIndexOfValue((String) newValue);
-                     Settings.System.putInt(getContentResolver(),
-                             Settings.System.POWER_SAVE_SETTINGS, PowerSaveSettings);
-                     Settings.Global.putInt(getContentResolver(),
-                             Settings.Global.LOW_POWER_MODE_TRIGGER_LEVEL,(PowerSaveSettings == 3 ? 1 : 0));
-                     mPowerSaveSettings.setSummary(mPowerSaveSettings.getEntries()[index]);
                 return true;
             }
         }
@@ -340,19 +319,11 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
         return false;
     }
 
-    private void updatePowerSaveSettings(int i) {
-        mPowerSaveSettings.setValue(String.valueOf(i));
-        mPowerSaveSettings.setSummary(mPowerSaveSettings.getEntry());
-    }
-
-    private void performanceUpdatePowerSaveSettings(int mode) {
-                if (mode == 0) {
+    private void updatePowerSaveSettings(int mode) {
+                if (mode == 1) {
                      Settings.System.putInt(getContentResolver(),
                              Settings.System.POWER_SAVE_SETTINGS, 1);
-                } else if (mode == 1) {
-                     Settings.System.putInt(getContentResolver(),
-                             Settings.System.POWER_SAVE_SETTINGS, 2);
-                } else if (mode == 2) {
+                } else {
                      Settings.System.putInt(getContentResolver(),
                              Settings.System.POWER_SAVE_SETTINGS, 0);
                 }

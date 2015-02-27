@@ -107,7 +107,7 @@ public class GestureSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         ContentResolver resolver = getActivity().getContentResolver();
-		
+
         if (preference == mTapToWake) {
             final SharedPreferences prefs =
                     PreferenceManager.getDefaultSharedPreferences(getActivity());

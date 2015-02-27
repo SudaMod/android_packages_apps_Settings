@@ -74,7 +74,7 @@
     <!-- Custom navigation bar height -->
     <string-array name="navigation_bar_height_entries" translatable="false">
         <item>@string/navigation_bar_height_56</item>
-	<item>@string/navigation_bar_height_52</item>    
+        <item>@string/navigation_bar_height_52</item>
         <item>@string/navigation_bar_height_48</item>
         <item>@string/navigation_bar_height_44</item>
         <item>@string/navigation_bar_height_40</item>
@@ -88,7 +88,7 @@
 
     <string-array name="navigation_bar_height_values" translatable="false">
         <item>56</item>
-        <item>52</item>    
+        <item>52</item>
         <item>48</item>
         <item>44</item>
         <item>40</item>
@@ -127,33 +127,18 @@
         <item>2</item>
         <item>3</item>
     </string-array>
-	
-    <!-- power save setting -->
-    <string-array name="power_save_setting_entries" translatable="false">
-    	<item>@string/power_save_setting_off</item>
-	<item>@string/power_save_setting_always_open</item>
-	<item>@string/power_save_setting_screen_saving</item>
-	<item>@string/low_save_setting_saving</item>		
-    </string-array>
-	
-    <string-array name="power_save_setting_values" translatable="false">
-    	<item>0</item>
-	<item>1</item>
-	<item>2</item>
-	<item>3</item>		
-    </string-array>
-	
+
     <!-- carrier size -->	
     <string-array name="entries_carrier_size_style" translatable="false">
-	 <item>@string/carrier_size_style_normal</item>
-	 <item>@string/carrier_size_style_small</item>
-	 <item>@string/carrier_size_style_big</item>
+        <item>@string/carrier_size_style_normal</item>
+        <item>@string/carrier_size_style_small</item>
+        <item>@string/carrier_size_style_big</item>
     </string-array>
-	
+
     <string-array name="values_carrier_size_style" translatable="false">
- 	<item>5</item>
- 	<item>4</item>
- 	<item>6</item>
+        <item>5</item>
+        <item>4</item>
+        <item>6</item>
     </string-array>
     <string-array name="color_entries" translatable="false">
         <item>@string/night_mode_color_black</item>
@@ -167,14 +152,14 @@
         <item>3</item>
     </string-array>
 
-        <!-- clear all recents button location -->
+    <!-- clear all recents button location -->
     <string-array name="recents_clear_all_location_entries">
         <item>@string/recents_clear_all_location_top_right</item>
         <item>@string/recents_clear_all_location_top_left</item>
-        <item>@string/recents_clear_all_location_top_center</item>        
+        <item>@string/recents_clear_all_location_top_center</item>
         <item>@string/recents_clear_all_location_bottom_right</item>
         <item>@string/recents_clear_all_location_bottom_left</item>
-        <item>@string/recents_clear_all_location_bottom_center</item>                  
+        <item>@string/recents_clear_all_location_bottom_center</item>
     </string-array>
 
     <string-array name="recents_clear_all_location_values" translatable="false">
@@ -182,10 +167,10 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        <item>4</item>  
-        <item>5</item>                                  
+        <item>4</item>
+        <item>5</item>
     </string-array>
-    
+
         <!-- Screen recorder video sizes -->
     <string-array name="screen_recorder_video_sizes" translatable="false">
         <item>@string/screen_recorder_size_240x400</item>
@@ -262,14 +247,14 @@
         <item>3</item>
         <item>4</item>
     </string-array>
-    
+
     <!-- clock size -->	
     <string-array name="entries_clock_size_style">
          <item>@string/clock_size_style_normal</item>
          <item>@string/clock_size_style_small</item>
          <item>@string/clock_size_style_big</item>
     </string-array>
-	
+
     <string-array name="values_clock_size_style" translatable="false">
         <item>5</item>
         <item>4</item>
