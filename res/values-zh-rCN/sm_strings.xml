@@ -237,7 +237,7 @@
   <string name="ga_rename_action">完成</string>
   <string name="ga_cancel_action">取消</string>
   <string name="ga_gestures_loading">加载手势中...</string>
-  <string name="ga_gestures_empty">为添加手势</string>
+  <string name="ga_gestures_empty">未添加手势</string>
   <string name="ga_gestures_activity">手势</string>
   <string name="ga_gestures_edit">编辑</string>
   <string name="ga_gestures_delete">删除</string>
