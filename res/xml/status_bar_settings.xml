@@ -28,14 +28,15 @@
             android:title="@string/status_bar_clock_style_title"
             android:dialogTitle="@string/status_bar_clock_style_title"
             android:entries="@array/status_bar_clock_style_entries"
-            android:entryValues="@array/status_bar_clock_style_values" />	
+            android:entryValues="@array/status_bar_clock_style_values" />
 
         <ListPreference
             android:key="clock_size"
             android:dialogTitle="@string/clock_size_style"
             android:title="@string/clock_size_style"
             android:entries="@array/entries_clock_size_style"
-            android:entryValues="@array/values_clock_size_style" />
+            android:entryValues="@array/values_clock_size_style"
+            android:defaultValue="0" />
 
 
         <ListPreference
@@ -74,7 +75,8 @@
             android:title="@string/show_carrier_speed_title"
             android:entries="@array/entries_carrier_size_style"
             android:entryValues="@array/values_carrier_size_style"
-            android:dependency="status_bar_carrier" />
+            android:dependency="status_bar_carrier" 
+            android:defaultValue="3" />
 
     </PreferenceCategory>
 
