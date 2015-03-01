@@ -76,7 +76,7 @@
             android:entries="@array/entries_carrier_size_style"
             android:entryValues="@array/values_carrier_size_style"
             android:dependency="status_bar_carrier" 
-            android:defaultValue="3" />
+            android:defaultValue="0" />
 
     </PreferenceCategory>
 
