@@ -264,5 +264,6 @@
   <string name="volume_steps_ring_title">铃声</string>
   <string name="volume_steps_system_title">系统</string>
   <string name="volume_steps_voice_call_title">语音通话</string>
+  <string name="screenshot_sound_title">截图声音</string>
 
 </resources>
