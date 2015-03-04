@@ -1228,14 +1228,11 @@ public class SettingsActivity extends Activity
                             UserManager.DISALLOW_DEBUGGING_FEATURES)) {
                         removeTile = true;
                     }
-                } else if (id == R.id.button_settings) {
-                    boolean hasDeviceKeys = getResources().getInteger(
-                            com.android.internal.R.integer.config_deviceHardwareKeys) != 0;
-                    if (!hasDeviceKeys) {
-                        removeTile = true;
-                    }
                 } else if (id == R.id.performance_settings) {
-                    if (!(pm.hasPowerProfiles() || (showDev && !Build.TYPE.equals("user")))) {
+                    final boolean forceHide =
+                            getResources().getBoolean(R.bool.config_hidePerformanceSettings);
+                    if (forceHide ||
+                            !(pm.hasPowerProfiles() || (showDev && !Build.TYPE.equals("user")))) {
                         removeTile = true;
                     }
                 }
