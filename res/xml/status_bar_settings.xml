@@ -19,7 +19,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/status_bar_title">
 
-<<<<<<< HEAD
     <PreferenceCategory
         android:key="clock_category"
         android:title="@string/clock_category">
