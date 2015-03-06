@@ -19,6 +19,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/status_bar_title">
 
+<<<<<<< HEAD
     <PreferenceCategory
         android:key="clock_category"
         android:title="@string/clock_category">
@@ -117,6 +118,13 @@
             android:entries="@array/entries_status_bar_network_traffic_style"
             android:entryValues="@array/values_status_bar_network_traffic_style"
             android:defaultValue="3" />
+
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="status_bar_show_empty_sims"
+            android:defaultValue="true"
+            android:title="@string/status_bar_show_unused_sims_title"
+            android:summaryOn="@string/status_bar_show_unused_sims_title_summary_on"
+            android:summaryOff="@string/status_bar_show_unused_sims_title_summary_off" />
 
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="show_su_icon"
