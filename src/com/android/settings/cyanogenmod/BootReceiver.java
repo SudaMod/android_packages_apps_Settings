@@ -29,10 +29,10 @@ import com.android.settings.ButtonSettings;
 import com.android.settings.DisplaySettings;
 import com.android.settings.R;
 import com.android.settings.Utils;
-import com.android.settings.hardware.DisplayColor;
-import com.android.settings.hardware.DisplayGamma;
 import com.android.settings.hardware.VibratorIntensity;
 import com.android.settings.sudamod.GestureSettings;
+import com.android.settings.livedisplay.DisplayColor;
+import com.android.settings.livedisplay.DisplayGamma;
 
 import java.util.Arrays;
 import java.util.List;
@@ -70,10 +70,9 @@ public class BootReceiver extends BroadcastReceiver {
         /* Restore the hardware tunable values */
         DisplaySettings.restore(ctx);
         ButtonSettings.restoreKeyDisabler(ctx);
-        DisplayColor.restore(ctx);
         DisplayGamma.restore(ctx);
         VibratorIntensity.restore(ctx);
-		GestureSettings.restore(ctx);
+        GestureSettings.restore(ctx);
     }
 
     private void initFreqCapFiles(Context ctx)
