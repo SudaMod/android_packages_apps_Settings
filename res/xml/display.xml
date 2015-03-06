@@ -104,12 +104,20 @@
                 android:defaultValue="false"
                 settings:advanced="true"/>
 
+        <!-- Screen Recorder -->
+        <PreferenceScreen
+                android:key="screen_recorder"
+                android:title="@string/screen_recorder_title"
+                android:summary="@string/screen_recorder_summary"
+                android:fragment="com.android.settings.sudamod.ScreenRecorderSettings" />
+
         <!-- Cast screen -->
         <PreferenceScreen
                 android:key="wifi_display"
                 android:title="@string/wifi_display_settings_title"
                 settings:keywords="@string/keywords_display_cast_screen"
                 android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -183,20 +191,6 @@
                 android:key="notification_light"
                 android:title="@string/notification_light_title"
                 android:fragment="com.android.settings.notificationlight.NotificationLightSettings" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-            android:key="calibration"
-            android:title="@string/category_calibration"
-            settings:advanced="true">
-
-        <!-- Screen Recorder -->
-        <PreferenceScreen
-                android:key="screen_recorder"
-                android:title="@string/screen_recorder_title"
-                android:summary="@string/screen_recorder_summary"
-                android:fragment="com.android.settings.sudamod.ScreenRecorderSettings" />
 
     </PreferenceCategory>
 
