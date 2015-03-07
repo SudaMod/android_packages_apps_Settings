@@ -73,11 +73,8 @@ public class BootReceiver extends BroadcastReceiver {
         ButtonSettings.restoreKeyDisabler(ctx);
         DisplayGamma.restore(ctx);
         VibratorIntensity.restore(ctx);
-<<<<<<< HEAD
         GestureSettings.restore(ctx);
-=======
         InputMethodAndLanguageSettings.restore(ctx);
->>>>>>> 89f53026b2adf6eac5aac21baabc8d3369f07797
     }
 
     private void initFreqCapFiles(Context ctx)
