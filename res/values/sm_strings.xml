@@ -435,4 +435,7 @@
     <!-- Screenshot sound -->
     <string name="screenshot_sound_title">Screenshot sound</string>
 
+    <!-- NightMode Tile -->
+    <string name="qs_tile_nightmode">NightMode</string>
+
 </resources>
