@@ -31,6 +31,7 @@ import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.hardware.VibratorIntensity;
 import com.android.settings.sudamod.GestureSettings;
+import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.livedisplay.DisplayColor;
 import com.android.settings.livedisplay.DisplayGamma;
 
@@ -72,7 +73,11 @@ public class BootReceiver extends BroadcastReceiver {
         ButtonSettings.restoreKeyDisabler(ctx);
         DisplayGamma.restore(ctx);
         VibratorIntensity.restore(ctx);
+<<<<<<< HEAD
         GestureSettings.restore(ctx);
+=======
+        InputMethodAndLanguageSettings.restore(ctx);
+>>>>>>> 89f53026b2adf6eac5aac21baabc8d3369f07797
     }
 
     private void initFreqCapFiles(Context ctx)
