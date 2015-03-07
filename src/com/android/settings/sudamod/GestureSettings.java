@@ -181,10 +181,6 @@ public class GestureSettings extends SettingsPreferenceFragment implements
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
-                private boolean mHasTapToWake;
-
-            CmHardwareManager cmHardwareManager =
-                (CmHardwareManager) context.getSystemService(Context.CMHW_SERVICE);
 
                 @Override
                 public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
@@ -202,6 +198,9 @@ public class GestureSettings extends SettingsPreferenceFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     ArrayList<String> result = new ArrayList<String>();
+
+                CmHardwareManager cmHardwareManager =
+                    (CmHardwareManager) context.getSystemService(Context.CMHW_SERVICE);
 
                     if (!isLiftToWakeAvailable(context)) {
                         result.add(KEY_LIFT_TO_WAKE);
