@@ -266,5 +266,7 @@
   <string name="volume_steps_voice_call_title">语音通话</string>
   <string name="screenshot_sound_title">截图声音</string>
   <string name="qs_tile_nightmode">夜间模式</string>
+  <string name="longpress_lock_icon_to_sleep_title">长摁解锁图标关闭屏幕</string>
+  <string name="longpress_lock_icon_to_sleep_summary">双击解锁和智能锁定开启时此功能无效</string>
 
 </resources>
