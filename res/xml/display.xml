@@ -52,6 +52,14 @@
                 android:defaultValue="0"
                 android:key="nightcolor"
                 android:dependency="nightswitch"/>
+
+        <!-- Lcd density -->
+        <ListPreference
+                android:key="lcd_density"
+                android:title="@string/lcd_density"
+                android:persistent="false"
+                settings:advanced="true" />
+
         <!-- LiveDisplay -->
         <PreferenceScreen
                 android:key="live_display"

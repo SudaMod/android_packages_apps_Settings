@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2010 The Android Open Source Project
  * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2014 The SudaMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +34,8 @@ import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
 import android.app.Activity;
 import android.app.ActivityManagerNative;
 import android.app.Dialog;
+import android.app.IActivityManager;
+import android.app.ProgressDialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -42,11 +45,13 @@ import android.content.SharedPreferences;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -60,6 +65,7 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.provider.Settings.Global;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -89,6 +95,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
+    private static final String KEY_LCD_DENSITY = "lcd_density";
 
     // ListView Animations Key
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
@@ -105,6 +112,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private final Configuration mCurConfig = new Configuration();
 
+    private ListPreference mLcdDensityPreference;
     private ListPreference mScreenTimeoutPreference;
     private Preference mScreenSaverPreference;
     private SwitchPreference mAccelerometer;
@@ -193,6 +201,41 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mFontSizePref.setOnPreferenceChangeListener(this);
         mFontSizePref.setOnPreferenceClickListener(this);
 
+        //lcd density
+        mLcdDensityPreference = (ListPreference) findPreference(KEY_LCD_DENSITY);
+        if (mLcdDensityPreference != null) {
+            final String defaultText = getResources().getString(R.string.lcd_density_default);
+            int defaultDensity = DisplayMetrics.DENSITY_DEVICE;
+            int currentDensity = DisplayMetrics.DENSITY_CURRENT;
+            if (currentDensity < 10 || currentDensity >= 1000) {
+                // Unsupported value, force default
+                currentDensity = defaultDensity;
+            }
+            int currentIndex = -1;
+            String[] densityEntries = new String[8];
+            String[] densityValues = new String[8];
+            for (int idx = 0; idx < 8; ++idx) {
+                int pct = (75 + idx*5);
+                int val = defaultDensity * pct / 100;
+                densityEntries[idx] = Integer.toString(val);
+                if (pct == 100) {
+                  densityEntries[idx] += " (" + defaultText + ")";
+                }
+                densityValues[idx] = Integer.toString(val);
+                if (currentDensity == val) {
+                    currentIndex = idx;
+                }
+            }
+            mLcdDensityPreference.setEntries(densityEntries);
+            mLcdDensityPreference.setEntryValues(densityValues);
+            if (currentIndex != -1) {
+                mLcdDensityPreference.setValueIndex(currentIndex);
+            }
+            mLcdDensityPreference.setOnPreferenceChangeListener(this);
+            updateLcdDensityPreferenceDescription(currentDensity);
+        }
+
+        //nightmode
         mNightSwitch = (SwitchPreference) findPreference("nightswitch");
         int NightMode = Settings.Global.getInt(
              resolver, Settings.Global.NIGHT_MODE, 0);
@@ -343,6 +386,17 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         preference.setSummary(summary);
     }
 
+    private void updateLcdDensityPreferenceDescription(int currentDensity) {
+        final String defaultText = getResources().getString(R.string.lcd_density_default);
+        int defaultDensity = DisplayMetrics.DENSITY_DEVICE;
+        ListPreference preference = mLcdDensityPreference;
+        String summary = getResources().getString(R.string.lcd_density_summary, currentDensity);
+        if (currentDensity == defaultDensity) {
+            summary += " (" + defaultText + ")";
+        }
+        preference.setSummary(summary);
+    }
+
     private void disableUnusableTimeouts(ListPreference screenTimeoutPreference) {
         final DevicePolicyManager dpm =
                 (DevicePolicyManager) getActivity().getSystemService(
@@ -463,6 +517,43 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
     }
 
+    private void writeLcdDensityPreference(final Context context, int value) {
+        try {
+            SystemProperties.set("persist.sys.lcd_density", Integer.toString(value));
+        } catch (RuntimeException e) {
+            Log.e(TAG, "Unable to save LCD density");
+            return;
+        }
+        final IActivityManager am = ActivityManagerNative.asInterface(
+                ServiceManager.checkService("activity"));
+        AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected void onPreExecute() {
+                ProgressDialog dialog = new ProgressDialog(context);
+                dialog.setMessage(getResources().getString(R.string.restarting_ui));
+                dialog.setCancelable(false);
+                dialog.setIndeterminate(true);
+                dialog.show();
+            }
+            @Override
+            protected Void doInBackground(Void... params) {
+                // Give the user a second to see the dialog
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    // Ignore
+                }
+                // Restart the UI
+                try {
+                    am.restart();
+                } catch (RemoteException e) {
+                    Log.e(TAG, "Failed to restart");
+                }
+                return null;
+            }
+        };
+        task.execute();
+    }
 
     // === Pulse notification light ===
 
@@ -538,6 +629,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             boolean auto = (Boolean) objValue;
             Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE,
                     auto ? SCREEN_BRIGHTNESS_MODE_AUTOMATIC : SCREEN_BRIGHTNESS_MODE_MANUAL);
+        } else if (KEY_LCD_DENSITY.equals(key)) {
+            try {
+                int value = Integer.parseInt((String) objValue);
+                writeLcdDensityPreference(preference.getContext(), value);
+                updateLcdDensityPreferenceDescription(value);
+            } catch (NumberFormatException e) {
+                Log.e(TAG, "could not persist display density setting", e);
+            }
         } else if (preference == mDozePreference) {
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), DOZE_ENABLED, value ? 1 : 0);

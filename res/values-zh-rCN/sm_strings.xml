@@ -268,5 +268,10 @@
   <string name="qs_tile_nightmode">夜间模式</string>
   <string name="longpress_lock_icon_to_sleep_title">长按熄屏</string>
   <string name="longpress_lock_icon_to_sleep_summary">长按锁屏图标将关闭屏幕</string>
+  <string name="lcd_density">屏幕密度</string>
+  <string name="dialog_title_lcd_density">屏幕密度</string>
+  <string name="lcd_density_summary">%d DPI</string>
+  <string name="lcd_density_default">默认</string>
+  <string name="restarting_ui">重启UI中\u2026</string>
 
 </resources>
