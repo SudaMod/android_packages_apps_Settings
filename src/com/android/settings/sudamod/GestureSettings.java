@@ -86,13 +86,14 @@ public class GestureSettings extends SettingsPreferenceFragment implements
 
         mTapToWake = (SwitchPreference) findPreference(KEY_TAP_TO_WAKE);
 
-        if (!mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
+        if (mTapToWake != null && category_gesture != null &&
+            !mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
             category_gesture.removePreference(mTapToWake);
             mTapToWake = null;
         }
 
         mLiftToWakePreference = (SwitchPreference) findPreference(KEY_LIFT_TO_WAKE);
-        if (isLiftToWakeAvailable(activity)) {
+        if (category_direct_control != null && mLiftToWakePreference != null && isLiftToWakeAvailable(activity)) {
             mLiftToWakePreference.setOnPreferenceChangeListener(this);
         } else {
             category_direct_control.removePreference(mLiftToWakePreference);
