@@ -1694,39 +1694,39 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         } else if (preference == mKillAppLongpressBack) {
             writeKillAppLongpressBackOptions();
         } else if (preference == mServer) {
-			AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-			alert.setTitle(R.string.captive_portal_server);
-			alert.setMessage(R.string.captive_portal_server_explain);
-			LinearLayout parent = new LinearLayout(getActivity());
-			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-					LinearLayout.LayoutParams.MATCH_PARENT,
-					LinearLayout.LayoutParams.MATCH_PARENT);
-			parent.setLayoutParams(params);
-			// Set an EditText view to get user input
-			final EditText input = new EditText(getActivity());
-			input.setText(TextUtils.isEmpty(mServerText) ? ""
-					: mServerText);
-			input.setSelection(input.getText().length());
-			params.setMargins(60, 0, 60, 0);
-			input.setLayoutParams(params);
-			parent.addView(input);
-			alert.setView(parent);
-			alert.setPositiveButton(getString(android.R.string.ok),
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int whichButton) {
-							String value = ((Spannable) input.getText())
-									.toString().trim();
-							Settings.Global
-									.putString(
-											getActivity().getContentResolver(),
-											Settings.Global.CAPTIVE_PORTAL_SERVER,
-											value);
-							updateServerTextSummary();
-						}
-					});
-			alert.setNegativeButton(getString(android.R.string.cancel), null);
-			alert.show();
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+            alert.setTitle(R.string.captive_portal_server);
+            alert.setMessage(R.string.captive_portal_server_explain);
+            LinearLayout parent = new LinearLayout(getActivity());
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT);
+            parent.setLayoutParams(params);
+            // Set an EditText view to get user input
+            final EditText input = new EditText(getActivity());
+            input.setText(TextUtils.isEmpty(mServerText) ? ""
+                    : mServerText);
+            input.setSelection(input.getText().length());
+            params.setMargins(60, 0, 60, 0);
+            input.setLayoutParams(params);
+            parent.addView(input);
+            alert.setView(parent);
+            alert.setPositiveButton(getString(android.R.string.ok),
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog,
+                                int whichButton) {
+                            String value = ((Spannable) input.getText())
+                                    .toString().trim();
+                            Settings.Global
+                                    .putString(
+                                            getActivity().getContentResolver(),
+                                            Settings.Global.CAPTIVE_PORTAL_SERVER,
+                                            value);
+                            updateServerTextSummary();
+                        }
+                    });
+            alert.setNegativeButton(getString(android.R.string.cancel), null);
+            alert.show();
         } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }

@@ -50,6 +50,24 @@
             android:title="@string/owner_info_settings_title"
             android:summary="@string/owner_info_settings_summary"/>
 
+        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+                android:key="lockscreen_visualizer"
+                android:title="@string/lockscreen_visualizer_title"
+                android:defaultValue="true"
+                settings:advanced="true"/>
+
+        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+            android:key="long_press_lock_icon_to_sleep"
+            android:title="@string/longpress_lock_icon_to_sleep_title"
+            android:summary="@string/longpress_lock_icon_to_sleep_summary" />
+
+        <Preference android:key="manage_trust_agents"
+                    android:title="@string/manage_trust_agents"
+                    android:summary="@string/manage_trust_agents_summary"
+                    android:persistent="false"
+                    android:fragment="com.android.settings.TrustAgentSettings"
+                    settings:advanced="true"/>
+
     </PreferenceCategory>
 
 </PreferenceScreen>

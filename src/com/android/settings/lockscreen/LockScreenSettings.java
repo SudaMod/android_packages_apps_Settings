@@ -69,7 +69,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment
     private static final String KEY_POWER_INSTANTLY_LOCKS = "power_button_instantly_locks";
     private static final String KEY_TRUST_AGENT = "trust_agent";
     private static final String KEY_MANAGE_TRUST_AGENTS = "manage_trust_agents";
-	private static final String KEY_VISIBLE_GESTURE = "visiblegesture";
+    private static final String KEY_VISIBLE_GESTURE = "visiblegesture";
 
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_IMPROVE_REQUEST = 124;
@@ -90,7 +90,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment
     private SwitchPreference mBiometricWeakLiveliness;
     private SwitchPreference mVisiblePattern;
     private SwitchPreference mPowerButtonInstantlyLocks;
-	private SwitchPreference mVisibleGesture;
+    private SwitchPreference mVisibleGesture;
 
     private DevicePolicyManager mDPM;
 
@@ -175,9 +175,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment
         // visible pattern
         mVisiblePattern = (SwitchPreference) root.findPreference(KEY_VISIBLE_PATTERN);
 
-		// visible gesture
-		mVisibleGesture = (SwitchPreference) root.findPreference(KEY_VISIBLE_GESTURE);
-		
+        // visible gesture
+        mVisibleGesture = (SwitchPreference) root.findPreference(KEY_VISIBLE_GESTURE);
+        
         // lock instantly on power key press
         mPowerButtonInstantlyLocks = (SwitchPreference) root.findPreference(
                 KEY_POWER_INSTANTLY_LOCKS);
@@ -199,8 +199,8 @@ public class LockScreenSettings extends SettingsPreferenceFragment
             if (securityCategory != null && mVisiblePattern != null) {
                 securityCategory.removePreference(root.findPreference(KEY_VISIBLE_PATTERN));
             }
-			if (securityCategory != null && mVisibleGesture != null) {
-				securityCategory.removePreference(root.findPreference(KEY_VISIBLE_GESTURE));
+            if (securityCategory != null && mVisibleGesture != null) {
+                securityCategory.removePreference(root.findPreference(KEY_VISIBLE_GESTURE));
             }
         }
 
@@ -280,9 +280,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment
                 case DevicePolicyManager.PASSWORD_QUALITY_COMPLEX:
                     resid = R.xml.security_settings_password;
                     break;
-				case DevicePolicyManager.PASSWORD_QUALITY_GESTURE_WEAK:
-					resid = R.xml.security_settings_gesture;
-					break;	
+                case DevicePolicyManager.PASSWORD_QUALITY_GESTURE_WEAK:
+                    resid = R.xml.security_settings_gesture;
+                    break;    
             }
         }
         return resid;
@@ -409,7 +409,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment
         } else if (KEY_VISIBLE_PATTERN.equals(key)) {
             lockPatternUtils.setVisiblePatternEnabled((Boolean) value);
         } else if (KEY_VISIBLE_GESTURE.equals(key)) {
-			lockPatternUtils.setVisibleGestureEnabled((Boolean) value);
+            lockPatternUtils.setVisibleGestureEnabled((Boolean) value);
         } else  if (KEY_BIOMETRIC_WEAK_LIVELINESS.equals(key)) {
             if ((Boolean) value) {
                 lockPatternUtils.setBiometricWeakLivelinessEnabled(true);

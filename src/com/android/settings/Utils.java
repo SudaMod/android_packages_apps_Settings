@@ -298,7 +298,7 @@ public final class Utils {
 
         return false;
     }
-	
+
     public static boolean updateTileToSpecificActivityFromMetaDataOrRemove(Context context,
             DashboardTile tile) {
 

@@ -29,11 +29,6 @@
         android:dialogTitle="@string/button_backlight_title"
         android:persistent="false" />
 
-    <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
-        android:key="long_press_lock_icon_to_sleep"
-        android:title="@string/longpress_lock_icon_to_sleep_title"
-        android:summary="@string/longpress_lock_icon_to_sleep_summary" />
-
     <PreferenceCategory
         android:key="recents_options"
         android:title="@string/recents_options" >

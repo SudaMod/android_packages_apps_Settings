@@ -155,7 +155,7 @@
   <string name="omniswitch_start_settings_title">设置</string>
   <string name="omniswitch_start_settings_summary">打开OmniSwitch设置</string>
   <string name="omniswitch_first_time_title">提示</string>
-  <string name="omniswitch_first_time_message">请确保你已经启用了OmniSwitch。请在稍后进入\"设置\"启用</string>
+  <string name="omniswitch_first_time_message">注意:\n请确保你已经启用了OmniSwitch,否则将无法替代系统最近任务。请在稍后进入\"设置\"启用</string>
   <string name="screen_recorder_title">屏幕录像</string>
   <string name="screen_recorder_summary">调整屏幕录像设置</string>
   <string name="screen_recorder_video_dimensions_title">视频尺寸</string>

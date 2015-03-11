@@ -31,4 +31,8 @@
             android:summary="@string/omniswitch_start_settings_summary"
             android:persistent="false" />
 
+    <PreferenceCategory
+            android:title="@string/omniswitch_first_time_message"
+            android:persistent="false" />
+
  </PreferenceScreen>
