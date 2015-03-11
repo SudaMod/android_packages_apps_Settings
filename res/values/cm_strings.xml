@@ -1045,6 +1045,7 @@
     <string name="lockscreen_none_target">None</string>
     <string name="lockscreen_message">Tap an icon on the left or right to reassign a lock screen shortcut.</string>
     <string name="lockscreen_choose_action_title">Choose action</string>
+    <string name="lockscreen_visualizer_title">Display music visualizer</string>
 
     <string name="navigation_ring_title">Navigation ring targets</string>
     <string name="navigation_ring_message">Tap the edit icon to open the navigation ring for editing.\n\nSelect a target to configure its behavior.\n\nTap the \'\u2713\' icon to save your changes, or \'Restore defaults\' to reset the settings to defaults.</string>
@@ -1080,6 +1081,7 @@
 
     <string name="advanced">Advanced</string>
     <string name="advanced_mode_title">Advanced mode</string>
+    <string name="advanced_mode_summary">Show additional options for configuring your device in various settings menus</string>
 
     <string name="category_misc">Miscellaneous</string>
     <string name="category_vibrate">Vibrate</string>

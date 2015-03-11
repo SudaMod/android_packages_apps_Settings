@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2008 The Android Open Source Project
+    Copyright (C) 2015 The SudaMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -20,7 +21,8 @@
         <!-- Advanced mode -->
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
             android:key="advanced_mode"
-            android:title="@string/advanced_mode_title"/>
+            android:title="@string/advanced_mode_title"
+            android:summary="@string/advanced_mode_summary" />
 
         <!-- System update settings - launches activity -->
         <PreferenceScreen android:key="system_update_settings"
