@@ -266,6 +266,7 @@
   <string name="volume_steps_voice_call_title">语音通话</string>
   <string name="screenshot_sound_title">截图声音</string>
   <string name="qs_tile_nightmode">夜间模式</string>
+  <string name="qs_tile_screenshot">屏幕截图</string>
   <string name="longpress_lock_icon_to_sleep_title">长按熄屏</string>
   <string name="longpress_lock_icon_to_sleep_summary">长按锁屏图标将关闭屏幕</string>
   <string name="lcd_density">屏幕密度</string>

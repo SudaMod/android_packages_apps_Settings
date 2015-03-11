@@ -437,6 +437,8 @@
 
     <!-- NightMode Tile -->
     <string name="qs_tile_nightmode">NightMode</string>
+    <!-- Screenshot Tile -->
+    <string name="qs_tile_screenshot">Screenshot</string>
 
     <!-- Long press on lock screen lock icon to sleep -->
     <string name="longpress_lock_icon_to_sleep_title">Long press lock icon to sleep</string>
