@@ -737,6 +737,7 @@
   <string name="lockscreen_none_target">无</string>
   <string name="lockscreen_message">轻触左边或右边的图标来重新分配锁屏快捷方式。</string>
   <string name="lockscreen_choose_action_title">选择操作</string>
+  <string name="lockscreen_visualizer_title">显示音乐可视化效果</string>
   <string name="whisperpush_title">WhisperPush</string>
   <string name="whisperpush_summary">管理安全短信设置</string>
   <string name="navigation_ring_title">导航环目标</string>
