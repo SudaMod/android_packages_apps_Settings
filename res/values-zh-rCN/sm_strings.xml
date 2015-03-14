@@ -147,15 +147,6 @@
   <string name="recents_clear_all_location_bottom_center">下方中央</string>
   <string name="recents_clear_all_dismiss_all_title">清理所有任务</string>
   <string name="recents_clear_all_dismiss_all_summary">选择是否要忽略清理所有前台任务</string> 
-  <string name="omniswitch_settings_title">OmniSwitch</string>
-  <string name="omniswitch_settings_title_summary">OmniSwitch快捷设置</string>  
-  <string name="omniswitch_category">OmniSwitch</string>
-  <string name="recents_use_omniswitch_title">替代系统最近任务</string>
-  <string name="recents_use_omniswitch_summary">使用OmniSwitch代替系统最近任务</string>
-  <string name="omniswitch_start_settings_title">设置</string>
-  <string name="omniswitch_start_settings_summary">打开OmniSwitch设置</string>
-  <string name="omniswitch_first_time_title">提示</string>
-  <string name="omniswitch_first_time_message">注意:\n请确保你已经启用了OmniSwitch,否则将无法替代系统最近任务。请在稍后进入\"设置\"启用</string>
   <string name="screen_recorder_title">屏幕录像</string>
   <string name="screen_recorder_summary">调整屏幕录像设置</string>
   <string name="screen_recorder_video_dimensions_title">视频尺寸</string>
