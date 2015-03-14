@@ -40,10 +40,4 @@
             android:defaultValue="3"
             android:dependency="show_clear_all_recents" />
 
-        <PreferenceScreen
-            android:id="@+id/omniswitch"
-            android:title="@string/omniswitch_settings_title"
-            android:summary="@string/omniswitch_settings_title_summary"	    
-            android:fragment="com.android.settings.sudamod.OmniSwitch" />
-
 </PreferenceScreen>
