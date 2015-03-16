@@ -312,7 +312,7 @@
   <string name="five_second">5 秒</string>
   <string name="veryeasy_shake">很轻</string>
   <string name="easy_shake">轻</string>
-  <string name="medium_shake">Default</string>
+  <string name="medium_shake">默认</string>
   <string name="hard_shake">重</string>
   <string name="veryhard_shake">很重</string>
   <string name="strong_shake">极重</string>
