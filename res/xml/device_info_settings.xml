@@ -130,8 +130,8 @@
         <!-- Mod version -->
         <Preference android:key="mod_version"
                 style="?android:preferenceInformationStyle"
-                android:title="@string/mod_version"
-                android:summary="@string/mod_version_default" />
+                android:title="@string/suda_version"
+                android:summary="@string/suda_version_default" />
 
         <!-- Device hardware processor infol -->
         <Preference android:key="device_processor"
