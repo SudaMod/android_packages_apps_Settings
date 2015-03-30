@@ -52,4 +52,12 @@
         android:title="@string/date_time_24hour"
         />
 
+    <PreferenceScreen
+        android:title="@string/wat"
+        android:summary="@string/wats">
+        <intent android:targetPackage="com.cyanogenmod.lockclock" 
+        android:action="android.intent.action.MAIN" 
+        android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+    </PreferenceScreen>
+
 </PreferenceScreen>
