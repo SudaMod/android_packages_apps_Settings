@@ -28,6 +28,21 @@
     <string name="wat">cLock</string>
     <string name="wats">Shortcut for cLock</string> 
 
+    <!-- Advanced Device Info -->
+    <string name="advanced_device_info_title">Advanced information</string>
+    <string name="advanced_device_info_summary">Information about CPU, GPU etc.</string>
+    <!-- CPU -->
+    <string name="cpu_info">CPU</string>
+    <string name="cpu_features">Processor features</string>
+    <!-- Memory -->
+    <string name="mem_info">Memory</string>
+    <!-- GPU -->
+    <string name="gpu_title" translatable="false">GPU / OpenGL</string>
+    <string name="gpu_vendor">GPU vendor</string>
+    <string name="gpu_renderer">GPU renderer</string>
+    <string name="gpu_gl_version">OpenGL version</string>
+    <string name="gpu_gl_extensions">OpenGL extensions</string>
+    <string name="gpu_shader_version">Shader version</string>
     <!-- Captive Portal -->
     <string name="captive_portal_detection">Captive portal detection</string>
     <string name="captive_portal_detection_summary">If disabled, a connection to google servers is not required in order to detect data connection.</string>	

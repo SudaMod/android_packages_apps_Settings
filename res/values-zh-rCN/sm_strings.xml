@@ -24,6 +24,16 @@
   <string name="location_unknow">未知</string>  
   <string name="suda_version">SudaMod版本</string>
   <string name="suda_version_default">未知</string>
+  <string name="advanced_device_info_title">高级信息</string>
+  <string name="advanced_device_info_summary">CPU、GPU等</string>
+  <string name="cpu_info">CPU</string>
+  <string name="cpu_features">处理器特性</string>
+  <string name="mem_info">运行内存</string>
+  <string name="gpu_vendor">GPU供应商</string>
+  <string name="gpu_renderer">GPU渲染器</string>
+  <string name="gpu_gl_version">OpenGL版本</string>
+  <string name="gpu_gl_extensions">OpenGL扩展</string>
+  <string name="gpu_shader_version">Shader版本</string>   
   <string name="captive_portal_detection">网络状况检测</string>
   <string name="captive_portal_detection_summary">如果状态栏有感叹号，可关闭网络状况检测</string>
   <string name="captive_portal_server">自定义验证服务器</string>
