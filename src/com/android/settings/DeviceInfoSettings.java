@@ -62,7 +62,6 @@ import java.util.regex.Pattern;
 public class DeviceInfoSettings extends SettingsPreferenceFragment implements Indexable {
 
     private static final String LOG_TAG = "DeviceInfoSettings";
-    private static final String FILENAME_PROC_VERSION = "/proc/version";
     private static final String FILENAME_MSV = "/sys/board_properties/soc/msv";
 
     private static final String KEY_MANUAL = "manual";
@@ -131,7 +130,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL);
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
-        findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
         setValueSummary(KEY_MOD_VERSION, "ro.sm.version");
         findPreference(KEY_MOD_VERSION).setEnabled(true);
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
@@ -398,53 +396,12 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         }
     }
 
-    public static String getFormattedKernelVersion() {
-        try {
-            return formatKernelVersion(readLine(FILENAME_PROC_VERSION));
-
-        } catch (IOException e) {
-            Log.e(LOG_TAG,
-                "IO Exception when getting kernel version for Device Info screen",
-                e);
-
-            return "Unavailable";
-        }
-    }
-
     private static String constructApiLevelString() {
         int sdkInt = cyanogenmod.os.Build.CM_VERSION.SDK_INT;
         StringBuilder builder = new StringBuilder();
         builder.append(cyanogenmod.os.Build.getNameForSDKInt(sdkInt))
                 .append(" (" + sdkInt + ")");
         return builder.toString();
-    }
-
-    public static String formatKernelVersion(String rawKernelVersion) {
-        // Example (see tests for more):
-        // Linux version 3.0.31-g6fb96c9 (android-build@xxx.xxx.xxx.xxx.com) \
-        //     (gcc version 4.6.x-xxx 20120106 (prerelease) (GCC) ) #1 SMP PREEMPT \
-        //     Thu Jun 28 11:02:39 PDT 2012
-
-        final String PROC_VERSION_REGEX =
-            "Linux version (\\S+) " + /* group 1: "3.0.31-g6fb96c9" */
-            "\\((\\S+?)\\) " +        /* group 2: "x@y.com" (kernel builder) */
-            "(?:\\(gcc.+? \\)) " +    /* ignore: GCC version information */
-            "(#\\d+) " +              /* group 3: "#1" */
-            "(?:.*?)?" +              /* ignore: optional SMP, PREEMPT, and any CONFIG_FLAGS */
-            "((Sun|Mon|Tue|Wed|Thu|Fri|Sat).+)"; /* group 4: "Thu Jun 28 11:02:39 PDT 2012" */
-
-        Matcher m = Pattern.compile(PROC_VERSION_REGEX).matcher(rawKernelVersion);
-        if (!m.matches()) {
-            Log.e(LOG_TAG, "Regex did not match on /proc/version: " + rawKernelVersion);
-            return "Unavailable";
-        } else if (m.groupCount() < 4) {
-            Log.e(LOG_TAG, "Regex match on /proc/version only returned " + m.groupCount()
-                    + " groups");
-            return "Unavailable";
-        }
-        return m.group(1) + "\n" +                 // 3.0.31-g6fb96c9
-            m.group(2) + " " + m.group(3) + "\n" + // x@y.com #1
-            m.group(4);                            // Thu Jun 28 11:02:39 PDT 2012
     }
 
     /**

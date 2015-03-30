@@ -16,4 +16,15 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="suda_version">SudaMod版本</string>
   <string name="suda_version_default">未知</string>
+  <string name="advanced_device_info_title">高级信息</string>
+  <string name="advanced_device_info_summary">CPU、GPU等</string>
+  <string name="cpu_processor">处理器</string>
+  <string name="cpu_processor_hardware">硬件</string>
+  <string name="cpu_type">处理器类型</string>
+  <string name="cpu_features">处理器特性</string>
+  <string name="gpu_vendor">GPU供应商</string>
+  <string name="gpu_renderer">GPU渲染器</string>
+  <string name="gpu_gl_version">OpenGL版本</string>
+  <string name="gpu_gl_extensions">OpenGL扩展</string>
+  <string name="gpu_shader_version">Shader版本</string>   
 </resources>
