@@ -52,4 +52,7 @@
     <string name="captive_portal_server_notset">Not Set Server</string>
     <string name="captive_portal_server_explain">Set captive portal server.You need to reboot your device.</string>
 
+    <!-- Version Type -->
+    <string name="mod_version_type">Type</string>
+
 </resources>

@@ -140,6 +140,11 @@
                 android:title="@string/suda_version"
                 android:summary="@string/suda_version_default" />
 
+        <!-- Mod Type -->
+        <Preference android:key="mod_version_type"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/mod_version_type"
+                android:summary="@string/suda_version_default" />
 
         <!-- Device firmware version -->
         <Preference android:key="firmware_version" 
