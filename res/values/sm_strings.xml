@@ -67,4 +67,6 @@
     <!-- Version Type -->
     <string name="mod_version_type">Type</string>
 
+    <!-- Show Chinese Date -->
+    <string name="show_chinese_date">Show Chinese Date</string>
 </resources>

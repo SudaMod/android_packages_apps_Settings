@@ -46,6 +46,11 @@
             android:title="@string/lockscreen_visualizer_title"
             android:defaultValue="true"
             settings:advanced="true"/>
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="chinese_date_view"
+            android:title="@string/show_chinese_date"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

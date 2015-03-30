@@ -47,4 +47,5 @@
   <string name="captive_portal_server">自定义验证服务器</string>
   <string name="captive_portal_server_notset">未填写验证服务器</string>
   <string name="captive_portal_server_explain">自定义验证服务器，修改完成需要重启或者关闭打开飞行模式</string>
+  <string name="show_chinese_date">锁屏显示农历</string>
 </resources>
