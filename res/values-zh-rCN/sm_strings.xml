@@ -15,6 +15,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="show_network_speed_title">状态栏网速</string>
+  <string name="show_network_speed_summary">在状态栏显示当前网速</string>
+  <string name="status_bar_network_traffic_style_disable">禁用</string>
+  <string name="status_bar_network_traffic_style_up">显示上传速度</string>
+  <string name="status_bar_network_traffic_style_down">显示下载速度</string>
+  <string name="status_bar_network_traffic_style_all">显示上传和下载速度</string>
   <string name="wat">天气时钟</string>
   <string name="wats">天气时钟插件快捷入口</string> 
   <string name="look_up_location">查询</string>
