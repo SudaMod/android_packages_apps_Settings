@@ -43,6 +43,8 @@
     <string name="gpu_gl_version">OpenGL version</string>
     <string name="gpu_gl_extensions">OpenGL extensions</string>
     <string name="gpu_shader_version">Shader version</string>
+    <!-- SudaMod Updates -->
+    <string name="smupdate_settings_title">SudaMod updates</string>
     <!-- Captive Portal -->
     <string name="captive_portal_detection">Captive portal detection</string>
     <string name="captive_portal_detection_summary">If disabled, a connection to google servers is not required in order to detect data connection.</string>	

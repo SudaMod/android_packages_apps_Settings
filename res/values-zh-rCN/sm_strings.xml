@@ -34,6 +34,7 @@
   <string name="gpu_gl_version">OpenGL版本</string>
   <string name="gpu_gl_extensions">OpenGL扩展</string>
   <string name="gpu_shader_version">Shader版本</string>   
+  <string name="smupdate_settings_title">SudaMod 更新</string> 
   <string name="captive_portal_detection">网络状况检测</string>
   <string name="captive_portal_detection_summary">如果状态栏有感叹号，可关闭网络状况检测</string>
   <string name="captive_portal_server">自定义验证服务器</string>
