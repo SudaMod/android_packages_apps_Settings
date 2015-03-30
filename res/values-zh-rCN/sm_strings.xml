@@ -46,5 +46,6 @@
   <string name="wats">天气时钟插件快捷入口</string>
   <string name="double_tap_sleep_anywhere_title">双击睡眠</string>
   <string name="double_tap_sleep_anywhere_summary">双击锁屏任意处关闭屏幕</string>
+  <string name="show_chinese_date">锁屏显示农历</string>
 
 </resources>
