@@ -16,4 +16,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="suda_version">SudaMod Version</string>
     <string name="suda_version_default">Unknow</string>
+
+    <!-- Phonelocation -->  
+    <string name="look_up_location">Look up</string>
+    <string name="phonelocation">Phonelocation Look up</string>
+    <string name="phonelocation_tip">Location：</string>
+    <string name="phone_tip">Please Enter number</string>
+    <string name="location_unknow">Unknow</string>
+    
 </resources>
