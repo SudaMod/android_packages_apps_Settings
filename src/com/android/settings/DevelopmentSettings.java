@@ -652,7 +652,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         updateRootAccessOptions();
         updateAdvancedRebootOptions();
         updateDevelopmentShortcutOptions();
-        updateUpdateRecoveryOptions();
     }
 
     private void writeAdvancedRebootOptions() {
@@ -725,7 +724,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         resetAdbNotifyOptions();
         resetVerifyAppsOverUsbOptions();
         resetDevelopmentShortcutOptions();
-        resetUpdateRecoveryOptions();
         writeAnimationScaleOption(0, mWindowAnimationScale, null);
         writeAnimationScaleOption(1, mTransitionAnimationScale, null);
         writeAnimationScaleOption(2, mAnimatorDurationScale, null);
@@ -1524,8 +1522,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                 .setNegativeButton(android.R.string.cancel, null)
                 .create()
                 .show();
-    }
-
     }
 
     @Override
