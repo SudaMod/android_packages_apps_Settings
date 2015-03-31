@@ -50,7 +50,7 @@
                 android:title="@string/night_mode_color"
                 android:entries="@array/color_entries"
                 android:entryValues="@array/color_values"
-                android:defaultValue="0"
+                android:defaultValue="1"
                 android:key="nightcolor"
                 android:dependency="nightswitch"/>
 
