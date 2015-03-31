@@ -140,6 +140,7 @@
         <item>4</item>
         <item>6</item>
     </string-array>
+
     <string-array name="color_entries" translatable="false">
         <item>@string/night_mode_color_black</item>
         <item>@string/night_mode_color_red</item>

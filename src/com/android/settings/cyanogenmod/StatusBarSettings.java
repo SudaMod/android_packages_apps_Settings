@@ -125,14 +125,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
         mClockSize = (ListPreference) findPreference(CLOCK_SIZE_STYLE);
         int ClockSize = Settings.System.getInt(resolver,
-                Settings.System.CLOCK_SIZE, 0);
+                Settings.System.CLOCK_SIZE, 5);
         mClockSize.setValue(String.valueOf(ClockSize));
         mClockSize.setSummary(mClockSize.getEntry());
         mClockSize.setOnPreferenceChangeListener(this);
 
         mCarrierSize = (ListPreference) findPreference(CARRIER_SIZE_STYLE);
         int CarrierSize = Settings.System.getInt(resolver,
-                Settings.System.CARRIER_SIZE, 0);
+                Settings.System.CARRIER_SIZE, 5);
         mCarrierSize.setValue(String.valueOf(CarrierSize));
         mCarrierSize.setSummary(mCarrierSize.getEntry());
         mCarrierSize.setOnPreferenceChangeListener(this);

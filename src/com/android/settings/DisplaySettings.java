@@ -245,7 +245,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         mNightColor = (ListPreference) findPreference("nightcolor");
         int NightColor = Settings.Global.getInt(
-             resolver, Settings.Global.NIGHT_MODE_COLOR, 0);
+             resolver, Settings.Global.NIGHT_MODE_COLOR, 1);
         mNightColor.setValue(String.valueOf(NightColor));
         mNightColor.setSummary(mNightColor.getEntry());
         mNightColor.setOnPreferenceChangeListener(this);
