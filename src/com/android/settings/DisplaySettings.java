@@ -94,6 +94,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     // ListView Animations Key
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
+
+    // NightMode
+    private static final String KEY_NIGHT_MODE = "night_mode";
+    private static final String KEY_NIGHT_MODE_COLOR = "night_mode_color";
+
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
     private FontDialogPreference mFontSizePref;
@@ -115,6 +120,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     // ListView Animations Preference
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
+    
+    //Night Mode
+    private SwitchPreference mNightSwitch;
+    private ListPreference mNightColor;
 
     private ContentObserver mAccelerometerRotationObserver =
             new ContentObserver(new Handler()) {
@@ -188,6 +197,20 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mFontSizePref = (FontDialogPreference) findPreference(KEY_FONT_SIZE);
         mFontSizePref.setOnPreferenceChangeListener(this);
         mFontSizePref.setOnPreferenceClickListener(this);
+
+        //nightmode
+        mNightSwitch = (SwitchPreference) findPreference("nightswitch");
+        int NightMode = Settings.Global.getInt(
+             resolver, Settings.Global.NIGHT_MODE, 0);
+        mNightSwitch.setChecked(NightMode == 1);
+        mNightSwitch.setOnPreferenceChangeListener(this);
+
+        mNightColor = (ListPreference) findPreference("nightcolor");
+        int NightColor = Settings.Global.getInt(
+             resolver, Settings.Global.NIGHT_MODE_COLOR, 1);
+        mNightColor.setValue(String.valueOf(NightColor));
+        mNightColor.setSummary(mNightColor.getEntry());
+        mNightColor.setOnPreferenceChangeListener(this);
 
         mAutoBrightnessPreference = (SwitchPreference) findPreference(KEY_AUTO_BRIGHTNESS);
         if (mAutoBrightnessPreference != null && isAutomaticBrightnessAvailable(getResources())) {
@@ -568,7 +591,19 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     listviewinterpolator);
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
             return true; 
-        } 
+        } else if (preference == mNightSwitch){
+            boolean auto = (Boolean) objValue;
+            Settings.Global.putInt(
+                    getContentResolver(), Settings.Global.NIGHT_MODE, auto ? 1 : 0); 
+            return true;
+        } else if (preference==mNightColor) {
+            int NightColor = Integer.valueOf((String) objValue);
+            int index = mNightColor.findIndexOfValue((String) objValue);
+            Settings.Global.putInt(
+                    getContentResolver(), Settings.Global.NIGHT_MODE_COLOR, NightColor);
+            mNightColor.setSummary(mNightColor.getEntries()[index]);
+            return true; 
+        }
         return true;
     }
 

@@ -98,4 +98,16 @@
         <item>6</item>
     </string-array>
 
+    <string-array name="color_entries" translatable="false">
+        <item>@string/night_mode_color_black</item>
+        <item>@string/night_mode_color_red</item>
+        <item>@string/night_mode_color_yellow</item>
+    </string-array>
+
+    <string-array name="color_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
 </resources>

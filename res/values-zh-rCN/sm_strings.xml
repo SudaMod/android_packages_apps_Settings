@@ -71,6 +71,12 @@
   <string name="carrier_size_style_normal">正常</string>
   <string name="carrier_size_style_small">小</string>
   <string name="carrier_size_style_big">大</string>
+  <string name="night_mode">夜间模式</string>
+  <string name="night_mode_summary">安装软件前请关闭夜间模式</string>    
+  <string name="night_mode_color">夜间模式颜色</string>
+  <string name="night_mode_color_black">黑色</string>
+  <string name="night_mode_color_red">红色</string>
+  <string name="night_mode_color_yellow">黄色</string>
   <string name="smupdate_settings_title">SudaMod 更新</string> 
   <string name="captive_portal_detection">网络状况检测</string>
   <string name="captive_portal_detection_summary">如果状态栏有感叹号，可关闭网络状况检测</string>

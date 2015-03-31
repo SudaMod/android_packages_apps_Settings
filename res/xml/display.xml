@@ -37,6 +37,22 @@
                 android:summary="@string/auto_brightness_summary"
                 android:persistent="false" />
 
+        <!-- NightMode -->
+        <SwitchPreference
+                android:title="@string/night_mode"
+                android:summary="@string/night_mode_summary"
+                android:defaultValue="false"
+                android:key="nightswitch"
+                />
+
+        <ListPreference
+                android:title="@string/night_mode_color"
+                android:entries="@array/color_entries"
+                android:entryValues="@array/color_values"
+                android:defaultValue="1"
+                android:key="nightcolor"
+                android:dependency="nightswitch"/>
+
         <!-- LiveDisplay -->
         <PreferenceScreen
                 android:key="live_display"

@@ -91,6 +91,15 @@
     <string name="gpu_gl_version">OpenGL version</string>
     <string name="gpu_gl_extensions">OpenGL extensions</string>
     <string name="gpu_shader_version">Shader version</string>
+  
+    <!-- night mode-->
+    <string name="night_mode">Night Mode</string>
+    <string name="night_mode_summary">Please turn off \"Night Mode\" when install a new app</string>  
+    <string name="night_mode_color">Night Mode Color</string>
+    <string name="night_mode_color_black">black</string>
+    <string name="night_mode_color_red">red</string>
+    <string name="night_mode_color_yellow">yellow</string>
+  
     <!-- Device Control -->
     <string name="device_control_title">Device Control</string>
     <!-- SudaMod Updates -->
