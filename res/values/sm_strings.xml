@@ -16,16 +16,25 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="suda_version">SudaMod Version</string>
     <string name="suda_version_default">Unknow</string>
-    <!-- ListView interpolator -->
-    <string name="listview_interpolator_title">ListView interpolator</string>
-    <string name="listview_accelerate_interpolator">Accelerate</string>
-    <string name="listview_decelerate_interpolator">Decelerate</string>
-    <string name="listview_accelerate_decelerate_interpolator">Accelerate decelerate</string>
-    <string name="listview_anticipate_interpolator">Anticipate</string>
-    <string name="listview_overshoot_interpolator">Overshoot</string>
-    <string name="listview_anticipate_overshoot_interpolator">Anticipate overshoot</string>
-    <string name="listview_bounce_interpolator">Bounce</string>
 
+    <!-- Show network speed -->
+    <string name="show_network_speed_title">Network speed</string>
+    <string name="show_network_speed_summary">Show network speed in status bar</string>
+    <string name="status_bar_network_traffic_style_disable">Disabled</string>
+    <string name="status_bar_network_traffic_style_up">Outgoing</string>
+    <string name="status_bar_network_traffic_style_down">Incoming</string>
+    <string name="status_bar_network_traffic_style_all">Outgoing and incoming</string>
+
+    <!-- Show carrier label and custom -->
+    <string name="show_status_bar_carrier_title">Status bar carrier</string>
+    <string name="show_status_bar_carrier_summary">Show carrier in status bar</string>
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="show_carrier_speed_title">Operators of font size</string>
+    <string name="carrier_size_style_normal">Normal</string>
+    <string name="carrier_size_style_small">Small</string>
+    <string name="carrier_size_style_big">Big</string>
 
     <!-- Phonelocation -->  
     <string name="look_up_location">Look up</string>
@@ -67,6 +76,11 @@
     <!-- Version Type -->
     <string name="mod_version_type">Type</string>
 
+    <!-- Statusbar Category -->
+    <string name="clock_category">Clock</string>
+    <string name="carrier_category">Status bar carrier</string>
+    <string name="battery_category">Battery</string>
+    <string name="statusbar_other_category">Other</string>
     <!-- Show Chinese Date -->
     <string name="show_chinese_date">Show Chinese Date</string>
 </resources>

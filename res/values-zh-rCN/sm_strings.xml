@@ -21,6 +21,11 @@
   <string name="status_bar_network_traffic_style_up">显示上传速度</string>
   <string name="status_bar_network_traffic_style_down">显示下载速度</string>
   <string name="status_bar_network_traffic_style_all">显示上传和下载速度</string>
+  <string name="show_status_bar_carrier_title">运营商名称</string>
+  <string name="show_status_bar_carrier_summary">在状态栏显示运营商名称</string>
+  <string name="custom_carrier_label_title">自定义运营商名称</string>
+  <string name="custom_carrier_label_explain">请输入新的运营商名称，留空为恢复默认运营商名称。</string>
+  <string name="custom_carrier_label_notset">当前没有设置运营商名称</string>
   <string name="wat">天气时钟</string>
   <string name="wats">天气时钟插件快捷入口</string> 
   <string name="look_up_location">查询</string>
@@ -40,6 +45,10 @@
   <string name="gpu_gl_version">OpenGL版本</string>
   <string name="gpu_gl_extensions">OpenGL扩展</string>
   <string name="gpu_shader_version">Shader版本</string>   
+  <string name="show_carrier_speed_title">运营商字体大小</string>
+  <string name="carrier_size_style_normal">正常</string>
+  <string name="carrier_size_style_small">小</string>
+  <string name="carrier_size_style_big">大</string>
   <string name="smupdate_settings_title">SudaMod 更新</string> 
   <string name="captive_portal_detection">网络状况检测</string>
   <string name="captive_portal_detection_summary">如果状态栏有感叹号，可关闭网络状况检测</string>
@@ -47,5 +56,9 @@
   <string name="captive_portal_server">自定义验证服务器</string>
   <string name="captive_portal_server_notset">未填写验证服务器</string>
   <string name="captive_portal_server_explain">自定义验证服务器，修改完成需要重启或者关闭打开飞行模式</string>
+  <string name="clock_category">时钟</string>
+  <string name="carrier_category">运营商自定义</string>
+  <string name="battery_category">电池</string>
+  <string name="statusbar_other_category">其他</string>
   <string name="show_chinese_date">锁屏显示农历</string>
 </resources>
