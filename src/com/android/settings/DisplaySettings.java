@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2010 The Android Open Source Project
  * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2015 The SudaMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +41,6 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
-import android.hardware.CmHardwareManager;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Build;
@@ -81,10 +81,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_SCREEN_SAVER = "screensaver";
-    private static final String KEY_LIFT_TO_WAKE = "lift_to_wake";
     private static final String KEY_DOZE = "doze";
     private static final String KEY_AUTO_BRIGHTNESS = "auto_brightness";
-    private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
     private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
     private static final String KEY_DISPLAY_ROTATION = "display_rotation";
     private static final String KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
@@ -109,13 +107,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private ListPreference mScreenTimeoutPreference;
     private Preference mScreenSaverPreference;
     private SwitchPreference mAccelerometer;
-    private SwitchPreference mLiftToWakePreference;
     private SwitchPreference mDozePreference;
     private SwitchPreference mAutoBrightnessPreference;
-    private SwitchPreference mTapToWake;
     private SwitchPreference mWakeWhenPluggedOrUnplugged;
 
-    private CmHardwareManager mCmHardwareManager;
 
     // ListView Animations Preference
     private ListPreference mListViewAnimation;
@@ -147,7 +142,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         final Activity activity = getActivity();
         final ContentResolver resolver = activity.getContentResolver();
-        mCmHardwareManager = (CmHardwareManager) activity.getSystemService(Context.CMHW_SERVICE);
 
         addPreferencesFromResource(R.xml.display);
 
@@ -222,15 +216,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             }
         }
 
-        mLiftToWakePreference = (SwitchPreference) findPreference(KEY_LIFT_TO_WAKE);
-        if (mLiftToWakePreference != null && isLiftToWakeAvailable(activity)) {
-            mLiftToWakePreference.setOnPreferenceChangeListener(this);
-        } else {
-            if (displayPrefs != null && mLiftToWakePreference != null) {
-                displayPrefs.removePreference(mLiftToWakePreference);
-                mLiftToWakePreference = null;
-            }
-        }
 
         mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
         if (mDozePreference != null && isDozeAvailable(activity)) {
@@ -239,13 +224,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             if (displayPrefs != null && mDozePreference != null) {
                 displayPrefs.removePreference(mDozePreference);
             }
-        }
-
-        mTapToWake = (SwitchPreference) findPreference(KEY_TAP_TO_WAKE);
-        if (displayPrefs != null && mTapToWake != null
-                && !mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
-            displayPrefs.removePreference(mTapToWake);
-            mTapToWake = null;
         }
 
         Preference proximityWake = findPreference(KEY_PROXIMITY_WAKE);
@@ -411,10 +389,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         super.onResume();
         updateDisplayRotationPreferenceDescription();
 
-        if (mTapToWake != null) {
-            mTapToWake.setChecked(mCmHardwareManager.get(FEATURE_TAP_TO_WAKE));
-        }
-
         RotationPolicy.registerRotationPolicyListener(getActivity(),
                 mRotationPolicyListener);
 
@@ -475,12 +449,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mAutoBrightnessPreference.setChecked(brightnessMode != SCREEN_BRIGHTNESS_MODE_MANUAL);
         }
 
-        // Update lift-to-wake if it is available.
-        if (mLiftToWakePreference != null) {
-            int value = Settings.Secure.getInt(getContentResolver(), WAKE_GESTURE_ENABLED, 0);
-            mLiftToWakePreference.setChecked(value != 0);
-        }
-
         // Update doze if it is available.
         if (mDozePreference != null) {
             int value = Settings.Secure.getInt(getContentResolver(), DOZE_ENABLED, 1);
@@ -539,9 +507,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mTapToWake) {
-            return mCmHardwareManager.set(FEATURE_TAP_TO_WAKE, mTapToWake.isChecked());
-        } else if (preference == mWakeWhenPluggedOrUnplugged) {
+        if (preference == mWakeWhenPluggedOrUnplugged) {
             Settings.Global.putInt(getContentResolver(),
                     Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
                     mWakeWhenPluggedOrUnplugged.isChecked() ? 1 : 0);
@@ -571,9 +537,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             boolean auto = (Boolean) objValue;
             Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE,
                     auto ? SCREEN_BRIGHTNESS_MODE_AUTOMATIC : SCREEN_BRIGHTNESS_MODE_MANUAL);
-        } else if (preference == mLiftToWakePreference) {
-            boolean value = (Boolean) objValue;
-            Settings.Secure.putInt(getContentResolver(), WAKE_GESTURE_ENABLED, value ? 1 : 0);
         } else if (preference == mDozePreference) {
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), DOZE_ENABLED, value ? 1 : 0);
@@ -628,18 +591,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
      */
     public static void restore(Context ctx) {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-        CmHardwareManager cmHardwareManager =
-            (CmHardwareManager) ctx.getSystemService(Context.CMHW_SERVICE);
-        if (cmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
-            final boolean enabled = prefs.getBoolean(KEY_TAP_TO_WAKE,
-                cmHardwareManager.get(FEATURE_TAP_TO_WAKE));
-
-            if (!cmHardwareManager.set(FEATURE_TAP_TO_WAKE, enabled)) {
-                Log.e(TAG, "Failed to restore tap-to-wake settings.");
-            } else {
-                Log.d(TAG, "Tap-to-wake settings restored.");
-            }
-        }
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
@@ -660,8 +611,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
-                    CmHardwareManager cmHardwareManager =
-                        (CmHardwareManager) context.getSystemService(Context.CMHW_SERVICE);
                     ArrayList<String> result = new ArrayList<String>();
                     if (!context.getResources().getBoolean(
                             com.android.internal.R.bool.config_dreamsSupported)) {
@@ -679,14 +628,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                             com.android.internal.R.bool.config_proximityCheckOnWake)) {
                         result.add(KEY_PROXIMITY_WAKE);
                     }
-                    if (!cmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
-                        result.add(KEY_TAP_TO_WAKE);
-                    }
                     if (!isAutomaticBrightnessAvailable(context.getResources())) {
                         result.add(KEY_AUTO_BRIGHTNESS);
-                    }
-                    if (!isLiftToWakeAvailable(context)) {
-                        result.add(KEY_LIFT_TO_WAKE);
                     }
                     if (!isDozeAvailable(context)) {
                         result.add(KEY_DOZE);
