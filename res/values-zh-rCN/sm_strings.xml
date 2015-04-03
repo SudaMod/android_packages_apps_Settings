@@ -105,6 +105,10 @@
   <string name="captive_portal_server">自定义验证服务器</string>
   <string name="captive_portal_server_notset">未填写验证服务器</string>
   <string name="captive_portal_server_explain">自定义验证服务器，修改完成需要重启或者关闭打开飞行模式</string>
+  <string name="clock_size_style">时钟大小</string>
+  <string name="clock_size_style_normal">正常</string>
+  <string name="clock_size_style_small">小</string>
+  <string name="clock_size_style_big">大</string>
   <string name="clock_category">时钟</string>
   <string name="carrier_category">运营商自定义</string>
   <string name="battery_category">电池</string>

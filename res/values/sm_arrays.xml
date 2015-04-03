@@ -128,4 +128,18 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+
+    <!-- clock size -->	
+    <string-array name="entries_clock_size_style">
+         <item>@string/clock_size_style_normal</item>
+         <item>@string/clock_size_style_small</item>
+         <item>@string/clock_size_style_big</item>
+    </string-array>
+
+    <string-array name="values_clock_size_style" translatable="false">
+        <item>5</item>
+        <item>4</item>
+        <item>6</item>
+    </string-array>
+
 </resources>
