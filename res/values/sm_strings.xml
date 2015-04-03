@@ -76,6 +76,15 @@
     <string name="wat">cLock</string>
     <string name="wats">Shortcut for cLock</string> 
 
+    <!-- Gesture and Direct Control -->  
+    <string name="gesture_title">Gesture</string>
+    <string name="gesture_direct_title">Gesture and Direct Control</string>  
+    <string name="direct_control_title">Direct Control</string>
+    <string name="direct_call_for_dialer_title">Direct Call in Dailer</string>
+    <string name="direct_call_for_dialer_summary">Lift phone to ear after entering number in dialer to call directly</string>
+    <string name="direct_call_for_mms_title">Direct Call in Mms</string>
+    <string name="direct_call_for_mms_summary">Lift phone to ear will automatically call current contact</string>
+      
     <!-- Advanced Device Info -->
     <string name="advanced_device_info_title">Advanced information</string>
     <string name="advanced_device_info_summary">Information about CPU, GPU etc.</string>
