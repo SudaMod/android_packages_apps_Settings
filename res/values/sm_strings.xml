@@ -100,6 +100,9 @@
     <string name="gpu_gl_version">OpenGL version</string>
     <string name="gpu_gl_extensions">OpenGL extensions</string>
     <string name="gpu_shader_version">Shader version</string>
+    <!-- clock second-->
+    <string name="clock_second_title">Time display seconds</string>
+    <string name="clock_second_summary">Let the time accurate to seconds</string>
   
     <!-- night mode-->
     <string name="night_mode">Night Mode</string>

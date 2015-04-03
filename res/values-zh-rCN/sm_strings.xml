@@ -78,6 +78,8 @@
   <string name="carrier_size_style_normal">正常</string>
   <string name="carrier_size_style_small">小</string>
   <string name="carrier_size_style_big">大</string>
+  <string name="clock_second_title">时间显示秒</string>
+  <string name="clock_second_summary">让时间精确到秒</string>
   <string name="night_mode">夜间模式</string>
   <string name="night_mode_summary">安装软件前请关闭夜间模式</string>    
   <string name="night_mode_color">夜间模式颜色</string>

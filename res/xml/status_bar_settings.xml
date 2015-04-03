@@ -44,6 +44,13 @@
             android:dialogTitle="@string/status_bar_am_pm_title"
             android:entries="@array/status_bar_am_pm_entries"
             android:entryValues="@array/status_bar_am_pm_values" />
+
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="clock_second"
+            android:title="@string/clock_second_title"
+            android:summary="@string/clock_second_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
