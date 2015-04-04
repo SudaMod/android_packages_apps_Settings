@@ -22,6 +22,12 @@
             android:title="@string/lock_screen_notifications_title"
             android:persistent="false" />
 
+    <!-- Heads up -->
+    <PreferenceScreen
+            android:key="heads_up_enabled"
+            android:fragment="com.android.settings.sudamod.HeadsUpSettings"
+            android:title="@string/category_heads_up"/>
+
     <!-- App notifications -->
     <PreferenceScreen
             android:key="app_notifications"
