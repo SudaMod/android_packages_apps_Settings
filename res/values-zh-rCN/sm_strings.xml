@@ -53,5 +53,7 @@
   <string name="double_tap_sleep_anywhere_title">双击睡眠</string>
   <string name="double_tap_sleep_anywhere_summary">双击锁屏任意处关闭屏幕</string>
   <string name="show_chinese_date">锁屏显示农历</string>
+  <string name="hardware_keys_action_screenshot">屏幕截图</string>
+  <string name="hardware_keys_action_reboot_menu">高级重启</string>
 
 </resources>

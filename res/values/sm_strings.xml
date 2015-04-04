@@ -64,4 +64,8 @@
 
     <!-- Show Chinese Date -->
     <string name="show_chinese_date">Show Chinese Date</string>
+
+    <!-- quick reboot menu and screenshot -->
+    <string name="hardware_keys_action_screenshot">Screenshot</string>
+    <string name="hardware_keys_action_reboot_menu">Reboot menu</string>
 </resources>
