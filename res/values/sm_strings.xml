@@ -45,6 +45,22 @@
     <string name="listview_anticipate_overshoot_interpolator">Anticipate overshoot</string>
     <string name="listview_bounce_interpolator">Bounce</string>
 
+    <!-- Custom navigation bar height -->
+    <string name="navigation_bar_height">Button height</string>
+    <string name="navigation_bar_height_48">48dp (default)</string>
+    <string name="navigation_bar_height_56" translatable="false">56dp</string>
+    <string name="navigation_bar_height_52" translatable="false">52dp</string>  
+    <string name="navigation_bar_height_44" translatable="false">44dp</string>
+    <string name="navigation_bar_height_40" translatable="false">40dp</string>
+    <string name="navigation_bar_height_36" translatable="false">36dp</string>
+    <string name="navigation_bar_height_32" translatable="false">32dp</string>
+    <string name="navigation_bar_height_28" translatable="false">28dp</string>
+    <string name="navigation_bar_height_24" translatable="false">24dp</string>
+    <string name="navigation_bar_height_20" translatable="false">20dp</string>
+    <string name="navigation_bar_height_0">hide</string>
+
+    <!-- Navigation Bar -->
+    <string name="navigation_bar_category">Navigation bar</string>
 
     <!-- Show network speed -->
     <string name="show_network_speed_title">Network speed</string>
@@ -130,8 +146,10 @@
 
     <!-- Device Control -->
     <string name="device_control_title">Device Control</string>
+
     <!-- SudaMod Updates -->
     <string name="smupdate_settings_title">SudaMod updates</string>
+
     <!-- Captive Portal -->
     <string name="captive_portal_detection">Captive portal detection</string>
     <string name="captive_portal_detection_summary">If disabled, a connection to google servers is not required in order to detect data connection.</string>	
