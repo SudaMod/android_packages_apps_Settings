@@ -177,6 +177,10 @@
     <string name="battery_category">Battery</string>
     <string name="statusbar_other_category">Other</string>
 
+    <!-- Long press on lock screen lock icon to sleep -->
+    <string name="longpress_lock_icon_to_sleep_title">Long press lock icon to sleep</string>
+    <string name="longpress_lock_icon_to_sleep_summary">This option will not work if both smart lock and accessibility touch exploration are enabled</string>
+
     <!-- LCD density -->
     <string name="lcd_density">LCD density</string>
     <string name="dialog_title_lcd_density">LCD density</string>

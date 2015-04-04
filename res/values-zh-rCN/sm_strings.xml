@@ -136,6 +136,8 @@
   <string name="carrier_category">运营商自定义</string>
   <string name="battery_category">电池</string>
   <string name="statusbar_other_category">其他</string>
+  <string name="longpress_lock_icon_to_sleep_title">长按熄屏</string>
+  <string name="longpress_lock_icon_to_sleep_summary">长按锁屏图标将关闭屏幕(Smart Lock开启时失效)</string>
   <string name="lcd_density">屏幕密度</string>
   <string name="dialog_title_lcd_density">屏幕密度</string>
   <string name="lcd_density_summary">%d DPI</string>
