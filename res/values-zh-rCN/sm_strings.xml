@@ -115,5 +115,10 @@
   <string name="carrier_category">运营商自定义</string>
   <string name="battery_category">电池</string>
   <string name="statusbar_other_category">其他</string>
+  <string name="lcd_density">屏幕密度</string>
+  <string name="dialog_title_lcd_density">屏幕密度</string>
+  <string name="lcd_density_summary">%d DPI</string>
+  <string name="lcd_density_default">默认</string>
+  <string name="restarting_ui">重启UI中\u2026</string>
   <string name="show_chinese_date">锁屏显示农历</string>
 </resources>

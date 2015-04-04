@@ -152,6 +152,13 @@
     <string name="carrier_category">Status bar carrier</string>
     <string name="battery_category">Battery</string>
     <string name="statusbar_other_category">Other</string>
+
+    <!-- LCD density -->
+    <string name="lcd_density">LCD density</string>
+    <string name="dialog_title_lcd_density">LCD density</string>
+    <string name="lcd_density_summary">%d DPI</string>
+    <string name="lcd_density_default">default</string>
+    <string name="restarting_ui">Restarting UI\u2026</string>
     <!-- Show Chinese Date -->
     <string name="show_chinese_date">Show Chinese Date</string>
 </resources>
