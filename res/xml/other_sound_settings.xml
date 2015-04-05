@@ -59,6 +59,11 @@
             android:switchTextOn=""
             android:persistent="false" />
 
+        <!-- Camera shutter sound -->
+        <SwitchPreference
+            android:key="camera_sounds"
+            android:title="@string/camera_sounds_title"
+            android:persistent="false" />
 
     <!-- Dock speaker plays -->
     <com.android.settings.notification.DropDownPreference

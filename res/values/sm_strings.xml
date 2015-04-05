@@ -116,6 +116,8 @@
     <string name="gpu_gl_version">OpenGL version</string>
     <string name="gpu_gl_extensions">OpenGL extensions</string>
     <string name="gpu_shader_version">Shader version</string>
+    <!-- Disable Camera Shutter Sound -->
+    <string name="camera_sounds_title">Camera shutter sound</string>
     <!-- clock second-->
     <string name="clock_second_title">Time display seconds</string>
     <string name="clock_second_summary">Let the time accurate to seconds</string>
