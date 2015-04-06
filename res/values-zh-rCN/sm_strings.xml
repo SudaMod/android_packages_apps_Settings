@@ -169,6 +169,11 @@
   <string name="restarting_ui">重启UI中\u2026</string>
   <string name="hardware_keys_action_screenshot">屏幕截图</string>
   <string name="hardware_keys_action_reboot_menu">高级重启</string>
+  <string name="kill_app_longpress_timeout_title">返回键强行关闭延迟</string>
+  <string name="timeout_2000">2s (默认)</string>
+  <string name="timeout_1500">1.5s</string>
+  <string name="timeout_1000">1s</string>
+  <string name="timeout_500">0.5s</string>
   <string name="show_chinese_date">锁屏显示农历</string>
   <string name="camera_sounds_title">相机、截屏声音</string>
   <string name="double_tap_sleep_nav_bar_title">双击锁屏</string>
