@@ -97,10 +97,6 @@
   <string name="night_mode_color_black">黑色</string>
   <string name="night_mode_color_red">红色</string>
   <string name="night_mode_color_yellow">黄色</string>
-  <string name="navigation_bar_height">导航栏高度</string>
-  <string name="navigation_bar_height_48">48dp (默认)</string>
-  <string name="navigation_bar_height_0">隐藏</string>
-  <string name="navigation_bar_category">导航栏</string>
   <string name="lockgesture_change_lock_pattern_label">更改解锁手势</string>
   <string name="lockgesture_change_lock_pin_label">更改解锁 PIN</string>
   <string name="lockgesture_need_to_unlock">确认保存的手势</string>
