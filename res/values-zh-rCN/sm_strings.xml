@@ -253,7 +253,7 @@
   <string name="qs_tile_nightmode">夜间模式</string>
   <string name="qs_tile_screenshot">屏幕截图</string>
   <string name="longpress_lock_icon_to_sleep_title">长按熄屏</string>
-  <string name="longpress_lock_icon_to_sleep_summary">长按锁屏图标将关闭屏幕</string>
+  <string name="longpress_lock_icon_to_sleep_summary">长按锁屏图标将关闭屏幕(Smart Lock开启时失效)</string>
   <string name="lcd_density">屏幕密度</string>
   <string name="dialog_title_lcd_density">屏幕密度</string>
   <string name="lcd_density_summary">%d DPI</string>
@@ -267,6 +267,8 @@
   <string name="timeout_1000">1s</string>
   <string name="timeout_500">0.5s</string>
   <string name="show_chinese_date">锁屏显示农历</string>
+  <string name="double_tap_sleep_nav_bar_title">双击锁屏</string>
+  <string name="double_tap_sleep_nav_bar_summary">双击导航栏空白处锁屏</string> 
   <string name="doze_overwrite_value_title">覆盖参数</string>
   <string name="doze_overwrite_value_summary">允许用户设置覆盖默认参数</string>
   <string name="doze_list_mode_title">主动显示</string>
