@@ -257,6 +257,9 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (newValue != null) {
             if (preference == mPerfProfilePref) {
+                int ProfilePref = Integer.valueOf((String) newValue);
+                Settings.System.putInt(getContentResolver(),
+                             Settings.System.POWER_SAVE_SETTINGS, ProfilePref == 1 ? 1 : 0);
                 mPowerManager.setPowerProfile(String.valueOf(newValue));
                 updatePerformanceSummary();
                 return true;
