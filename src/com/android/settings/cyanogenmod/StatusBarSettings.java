@@ -100,19 +100,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mStatusBarAmPm = (ListPreference) prefSet
-                .findPreference(STATUS_BAR_AM_PM);
-        if (DateFormat.is24HourFormat(getActivity())) {
-            prefSet.removePreference(prefSet.findPreference(STATUS_BAR_AM_PM));
-        } else {
-            mStatusBarAmPm = (ListPreference) prefSet
-                    .findPreference(STATUS_BAR_AM_PM);
-            int statusBarAmPm = Settings.System.getInt(resolver,
-                    Settings.System.STATUS_BAR_AM_PM, 0);
-            mStatusBarAmPm.setValue(String.valueOf(statusBarAmPm));
-            mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntry());
-            mStatusBarAmPm.setOnPreferenceChangeListener(this);
-        }
 
         mStatusBarNetworkTraffic = (ListPreference) prefSet
                 .findPreference(STATUS_BAR_NETWORK_TRAFFIC_STYLE);
@@ -151,7 +138,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             updateCustomLabelTextSummary();
         }
         mStatusBarClock = (ListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
-
+        mStatusBarAmPm = (ListPreference) findPreference(STATUS_BAR_AM_PM);
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         mStatusBarBatteryShowPercent = (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
 
@@ -160,6 +147,17 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mStatusBarClock.setValue(String.valueOf(clockStyle));
         mStatusBarClock.setSummary(mStatusBarClock.getEntry());
         mStatusBarClock.setOnPreferenceChangeListener(this);
+
+        if (DateFormat.is24HourFormat(getActivity())) {
+            mStatusBarAmPm.setEnabled(false);
+            mStatusBarAmPm.setSummary(R.string.status_bar_am_pm_info);
+        } else {
+            int statusBarAmPm = Settings.System.getInt(resolver,
+                    Settings.System.STATUS_BAR_AM_PM, 2);
+            mStatusBarAmPm.setValue(String.valueOf(statusBarAmPm));
+            mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntry());
+            mStatusBarAmPm.setOnPreferenceChangeListener(this);
+        }
 
         mDateScond = (SwitchPreference) findPreference(KEY_DATE_SECOND);
         mDateScond.setChecked((Settings.System.getInt(resolver,
