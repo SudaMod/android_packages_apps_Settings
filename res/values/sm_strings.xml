@@ -49,9 +49,6 @@
     <string name="blacklist_all_numbers_title">All numbers</string>
     <string name="blacklist_all_numbers_summary">Block all calls</string>
 
-    <!-- Smart Control -->
-    <string name="smartcontrol_settings_title">Smart Control</string>
-
     <!-- Custom navigation bar height -->
     <string name="navigation_bar_height">Button height</string>
     <string name="navigation_bar_height_48">48dp (default)</string>
@@ -426,6 +423,7 @@
 
     <!-- NightMode Tile -->
     <string name="qs_tile_nightmode">NightMode</string>
+
     <!-- Screenshot Tile -->
     <string name="qs_tile_screenshot">Screenshot</string>
 
