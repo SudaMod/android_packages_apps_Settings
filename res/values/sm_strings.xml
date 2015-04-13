@@ -260,4 +260,9 @@
     <!-- Double Tap Navbar to Sleep -->
     <string name="double_tap_sleep_nav_bar_title">Double-tap to sleep</string>
     <string name="double_tap_sleep_nav_bar_summary">Double tap navigation bar to put the device to sleep</string> 
+
+    <!-- Show Memory bar -->
+    <string name="recents_show_membar_title">Memory bar</string>
+    <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
+
 </resources>
