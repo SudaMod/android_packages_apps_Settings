@@ -316,4 +316,6 @@
   <string name="pocket_only_mode">口袋模式</string>
   <string name="shake_pulse_mode">晃动模式和主动模式</string>
   <string name="pulse_only_mode">主动模式（默认）</string>
+  <string name="recents_show_membar_title">运存栏</string>
+  <string name="recents_show_membar_summary">显示设备可用运存数值</string>
 </resources>
