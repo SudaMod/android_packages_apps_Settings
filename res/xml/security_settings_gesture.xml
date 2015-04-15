@@ -40,6 +40,18 @@
             android:entryValues="@array/lock_after_timeout_values"
             android:persistent="false"/>
 
+        <Preference android:key="manage_trust_agents"
+                    android:title="@string/manage_trust_agents"
+                    android:summary="@string/manage_trust_agents_summary"
+                    android:persistent="false"
+                    android:fragment="com.android.settings.TrustAgentSettings"
+                    settings:advanced="true"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="general_category"
+        android:title="@string/title_general">
+
         <SwitchPreference
             android:key="power_button_instantly_locks"
             android:title="@string/lockgesture_settings_enable_power_button_instantly_locks"/>
@@ -71,13 +83,6 @@
                 android:fragment="com.android.settings.cyanogenmod.LockscreenShortcuts"
                 android:title="@string/lockscreen_targets_message"
                 settings:advanced="true"/>
-
-        <Preference android:key="manage_trust_agents"
-                    android:title="@string/manage_trust_agents"
-                    android:summary="@string/manage_trust_agents_summary"
-                    android:persistent="false"
-                    android:fragment="com.android.settings.TrustAgentSettings"
-                    settings:advanced="true"/>
 
     </PreferenceCategory>
 
