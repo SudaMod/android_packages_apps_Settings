@@ -180,4 +180,16 @@
   <string name="double_tap_sleep_nav_bar_summary">双击导航栏空白处锁屏</string> 
   <string name="recents_show_membar_title">运存栏</string>
   <string name="recents_show_membar_summary">显示设备可用运存数值</string>
+  <string name="status_bar_date_title">日期</string>
+  <string name="status_bar_date_none">隐藏 (默认)</string>
+  <string name="status_bar_date_small">小</string>
+  <string name="status_bar_date_normal">正常</string>
+  <string name="status_bar_date_format_title">日期格式</string>
+  <string name="status_bar_date_style">日期风格</string>
+  <string name="status_bar_date_style_normal">正常</string>
+  <string name="status_bar_date_style_lowercase">小写</string>
+  <string name="status_bar_date_style_uppercase">大写</string>
+  <string name="status_bar_date_format_custom">自定义</string>
+  <string name="status_bar_date_string_edittext_title">必须是日期格式，例如 MM/dd/yy</string>
+  <string name="status_bar_date_string_edittext_summary">输入值</string>
 </resources>
