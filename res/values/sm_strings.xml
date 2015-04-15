@@ -222,7 +222,7 @@
     <string name="heads_up_time_out_never">Never</string>
 
     <!-- Statusbar Category -->
-    <string name="clock_category">Clock and Data</string>
+    <string name="clock_category">Clock and Date</string>
     <string name="carrier_category">Status bar carrier</string>
     <string name="battery_category">Battery</string>
     <string name="statusbar_other_category">Other</string>
