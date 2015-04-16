@@ -144,9 +144,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         }
         mStatusBarClock = (ListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
         mStatusBarAmPm = (ListPreference) findPreference(STATUS_BAR_AM_PM);
-	mStatusBarDate = (ListPreference) findPreference(STATUS_BAR_DATE);
-	mStatusBarDateStyle = (ListPreference) findPreference(STATUS_BAR_DATE_STYLE);
-	mStatusBarDateFormat = (ListPreference) findPreference(STATUS_BAR_DATE_FORMAT);
+
+        mStatusBarDate = (ListPreference) findPreference(STATUS_BAR_DATE);
+        mStatusBarDateStyle = (ListPreference) findPreference(STATUS_BAR_DATE_STYLE);
+        mStatusBarDateFormat = (ListPreference) findPreference(STATUS_BAR_DATE_FORMAT);
+
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         mStatusBarBatteryShowPercent =
                 (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
