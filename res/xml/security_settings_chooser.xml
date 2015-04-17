@@ -34,6 +34,12 @@
         android:title="@string/title_general">
 
         <PreferenceScreen
+            android:key="lockscreen_weather"
+            android:title="@string/lock_screen_weather_settings_title"
+            android:summary="@string/lock_screen_weather_settings_title_summary"
+            android:fragment="com.android.settings.sudamod.LockScreenWeatherSettings" />
+
+        <PreferenceScreen
             android:key="owner_info_settings"
             android:fragment="com.android.settings.OwnerInfoSettings"
             android:title="@string/owner_info_settings_title"

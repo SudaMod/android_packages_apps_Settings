@@ -57,6 +57,12 @@
             android:title="@string/lockgesture_settings_enable_power_button_instantly_locks"/>
 
         <PreferenceScreen
+            android:key="lockscreen_weather"
+            android:title="@string/lock_screen_weather_settings_title"
+            android:summary="@string/lock_screen_weather_settings_title_summary"
+            android:fragment="com.android.settings.sudamod.LockScreenWeatherSettings" />
+
+        <PreferenceScreen
             android:fragment="com.android.settings.OwnerInfoSettings"
             android:key="owner_info_settings"
             android:title="@string/owner_info_settings_title"
