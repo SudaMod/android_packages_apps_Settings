@@ -336,8 +336,7 @@
   <string name="position_centered_title">居中</string>
   <string name="hidden_title">隐藏</string>
   <string name="dlg_reset_values_message">恢复默认值?</string>
-  <string name="dlg_reset_android">安卓</string>
-  <string name="dlg_reset_temasek">自定义</string>
+  <string name="dlg_reset_temasek">确认</string>
   <string name="colors_title">彩色</string>
   <string name="text_title">文本</string>
   <string name="reset">重置</string>
