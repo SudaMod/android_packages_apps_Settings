@@ -32,13 +32,6 @@
             android:defaultValue="true"
             android:dependency="show_clear_all_recents" />
 
-        <!-- Membar in Recents -->
-        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-            android:key="systemui_recents_mem_display"
-            android:title="@string/recents_show_membar_title"
-            android:summary="@string/recents_show_membar_summary"
-            android:defaultValue="true" />
-
         <ListPreference
             android:key="recents_clear_all_location"
             android:title="@string/recents_clear_all_location_title"
