@@ -275,7 +275,7 @@ public class LockScreenWeatherSettings extends SettingsPreferenceFragment implem
                     .setTitle(R.string.reset)
                     .setMessage(R.string.dlg_reset_values_message)
                     .setNegativeButton(R.string.cancel, null)
-                    .setNeutralButton(R.string.dlg_reset_android,
+                    .setPositiveButton(R.string.dlg_reset_temasek,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getOwner().mResolver,
@@ -295,28 +295,6 @@ public class LockScreenWeatherSettings extends SettingsPreferenceFragment implem
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.LOCK_SCREEN_WEATHER_ICON_COLOR,
                                     DEFAULT_COLOR);
-                            getOwner().refreshSettings();
-                        }
-                    })
-                    .setPositiveButton(R.string.dlg_reset_temasek,
-                        new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_SHOW_WEATHER, 1);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_SHOW_WEATHER_LOCATION, 1);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_SHOW_WEATHER_TIMESTAMP, 1);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_WEATHER_CONDITION_ICON, 2);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_WEATHER_COLORIZE_ALL_ICONS, 1);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_WEATHER_TEXT_COLOR,
-                                    HOLO_BLUE_LIGHT);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_WEATHER_ICON_COLOR,
-                                    HOLO_BLUE_LIGHT);
                             getOwner().refreshSettings();
                         }
                     })
