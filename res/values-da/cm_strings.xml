@@ -52,6 +52,12 @@
   <string name="profile_populate_profile_from_state">Konfigurér profilen vha. aktuelle enhedsindstillinger?</string>
   <string name="profile_menu_fill_from_state">Importér aktuelle enhedsindstillinger</string>
   <string name="profile_remove_current_profile">Kan ikke slette den aktuelle profil!</string>
+  <string name="profile_app_group_category_title">Tilsidesætning af underretninger</string>
+  <string name="profile_app_group_item_instructions">Tilføj eller fjern grupper</string>
+  <string name="profile_app_group_item_instructions_summary">Tilføj eller fjern tilsidesættelse af underretninger fra grupper af apps til denne profil</string>
+  <string name="profile_entries_on">Til</string>
+  <string name="profile_entries_off">Fra</string>
+  <string name="profile_entries_no_override">Tilsidesæt ikke</string>
   <string name="profile_name_title">Navn</string>
   <string name="new_profile_name">&lt;ny profil&gt;</string>
   <string name="rename_dialog_title">Omdøb</string>
@@ -150,7 +156,6 @@
   <string name="sunlight_enhancement_summary">Øger skærmens lysstyrke og læsbarhed under direkte sollys</string>
   <string name="color_enhancement_title">Farveforbedring</string>
   <string name="color_enhancement_summary">Forbedrer dynamisk farven på skærmen</string>
-  <string name="app_security_title">App-sikkerhed</string>
   <string name="blacklist_title">Sortliste</string>
   <string name="blacklist_edit_dialog_title">Redigér sortlistet nummer</string>
   <string name="blacklist_prefs">Indstillinger</string>
@@ -292,6 +297,9 @@
   <string name="status_bar_battery_percentage_default">Skjult</string>
   <string name="status_bar_battery_percentage_text_inside">Inde i ikonet</string>
   <string name="status_bar_battery_percentage_text_next">Ved siden af ikonet</string>
+  <string name="status_bar_show_unused_sims_title">Vis tomme SIM-ikoner</string>
+  <string name="status_bar_show_unused_sims_title_summary_off">Skjul ikoner fra ubrugte SIM-slots</string>
+  <string name="status_bar_show_unused_sims_title_summary_on">Vis ikoner fra ubrugte SIM-slots</string>
   <string name="edit_light_settings">Rediger LED-indstillinger</string>
   <string name="pulse_speed_title">Blinklængde og hastighed</string>
   <string name="default_time">Normal</string>
@@ -324,6 +332,8 @@
   <string name="notification_light_missed_call_title">Ubesvaret opkald</string>
   <string name="notification_light_voicemail_title">Telefonsvarer</string>
   <string name="notification_ringtone_title_cm">Meddelelseslyd</string>
+  <string name="headset_connect_player_title">Start musik-app</string>
+  <string name="headset_connect_player_summary">Start standard-app til musik, når headset tilsluttes</string>
   <string name="ime_switcher_notify">Ikon for valg</string>
   <string name="ime_switcher_notify_summary">Vis ikon til valg af input-metode</string>
   <string name="app_notification_show_on_keyguard_title">Vis på låseskærmen</string>
@@ -473,6 +483,22 @@
   <string name="profile_setup_setup_triggers_title_config">Ændre udløsere: <xliff:g id="profile_name">%1$s</xliff:g></string>
   <string name="profile_setup_actions_title">Trin 2: Opsætning af handlinger</string>
   <string name="profile_setup_actions_title_config">Omkonfigurere handlinger</string>
+  <string name="profile_appgroups_manage">App-grupper</string>
+  <string name="profile_appgroup_manage">Administrer app-gruppe</string>
+  <string name="profile_appgroups_title">App-grupper</string>
+  <string name="profile_new_appgroup">Ny app-gruppe</string>
+  <string name="profile_delete_appgroup">Slet denne app-gruppe?</string>
+  <string name="profile_appgroup_name_prompt">Angiv et navn for den nye app-gruppe</string>
+  <string name="profile_appgroup_name_title">Navn</string>
+  <string name="duplicate_appgroup_name">Duplikere app-gruppenavn!</string>
+  <string name="profile_app_delete_confirm">Fjern denne app?</string>
+  <string name="sound_mode">Meddelelsestilstand</string>
+  <string name="ringer_mode">Ringetilstand</string>
+  <string name="lights_mode">Lystilstand</string>
+  <string name="vibrate_mode">Vibratortilstand</string>
+  <string name="choose_soundtone">Vælg meddelelsestone</string>
+  <string name="choose_ringtone">Vælg ringetone</string>
+  <string name="soundtone_title">Meddelelseslyd</string>
   <string name="no_bluetooth_triggers">Ingen Bluetooth-enheder parret.\nTryk for at parre en Bluetooth-enhed, før du konfigurerer udløsere.</string>
   <string name="no_wifi_triggers">Ingen Wi\u2011Fi-adgangspunkter konfigureret.\nTryk for at forbinde til Wi\u2011Fi, før du konfigurerer udløsere.</string>
   <string name="no_triggers_configured">Ingen udløsere er konfigureret. Tryk her for at tilføje flere.</string>
@@ -543,6 +569,12 @@
   <string name="subs_settings">SIM-kort status</string>
   <string name="storage_usb">USB-hukommelse</string>
   <string name="storage_uicc">UICC-hukommelse</string>
+  <string name="sdcard_eject" product="default">Frakoble SD-kort</string>
+  <string name="sdcard_eject_summary" product="default">Frakoble SD-kortet, så du sikkert kan fjerne det</string>
+  <string name="sd_card_format" product="default">Slet SD-kort</string>
+  <string name="sd_card_format_summary" product="default">Sletter alle data på SD-kortet som musik og billeder</string>
+  <string name="sdcard_mount" product="default">Tilslut SD-kort</string>
+  <string name="sdcard_insert_summary" product="default">Indsæt et SD-kort for at tilslutte</string>
   <string name="usb_eject" product="default">Frakoble USB-hukommelse</string>
   <string name="usb_eject_summary" product="default">Frakoble USB-hukommelsen, så du sikkert kan fjerne den</string>
   <string name="usb_format" product="default">Slet USB-hukommelse</string>
@@ -557,22 +589,31 @@
   <string name="uicc_insert_summary" product="default">Indsæt UICC-hukommelse til tilslutning</string>
   <string name="usb_settings_enable_ums_title">Aktiver lagerenhed?</string>
   <string name="usb_settings_enable_ums_message">Systemkomponenter og apps afhænger af, at primær hukommelse altid er tilgængelig. Denne funktion bryder denne funktionalitet. Det anbefales kraftigt at bruge MTP i stedet. Er du sikker på, du vil aktivere lagerenhed?</string>
+  <string name="dlg_confirm_sdcard_unmount_title" product="default">Frakoble SD-kort?</string>
   <string name="dlg_confirm_usb_unmount_title" product="default">Frakoble USB-hukommelse?</string>
   <string name="dlg_confirm_uicc_unmount_title" product="default">Frakoble UICC-hukommelse?</string>
+  <string name="dlg_confirm_sdcard_unmount_text" product="default">Hvis du frakobler SD-kortet, vil nogle apps stoppe og kan være utilgængelige, indtil du tilslutter SD-kortet igen.</string>
   <string name="dlg_confirm_usb_unmount_text" product="default">Hvis du frakobler USB-hukommelsen, vil nogle apps stoppe og kan være utilgængelige, indtil du tilslutter USB-hukommelsen igen.</string>
   <string name="dlg_confirm_uicc_unmount_text" product="default">Hvis du frakobler UICC-hukommelsen, vil nogle apps stoppe og kan være utilgængelige, indtil du tilslutter UICC-hukommelsen igen.</string>
+  <string name="dlg_error_sdcard_unmount_text" product="default">Kunne ikke frakoble SD-kortet. Prøv igen senere.</string>
   <string name="dlg_error_usb_unmount_text" product="default">Kunne ikke frakoble USB-hukommelse. Prøv igen senere.</string>
   <string name="dlg_error_uicc_unmount_text" product="default">Kunne ikke frakoble UICC-hukommelse. Prøv igen senere.</string>
+  <string name="sdcard_unmount_inform_text" product="default">SD-kortet bliver frakoblet.</string>
   <string name="usb_unmount_inform_text" product="default">USB-hukommelse bliver frakoblet.</string>
   <string name="uicc_unmount_inform_text" product="default">UICC-hukommelse bliver frakoblet.</string>
+  <string name="sdcard_media_format_desc" product="default">Slet SD-kortet? Du vil miste <b>alle</b> data på kortet!</string>
   <string name="usb_media_format_desc" product="default">Slet USB-hukommelsen? Du vil miste <b>alle</b> data på hukommelsen!</string>
   <string name="uicc_media_format_desc" product="default">Slet UICC-hukommelsen? Du vil miste <b>alle</b> data på hukommelsen!</string>
+  <string name="sdcard_media_format_button_text" product="default">Slet SD-kort</string>
   <string name="usb_media_format_button_text" product="default">Slet USB-hukommelse</string>
   <string name="uicc_media_format_button_text" product="default">Slet UICC-hukommelse</string>
+  <string name="sdcard_media_format_final_desc" product="default">Slet SD-kortet og alle filer, der er gemt? Du kan ikke fortryde denne handling!</string>
   <string name="usb_media_format_final_desc" product="default">Slet hele USB-hukommelsen og alle filer, der er gemt? Du kan ikke fortryde denne handling!</string>
   <string name="uicc_media_format_final_desc" product="default">Slet UICC-hukommelsen og alle filer der er gemt der? Du kan ikke fortryde denne handling!</string>
+  <string name="sdcard_media_format_gesture_explanation" product="default">Du skal tegne dit oplåsningsmønster for at bekræfte, du vil slette SD-kortet.</string>
   <string name="usb_media_format_gesture_explanation" product="default">Du skal tegne dit oplåsningsmønster for at bekræfte, du vil slette USB-hukommelsen.</string>
   <string name="uicc_media_format_gesture_explanation" product="default">Du skal tegne dit oplåsningsmønster for at bekræfte, at du vil slette UICC-hukommelsen.</string>
+  <string name="storage_rescan_media">Scan lagerenheden igen for medier</string>
   <string name="location_category_enhanced_location">Forbedret placering (IZat)</string>
   <string name="app_ops_settings_summary">Vis eller redigér app-tilladelser</string>
   <string name="enable_adb_summary_charging">Enheden er i oplader-tilstand, USB debugging er deaktiveret</string>
@@ -599,10 +640,6 @@
   <string name="usb_sdcard_summary">Lader dig overføre filer mellem din computer og SD-kortet ved tilslutte det som et USB-drev</string>
   <string name="external_storage_turn_on">Ekstern lagring er aktiveret</string>
   <string name="external_storage_turn_off">Ekstern lagring er slået fra</string>
-  <string name="menu_hidden_apps_delete">Nulstil</string>
-  <string name="menu_hidden_apps_reset_lock">Nulstil mønster lås</string>
-  <string name="protected_apps">Beskyttede apps</string>
-  <string name="saving_protected_components">Gemmer komponenttilstand\u2026</string>
   <string name="stats_collection_title">Indsamling af statistik</string>
   <string name="stats_collection_summary">Når aktiveret, tillades indsamling af målinger</string>
   <string name="power_notifications_category_title">Strømlyde</string>
@@ -697,6 +734,8 @@
   <string name="wifi_mhz">MHz</string>
   <string name="maximum_head_level">Hoved: %1$s W/kg</string>
   <string name="maximum_body_level">Krop: %1$s W/kg</string>
+  <string name="ic_code_model">Model: %1$s</string>
+  <string name="ic_code_full">IC: %1$s</string>
   <string name="power_menu_expanded_desktop">Udvidet skrivebord</string>
   <string name="expanded_hide_nothing">Skjul intet</string>
   <string name="expanded_hide_status">Skjul statuslinje</string>
@@ -712,6 +751,7 @@
   <string name="lockscreen_none_target">Ingen</string>
   <string name="lockscreen_message">Tryk på et ikon til venstre eller højre for igen at tildele en genvej til skærmlås.</string>
   <string name="lockscreen_choose_action_title">Vælg handling</string>
+  <string name="lockscreen_visualizer_title">Vis musikvisualisator</string>
   <string name="whisperpush_title">WhisperPush</string>
   <string name="whisperpush_summary">Administrér indstillinger for sikker SMS.</string>
   <string name="navigation_ring_title">Mål for navigationsring</string>
@@ -739,6 +779,7 @@
   <string name="stylus_app_not_installed">%s er ikke installeret</string>
   <string name="advanced">Avanceret</string>
   <string name="advanced_mode_title">Avanceret tilstand</string>
+  <string name="advanced_mode_summary">Vis yderligere indstillinger for konfiguration af enheden i forskellige indstillingsmenuer</string>
   <string name="category_misc">Diverse</string>
   <string name="category_vibrate">Vibrér</string>
   <string name="category_volume">Lydstyrke</string>
@@ -753,4 +794,22 @@
   <string name="recents_show_searchbar">Vis søgefelt i menuen for senest anvendte apps</string>
   <string name="keywords_recents_show_searchbar">seneste seneste deaktivere aktivere vise skjule søge linje søgelinje</string>
   <string name="sim_ringtone_title">SIM-kort %d ringetone</string>
+  <string name="interruptions_ignore_while_media_title">Undgå lyddæmpning</string>
+  <string name="interruptions_ignore_while_media_summary">Reducér ikke lydstyrken, når en meddelelse modtages</string>
+  <string name="live_display_summary">Optimér din skærm baseret på tidspunktet på dagen, samt omgivelserne, for at forbedre læsbarheden og nedsætte anstrengelsen af øjnene</string>
+  <string name="live_display_mode">Visningstilstand</string>
+  <string name="live_display_color_temperature_title">Farvetemperatur</string>
+  <string name="live_display_color_temperature_summary">Dag: <xliff:g id="day_temperature">%1$d</xliff:g>K Nat: <xliff:g id="night_temperature">%2$d</xliff:g>K</string>
+  <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g>K</string>
+  <string name="live_display_day">Dag</string>
+  <string name="live_display_night">Nat</string>
+  <string name="live_display_outdoor_mode_title">Automatisk udendørstilstand</string>
+  <string name="live_display_outdoor_mode_summary">Øger automatisk lysstyrken og farvemætningen ved meget sollys</string>
+  <string name="live_display_low_power_title">Reducér strømforbruget</string>
+  <string name="live_display_low_power_summary">Justér skærmen til laveste strømforbrug uden forringelse</string>
+  <string name="live_display_enhance_color_title">Forbedre farver</string>
+  <string name="live_display_enhance_color_summary">Forbedr farven for hudfarve, landskab og andre billeder</string>
+  <string name="battery_saver_threshold">Grænse for strømspare</string>
+  <string name="battery_saver_summary">Reducere ydeevnen og begrænser baggrundsdata</string>
+  <string name="battery_saver_summary_unavailable">Ikke tilgængelig under opladning</string>
 </resources>

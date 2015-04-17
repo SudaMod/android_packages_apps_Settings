@@ -54,6 +54,9 @@
   <string name="profile_app_group_category_title">通知覆盖</string>
   <string name="profile_app_group_item_instructions">添加或移除组</string>
   <string name="profile_app_group_item_instructions_summary">添加或移除通知覆盖应用组到此配置文件</string>
+  <string name="profile_entries_on">开启</string>
+  <string name="profile_entries_off">关闭</string>
+  <string name="profile_entries_no_override">不覆盖</string>
   <string name="profile_name_title">名称</string>
   <string name="new_profile_name">&lt;新情景模式&gt;</string>
   <string name="rename_dialog_title">重命名</string>
@@ -121,7 +124,7 @@
   <string name="power_end_call_title">结束通话</string>
   <string name="power_end_call_summary">按下电源按钮将结束当前通话</string>
   <string name="button_wake_title">唤醒设备</string>
-  <string name="button_wake_summary">覆写重放控制</string>
+  <string name="button_wake_summary">覆盖重放控制</string>
   <string name="home_answer_call_title">接听电话</string>
   <string name="home_answer_call_summary">按 Home 键将接听当前来电</string>
   <string name="button_backlight_title">背光灯</string>
@@ -152,7 +155,6 @@
   <string name="sunlight_enhancement_summary">在明亮的阳光下提高显示亮度和可读性</string>
   <string name="color_enhancement_title">色彩增强</string>
   <string name="color_enhancement_summary">动态增强屏幕色彩</string>
-  <string name="app_security_title">应用安全</string>
   <string name="blacklist_title">黑名单</string>
   <string name="blacklist_edit_dialog_title">编辑黑名单</string>
   <string name="blacklist_prefs">设置</string>
@@ -294,6 +296,9 @@
   <string name="status_bar_battery_percentage_default">隐藏</string>
   <string name="status_bar_battery_percentage_text_inside">图标内</string>
   <string name="status_bar_battery_percentage_text_next">图标旁</string>
+  <string name="status_bar_show_unused_sims_title">显示空 SIM 卡图标</string>
+  <string name="status_bar_show_unused_sims_title_summary_off">隐藏未使用的 SIM 卡槽图标</string>
+  <string name="status_bar_show_unused_sims_title_summary_on">显示未使用的 SIM 卡槽</string>
   <string name="edit_light_settings">编辑指示灯设置</string>
   <string name="pulse_speed_title">呼吸长度与速度</string>
   <string name="default_time">正常</string>
@@ -563,6 +568,12 @@
   <string name="subs_settings">SIM 卡状态</string>
   <string name="storage_usb">USB 存储</string>
   <string name="storage_uicc">UICC 存储</string>
+  <string name="sdcard_eject" product="default">卸载 SD 卡</string>
+  <string name="sdcard_eject_summary" product="default">卸载 SD 卡后您就可以安全地移除它</string>
+  <string name="sd_card_format" product="default">擦除 SD 卡</string>
+  <string name="sd_card_format_summary" product="default">擦除 SD 卡中的全部数据，例如音乐和照片</string>
+  <string name="sdcard_mount" product="default">挂载 SD 卡</string>
+  <string name="sdcard_insert_summary" product="default">插入 SD 卡来挂载</string>
   <string name="usb_eject" product="default">卸载 USB 存储</string>
   <string name="usb_eject_summary" product="default">卸载 USB 存储后您就可以安全地移除它</string>
   <string name="usb_format" product="default">擦除 USB 存储</string>
@@ -577,22 +588,31 @@
   <string name="uicc_insert_summary" product="default">插入 UICC 存储以挂载</string>
   <string name="usb_settings_enable_ums_title">启用大容量存储吗？</string>
   <string name="usb_settings_enable_ums_message">系统组件和应用依赖于永远可用的主存储器。大容量存储模式破坏了此功能。强烈建议您使用 MTP 作为替代。您确定要打开大容量存储模式吗？</string>
+  <string name="dlg_confirm_sdcard_unmount_title" product="default">卸载 SD 卡？</string>
   <string name="dlg_confirm_usb_unmount_title" product="default">卸载 USB 存储？</string>
   <string name="dlg_confirm_uicc_unmount_title" product="default">卸载 UICC 存储</string>
+  <string name="dlg_confirm_sdcard_unmount_text" product="default">如果卸载该 SD 卡，您当前使用的某些应用会停止，并且在您重新挂载该 SD 卡前，这些应用可能都无法使用。</string>
   <string name="dlg_confirm_usb_unmount_text" product="default">如果卸载 USB 存储，您正在使用的一些应用将停止并且可能无法使用，直到您重新挂载 USB 存储。</string>
   <string name="dlg_confirm_uicc_unmount_text" product="default">如果卸载 UICC 存储，您正在使用的一些应用将停止并且可能无法使用，直到您重新挂载 UICC 存储。</string>
+  <string name="dlg_error_sdcard_unmount_text" product="default">无法卸载 SD 卡。请稍后重试。</string>
   <string name="dlg_error_usb_unmount_text" product="default">无法卸载 USB 存储。请稍后重试。</string>
   <string name="dlg_error_uicc_unmount_text" product="default">无法卸载 UICC 存储。请稍后重试。</string>
+  <string name="sdcard_unmount_inform_text" product="default">SD 卡将被卸载。</string>
   <string name="usb_unmount_inform_text" product="default">USB 存储将被卸载。</string>
   <string name="uicc_unmount_inform_text" product="default">UICC 存储将被卸载。</string>
+  <string name="sdcard_media_format_desc" product="default">要擦除 SD 卡吗？您将会丢失其中存储的<b>全部</b>数据！</string>
   <string name="usb_media_format_desc" product="default">确定擦除 USB 储存吗？这样您将丢失<b>所有</b>的存储数据！</string>
   <string name="uicc_media_format_desc" product="default">确定擦除 UICC 储存吗？这样您将丢失<b>所有</b>的存储数据！</string>
+  <string name="sdcard_media_format_button_text" product="default">擦除 SD 卡</string>
   <string name="usb_media_format_button_text" product="default">擦除 USB 存储</string>
   <string name="uicc_media_format_button_text" product="default">擦除 UICC 存储</string>
+  <string name="sdcard_media_format_final_desc" product="default">确定要擦除 SD 卡，删除其中存储的全部文件吗？您无法撤消该操作！</string>
   <string name="usb_media_format_final_desc" product="default">确定要擦除该 USB 存储，删除其中存储的全部文件吗？您无法撤消此操作！</string>
   <string name="uicc_media_format_final_desc" product="default">确定擦除该 UICC 存储，并删除其中储存的全部文件吗？您无法撤消此操作！</string>
+  <string name="sdcard_media_format_gesture_explanation" product="default">您需要绘制解锁图案以确认要擦除 SD 卡。</string>
   <string name="usb_media_format_gesture_explanation" product="default">您需要绘制解锁图案以确认要擦除 USB 存储。</string>
   <string name="uicc_media_format_gesture_explanation" product="default">您需要绘制解锁图案以确认要擦除 USB 存储。</string>
+  <string name="storage_rescan_media">为存储卷重新扫描媒体</string>
   <string name="location_category_enhanced_location">增强的位置 (IZat)</string>
   <string name="app_ops_settings_summary">查看或更改应用的权限</string>
   <string name="enable_adb_summary_charging">设备正处于充电模式，USB 调试已被禁用</string>
@@ -619,10 +639,6 @@
   <string name="usb_sdcard_summary">挂载 SD 卡为闪存设备，使您可以在计算机和 SD 卡之间传输文件</string>
   <string name="external_storage_turn_on">外部存储已打开</string>
   <string name="external_storage_turn_off">外部存储已关闭</string>
-  <string name="menu_hidden_apps_delete">重置</string>
-  <string name="menu_hidden_apps_reset_lock">重置锁定图案</string>
-  <string name="protected_apps">受保护的应用</string>
-  <string name="saving_protected_components">正在保存组件状态\u2026</string>
   <string name="stats_collection_title">统计数据收集</string>
   <string name="stats_collection_summary">启用时，允许数据收集</string>
   <string name="power_notifications_category_title">充电提示音</string>
@@ -734,6 +750,7 @@
   <string name="lockscreen_none_target">无</string>
   <string name="lockscreen_message">轻触左边或右边的图标来重新分配锁屏快捷方式。</string>
   <string name="lockscreen_choose_action_title">选择操作</string>
+  <string name="lockscreen_visualizer_title">显示音乐可视化</string>
   <string name="whisperpush_title">WhisperPush</string>
   <string name="whisperpush_summary">管理安全短信设置</string>
   <string name="navigation_ring_title">导航环目标</string>
@@ -761,6 +778,7 @@
   <string name="stylus_app_not_installed">%s 尚未被安装</string>
   <string name="advanced">高级</string>
   <string name="advanced_mode_title">高级模式</string>
+  <string name="advanced_mode_summary">在设置菜单中显示额外选项以配置您的设备</string>
   <string name="category_misc">杂项</string>
   <string name="category_vibrate">振动</string>
   <string name="category_volume">音量</string>
@@ -777,6 +795,7 @@
   <string name="sim_ringtone_title">SIM 卡 %d 铃声</string>
   <string name="interruptions_ignore_while_media_title">阻止音频回避</string>
   <string name="interruptions_ignore_while_media_summary">当通知到达时，不要降低媒体播放音量</string>
+  <string name="live_display_summary">基于时间和环境条件来优化您的屏幕以改善可读性和减少眼睛疲劳</string>
   <string name="live_display_mode">显示模式</string>
   <string name="live_display_color_temperature_title">色温</string>
   <string name="live_display_color_temperature_summary">白天：<xliff:g id="day_temperature">%1$d</xliff:g>K 夜晚：<xliff:g id="night_temperature">%2$d</xliff:g>K</string>
@@ -789,4 +808,7 @@
   <string name="live_display_low_power_summary">在不降低亮度的情况下调整屏幕使耗电最低</string>
   <string name="live_display_enhance_color_title">增强色彩</string>
   <string name="live_display_enhance_color_summary">为肤色、风景和其他图像提高颜色活力</string>
+  <string name="battery_saver_threshold">节电助手阈值</string>
+  <string name="battery_saver_summary">降低性能并限制后台流量</string>
+  <string name="battery_saver_summary_unavailable">在充电时不可用</string>
 </resources>

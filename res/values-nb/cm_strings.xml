@@ -153,7 +153,6 @@
   <string name="sunlight_enhancement_summary">Forbedre lysstyrken og lesbarhet under sterkt sollys</string>
   <string name="color_enhancement_title">Fargeforbedring</string>
   <string name="color_enhancement_summary">Dynamisk forbedre fargene på skjermen</string>
-  <string name="app_security_title">Program sikkerhet</string>
   <string name="blacklist_title">Svarteliste</string>
   <string name="blacklist_edit_dialog_title">Redigere svarteliste</string>
   <string name="blacklist_prefs">Innstillinger</string>
@@ -295,6 +294,9 @@
   <string name="status_bar_battery_percentage_default">Skjult</string>
   <string name="status_bar_battery_percentage_text_inside">Inne i ikonet</string>
   <string name="status_bar_battery_percentage_text_next">Ved siden av ikonet</string>
+  <string name="status_bar_show_unused_sims_title">Vis tomme SIM ikoner</string>
+  <string name="status_bar_show_unused_sims_title_summary_off">Skjul ikoner av ubrukte SIM-spor</string>
+  <string name="status_bar_show_unused_sims_title_summary_on">Vis ubrukte SIM-spor</string>
   <string name="edit_light_settings">Redigere lys innstillinger</string>
   <string name="pulse_speed_title">Puls lengde og hastighet</string>
   <string name="default_time">Normal</string>
@@ -620,10 +622,6 @@
   <string name="usb_sdcard_summary">Lar deg overføre filer mellom datamaskinen og SD-kortet ved å montere den som en flash-enhet</string>
   <string name="external_storage_turn_on">Ekstern lagring er aktivert</string>
   <string name="external_storage_turn_off">Ekstern lagring er deaktivert</string>
-  <string name="menu_hidden_apps_delete">Tilbakestille</string>
-  <string name="menu_hidden_apps_reset_lock">Tilbakestille mønster lås</string>
-  <string name="protected_apps">Beskyttede apps</string>
-  <string name="saving_protected_components">Lagre komponent status\u2026</string>
   <string name="stats_collection_title">Statistikkinnsamling</string>
   <string name="stats_collection_summary">Når aktivert, tillater innsamling av statistikk</string>
   <string name="power_notifications_category_title">Ladelyder</string>
@@ -735,6 +733,7 @@
   <string name="lockscreen_none_target">Ingen</string>
   <string name="lockscreen_message">Tapp ikonet på venstre eller høyre for å tilordne en låseskjermsnarvei.</string>
   <string name="lockscreen_choose_action_title">Velg handling</string>
+  <string name="lockscreen_visualizer_title">Vis musikk visualizer</string>
   <string name="whisperpush_title">WhisperPush</string>
   <string name="whisperpush_summary">Administrere sikre SMS-innstillinger</string>
   <string name="navigation_ring_title">Mål for navigasjonsring</string>
@@ -762,6 +761,7 @@
   <string name="stylus_app_not_installed">%s er ikke installert</string>
   <string name="advanced">Avansert</string>
   <string name="advanced_mode_title">Avansert modus</string>
+  <string name="advanced_mode_summary">Vis flere alternativer for å konfigurere enheten i ulike innstillingsmenyer</string>
   <string name="category_misc">Diverse</string>
   <string name="category_vibrate">Vibrer</string>
   <string name="category_volume">Volum</string>
@@ -778,6 +778,7 @@
   <string name="sim_ringtone_title">SIM %d ringetone</string>
   <string name="interruptions_ignore_while_media_title">Hindre lyd ducking</string>
   <string name="interruptions_ignore_while_media_summary">Ikke Reduser media avspillingsvolumet når en melding ankommer</string>
+  <string name="live_display_summary">Optimalisere skjermen basert på tidspunkt på dagen og omgivelsesforhold å forbedre lesbarhet og redusere belastningen på øynene</string>
   <string name="live_display_mode">Visningsmodus</string>
   <string name="live_display_color_temperature_title">Fargetemperatur</string>
   <string name="live_display_color_temperature_summary">Dag: <xliff:g id="day_temperature">%1$d</xliff:g>K  Natt: <xliff:g id="night_temperature">%2$d</xliff:g>K</string>
@@ -790,4 +791,7 @@
   <string name="live_display_low_power_summary">Justere visningen for laveste strømforbruk uten degradering</string>
   <string name="live_display_enhance_color_title">Forbedre farger</string>
   <string name="live_display_enhance_color_summary">Forbedre fargefullhet på hudfarger, natur og andre bilder</string>
+  <string name="battery_saver_threshold">Batterisparingsterskel</string>
+  <string name="battery_saver_summary">Reduser ytelsen og begrens bakgrunnsdata</string>
+  <string name="battery_saver_summary_unavailable">Ikke tilgjengelig under lading</string>
 </resources>

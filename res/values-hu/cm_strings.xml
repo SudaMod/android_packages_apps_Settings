@@ -52,6 +52,12 @@
   <string name="profile_populate_profile_from_state">Konfigurálja a profilt a jelenlegi beállításokat használva?</string>
   <string name="profile_menu_fill_from_state">Jelenlegi beállítások importálása</string>
   <string name="profile_remove_current_profile">Nem lehet törölni az aktuális profilt!</string>
+  <string name="profile_app_group_category_title">Értesítés felülbírálása</string>
+  <string name="profile_app_group_item_instructions">Csoportok hozzáadása, vagy eltávolítása</string>
+  <string name="profile_app_group_item_instructions_summary">Felülbírált értesítésekkel rendelkező alkalmazáscsoportok hozzáadása ehhez a profilhoz</string>
+  <string name="profile_entries_on">Be</string>
+  <string name="profile_entries_off">Ki</string>
+  <string name="profile_entries_no_override">Nincs felülbírálás</string>
   <string name="profile_name_title">Név</string>
   <string name="new_profile_name">&lt;Új profil&gt;</string>
   <string name="rename_dialog_title">Átnevezés</string>
@@ -150,7 +156,6 @@
   <string name="sunlight_enhancement_summary">Növeli a kijelző fényerejét és az olvashatóságot ragyogó napfény esetén</string>
   <string name="color_enhancement_title">Színek javítása</string>
   <string name="color_enhancement_summary">Dinamikusan javítja a kijelző színét</string>
-  <string name="app_security_title">Alkalmazásbiztonság</string>
   <string name="blacklist_title">Tiltólista</string>
   <string name="blacklist_edit_dialog_title">Tiltólista szerkesztése</string>
   <string name="blacklist_prefs">Beállítások</string>
@@ -292,6 +297,9 @@
   <string name="status_bar_battery_percentage_default">Rejtett</string>
   <string name="status_bar_battery_percentage_text_inside">Az ikon belsejében</string>
   <string name="status_bar_battery_percentage_text_next">Az ikon mellett</string>
+  <string name="status_bar_show_unused_sims_title">Üres SIM ikonok megjelenítése</string>
+  <string name="status_bar_show_unused_sims_title_summary_off">Használaton kívüli SIM foglalatok elrejtése</string>
+  <string name="status_bar_show_unused_sims_title_summary_on">Használaton kívüli SIM foglalatok megjelenítése</string>
   <string name="edit_light_settings">Jelzés beállítások</string>
   <string name="pulse_speed_title">Impulzus hossza és sebessége</string>
   <string name="default_time">Normál</string>
@@ -324,6 +332,8 @@
   <string name="notification_light_missed_call_title">Nem fogadott hívás</string>
   <string name="notification_light_voicemail_title">Hangposta</string>
   <string name="notification_ringtone_title_cm">Értesítés hangja</string>
+  <string name="headset_connect_player_title">Zenelejátszó indítása</string>
+  <string name="headset_connect_player_summary">Alapértelmezett zenelejátszó elindítása fülhallgató csatlakoztatásakor</string>
   <string name="ime_switcher_notify">Választó ikon</string>
   <string name="ime_switcher_notify_summary">Beviteli mód választó ikon megjelenítése</string>
   <string name="app_notification_show_on_keyguard_title">Megjelenítés a zárképernyőn</string>
@@ -473,6 +483,22 @@
   <string name="profile_setup_setup_triggers_title_config">Triggerek módosítása: <xliff:g id="profile_name">%1$s</xliff:g></string>
   <string name="profile_setup_actions_title">2. lépés: Beállítások elvégzése</string>
   <string name="profile_setup_actions_title_config">Műveletek újrakonfigurálása</string>
+  <string name="profile_appgroups_manage">Alkalmazáscsoportok</string>
+  <string name="profile_appgroup_manage">Alkalmazáscsoportok kezelése</string>
+  <string name="profile_appgroups_title">Alkalmazáscsoportok</string>
+  <string name="profile_new_appgroup">Új alkalmazáscsoport</string>
+  <string name="profile_delete_appgroup">Alkalmazáscsoport törlése?</string>
+  <string name="profile_appgroup_name_prompt">Adja meg az új alkalmazáscsoport nevét</string>
+  <string name="profile_appgroup_name_title">Név</string>
+  <string name="duplicate_appgroup_name">Már létező alkalmazáscsoport!</string>
+  <string name="profile_app_delete_confirm">Biztosan el akarja távolítani ezt az alkalmazást?</string>
+  <string name="sound_mode">Értesítési mód</string>
+  <string name="ringer_mode">Csengetés módja</string>
+  <string name="lights_mode">Fényjelzés módja</string>
+  <string name="vibrate_mode">Rezgő mód</string>
+  <string name="choose_soundtone">Értesítés hangja</string>
+  <string name="choose_ringtone">Telefon csengőhangja</string>
+  <string name="soundtone_title">Értesítés hangja</string>
   <string name="no_bluetooth_triggers">Nincs párosított Bluetooth eszköz.\nBluetooth eszköz párosításáért érintse meg, mielőtt beállítaná a triggereket.</string>
   <string name="no_wifi_triggers">Nincs Wi\u2011Fi hozzáférési pont beállítva.\nA Wi\u2011Fi csatlakoztatásához érintse meg, mielőtt beállítaná a triggereket.</string>
   <string name="no_triggers_configured">Nincs trigger beállítva. Új hozzáadásáért érintse meg.</string>
@@ -543,6 +569,12 @@
   <string name="subs_settings">SIM-kártya állapota</string>
   <string name="storage_usb">USB tárhely</string>
   <string name="storage_uicc">UICC tároló</string>
+  <string name="sdcard_eject" product="default">SD kártya leválasztása</string>
+  <string name="sdcard_eject_summary" product="default">SD kártya leválasztása a biztonságos eltávolítás érdekében</string>
+  <string name="sd_card_format" product="default">SD kártya törlése</string>
+  <string name="sd_card_format_summary" product="default">Az összes adatot törli az SD-kártyán, mint pl. zene és fénykép</string>
+  <string name="sdcard_mount" product="default">SD kártya csatolása</string>
+  <string name="sdcard_insert_summary" product="default">Helyezzen be SD kártyát a csatlakoztatáshoz</string>
   <string name="usb_eject" product="default">USB tároló leválasztása</string>
   <string name="usb_eject_summary" product="default">USB tároló leválasztása a biztonságos eltávolítás érdekében</string>
   <string name="usb_format" product="default">USB tároló törlése</string>
@@ -557,22 +589,31 @@
   <string name="uicc_insert_summary" product="default">Csatoláshoz helyezzen be UICC tárolót</string>
   <string name="usb_settings_enable_ums_title">Engedélyezi az USB háttértár módot?</string>
   <string name="usb_settings_enable_ums_message">A rendszer elemei és az alkalmazások arra támaszkodnak, hogy az elsődleges tároló mindig rendelkezésre áll. Ez a lehetőség megszünteti ezt a funkcionalitást. Helyette erősen ajánlott inkább az MTP használata. Biztosan engedélyezni szeretné háttértárként?</string>
+  <string name="dlg_confirm_sdcard_unmount_title" product="default">SD kártya leválasztása?</string>
   <string name="dlg_confirm_usb_unmount_title" product="default">USB tároló leválasztása?</string>
   <string name="dlg_confirm_uicc_unmount_title" product="default">UICC tároló leválasztása?</string>
+  <string name="dlg_confirm_sdcard_unmount_text" product="default">Ha leválasztja az SD kártyát, néhány alkalmazás, melyeket használ, leállhat és elérhetetlen lehet, ameddig újra nem csatlakoztatja az SD kártyát.</string>
   <string name="dlg_confirm_usb_unmount_text" product="default">Ha leválasztja az USB tárolót, néhány alkalmazás, melyeket használ, leállhat és elérhetetlen lehet, ameddig újra nem csatlakoztatja az USB tárolót.</string>
   <string name="dlg_confirm_uicc_unmount_text" product="default">Ha leválasztja az UICC tárolót, néhány alkalmazás, melyeket használ, leállhat és elérhetetlen lehet, ameddig újra nem csatlakoztatja az UICC tárolót.</string>
+  <string name="dlg_error_sdcard_unmount_text" product="default">Nem lehet leválasztani az SD kártyát. Próbálja meg később.</string>
   <string name="dlg_error_usb_unmount_text" product="default">Nem lehet leválasztani az USB tárolót. Próbálja meg később.</string>
   <string name="dlg_error_uicc_unmount_text" product="default">Nem lehet leválasztani az UICC tárolót. Próbálja meg később.</string>
+  <string name="sdcard_unmount_inform_text" product="default">Az SD kártya le lesz választva.</string>
   <string name="usb_unmount_inform_text" product="default">Az USB tároló le lesz választva.</string>
   <string name="uicc_unmount_inform_text" product="default">Az UICC tároló le lesz választva.</string>
+  <string name="sdcard_media_format_desc" product="default">SD kártya törlése? A kártyán tárolt <b>minden</b> adat el fog veszni!</string>
   <string name="usb_media_format_desc" product="default">Törli az USB tárolót? <b>Minden</b> tárolón lévő adat el fog veszni!</string>
   <string name="uicc_media_format_desc" product="default">Törli az UICC tárolót? <b>Minden</b> tárolón lévő adat el fog veszni!</string>
+  <string name="sdcard_media_format_button_text" product="default">SD kártya törlése</string>
   <string name="usb_media_format_button_text" product="default">USB tároló törlése</string>
   <string name="uicc_media_format_button_text" product="default">UICC tároló törlése</string>
+  <string name="sdcard_media_format_final_desc" product="default">SD kártya törlése. Törli az összes ott tárolt fájlt? Ez a művelet nem visszavonható!</string>
   <string name="usb_media_format_final_desc" product="default">USB tároló törlése. Törli az összes ott tárolt fájlt? Ez a művelet nem visszavonható!</string>
   <string name="uicc_media_format_final_desc" product="default">UICC tároló törlése. Törli az összes ott tárolt fájlt? Ez a művelet nem visszavonható!</string>
+  <string name="sdcard_media_format_gesture_explanation" product="default">Az SD kártya törlésének megerősítéséhez meg kell adnia a feloldó mintáját.</string>
   <string name="usb_media_format_gesture_explanation" product="default">Az USB tároló törlésének megerősítéséhez meg kell adnia a feloldó mintáját.</string>
   <string name="uicc_media_format_gesture_explanation" product="default">Az UICC tároló törlésének megerősítéséhez meg kell adnia a feloldó mintáját.</string>
+  <string name="storage_rescan_media">Médiakeresés újraindítása az adathordozón</string>
   <string name="location_category_enhanced_location">Megnövelt helymeghatározás (IZat)</string>
   <string name="app_ops_settings_summary">Alkalmazás engedélyek megtekintése vagy megváltoztatása</string>
   <string name="enable_adb_summary_charging">Készülék Töltés módban, USB hibakeresés letiltva</string>
@@ -599,10 +640,6 @@
   <string name="usb_sdcard_summary">Lehetővé teszi fájlok átvitelét az eszköz és az ön számítógépe közt, mintha csak egy pendrive-ot használna</string>
   <string name="external_storage_turn_on">Külső tároló bekapcsolva</string>
   <string name="external_storage_turn_off">Külső tároló kikapcsolva</string>
-  <string name="menu_hidden_apps_delete">Visszaállítás</string>
-  <string name="menu_hidden_apps_reset_lock">Minta visszaállítása</string>
-  <string name="protected_apps">Védett alkalmazások</string>
-  <string name="saving_protected_components">Összetevő állapotának mentése\u2026</string>
   <string name="stats_collection_title">Statisztika gyűjtése</string>
   <string name="stats_collection_summary">Ha engedélyezve van, lehetővé teszi a mérőszámok gyűjtését</string>
   <string name="power_notifications_category_title">Töltés jelzése</string>
@@ -697,6 +734,8 @@
   <string name="wifi_mhz">MHz</string>
   <string name="maximum_head_level">Fej: %1$s W/kg</string>
   <string name="maximum_body_level">Test: %1$s W/kg</string>
+  <string name="ic_code_model">Modell: %1$s</string>
+  <string name="ic_code_full">IC: %1$s</string>
   <string name="power_menu_expanded_desktop">Képernyő kiterjesztés</string>
   <string name="expanded_hide_nothing">Egyiket se rejtse el</string>
   <string name="expanded_hide_status">Státuszbár elrejtése</string>
@@ -712,6 +751,7 @@
   <string name="lockscreen_none_target">Nincs</string>
   <string name="lockscreen_message">Érintsen meg egy ikont jobb vagy bal oldalt a zárképernyő hivatkozások ismételt hozzárendeléséhez.</string>
   <string name="lockscreen_choose_action_title">Válasszon műveletet</string>
+  <string name="lockscreen_visualizer_title">Zenei vizualítás megjelenítése</string>
   <string name="whisperpush_title">WhisperPush</string>
   <string name="whisperpush_summary">Biztonságos SMS beállítások kezelése</string>
   <string name="navigation_ring_title">Navigációs gyűrű hivatkozások</string>
@@ -739,6 +779,7 @@
   <string name="stylus_app_not_installed">%s nincs telepítve</string>
   <string name="advanced">Haladó</string>
   <string name="advanced_mode_title">Haladó mód</string>
+  <string name="advanced_mode_summary">További konfigurálási lehetőségek megjelenítése az eszköz egyes beállításainál</string>
   <string name="category_misc">Egyéb</string>
   <string name="category_vibrate">Rezgés</string>
   <string name="category_volume">Hangerő</string>
@@ -753,4 +794,22 @@
   <string name="recents_show_searchbar">Keresősáv megjelenítése az előzmények menüben</string>
   <string name="keywords_recents_show_searchbar">előzmény előzmények letiltás engedélyezés megjelenítés elrejtés kereső sáv keresősáv</string>
   <string name="sim_ringtone_title">SIM %d csengőhang</string>
+  <string name="interruptions_ignore_while_media_title">Lehalkítás megelőzésee</string>
+  <string name="interruptions_ignore_while_media_summary">Ne csökkentse a lejátszott média hangerejét értesítés érkezésekor</string>
+  <string name="live_display_summary">Optimalizálja a képernyőt a napszaknak és a fényviszonyoknak megfelelően, javítva az olvashatóságot és csökkentve a szemek terhelését</string>
+  <string name="live_display_mode">Képernyő mód</string>
+  <string name="live_display_color_temperature_title">Színhőmérséklet</string>
+  <string name="live_display_color_temperature_summary">Nappal:<xliff:g id="day_temperature">%1$d</xliff:g>K Éjszaka:<xliff:g id="night_temperature">%2$d</xliff:g>K</string>
+  <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g>K</string>
+  <string name="live_display_day">Nappal</string>
+  <string name="live_display_night">Éjszaka</string>
+  <string name="live_display_outdoor_mode_title">Automatikus kültéri mód</string>
+  <string name="live_display_outdoor_mode_summary">Fényerő és színtelítettség automatikus növelése erős napsütésben</string>
+  <string name="live_display_low_power_title">Energiafogyasztás csökkentése</string>
+  <string name="live_display_low_power_summary">A kijelző beállítása a legkisebb energiafogyasztásra, minőségromlás nélkül</string>
+  <string name="live_display_enhance_color_title">Színek élénkítése</string>
+  <string name="live_display_enhance_color_summary">Bőr színek, tájképek és egyéb képek színerősségének javítása</string>
+  <string name="battery_saver_threshold">Akkumulátor kímélő küszöb</string>
+  <string name="battery_saver_summary">Csökkenti a teljesítményt és korlátozza a háttér adatokat</string>
+  <string name="battery_saver_summary_unavailable">Töltés közben nem érhető el</string>
 </resources>
