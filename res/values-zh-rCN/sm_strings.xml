@@ -204,8 +204,8 @@
   <string name="weather_condition_icon_colored_title">彩色</string>
   <string name="weather_condition_icon_vclouds_title">VClouds</string>
   <string name="weather_colorize_all_icons_title">为所有图标着色</string>
-  <string name="weather_colorize_all_icons_summary">仅单色模式下不可为图标着色</string>
-  <string name="icons_title">图标集</string>
+  <string name="weather_colorize_all_icons_summary">单色图标可不用打开此项</string>
+  <string name="icons_title">图标</string>
   <string name="position_right_title">居右</string>
   <string name="position_centered_title">居中</string>
   <string name="hidden_title">隐藏</string>
