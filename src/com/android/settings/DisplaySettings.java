@@ -24,7 +24,6 @@ import com.android.internal.view.RotationPolicy;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import static android.hardware.CmHardwareManager.FEATURE_TAP_TO_WAKE;
 import static android.provider.Settings.Secure.DOZE_ENABLED;
 import static android.provider.Settings.Secure.WAKE_GESTURE_ENABLED;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE;
@@ -86,7 +85,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_SCREEN_SAVER = "screensaver";
-    private static final String KEY_DOZE = "doze";
     private static final String KEY_AUTO_BRIGHTNESS = "auto_brightness";
     private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
     private static final String KEY_DISPLAY_ROTATION = "display_rotation";
@@ -105,6 +103,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
+    private static final String KEY_DOZE_FRAGMENT = "doze_fragment";
+
     private FontDialogPreference mFontSizePref;
     private PreferenceScreen mDisplayRotationPreference;
 
@@ -114,7 +114,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private ListPreference mScreenTimeoutPreference;
     private Preference mScreenSaverPreference;
     private SwitchPreference mAccelerometer;
-    private SwitchPreference mDozePreference;
+    private PreferenceScreen mDozeFragement;
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mWakeWhenPluggedOrUnplugged;
 
@@ -258,12 +258,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
 
 
-        mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
-        if (mDozePreference != null && isDozeAvailable(activity)) {
-            mDozePreference.setOnPreferenceChangeListener(this);
-        } else {
-            if (displayPrefs != null && mDozePreference != null) {
-                displayPrefs.removePreference(mDozePreference);
+        mDozeFragement = (PreferenceScreen) findPreference(KEY_DOZE_FRAGMENT);
+        if (mDozeFragement == null || !isDozeAvailable(activity)) {
+            if (displayPrefs != null && mDozeFragement != null) {
+            displayPrefs.removePreference(mDozeFragement);
+            mDozeFragement = null;
             }
         }
 
@@ -501,11 +500,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mAutoBrightnessPreference.setChecked(brightnessMode != SCREEN_BRIGHTNESS_MODE_MANUAL);
         }
 
-        // Update doze if it is available.
-        if (mDozePreference != null) {
-            int value = Settings.Secure.getInt(getContentResolver(), DOZE_ENABLED, 1);
-            mDozePreference.setChecked(value != 0);
-        }
     }
 
     private void updateScreenSaverSummary() {
@@ -635,9 +629,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist display density setting", e);
             }
-        } else if (preference == mDozePreference) {
-            boolean value = (Boolean) objValue;
-            Settings.Secure.putInt(getContentResolver(), DOZE_ENABLED, value ? 1 : 0);
         } else if (preference == mListViewAnimation) {
             int listviewanimation = Integer.valueOf((String) objValue);
             int index = mListViewAnimation.findIndexOfValue((String) objValue);
@@ -730,7 +721,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                         result.add(KEY_AUTO_BRIGHTNESS);
                     }
                     if (!isDozeAvailable(context)) {
-                        result.add(KEY_DOZE);
+                        result.add(KEY_DOZE_FRAGMENT);
                     }
                     return result;
                 }
