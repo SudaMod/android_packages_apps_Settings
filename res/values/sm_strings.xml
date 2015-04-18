@@ -149,6 +149,41 @@
     <!-- Device Control -->
     <string name="device_control_title">Device Control</string>
 
+    <!-- video sizes -->
+    <string name="screen_recorder_size_240x400" translatable="false">240x400</string>
+    <string name="screen_recorder_size_360x640" translatable="false">360x640</string>
+    <string name="screen_recorder_size_480x800" translatable="false">480x800</string>
+    <string name="screen_recorder_size_480x854" translatable="false">480x854</string>
+    <string name="screen_recorder_size_540x960" translatable="false">540x960</string>
+    <string name="screen_recorder_size_600x1024" translatable="false">600x1024</string>
+    <string name="screen_recorder_size_720x1280" translatable="false">720x1280</string>
+
+    <!-- frame rates -->
+    <string name="screen_recorder_bitrate_title_100000" translatable="false">100 kB/s</string>
+    <string name="screen_recorder_bitrate_title_250000" translatable="false">250 kB/s</string>
+    <string name="screen_recorder_bitrate_title_500000" translatable="false">500 kB/s</string>
+    <string name="screen_recorder_bitrate_title_1000000" translatable="false">1 MB/s</string>
+    <string name="screen_recorder_bitrate_title_2000000" translatable="false">2 MB/s</string>
+    <string name="screen_recorder_bitrate_title_3000000" translatable="false">3 MB/s</string>
+    <string name="screen_recorder_bitrate_title_4000000" translatable="false">4 MB/s</string>
+    <string name="screen_recorder_bitrate_title_5000000" translatable="false">5 MB/s</string>
+    <string name="screen_recorder_bitrate_title_10000000" translatable="false">10 MB/s</string>
+    <string name="screen_recorder_bitrate_title_20000000" translatable="false">20 MB/s</string>
+    <string name="screen_recorder_bitrate_100000" translatable="false">100000</string>
+    <string name="screen_recorder_bitrate_250000" translatable="false">250000</string>
+    <string name="screen_recorder_bitrate_500000" translatable="false">500000</string>
+    <string name="screen_recorder_bitrate_1000000" translatable="false">1000000</string>
+    <string name="screen_recorder_bitrate_2000000" translatable="false">2000000</string>
+    <string name="screen_recorder_bitrate_3000000" translatable="false">3000000</string>
+    <string name="screen_recorder_bitrate_4000000" translatable="false" >4000000</string>
+    <string name="screen_recorder_bitrate_5000000" translatable="false">5000000</string>
+    <string name="screen_recorder_bitrate_10000000" translatable="false">10000000</string>
+    <string name="screen_recorder_bitrate_20000000" translatable="false">20000000</string>
+    <string name="power_menu_screenrecord_title">Screen record</string>
+    <string name="screen_recorder_record_audio_title">External audio</string>
+    <string name="screen_recorder_record_audio_summary">Record audio from the microphone</string>
+    <string name="screen_recorder_power_menu_summary">Add a Screen Record entry in the power menu</string>
+
     <!-- SudaMod Updates -->
     <string name="smupdate_settings_title">SudaMod updates</string>
 
