@@ -116,8 +116,14 @@
     <string name="gpu_gl_version">OpenGL version</string>
     <string name="gpu_gl_extensions">OpenGL extensions</string>
     <string name="gpu_shader_version">Shader version</string>
+
+    <!-- Superuser indicator-->
+    <string name="su_indicator">Superuser indicator</string>
+    <string name="su_indicator_summary">Show superuser indicator when a session is active</string>         
+
     <!-- Disable Camera Shutter Sound -->
     <string name="camera_sounds_title">Camera shutter sound</string>
+
     <!-- clock second-->
     <string name="clock_second_title">Time display seconds</string>
     <string name="clock_second_summary">Let the time accurate to seconds</string>
@@ -148,6 +154,12 @@
 
     <!-- Device Control -->
     <string name="device_control_title">Device Control</string>
+    
+    <!-- Screen recorder -->
+    <string name="screen_recorder_title">Screen recorder</string>
+    <string name="screen_recorder_summary">Adjust screen recorder settings</string>
+    <string name="screen_recorder_video_dimensions_title">Video size</string>
+    <string name="screen_recorder_video_bitrate_title">Bitrate</string>
 
     <!-- video sizes -->
     <string name="screen_recorder_size_240x400" translatable="false">240x400</string>
