@@ -288,7 +288,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                         }
                         Settings.System.putString(getActivity().getContentResolver(),
                             Settings.System.STATUS_BAR_DATE_FORMAT, value);
-
+                        mStatusBarDateFormat.setSummary(value);
                         return;
                     }
                 });
@@ -305,6 +305,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                 if ((String) newValue != null) {
                     Settings.System.putString(getActivity().getContentResolver(),
                         Settings.System.STATUS_BAR_DATE_FORMAT, (String) newValue);
+                    mStatusBarDateFormat.setSummary((String) newValue);
                 }
             }
             return true;
