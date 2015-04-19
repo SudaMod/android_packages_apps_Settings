@@ -31,9 +31,11 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
+import android.preference.PreferenceCategory;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.preference.SwitchPreference;
+import android.suda.utils.SudaUtils;
 import android.telephony.TelephonyManager;
 import android.text.Spannable;
 import android.text.TextUtils;
@@ -77,6 +79,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
 
+    private static final String CATEGORY_DATE_TIME = "category_date_time";
+
+
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
@@ -94,6 +99,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private ListPreference mStatusBarDateFormat;
     private ListPreference mCarrierSize;
     private ListPreference mClockSize;
+
+    private PreferenceCategory mcategory_date_time;
 
     private String mCustomCarrierLabelText;
 
@@ -149,6 +156,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarDateStyle = (ListPreference) findPreference(STATUS_BAR_DATE_STYLE);
         mStatusBarDateFormat = (ListPreference) findPreference(STATUS_BAR_DATE_FORMAT);
 
+        mcategory_date_time = (PreferenceCategory) findPreference(CATEGORY_DATE_TIME);
+
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         mStatusBarBatteryShowPercent =
                 (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
@@ -176,12 +185,15 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarDate.setSummary(mStatusBarDate.getEntry());
         mStatusBarDate.setOnPreferenceChangeListener(this);
 
-        int dateStyle = Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_DATE_STYLE, 0);
-        mStatusBarDateStyle.setValue(String.valueOf(dateStyle));
-        mStatusBarDateStyle.setSummary(mStatusBarDateStyle.getEntry());
-        mStatusBarDateStyle.setOnPreferenceChangeListener(this);
-
+        if(!SudaUtils.isSupportLanguage(true)) {
+            int dateStyle = Settings.System.getInt(resolver,
+                    Settings.System.STATUS_BAR_DATE_STYLE, 0);
+            mStatusBarDateStyle.setValue(String.valueOf(dateStyle));
+            mStatusBarDateStyle.setSummary(mStatusBarDateStyle.getEntry());
+            mStatusBarDateStyle.setOnPreferenceChangeListener(this);
+        } else {
+            mcategory_date_time.removePreference(mStatusBarDateStyle);
+        }
         mStatusBarDateFormat.setOnPreferenceChangeListener(this);
         mStatusBarDateFormat.setSummary(mStatusBarDateFormat.getEntry());
         if (mStatusBarDateFormat.getValue() == null) {

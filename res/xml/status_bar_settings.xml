@@ -20,7 +20,7 @@
     android:title="@string/status_bar_title">
 
     <PreferenceCategory
-        android:key="clock_category"
+        android:key="category_date_time"
         android:title="@string/clock_category">
 
         <ListPreference
