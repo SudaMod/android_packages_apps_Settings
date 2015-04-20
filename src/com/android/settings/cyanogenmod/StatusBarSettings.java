@@ -194,8 +194,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         } else {
             mcategory_date_time.removePreference(mStatusBarDateStyle);
         }
+
+        String oldText = Settings.System.getString(getActivity().getContentResolver(),
+                            Settings.System.STATUS_BAR_DATE_FORMAT);
         mStatusBarDateFormat.setOnPreferenceChangeListener(this);
-        mStatusBarDateFormat.setSummary(mStatusBarDateFormat.getEntry());
+        mStatusBarDateFormat.setSummary(oldText);
+
         if (mStatusBarDateFormat.getValue() == null) {
             mStatusBarDateFormat.setValue("EEE");
         }
