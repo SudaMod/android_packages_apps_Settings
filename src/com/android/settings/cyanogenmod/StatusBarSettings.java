@@ -76,10 +76,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
 
+    private static final String STATUS_BAR_SHOW_SU = "show_su_icon";
+
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
 
     private static final String CATEGORY_DATE_TIME = "category_date_time";
+    private static final String CATEGORY_OTHER = "statusbar_other_category";
 
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
@@ -101,6 +104,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private ListPreference mClockSize;
 
     private PreferenceCategory mcategory_date_time;
+    private PreferenceCategory mcategory_other;
+
+    private SwitchPreference mStatusBarShowSu;
+
 
     private String mCustomCarrierLabelText;
 
@@ -157,10 +164,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarDateFormat = (ListPreference) findPreference(STATUS_BAR_DATE_FORMAT);
 
         mcategory_date_time = (PreferenceCategory) findPreference(CATEGORY_DATE_TIME);
+        mcategory_other =  (PreferenceCategory) findPreference(CATEGORY_OTHER);
 
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         mStatusBarBatteryShowPercent =
                 (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
+
+        mStatusBarShowSu =  (SwitchPreference) prefSet
+                .findPreference(STATUS_BAR_SHOW_SU);
 
         int clockStyle = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CLOCK, 1);
@@ -177,6 +188,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             mStatusBarAmPm.setValue(String.valueOf(statusBarAmPm));
             mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntry());
             mStatusBarAmPm.setOnPreferenceChangeListener(this);
+        }
+
+        if (SudaUtils.isApkInstalled("eu.chainfire.supersu" , getActivity())) {
+            mcategory_other.removePreference(mStatusBarShowSu);
         }
 
         int showDate = Settings.System.getInt(resolver,
