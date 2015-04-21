@@ -269,4 +269,6 @@
   <string name="colors_title">彩色</string>
   <string name="text_title">文本</string>
   <string name="reset">重置</string>
+  <string name="disable_fc_notifications_title">禁止FC提示</string>
+  <string name="disable_fc_notifications_summary">开启将隐藏所有FC提示</string>
 </resources>
