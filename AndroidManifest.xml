@@ -726,7 +726,6 @@
                 android:value="true" />
         </activity>
 
-<<<<<<< HEAD
 
         <activity android:name="Settings$ManageApplicationsActivity"
                 android:label="@string/applications_settings"
