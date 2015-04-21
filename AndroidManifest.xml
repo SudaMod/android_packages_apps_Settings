@@ -728,8 +728,6 @@
 
 <<<<<<< HEAD
 
-=======
->>>>>>> 88e9cf51975ab6ece2688cd0212818989304106c
         <activity android:name="Settings$ManageApplicationsActivity"
                 android:label="@string/applications_settings"
                 android:taskAffinity="">
