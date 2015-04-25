@@ -79,6 +79,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_POWER_END_CALL = "power_end_call";
     private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
     private static final String KEY_VOLUME_MUSIC_CONTROLS = "volbtn_music_controls";
+    private static final String KEY_VOLUME_CONTROL_RING_STREAM = "volume_keys_control_ring_stream";
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -125,6 +126,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private ListPreference mVolumeKeyCursorControl;
     private SwitchPreference mVolumeWakeScreen;
     private SwitchPreference mVolumeMusicControls;
+    private SwitchPreference mVolumeControlRingStream;
     private SwitchPreference mSwapVolumeButtons;
     private SwitchPreference mDisableNavigationKeys;
     private SwitchPreference mNavigationBarLeftPref;
@@ -213,6 +215,14 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
         mVolumeWakeScreen = (SwitchPreference) findPreference(Settings.System.VOLUME_WAKE_SCREEN);
         mVolumeMusicControls = (SwitchPreference) findPreference(KEY_VOLUME_MUSIC_CONTROLS);
+
+        mVolumeControlRingStream = (SwitchPreference)
+                findPreference(KEY_VOLUME_CONTROL_RING_STREAM);
+        int volumeControlRingtone = Settings.System.getInt(getContentResolver(),
+                Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM, 1);
+        if (mVolumeControlRingStream != null) {
+            mVolumeControlRingStream.setChecked(volumeControlRingtone > 0);
+        }
 
         if (mVolumeWakeScreen != null) {
             if (mVolumeMusicControls != null) {
@@ -628,12 +638,10 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(context.getContentResolver(),
                     Settings.Secure.BUTTON_BRIGHTNESS, 0);
         } else {
-            int oldBright = prefs.getInt("pre_navbar_button_backlight", -1);
-            if (oldBright != -1) {
-                Settings.Secure.putInt(context.getContentResolver(),
-                        Settings.Secure.BUTTON_BRIGHTNESS, oldBright);
-                editor.remove("pre_navbar_button_backlight");
-            }
+            int oldBright = prefs.getInt("pre_navbar_button_backlight", defaultBrightness);
+            Settings.Secure.putInt(context.getContentResolver(),
+                    Settings.Secure.BUTTON_BRIGHTNESS, oldBright);
+            editor.remove("pre_navbar_button_backlight");
         }
         editor.commit();
     }
@@ -706,6 +714,10 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                     ? (ScreenType.isTablet(getActivity()) ? 2 : 1) : 0;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value);
+        } else if (preference == mVolumeControlRingStream) {
+            int value = mVolumeControlRingStream.isChecked() ? 1 : 0;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM, value);
         } else if (preference == mDisableNavigationKeys) {
             mDisableNavigationKeys.setEnabled(false);
             mNavigationPreferencesCat.setEnabled(false);
