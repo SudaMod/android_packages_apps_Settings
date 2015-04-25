@@ -69,7 +69,7 @@
         <PreferenceScreen android:key="contributor_cloud"
             android:title="@string/contributor_cloud_title"
             android:fragment="com.android.settings.cyanogenmod.ContributorsCloud" >
-        </PreferenceScreen>
+        </PreferenceScreen> -->
 
         <!-- Legal Information -->
         <PreferenceScreen
@@ -121,10 +121,15 @@
                 android:title="@string/device_feedback">
         </PreferenceScreen>
 
-        <!-- Device hardware model -->
-        <Preference android:key="device_model" 
+       <Preference android:key="device_name"
                 style="?android:preferenceInformationStyle"
-                android:title="@string/model_name"
+                android:title="@string/device_name"
+                android:summary="@string/device_info_default"/>
+
+        <!-- Device hardware model -->
+        <Preference android:key="device_model"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/device_model"
                 android:summary="@string/device_info_default"/>
 
         <!-- Mod version -->
