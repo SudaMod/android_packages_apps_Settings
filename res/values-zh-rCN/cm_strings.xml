@@ -764,8 +764,6 @@
   <string name="lockscreen_message">轻触左边或右边的图标来重新分配锁屏快捷方式。</string>
   <string name="lockscreen_choose_action_title">选择操作</string>
   <string name="lockscreen_visualizer_title">显示音乐可视化</string>
-  <string name="whisperpush_title">WhisperPush</string>
-  <string name="whisperpush_summary">管理安全短信设置</string>
   <string name="navigation_ring_title">导航环目标</string>
   <string name="navigation_ring_message">轻按编辑图标以打开导航环编辑。\n\n选择一个目标以配置其行为。\n\n轻按“\u2713”图标以保存您的变更，或“还原默认值”以重置设置到默认状态。</string>
   <string name="stylus_icon_enabled_title">使用触控笔时显示光标</string>
