@@ -28,20 +28,4 @@
             android:title="@string/blacklist_title"
             android:summary="@string/blacklist_summary"
             android:fragment="com.android.settings.blacklist.BlacklistSettings" />
-
-        <Preference
-            android:key="whisperpush"
-            android:title="@string/whisperpush_title"
-            android:summary="@string/whisperpush_summary">
-            <intent android:targetPackage="org.whispersystems.whisperpush"
-                    android:targetClass="org.whispersystems.whisperpush.ui.PreferenceActivity" />
-        </Preference>
-
-        <!-- Anonymous statistics - (CMStats) -->
-        <PreferenceScreen
-            android:key="cmstats"
-            android:title="@string/anonymous_statistics_title"
-            android:summary="@string/anonymous_statistics_summary"
-            android:fragment="com.android.settings.cmstats.AnonymousStats" >
-        </PreferenceScreen>
 </PreferenceScreen>

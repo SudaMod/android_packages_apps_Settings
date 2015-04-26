@@ -38,10 +38,8 @@ import java.util.List;
 public class PrivacySettings extends SettingsPreferenceFragment implements Indexable {
 
     private static final String KEY_BLACKLIST = "blacklist";
-    private static final String KEY_WHISPERPUSH = "whisperpush";
 
     private PreferenceScreen mBlacklist;
-    private Preference mWhisperPush;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,18 +47,9 @@ public class PrivacySettings extends SettingsPreferenceFragment implements Index
         addPreferencesFromResource(R.xml.privacy_settings_cyanogenmod);
 
         mBlacklist = (PreferenceScreen) findPreference(KEY_BLACKLIST);
-        mWhisperPush = (Preference) findPreference(KEY_WHISPERPUSH);
 
         // Add package manager to check if features are available
         PackageManager pm = getPackageManager();
-
-        // WhisperPush
-        // Only if device has telephony support and has WhisperPush installed.
-        if (!isWhisperPushable(getActivity(), pm)) {
-            // No telephony, remove dependent options
-            PreferenceScreen root = getPreferenceScreen();
-            root.removePreference(mWhisperPush);
-        }
 
         // Determine options based on device telephony support
         if (!pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
@@ -68,12 +57,6 @@ public class PrivacySettings extends SettingsPreferenceFragment implements Index
             PreferenceScreen root = getPreferenceScreen();
             root.removePreference(mBlacklist);
         }
-
-    }
-
-    private static boolean isWhisperPushable(Context context, PackageManager pm) {
-        return pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY) &&
-                Utils.isPackageInstalled(context, "org.whispersystems.whisperpush");
     }
 
     @Override
@@ -113,9 +96,6 @@ public class PrivacySettings extends SettingsPreferenceFragment implements Index
                     // Determine options based on device telephony support
                     if (!pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
                         result.add(KEY_BLACKLIST);
-                    }
-                    if (!isWhisperPushable(context, pm)) {
-                        result.add(KEY_WHISPERPUSH);
                     }
                     return result;
                 }
