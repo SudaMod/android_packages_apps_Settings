@@ -59,6 +59,12 @@
             android:summary="@string/direct_call_for_mms_summary"
             android:title="@string/direct_call_for_mms_title" />
 
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="shake_clean_recent"
+            android:title="@string/shake_clean_recent"
+            android:summary="@string/shake_clean_recent_summary"
+            android:defaultValue="true" />
+
         <!-- Lift to wake -->
         <SwitchPreference
             android:key="lift_to_wake"
