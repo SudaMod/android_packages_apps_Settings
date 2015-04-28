@@ -65,6 +65,12 @@
             android:summary="@string/shake_clean_recent_summary"
             android:defaultValue="true" />
 
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="shake_clean_notification"
+            android:title="@string/shake_clean_notification"
+            android:summary="@string/shake_clean_notification_summary"
+            android:defaultValue="true" />
+
         <!-- Lift to wake -->
         <SwitchPreference
             android:key="lift_to_wake"
