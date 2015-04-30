@@ -106,6 +106,5 @@ public class Settings extends SettingsActivity {
     public static class LockScreenSettingsActivity extends SettingsActivity { /* empty */ }
     public static class LiveDisplayActivity extends SettingsActivity { /* empty */ }
     public static class DisplayRotationActivity extends SettingsActivity { /* empty */ }
-    public static class AnonymousStatsActivity extends Settings { /* empty */ }
 }
 
