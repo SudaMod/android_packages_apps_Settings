@@ -89,6 +89,8 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
     private int mNumSims;
     private TelephonyManager mTelephonyManager;
 
+    private boolean mDisableAltAlwaysSmsCallSimPref = false;
+
     public SimSettings() {
         super(DISALLOW_CONFIG_SIM);
     }
@@ -105,6 +107,9 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
         }
 
         mNumSlots = mTelephonyManager.getSimCount();
+
+        mDisableAltAlwaysSmsCallSimPref = getResources()
+                .getBoolean(R.bool.config_disableAltAlwaysSmsCallSimPref);
 
         createPreferences();
         updateAllOptions();
@@ -236,10 +241,14 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
         mSimEnablers = new ArrayList<MultiSimEnablerPreference>(mNumSlots);
         for (int i = 0; i < mNumSlots; ++i) {
             final SubInfoRecord sir = findRecordBySlotId(i);
-            if (mNumSlots > 1) {
-                mSimEnablers.add(i, new MultiSimEnablerPreference(
-                        getActivity(), sir, mHandler, i));
-                simEnablers.addPreference(mSimEnablers.get(i));
+            if (mNumSlots > 1 && sir != null) {
+                MultiSimEnablerPreference multiSimEnablerPreference =
+                        new MultiSimEnablerPreference(getActivity(), sir, mHandler, i);
+                mSimEnablers.add(multiSimEnablerPreference);
+                simEnablers.addPreference(multiSimEnablerPreference);
+                if (mDisableAltAlwaysSmsCallSimPref && i == 0) {
+                    multiSimEnablerPreference.setExplicitlyDisabled(true);
+                }
             } else {
                 removePreference(SIM_ENABLER_CATEGORY);
             }
@@ -449,6 +458,10 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
         for (int i = 0; i < subAvailableSize; ++i) {
             final SubInfoRecord sir = mAvailableSubInfos.get(i);
             if(sir != null){
+                if (i > 0 && (keyPref.equals(KEY_CALLS) || keyPref.equals(KEY_SMS)) &&
+                        mDisableAltAlwaysSmsCallSimPref) {
+                    continue;
+                }
                 simPref.addItem(sir.displayName + " - " + Integer.toString(i+1), sir);
             }
         }
