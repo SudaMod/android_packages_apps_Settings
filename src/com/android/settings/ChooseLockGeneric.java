@@ -376,7 +376,8 @@ public class ChooseLockGeneric extends SettingsActivity {
                 switch (preference.getKey()) {
                     case KEY_UNLOCK_SET_PATTERN:
                     case KEY_UNLOCK_SET_PIN:
-                    case KEY_UNLOCK_SET_PASSWORD: {
+                    case KEY_UNLOCK_SET_PASSWORD:
+                    case KEY_UNLOCK_SET_GESTURE: {
                         preference.setSummary(summary);
                     } break;
                 }
