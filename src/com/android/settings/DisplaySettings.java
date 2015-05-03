@@ -70,6 +70,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.android.settings.cyanogenmod.DisplayRotation;
+import com.android.settings.Utils;
 
 public class DisplaySettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, OnPreferenceClickListener, Indexable {
@@ -259,7 +260,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
 
         mDozeFragement = (PreferenceScreen) findPreference(KEY_DOZE_FRAGMENT);
-        if (mDozeFragement == null || !isDozeAvailable(activity)) {
+        if (mDozeFragement == null || !Utils.isDozeAvailable(activity)) {
             if (displayPrefs != null && mDozeFragement != null) {
             displayPrefs.removePreference(mDozeFragement);
             mDozeFragement = null;
@@ -288,15 +289,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static boolean isLiftToWakeAvailable(Context context) {
         SensorManager sensors = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
         return sensors != null && sensors.getDefaultSensor(Sensor.TYPE_WAKE_GESTURE) != null;
-    }
-
-    private static boolean isDozeAvailable(Context context) {
-        String name = Build.IS_DEBUGGABLE ? SystemProperties.get("debug.doze.component") : null;
-        if (TextUtils.isEmpty(name)) {
-            name = context.getResources().getString(
-                    com.android.internal.R.string.config_dozeComponent);
-        }
-        return !TextUtils.isEmpty(name);
     }
 
     private static boolean isAutomaticBrightnessAvailable(Resources res) {
@@ -720,7 +712,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     if (!isAutomaticBrightnessAvailable(context.getResources())) {
                         result.add(KEY_AUTO_BRIGHTNESS);
                     }
-                    if (!isDozeAvailable(context)) {
+                    if (!Utils.isDozeAvailable(context)) {
                         result.add(KEY_DOZE_FRAGMENT);
                     }
                     return result;
