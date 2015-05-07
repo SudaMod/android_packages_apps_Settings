@@ -158,6 +158,11 @@
   <string name="sunlight_enhancement_summary">在明亮的阳光下提高显示亮度和可读性</string>
   <string name="color_enhancement_title">色彩增强</string>
   <string name="color_enhancement_summary">动态增强屏幕色彩</string>
+  <string name="blacklist_title">黑名单列表</string>
+  <string name="blacklist_edit_dialog_title">编辑黑名单号码</string>
+  <string name="blacklist_empty_text">当前未添加黑名单。点击(+)按钮进行添加。</string>
+  <string name="blacklist_disabled_empty_text">开启黑名单列表来阻止接受黑名单来电和信息。</string>
+  <string name="blacklist_summary">你将不会收到黑名单列表的电话和信息</string>
   <string name="blacklist_prefs">设置</string>
   <string name="blacklist_button_delete">删除</string>
   <string name="blacklist_summary_disabled">禁用</string>
@@ -827,4 +832,5 @@
   <string name="preview_version_title">版本</string>
   <string name="preview_country_title">国家</string>
   <string name="preview_carrier_title">运营商</string>
+  <string name="device_model">型号</string>
 </resources>
