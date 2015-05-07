@@ -161,7 +161,7 @@
   <string name="blacklist_title">黑名单列表</string>
   <string name="blacklist_edit_dialog_title">编辑黑名单号码</string>
   <string name="blacklist_empty_text">当前未添加黑名单。点击(+)按钮进行添加。</string>
-  <string name="blacklist_disabled_empty_text">开启黑名单列表来阻止接受黑名单来电和信息。</string>
+  <string name="blacklist_disabled_empty_text">开启黑名单列表来阻止接收黑名单来电和信息。</string>
   <string name="blacklist_summary">你将不会收到黑名单列表的电话和信息</string>
   <string name="blacklist_prefs">设置</string>
   <string name="blacklist_button_delete">删除</string>
