@@ -380,7 +380,7 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
     private void updateState() {
         // Update doze if it is available.
         if (mDozePreference != null) {
-            int value = Settings.Secure.getInt(getContentResolver(), Settings.Secure.DOZE_ENABLED, 1);
+            int value = Settings.Secure.getInt(getContentResolver(), Settings.Secure.DOZE_ENABLED, 0);
             mDozePreference.setChecked(value != 0);
         }
     }
