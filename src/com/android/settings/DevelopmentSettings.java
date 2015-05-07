@@ -58,6 +58,7 @@ import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.suda.utils.SudaUtils;
 import android.text.Spannable;
 import android.text.TextUtils;
 import android.util.Log;
@@ -491,7 +492,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private boolean removeRootOptionsIfRequired() {
         // user builds don't get root, and eng always gets root
-        if (!(Build.IS_DEBUGGABLE || "eng".equals(Build.TYPE))) {
+        if (!(Build.IS_DEBUGGABLE || "eng".equals(Build.TYPE))
+          || SudaUtils.isApkInstalled("eu.chainfire.supersu" , getActivity())) {
             if (mRootAccess != null) {
                 getPreferenceScreen().removePreference(mRootAccess);
                 return true;

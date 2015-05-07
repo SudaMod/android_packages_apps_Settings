@@ -29,9 +29,11 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
+import android.preference.PreferenceCategory;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.preference.SwitchPreference;
+import android.suda.utils.SudaUtils;
 import android.telephony.TelephonyManager;
 import android.text.Spannable;
 import android.text.TextUtils;
@@ -73,10 +75,16 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+
+    private static final String STATUS_BAR_SHOW_SU = "show_su_icon";
+
     private static final String KEY_DATE_SECOND = "date_second";
 
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
+
+    private static final String CATEGORY_OTHER = "statusbar_other_category";
+
 
     private ListPreference mStatusBarAmPm;
     private ListPreference mStatusBarNetworkTraffic;
@@ -89,6 +97,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private ListPreference mCarrierSize;
     private ListPreference mClockSize;
     private SwitchPreference mDateScond;
+
+    private PreferenceCategory mcategory_other;
+
+    private SwitchPreference mStatusBarShowSu;
+
 
     private String mCustomCarrierLabelText;
 
@@ -142,6 +155,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         mStatusBarBatteryShowPercent = (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
 
+        mStatusBarShowSu =  (SwitchPreference) prefSet
+                .findPreference(STATUS_BAR_SHOW_SU);
+
         int clockStyle = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CLOCK, 1);
         mStatusBarClock.setValue(String.valueOf(clockStyle));
@@ -157,6 +173,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             mStatusBarAmPm.setValue(String.valueOf(statusBarAmPm));
             mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntry());
             mStatusBarAmPm.setOnPreferenceChangeListener(this);
+        }
+
+        if (SudaUtils.isApkInstalled("eu.chainfire.supersu" , getActivity())) {
+            mcategory_other.removePreference(mStatusBarShowSu);
         }
 
         mDateScond = (SwitchPreference) findPreference(KEY_DATE_SECOND);
