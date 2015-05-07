@@ -316,7 +316,7 @@
   <string name="pocket_only_mode">口袋模式</string>
   <string name="shake_pulse_mode">晃动模式和主动模式</string>
   <string name="pulse_only_mode">主动模式（默认）</string>
-  <string name="lock_screen_weather_settings_title"><b>锁屏天气</b></string>
+  <string name="lock_screen_weather_settings_title">锁屏天气</string>
   <string name="lock_screen_weather_settings_title_summary">定制锁屏天气面板</string>
   <string name="weather_show_weather_title">显示天气</string>
   <string name="weather_show_weather_summary">启用天气信息显示</string>
