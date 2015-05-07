@@ -130,6 +130,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment
             mBiometricWeakLiveliness.setChecked(
                     lockPatternUtils.isBiometricWeakLivelinessEnabled());
         }
+        if (mVisibleGesture != null) {
+            mVisibleGesture.setChecked(lockPatternUtils.isVisibleGestureEnabled());
+        }
         if (mVisiblePattern != null) {
             mVisiblePattern.setChecked(lockPatternUtils.isVisiblePatternEnabled());
         }
