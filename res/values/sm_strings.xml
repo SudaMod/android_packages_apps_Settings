@@ -526,4 +526,8 @@
     <string name="colors_title">Colors</string>
     <string name="text_title">Text</string>
     <string name="reset">Reset</string>
+
+    <!-- Text for forcing expanded notifications -->
+    <string name="disable_fc_notifications_title">Disable FC Notifications</string>
+    <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
 </resources>
