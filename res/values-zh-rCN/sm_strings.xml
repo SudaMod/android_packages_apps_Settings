@@ -201,7 +201,7 @@
   <string name="heads_up_time_out_8sec"> 8 秒</string>
   <string name="heads_up_time_out_10sec"> 10 秒</string>
   <string name="heads_up_time_out_never">从不</string>
-  <string name="clock_category">时钟</string>
+  <string name="clock_category">时钟与日期</string>
   <string name="carrier_category">运营商自定义</string>
   <string name="battery_category">电池</string>
   <string name="statusbar_other_category">其他</string>
@@ -271,6 +271,14 @@
   <string name="show_chinese_date">锁屏显示农历</string>
   <string name="double_tap_sleep_nav_bar_title">双击锁屏</string>
   <string name="double_tap_sleep_nav_bar_summary">双击导航栏空白处锁屏</string> 
+  <string name="status_bar_date_title">日期大小</string>
+  <string name="status_bar_date_none">隐藏 (默认)</string>
+  <string name="status_bar_date_small">小</string>
+  <string name="status_bar_date_normal">正常</string>
+  <string name="status_bar_date_format_title">日期格式</string>
+  <string name="status_bar_date_format_custom">自定义</string>
+  <string name="status_bar_date_string_edittext_title">必须是日期格式，例如 MM/dd/yy</string>
+  <string name="status_bar_date_string_edittext_summary">输入值</string>
   <string name="doze_overwrite_value_title">覆盖参数</string>
   <string name="doze_overwrite_value_summary">允许用户设置覆盖默认参数</string>
   <string name="doze_list_mode_title">主动显示</string>
