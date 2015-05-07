@@ -83,6 +83,10 @@
   <string name="direct_call_for_dialer_summary">手机放在耳边时将自动拨打当前拨号器输入的电话号码</string>
   <string name="direct_call_for_mms_title">短信界面体感拨号</string>
   <string name="direct_call_for_mms_summary">手机放在耳边时将自动拨打当前的短信联系者电话号码</string>
+  <string name="shake_clean_recent">晃动清理最近任务</string>
+  <string name="shake_clean_recent_summary">最近任务界面通过晃动清理</string>
+  <string name="shake_clean_notification">晃动清理通知</string>
+  <string name="shake_clean_notification_summary">通知栏通知晃动清理</string>
   <string name="show_carrier_speed_title">运营商字体大小</string>
   <string name="carrier_size_style_normal">正常</string>
   <string name="carrier_size_style_small">小</string>

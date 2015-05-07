@@ -107,7 +107,11 @@
     <string name="direct_call_for_dialer_summary">Lift phone to ear after entering number in dialer to call directly</string>
     <string name="direct_call_for_mms_title">Direct Call in Mms</string>
     <string name="direct_call_for_mms_summary">Lift phone to ear will automatically call current contact</string>
-      
+    <string name="shake_clean_recent">Clean by shake</string>
+    <string name="shake_clean_recent_summary">Clean recent task by shake</string>
+    <string name="shake_clean_notification">Clean by shake</string>
+    <string name="shake_clean_notification_summary">Clean notification by shake</string>
+
     <!-- Advanced Device Info -->
     <string name="advanced_device_info_title">Advanced information</string>
     <string name="advanced_device_info_summary">Information about CPU, GPU etc.</string>
