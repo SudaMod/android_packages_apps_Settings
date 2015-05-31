@@ -20,6 +20,12 @@ package com.android.settings;
 
 import android.os.UserHandle;
 
+import android.view.Display;
+import android.view.IWindowManager;
+import android.view.WindowManager;
+import android.view.WindowManagerGlobal;
+import android.view.WindowManagerImpl;
+import android.widget.Toast;
 import com.android.internal.view.RotationPolicy;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
@@ -204,8 +210,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mLcdDensityPreference = (ListPreference) findPreference(KEY_LCD_DENSITY);
         if (mLcdDensityPreference != null) {
             final String defaultText = getResources().getString(R.string.lcd_density_default);
-            int defaultDensity = DisplayMetrics.DENSITY_DEVICE;
-            int currentDensity = DisplayMetrics.DENSITY_CURRENT;
+            int defaultDensity = getDefaultDensity();
+            int currentDensity = getCurrentDensity();
             if (currentDensity < 10 || currentDensity >= 1000) {
                 // Unsupported value, force default
                 currentDensity = defaultDensity;
@@ -279,6 +285,28 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 (SwitchPreference) findPreference(KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
 
         initPulse((PreferenceCategory) findPreference(KEY_CATEGORY_LIGHTS));
+    }
+
+    private int getDefaultDensity() {
+        IWindowManager wm = IWindowManager.Stub.asInterface(ServiceManager.checkService(
+                Context.WINDOW_SERVICE));
+        try {
+            return wm.getInitialDisplayDensity(Display.DEFAULT_DISPLAY);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return DisplayMetrics.DENSITY_DEVICE;
+    }
+
+    private int getCurrentDensity() {
+        IWindowManager wm = IWindowManager.Stub.asInterface(ServiceManager.checkService(
+                Context.WINDOW_SERVICE));
+        try {
+            return wm.getBaseDisplayDensity(Display.DEFAULT_DISPLAY);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return DisplayMetrics.DENSITY_DEVICE;
     }
 
     private static boolean allowAllRotations(Context context) {
@@ -376,6 +404,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     }
 
     private void updateLcdDensityPreferenceDescription(int currentDensity) {
+<<<<<<< HEAD
         final String defaultText = getResources().getString(R.string.lcd_density_default);
         int defaultDensity = DisplayMetrics.DENSITY_DEVICE;
         ListPreference preference = mLcdDensityPreference;
@@ -384,6 +413,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             summary += " (" + defaultText + ")";
         }
         preference.setSummary(summary);
+=======
+        final int summaryResId = currentDensity == getDefaultDensity()
+                ? R.string.lcd_density_default_value_format : R.string.lcd_density_value_format;
+        mLcdDensityPreference.setSummary(getString(summaryResId, currentDensity));
+>>>>>>> 06b12655bc78390d64b141864fbd62624e38ea66
     }
 
     private void disableUnusableTimeouts(ListPreference screenTimeoutPreference) {
@@ -501,15 +535,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
     }
 
-    private void writeLcdDensityPreference(final Context context, int value) {
-        try {
-            SystemProperties.set("persist.sys.lcd_density", Integer.toString(value));
-        } catch (RuntimeException e) {
-            Log.e(TAG, "Unable to save LCD density");
-            return;
-        }
+    private void writeLcdDensityPreference(final Context context, final int density) {
         final IActivityManager am = ActivityManagerNative.asInterface(
                 ServiceManager.checkService("activity"));
+        final IWindowManager wm = IWindowManager.Stub.asInterface(ServiceManager.checkService(
+                Context.WINDOW_SERVICE));
         AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
             @Override
             protected void onPreExecute() {
@@ -527,6 +557,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 } catch (InterruptedException e) {
                     // Ignore
                 }
+
+                try {
+                    wm.setForcedDisplayDensity(Display.DEFAULT_DISPLAY, density);
+                } catch (RemoteException e) {
+                    Log.e(TAG, "Failed to set density to " + density, e);
+                }
+
                 // Restart the UI
                 try {
                     am.restart();
