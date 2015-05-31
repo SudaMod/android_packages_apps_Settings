@@ -472,6 +472,4 @@
     <!-- Text for forcing expanded notifications -->
     <string name="disable_fc_notifications_title">Disable FC Notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
-
-    <string name="dolbyset">Dolby Setting</string>
 </resources>

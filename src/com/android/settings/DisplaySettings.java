@@ -404,14 +404,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     }
 
     private void updateLcdDensityPreferenceDescription(int currentDensity) {
-        final String defaultText = getResources().getString(R.string.lcd_density_default);
-        int defaultDensity = getDefaultDensity();
-        ListPreference preference = mLcdDensityPreference;
-        String summary = getResources().getString(R.string.lcd_density_summary, currentDensity);
-        if (currentDensity == defaultDensity) {
-            summary += " (" + defaultText + ")";
-        }
-        preference.setSummary(summary);
+        final int summaryResId = currentDensity == getDefaultDensity()
                 ? R.string.lcd_density_default_value_format : R.string.lcd_density_value_format;
         mLcdDensityPreference.setSummary(getString(summaryResId, currentDensity));
     }

@@ -57,10 +57,6 @@
 
     </PreferenceCategory>
 
-    <PreferenceScreen android:title="@string/dolbyset" android:key="dolby_control">
-        <intent android:targetPackage="com.dolby.ds1appUI" android:action="android.intent.action.MAIN" android:targetClass="com.dolby.ds1appUI.MainActivity" />
-    </PreferenceScreen>
-
     <PreferenceCategory
         android:key="sounds"
         android:title="@string/category_sounds">
