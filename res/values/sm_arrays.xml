@@ -243,9 +243,9 @@
     </string-array>
 
     <string-array name="values_clock_size_style" translatable="false">
-        <item>5</item>
-        <item>4</item>
         <item>6</item>
+        <item>5</item>
+        <item>7</item>
     </string-array>
 
     <!-- Heads up timeout -->

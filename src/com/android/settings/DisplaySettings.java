@@ -404,20 +404,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     }
 
     private void updateLcdDensityPreferenceDescription(int currentDensity) {
-<<<<<<< HEAD
         final String defaultText = getResources().getString(R.string.lcd_density_default);
-        int defaultDensity = DisplayMetrics.DENSITY_DEVICE;
+        int defaultDensity = getDefaultDensity();
         ListPreference preference = mLcdDensityPreference;
         String summary = getResources().getString(R.string.lcd_density_summary, currentDensity);
         if (currentDensity == defaultDensity) {
             summary += " (" + defaultText + ")";
         }
         preference.setSummary(summary);
-=======
-        final int summaryResId = currentDensity == getDefaultDensity()
                 ? R.string.lcd_density_default_value_format : R.string.lcd_density_value_format;
         mLcdDensityPreference.setSummary(getString(summaryResId, currentDensity));
->>>>>>> 06b12655bc78390d64b141864fbd62624e38ea66
     }
 
     private void disableUnusableTimeouts(ListPreference screenTimeoutPreference) {
