@@ -472,4 +472,15 @@
     <!-- Text for forcing expanded notifications -->
     <string name="disable_fc_notifications_title">Disable FC Notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
+
+    <string name="dolbyset">Dolby Setting</string>
+
+    <!-- QuickSettings colors -->
+    <string name="background_title">Background</string>
+    <string name="icon_title">Icon</string>
+    <string name="qs_colors_title">Custom Color Options</string>
+    <string name="reset_android">Android</string>
+    <string name="reset_swag">Swag</string>
+    <string name="background_header_title">Header background color</string>
+    <string name="reset_message">reset message</string>
 </resources>

@@ -300,9 +300,16 @@
   <string name="hidden_title">隐藏</string>
   <string name="dlg_reset_values_message">恢复默认值?</string>
   <string name="dlg_reset_temasek">确认</string>
-  <string name="colors_title">彩色</string>
+  <string name="colors_title">色彩</string>
   <string name="text_title">文本</string>
   <string name="reset">重置</string>
   <string name="disable_fc_notifications_title">禁止FC提示</string>
   <string name="disable_fc_notifications_summary">开启将隐藏所有FC提示</string>
+  <string name="background_title">背景</string>
+  <string name="icon_title">图标</string>
+  <string name="qs_colors_title">自定义通知抽屉背景色彩</string>
+  <string name="reset_android">Android</string>
+  <string name="reset_swag">Swag</string>
+  <string name="background_header_title">通知抽屉背景色彩</string>
+  <string name="reset_message">恢复默认</string>
 </resources>
