@@ -21,30 +21,30 @@
 
     <TextView
         android:id="@+id/location"
-        android:layout_marginTop="10dp"	
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-	android:text="@string/phonelocation_tip"
-	android:textAppearance="?android:attr/textAppearanceMedium"		
-	/>
+        android:layout_marginTop="10dp"
+        android:text="@string/phonelocation_tip"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
         android:id="@+id/phone"
-	android:hint="@string/phone_tip"
-        android:layout_marginTop="40dp"	
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/location"
-        android:layout_alignLeft="@+id/ocation"	
-	android:ems="10"	
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="@string/phone_tip"
         android:inputType="phone" />
 
     <Button
         android:id="@+id/lookup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/phone"
-	android:layout_alignBottom="@+id/phone"
+        android:layout_alignBottom="@+id/phone"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
         android:text="@string/look_up_location" />
 
 </RelativeLayout>
