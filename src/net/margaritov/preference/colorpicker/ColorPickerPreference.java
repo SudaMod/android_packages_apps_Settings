@@ -45,9 +45,6 @@ public class ColorPickerPreference extends Preference implements
     View mView;
     ColorPickerDialog mDialog;
     LinearLayout widgetFrameView;
-    int mDefaultValue = Color.BLACK;
-    int mAndroidColor = 0x00000000;
-    int mCustomColor = mAndroidColor;
     private int mValue = Color.BLACK;
     private float mDensity = 0;
     private boolean mAlphaSliderEnabled = false;
@@ -190,10 +187,6 @@ public class ColorPickerPreference extends Preference implements
         mAlphaSliderEnabled = enable;
     }
 
-    public void setDefaultColors(int androidColor, int CustomColor) {
-        mAndroidColor = androidColor;
-        mCustomColor = CustomColor;
-    }
     /**
      * For custom purposes. Not used by ColorPickerPreferrence
      *
