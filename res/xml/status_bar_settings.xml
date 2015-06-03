@@ -19,6 +19,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/status_bar_title">
 
+        <SwitchPreference
+           android:key="enable_task_manager"
+           android:title="@string/enable_task_manager_title"
+           android:summary="@string/enable_task_manager_summary" />
+
     <PreferenceCategory
         android:key="category_date_time"
         android:title="@string/clock_category">
