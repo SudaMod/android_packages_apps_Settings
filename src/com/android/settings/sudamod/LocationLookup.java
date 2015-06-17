@@ -52,7 +52,7 @@ public class LocationLookup extends Activity {
                 String phonelocation_tip = (String) LocationLookup.this.getResources().getText(R.string.phonelocation_tip);
                 String location_unknow = (String) LocationLookup.this.getResources().getText(R.string.location_unknow);
 
-                if(pl == null) {
+                if (pl == null) {
                     tvlocation.setText(phonelocation_tip + location_unknow);
                 } else{
                     tvlocation.setText(phonelocation_tip + pl );
