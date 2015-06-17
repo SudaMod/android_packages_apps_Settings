@@ -30,37 +30,37 @@ import com.android.settings.R;
 
 public class LocationLookup extends Activity {
 
-	private Button btlookup;
-	private EditText etphone;
-	private TextView tvlocation;
+    private Button btlookup;
+    private EditText etphone;
+    private TextView tvlocation;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.phonelocation);
-		
-		btlookup = (Button) findViewById(R.id.lookup);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.phonelocation);
+
+        btlookup = (Button) findViewById(R.id.lookup);
         etphone  = (EditText) findViewById( R.id.phone);
         tvlocation = (TextView) findViewById(R.id.location);
-		
-        btlookup.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				String pl = PhoneLocation.getCityFromPhone(etphone.getText().toString());
-				String phonelocation_tip = (String) LocationLookup.this.getResources().getText(R.string.phonelocation_tip);
-				String location_unknow = (String) LocationLookup.this.getResources().getText(R.string.location_unknow);
-								
-				if(pl.equals("")){
-					tvlocation.setText(phonelocation_tip + location_unknow);		
-				} else{
-					tvlocation.setText(phonelocation_tip + pl );					
-				}	
-				
-			}
-		});		
 
-	}
+        btlookup.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                // TODO Auto-generated method stub
+                String pl = PhoneLocation.getCityFromPhone(etphone.getText().toString());
+                String phonelocation_tip = (String) LocationLookup.this.getResources().getText(R.string.phonelocation_tip);
+                String location_unknow = (String) LocationLookup.this.getResources().getText(R.string.location_unknow);
+
+                if(pl == null) {
+                    tvlocation.setText(phonelocation_tip + location_unknow);
+                } else{
+                    tvlocation.setText(phonelocation_tip + pl );
+                }
+
+            }
+        });
+
+    }
 
 }
