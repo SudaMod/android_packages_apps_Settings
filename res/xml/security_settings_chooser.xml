@@ -66,6 +66,11 @@
             android:key="chinese_date_view"
             android:title="@string/show_chinese_date"
             android:defaultValue="true" />
+
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="enable_traffic_notification"
+            android:title="@string/show_traffic_notification"
+            android:defaultValue="true" />
     </PreferenceCategory>
 
 </PreferenceScreen>

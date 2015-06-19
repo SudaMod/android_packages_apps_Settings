@@ -370,8 +370,10 @@
     <string name="timeout_1000">1 second</string>
     <string name="timeout_500">0,5 second</string>
 
-    <!-- Show Chinese Date -->
+    <!-- LockScreen Options -->
     <string name="show_chinese_date">Show Chinese Date</string>
+    <string name="show_traffic_notification">Show lock screen flow</string>
+
 
     <!-- Double Tap Navbar to Sleep -->
     <string name="double_tap_sleep_nav_bar_title">Double-tap to sleep</string>

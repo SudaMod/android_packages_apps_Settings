@@ -90,6 +90,11 @@
                 android:title="@string/lockscreen_targets_message"
                 settings:advanced="true"/>
 
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="enable_traffic_notification"
+            android:title="@string/show_traffic_notification"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
