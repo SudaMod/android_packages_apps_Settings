@@ -307,6 +307,6 @@
   <string name="disable_fc_notifications_title">禁止FC提示</string>
   <string name="disable_fc_notifications_summary">开启将隐藏所有FC提示</string>
   <string name="enable_task_manager_title">任务管理器</string>
-  <string name="enable_task_manager_summary">启用/禁用下拉抽屉任务管理器</string>
+  <string name="enable_task_manager_summary">启用/禁用下拉抽屉任务管理器。\n修改此选项SystemUI会重新启动!</string>
 
 </resources>
