@@ -483,9 +483,4 @@
     <string name="reset_swag">Swag</string>
     <string name="background_header_title">Header background color</string>
     <string name="reset_message">reset message</string>
-
-    <!-- Task Manager -->
-    <string name="enable_task_manager_title">Task Manager</string>
-    <string name="enable_task_manager_summary">Enable/Disable action for the task manager button in the expanded statusbar area.\nChanging this option will trigger SystemUI restart!</string>
-
 </resources>

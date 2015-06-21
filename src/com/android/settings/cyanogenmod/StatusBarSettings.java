@@ -27,7 +27,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -52,7 +51,6 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
-import com.android.settings.util.Helpers;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -69,7 +67,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String CARRIER_SIZE_STYLE = "carrier_size_style";
     private static final String CLOCK_SIZE_STYLE = "clock_size";
-    private static final String PREF_ENABLE_TASK_MANAGER = "enable_task_manager";
 
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
@@ -94,7 +91,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
 
     private ListPreference mStatusBarNetworkTraffic;
     private SwitchPreference mStatusBarCarrier;
-    private SwitchPreference mEnableTaskManager;
     private PreferenceScreen mCustomCarrierLabel;
 
     private ListPreference mStatusBarClock;
@@ -173,11 +169,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         mStatusBarBatteryShowPercent =
                 (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
-
-        // Task manager
-        mEnableTaskManager = (SwitchPreference) prefSet.findPreference(PREF_ENABLE_TASK_MANAGER);
-        mEnableTaskManager.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.ENABLE_TASK_MANAGER, 0) == 1));
 
         mStatusBarShowSu =  (SwitchPreference) prefSet
                 .findPreference(STATUS_BAR_SHOW_SU);
@@ -405,14 +396,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             final Preference preference) {
         final ContentResolver resolver = getActivity().getContentResolver();
-       if  (preference == mEnableTaskManager) {
-            boolean enabled = ((SwitchPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.ENABLE_TASK_MANAGER, enabled ? 1:0);
-            Helpers.restartSystemUI();        
-       return super.onPreferenceTreeClick(preferenceScreen, preference);
-
-       } else if (preference.getKey().equals(CUSTOM_CARRIER_LABEL)) {
+        if (preference.getKey().equals(CUSTOM_CARRIER_LABEL)) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
             alert.setTitle(R.string.custom_carrier_label_title);
             alert.setMessage(R.string.custom_carrier_label_explain);
