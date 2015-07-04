@@ -923,50 +923,14 @@
     <string name="select_custom_app_title">Select custom app</string>
     <string name="select_custom_activity_title">Select custom activity</string>
 
-    <!-- Performance settings -->
-    <string name="performance_settings_title">Performance</string>
-
-    <!-- Performance Settings : I/O scheduler settings title -->
-    <string name="io_scheds_title">I/O scheduler</string>
-
-    <!-- Performance Settings : I/O scheduler settings sub items -->
-    <string name="io_sched_title">I/O scheduler</string>
-    <string name="io_sched_summary" translatable="false">%S</string>
-
-    <!-- Performance Settings : Performance profile settings -->
+    <!-- Battery : Automatic performance profiles -->
+    <string name="autoperf_title">Enable per-app profiles</string>
+    <string name="autoperf_summary">Automatically choose an appropriate battery mode for various apps</string>
     <string name="perf_profile_title">Battery mode</string>
 
-    <!-- Performance : Force high-end graphics -->
+    <!-- Development : Force high-end graphics -->
     <string name="pref_force_highend_gfx_title">Force high-end graphics</string>
     <string name="pref_force_highend_gfx_summary">Enables high-end visual effects such as transparent status/navigation bar (requires reboot)</string>
-
-    <!-- Performance Settings : Warning dialog -->
-    <string name="performance_settings_warning_title">Proceed with caution</string>
-    <string name="performance_settings_warning">These settings are experimental and any applied changes have the potential to cause instability, crashes, data loss or hardware failures.\n\nWe request that you do not file bug reports if any settings are changed from their defaults.</string>
-
-    <!-- Performance Settings : Set on boot option -->
-    <string name="performance_set_on_boot">Set on boot</string>
-    <string name="performance_set_on_boot_summary">Restore the settings on boot</string>
-
-    <!-- Performance Settings : Processor Settings -->
-    <!-- Performance Settings : Processor settings title -->
-    <string name="processor_title">Processor</string>
-
-    <!-- Performance Settings : Processor settings sub items -->
-    <string name="cpu_cur_freq_title">Current CPU frequency</string>
-    <string name="cpu_governors_title">CPU governor</string>
-    <string name="cpu_governors_summary" translatable="false">%S</string>
-    <string name="cpu_min_freq_title">Minimum CPU frequency</string>
-    <string name="cpu_min_freq_summary" translatable="false">%s</string>
-    <string name="cpu_max_freq_title">Maximum CPU frequency</string>
-    <string name="cpu_max_freq_summary" translatable="false">%s</string>
-
-    <!-- Automatic performance profiles -->
-    <string name="autoperf_title">Enable per-app profiles</string>
-    <string name="autoperf_summary">Automatically choose an appropriate performance profile for various apps</string>
-
-    <!-- Performance menu, graphics options category -->
-    <string name="graphics_title">Graphics and rendering</string>
 
     <!-- EdgeGesture service -->
     <string name="edge_gesture_service_title">Block gesture touch events</string>
@@ -1242,6 +1206,20 @@
     <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
     <string name="wifi_setting_countrycode_error">There was a problem setting the region code.</string>
 
+    <!-- Wi-Fi region countries -->
+    <string name="wifi_countrycode_entries_us">United States</string>
+    <string name="wifi_countrycode_entries_ca">Canada, Taiwan</string>
+    <string name="wifi_countrycode_entries_de">Germany</string>
+    <string name="wifi_countrycode_entries_gb">Europe</string>
+    <string name="wifi_countrycode_entries_jp">Japan, Russia</string>
+    <string name="wifi_countrycode_entries_au">Australia</string>
+    <string name="wifi_countrycode_entries_cn">China</string>
+    <string name="wifi_countrycode_entries_kr">Korea</string>
+    <string name="wifi_countrycode_entries_tr">South Africa, Turkey</string>
+    <string name="wifi_countrycode_entries_sg">Israel, Singapore</string>
+    <string name="wifi_countrycode_entries_br">Brazil</string>
+    <string name="wifi_countrycode_entries_in">India</string>
+
     <!-- FINGERPRINT -->
     <!-- Summary for "Configure lockscreen" when security Fingerprint is enabled [CHAR LIMIT=45] -->
     <string name="unlock_set_unlock_mode_fingerprint">Fingerprint</string>
@@ -1261,18 +1239,5 @@
     <string name="fingerprint_dialog_title_max_fingers_reached">Max fingerprints reached</string>
     <!-- Message for dialog that shows when the user cannot add anymore fingers -->
     <string name="fingerprint_dialog_msg_max_fingers_reached">You can only enroll <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> fingerprints. Delete an existing fingerprint.</string>
-    <!-- Wi-Fi region countries -->
-    <string name="wifi_countrycode_entries_us">United States</string>
-    <string name="wifi_countrycode_entries_ca">Canada, Taiwan</string>
-    <string name="wifi_countrycode_entries_de">Germany</string>
-    <string name="wifi_countrycode_entries_gb">Europe</string>
-    <string name="wifi_countrycode_entries_jp">Japan, Russia</string>
-    <string name="wifi_countrycode_entries_au">Australia</string>
-    <string name="wifi_countrycode_entries_cn">China</string>
-    <string name="wifi_countrycode_entries_kr">Korea</string>
-    <string name="wifi_countrycode_entries_tr">South Africa, Turkey</string>
-    <string name="wifi_countrycode_entries_sg">Israel, Singapore</string>
-    <string name="wifi_countrycode_entries_br">Brazil</string>
-    <string name="wifi_countrycode_entries_in">India</string>
 
 </resources>
