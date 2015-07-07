@@ -202,6 +202,15 @@
   <string name="carrier_category">运营商自定义</string>
   <string name="battery_category">电池</string>
   <string name="statusbar_other_category">其他</string>
+  <string name="volume_steps_title">音量总阀值</string>
+  <string name="volume_steps_alarm_title">闹钟</string>
+  <string name="volume_steps_dtmf_title">DTMF</string>
+  <string name="volume_steps_music_title">媒体</string>
+  <string name="volume_steps_notification_title">通知</string>
+  <string name="volume_steps_ring_title">铃声</string>
+  <string name="volume_steps_system_title">系统</string>
+  <string name="volume_steps_voice_call_title">语音通话</string>
+  <string name="screenshot_sound_title">截图声音</string>
   <string name="qs_tile_nightmode">夜间模式</string>
   <string name="qs_tile_screenshot">屏幕截图</string>
   <string name="longpress_lock_icon_to_sleep_title">长按熄屏</string>

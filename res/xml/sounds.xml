@@ -42,6 +42,11 @@
                 android:icon="@drawable/ic_audio_alarm_24dp"
                 android:title="@string/alarm_volume_option_title" />
 
+        <PreferenceScreen
+               android:key="volume_steps"
+               android:fragment="com.android.settings.sudamod.VolumeSteps"
+               android:title="@string/volume_steps_title" />
+
         <!-- Link Volume Notification -->
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
                 android:key="volume_link_notification"
