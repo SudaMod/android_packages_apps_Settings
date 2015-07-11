@@ -16,21 +16,25 @@
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:gravity="center_vertical"
-    android:paddingLeft="25dp"
-    android:paddingRight="27dp">
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
     <TextView
-        android:id="@+id/label"
+        android:id="@+id/manage_fingerprints"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/fingerprint_dialog_name_label" />
-    <EditText
-        android:id="@+id/name"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        android:textColor="@color/manage_fingerprints_primary_color"
+        android:layout_marginStart="16dp"/>
+
+    <ListView
+        android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:maxLength="20"
-        android:selectAllOnFocus="true"/>
+        android:layout_height="wrap_content" />
+
+    <fragment android:name="com.android.setupwizard.navigationbar.SetupWizardNavBar"
+        android:id="@+id/navigation_bar"
+        style="@style/setup_wizard_navbar_style" />
+
 </LinearLayout>
