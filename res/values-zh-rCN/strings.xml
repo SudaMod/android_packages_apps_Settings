@@ -2406,6 +2406,7 @@
     <string name="lock_screen_notifications_interstitial_message" msgid="6164532459432182244">"在设备锁定时，您希望通知如何显示？"</string>
     <string name="app_notifications_title" msgid="5810577805218003760">"应用通知"</string>
     <string name="other_sound_settings" msgid="3151004537006844718">"其他提示音"</string>
+    <string name="dolby_sound_settings">"杜比音效"</string>
     <string name="dial_pad_tones_title" msgid="1999293510400911558">"拨号键盘提示音"</string>
     <string name="screen_locking_sounds_title" msgid="1340569241625989837">"屏幕锁定提示音"</string>
     <string name="docking_sounds_title" msgid="155236288949940607">"基座提示音"</string>

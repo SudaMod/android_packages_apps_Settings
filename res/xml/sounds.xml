@@ -116,6 +116,11 @@
                 android:fragment="com.android.settings.notification.OtherSoundSettings" />
     </PreferenceCategory>
 
+        <!-- Dolby sounds -->
+    <PreferenceScreen android:title="@string/dolby_sound_settings" android:key="dolby_sounds">
+        <intent android:targetPackage="com.dolby.ds1appUI" android:action="android.intent.action.MAIN" android:targetClass="com.dolby.ds1appUI.MainActivity" />
+    </PreferenceScreen>
+
     <PreferenceCategory
             android:key="vibrate"
             android:title="@string/category_vibrate">

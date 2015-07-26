@@ -2407,6 +2407,7 @@
     <string name="lock_screen_notifications_interstitial_message" msgid="6164532459432182244">"當裝置鎖定時，您要如何顯示通知？"</string>
     <string name="app_notifications_title" msgid="5810577805218003760">"應用程式通知"</string>
     <string name="other_sound_settings" msgid="3151004537006844718">"其他音效"</string>
+    <string name="dolby_sound_settings">"杜比音效"</string>
     <string name="dial_pad_tones_title" msgid="1999293510400911558">"撥號鍵盤音效"</string>
     <string name="screen_locking_sounds_title" msgid="1340569241625989837">"螢幕鎖定音效"</string>
     <string name="docking_sounds_title" msgid="155236288949940607">"插座音效"</string>
