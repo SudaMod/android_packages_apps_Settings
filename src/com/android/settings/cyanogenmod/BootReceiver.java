@@ -25,6 +25,7 @@ import com.android.settings.hardware.VibratorIntensity;
 import com.android.settings.sudamod.GestureSettings;
 import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.livedisplay.DisplayGamma;
+import com.android.settings.location.LocationSettings;
 
 public class BootReceiver extends BroadcastReceiver {
 
@@ -40,5 +41,6 @@ public class BootReceiver extends BroadcastReceiver {
         VibratorIntensity.restore(ctx);
         GestureSettings.restore(ctx);
         InputMethodAndLanguageSettings.restore(ctx);
+        LocationSettings.restore(ctx);
     }
 }
