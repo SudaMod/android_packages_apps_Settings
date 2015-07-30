@@ -14,9 +14,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- SudaMod Version -->
     <string name="suda_version">SudaMod Version</string>
     <string name="suda_version_default">Unknow</string>
-
 
     <!-- Show network speed -->
     <string name="show_network_speed_title">Network speed</string>
@@ -45,5 +45,12 @@
     <string name="su_indicator">Superuser indicator</string>
     <string name="su_indicator_summary_on">Superuser indicator is visible when a session is active</string>
     <string name="su_indicator_summary_off">Toggle to show superuser indicator when a session is active</string>
+
+    <!-- Captive Portal -->
+    <string name="captive_portal_detection">Captive portal detection</string>
+    <string name="captive_portal_detection_summary">If disabled, a connection to google servers is not required in order to detect data connection.</string>	
+    <string name="captive_portal_server">Captive portal Server</string>
+    <string name="captive_portal_server_notset">Not Set Server</string>
+    <string name="captive_portal_server_explain">Set captive portal server.You need to reboot your device.</string>
 
 </resources>

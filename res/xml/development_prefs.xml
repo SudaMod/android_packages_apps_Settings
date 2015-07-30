@@ -208,6 +208,17 @@
             android:title="@string/mobile_data_always_on"
             android:summary="@string/mobile_data_always_on_summary"/>
 
+        <com.android.settings.sudamod.GlobalSettingSwitchPreference
+            android:key="captive_portal_detection_enabled"
+            android:title="@string/captive_portal_detection"
+            android:summary="@string/captive_portal_detection_summary"
+            android:defaultValue="true"/>
+
+        <PreferenceScreen
+            android:key="captive_portal_server"
+            android:title="@string/captive_portal_server"
+            android:dependency="captive_portal_detection_enabled" />
+
         <ListPreference
             android:key="select_usb_configuration"
             android:title="@string/select_usb_configuration_title"
