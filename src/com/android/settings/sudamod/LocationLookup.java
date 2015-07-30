@@ -20,6 +20,7 @@ package com.android.settings.sudamod;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.pm.PackageManager;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -52,7 +53,7 @@ public class LocationLookup extends Activity {
                 String phonelocation_tip = (String) LocationLookup.this.getResources().getText(R.string.phonelocation_tip);
                 String location_unknow = (String) LocationLookup.this.getResources().getText(R.string.location_unknow);
 
-                if (pl == null) {
+                if (TextUtils.isEmpty(pl)) {
                     tvlocation.setText(phonelocation_tip + location_unknow);
                 } else{
                     tvlocation.setText(phonelocation_tip + pl );
