@@ -82,6 +82,12 @@
                 android:targetClass="com.android.systemui.cm.LockscreenShortcutsActivity" />
         </PreferenceScreen>
 
+        <PreferenceScreen
+            android:key="lock_screen_general_category"
+            android:fragment="com.android.settings.sudamod.LockScreenSettings"
+            android:title="@string/lockscreen_settings_title" 
+            />
+
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="chinese_date_view"
             android:title="@string/show_chinese_date"

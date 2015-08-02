@@ -68,4 +68,10 @@
     <!-- quick reboot menu and screenshot -->
     <string name="hardware_keys_action_screenshot">Screenshot</string>
     <string name="hardware_keys_action_reboot_menu">Reboot menu</string>
+
+    <!-- Lock screen settings -->
+    <string name="lockscreen_settings_title">Lockscreen wallpaper</string>
+    <string name="lockscreen_wallpaper_title">Wallpaper</string>
+    <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
+    <string name="lockscreen_wallpaper_clear_title">Clear lock screen wallpaper</string>
 </resources>
