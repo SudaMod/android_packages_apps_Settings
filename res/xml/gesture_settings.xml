@@ -43,6 +43,12 @@
             android:summary="@string/double_tap_to_sleep_summary"
             android:defaultValue="true" />
 
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="three_finger_gesture"
+            android:title="@string/three_finger_gesture"
+            android:summary="@string/three_finger_gesture_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -104,6 +104,8 @@
     <string name="shake_clean_recent_summary">Clean recent task by shake</string>
     <string name="shake_clean_notification">Clean by shake</string>
     <string name="shake_clean_notification_summary">Clean notification by shake</string>
+    <string name="three_finger_gesture">Three finger gesture</string>
+    <string name="three_finger_gesture_summary">Swipe three finger to screenshot</string>
 
     <!-- Advanced Device Info -->
     <string name="advanced_device_info_title">Advanced information</string>
