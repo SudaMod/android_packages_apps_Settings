@@ -482,6 +482,7 @@
   <string name="ok">אישור</string>
   <string name="profile_menu_delete_title">מחק</string>
   <string name="profile_action_none">השאר ללא שינוי</string>
+  <string name="profile_action_system">ברירת המחדל של המערכת</string>
   <string name="profile_action_disable">כבה</string>
   <string name="profile_action_enable">הפעל</string>
   <string name="profile_trigger_a2dp_connect">בחיבור A2DP</string>
@@ -933,6 +934,7 @@
   <string name="fingerprint_enrollment_error_title_3">הממ... משהו השתבש</string>
   <string name="fingerprint_enrollment_error_title_4">הו לא, נסו שנית</string>
   <string name="fingerprint_enrollment_error_title_5">אופס, אירעה שגיאה</string>
+  <string name="lockscreen_settings_and_fingerprint">מסך נעילה וטביעות אצבע</string>
   <string name="menu_stats_reset">איפוס סטטיסטיקות</string>
   <string name="reset_stats_msg">היסטוריית הסוללה שלך הולכת להתאפס</string>
   <string name="dock_battery_not_present">סוללה חיצונית לא נוכחת</string>
