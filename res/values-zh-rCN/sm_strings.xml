@@ -42,8 +42,9 @@
   <string name="captive_portal_server">自定义验证服务器</string>
   <string name="captive_portal_server_notset">未填写验证服务器</string>
   <string name="captive_portal_server_explain">自定义验证服务器，修改完成需要重启或者关闭打开飞行模式</string>
-
   <string name="wat">天气时钟</string>
   <string name="wats">天气时钟插件快捷入口</string>
+  <string name="double_tap_sleep_anywhere_title">双击睡眠</string>
+  <string name="double_tap_sleep_anywhere_summary">双击锁屏任意处关闭屏幕</string>
 
 </resources>
