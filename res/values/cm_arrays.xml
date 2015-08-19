@@ -155,7 +155,7 @@
         <item>250</item>
         <item>500</item>
         <item>1000</item>
-        <item>2500</item>
+        <item>2000</item>
         <item>5000</item>
     </string-array>
 
@@ -171,7 +171,7 @@
         <item>250</item>
         <item>500</item>
         <item>1000</item>
-        <item>2500</item>
+        <item>2000</item>
         <item>5000</item>
     </string-array>
 
@@ -526,6 +526,18 @@
         <item>SG</item>
         <item>BR</item>
         <item>IN</item>
+    </string-array>
+
+    <string-array name="keep_screen_on_titles" translatable="false">
+        <item>@string/keep_screen_on_never</item>
+        <item>@string/keep_screen_on_debugging</item>
+        <item>@string/keep_screen_on_charging</item>
+    </string-array>
+
+    <string-array name="keep_screen_on_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 
     <string-array name="fingerprint_successful_scan_titles" translatable="false">
