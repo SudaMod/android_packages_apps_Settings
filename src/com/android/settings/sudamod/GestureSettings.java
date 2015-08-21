@@ -36,7 +36,7 @@ import android.util.Log;
 
 import cyanogenmod.hardware.CMHardwareManager;
 
-import static android.hardware.CmHardwareManager.FEATURE_TAP_TO_WAKE;
+import static cyanogenmod.hardware.CMHardwareManager.FEATURE_TAP_TO_WAKE;
 
 import java.util.ArrayList;
 import java.util.List;
