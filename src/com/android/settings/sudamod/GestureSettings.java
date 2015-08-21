@@ -24,7 +24,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
-import android.hardware.CmHardwareManager;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
@@ -34,6 +33,8 @@ import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.provider.SearchIndexableResource;
 import android.util.Log;
+
+import cyanogenmod.hardware.CMHardwareManager;
 
 import static android.hardware.CmHardwareManager.FEATURE_TAP_TO_WAKE;
 
@@ -67,13 +68,13 @@ public class GestureSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mDirectCallForDialer;
     private SwitchPreference mDirectCallForMms;
 
-    private CmHardwareManager mCmHardwareManager;
+    private CMHardwareManager mHardware;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         final Activity activity = getActivity();
-        mCmHardwareManager = (CmHardwareManager) activity.getSystemService(Context.CMHW_SERVICE);
+        mHardware = CMHardwareManager.getInstance(activity);
 
         addPreferencesFromResource(R.xml.gesture_settings);
 
@@ -87,7 +88,7 @@ public class GestureSettings extends SettingsPreferenceFragment implements
         mTapToWake = (SwitchPreference) findPreference(KEY_TAP_TO_WAKE);
 
         if (mTapToWake != null && category_gesture != null &&
-            !mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
+            !mHardware.isSupported(FEATURE_TAP_TO_WAKE)) {
             category_gesture.removePreference(mTapToWake);
             mTapToWake = null;
         }
@@ -116,7 +117,7 @@ public class GestureSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
 
         if (preference == mTapToWake) {
-            return  mCmHardwareManager.set(FEATURE_TAP_TO_WAKE, mTapToWake.isChecked());
+            return  mHardware.set(FEATURE_TAP_TO_WAKE, mTapToWake.isChecked());
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -148,7 +149,7 @@ public class GestureSettings extends SettingsPreferenceFragment implements
 
         // Update tap-to-wake if it is available.
         if (mTapToWake != null) {
-            mTapToWake.setChecked(mCmHardwareManager.get(FEATURE_TAP_TO_WAKE));
+            mTapToWake.setChecked(mHardware.get(FEATURE_TAP_TO_WAKE));
         }
 
         mDirectCallForDialer.setChecked((Settings.System.getInt(resolver,
@@ -166,8 +167,7 @@ public class GestureSettings extends SettingsPreferenceFragment implements
 
     public static void restore(Context ctx) {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-            CmHardwareManager cmHardwareManager =
-                (CmHardwareManager) ctx.getSystemService(Context.CMHW_SERVICE);
+            CMHardwareManager cmHardwareManager = CMHardwareManager.getInstance(ctx);
             if (cmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
             final boolean enabled = prefs.getBoolean(KEY_TAP_TO_WAKE,
                cmHardwareManager.get(FEATURE_TAP_TO_WAKE));
@@ -198,11 +198,8 @@ public class GestureSettings extends SettingsPreferenceFragment implements
 
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
+                    CMHardwareManager cmHardwareManager = CMHardwareManager.getInstance(context);
                     ArrayList<String> result = new ArrayList<String>();
-
-                CmHardwareManager cmHardwareManager =
-                    (CmHardwareManager) context.getSystemService(Context.CMHW_SERVICE);
-
                     if (!isLiftToWakeAvailable(context)) {
                         result.add(KEY_LIFT_TO_WAKE);
                     }
