@@ -501,4 +501,8 @@
     <string name="reset_swag">Swag</string>
     <string name="background_header_title">Header background color</string>
     <string name="reset_message">reset message</string>
+
+    <!-- Double tap to sleep on lockscreen -->
+    <string name="double_tap_sleep_anywhere_title">Double-tap to sleep</string>
+    <string name="double_tap_sleep_anywhere_summary">Double tap lockscreen to put the device to sleep</string>
 </resources>
