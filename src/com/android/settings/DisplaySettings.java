@@ -210,35 +210,41 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         //lcd density
         mLcdDensityPreference = (ListPreference) findPreference(KEY_LCD_DENSITY);
         if (mLcdDensityPreference != null) {
-            final String defaultText = getResources().getString(R.string.lcd_density_default);
-            int defaultDensity = getDefaultDensity();
-            int currentDensity = getCurrentDensity();
-            if (currentDensity < 10 || currentDensity >= 1000) {
-                // Unsupported value, force default
-                currentDensity = defaultDensity;
-            }
-            int currentIndex = -1;
-            String[] densityEntries = new String[8];
-            String[] densityValues = new String[8];
-            for (int idx = 0; idx < 8; ++idx) {
-                int pct = (75 + idx*5);
-                int val = defaultDensity * pct / 100;
-                densityEntries[idx] = Integer.toString(val);
-                if (pct == 100) {
-                  densityEntries[idx] += " (" + defaultText + ")";
+            if (UserHandle.myUserId() != UserHandle.USER_OWNER) {
+                displayPrefs.removePreference(mLcdDensityPreference);
+            } else {
+                int defaultDensity = getDefaultDensity();
+                int currentDensity = getCurrentDensity();
+                if (currentDensity < 10 || currentDensity >= 1000) {
+                    // Unsupported value, force default
+                    currentDensity = defaultDensity;
                 }
-                densityValues[idx] = Integer.toString(val);
-                if (currentDensity == val) {
-                    currentIndex = idx;
+
+                int factor = defaultDensity >= 480 ? 40 : 20;
+                int minimumDensity = defaultDensity - 4 * factor;
+                int currentIndex = -1;
+                String[] densityEntries = new String[7];
+                String[] densityValues = new String[7];
+                for (int idx = 0; idx < 7; ++idx) {
+                    int val = minimumDensity + factor * idx;
+                    int valueFormatResId = val == defaultDensity
+                            ? R.string.lcd_density_default_value_format
+                            : R.string.lcd_density_value_format;
+
+                    densityEntries[idx] = getString(valueFormatResId, val);
+                    densityValues[idx] = Integer.toString(val);
+                    if (currentDensity == val) {
+                        currentIndex = idx;
+                    }
                 }
+                mLcdDensityPreference.setEntries(densityEntries);
+                mLcdDensityPreference.setEntryValues(densityValues);
+                if (currentIndex != -1) {
+                    mLcdDensityPreference.setValueIndex(currentIndex);
+                }
+                mLcdDensityPreference.setOnPreferenceChangeListener(this);
+                updateLcdDensityPreferenceDescription(currentDensity);
             }
-            mLcdDensityPreference.setEntries(densityEntries);
-            mLcdDensityPreference.setEntryValues(densityValues);
-            if (currentIndex != -1) {
-                mLcdDensityPreference.setValueIndex(currentIndex);
-            }
-            mLcdDensityPreference.setOnPreferenceChangeListener(this);
-            updateLcdDensityPreferenceDescription(currentDensity);
         }
 
         //nightmode
