@@ -38,6 +38,13 @@ import java.util.List;
 public class PrivacySettings extends SettingsPreferenceFragment implements Indexable {
 
     private static final String KEY_BLACKLIST = "blacklist";
+<<<<<<< HEAD
+=======
+    private static final String KEY_WHISPERPUSH = "whisperpush";
+    private static final String WHISPERPUSH_ORIGINAL = "org.whispersystems.whisperpush";
+    private static final String WHISPERPUSH_UPDATE = "org.whispersystems.whisperpush2";
+    private static final String KEY_STATS = "cmstats";
+>>>>>>> 27fc976a3438271935fb9ef44973f3219d7af4d2
 
     private PreferenceScreen mBlacklist;
 
@@ -51,8 +58,14 @@ public class PrivacySettings extends SettingsPreferenceFragment implements Index
         // Add package manager to check if features are available
         PackageManager pm = getPackageManager();
 
+        boolean isOwner = Utils.isUserOwner();
+        if (!isOwner) {
+            PreferenceScreen root = getPreferenceScreen();
+            root.removePreference(findPreference(KEY_STATS));
+        }
+
         // Determine options based on device telephony support
-        if (!pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
+        if (!pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY) || !isOwner) {
             // No telephony, remove dependent options
             PreferenceScreen root = getPreferenceScreen();
             root.removePreference(mBlacklist);
