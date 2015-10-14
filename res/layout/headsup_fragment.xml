@@ -24,12 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.android.settings.cyanogenmod.CMSecureSettingSwitchPreference
-        android:key="stats_collection"
-        android:title="@string/stats_collection_title"
-        android:summary="@string/stats_collection_summary"
-        android:defaultValue="true" />
-
     <TextView
         android:id="@+id/disabled_text"
         android:layout_width="match_parent"
