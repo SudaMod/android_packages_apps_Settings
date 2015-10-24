@@ -54,13 +54,6 @@
                 android:key="nightcolor"
                 android:dependency="nightswitch"/>
 
-        <!-- Lcd density -->
-        <ListPreference
-                android:key="lcd_density"
-                android:title="@string/lcd_density"
-                android:persistent="false"
-                settings:advanced="true" />
-
         <!-- LiveDisplay -->
         <PreferenceScreen
                 android:key="live_display"
@@ -136,6 +129,13 @@
                 android:title="@string/power_menu_expanded_desktop"
                 android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment"
                 settings:advanced="true"/>
+
+        <!-- DPI chooser -->
+        <ListPreference
+                android:key="lcd_density"
+                android:title="@string/lcd_density"
+                android:persistent="false"
+                settings:advanced="true" />
 
         <!-- Day dream -->
         <PreferenceScreen
