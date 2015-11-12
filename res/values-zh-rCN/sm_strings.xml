@@ -32,5 +32,9 @@
   <string name="gpu_renderer">GPU渲染器</string>
   <string name="gpu_gl_version">OpenGL版本</string>
   <string name="gpu_gl_extensions">OpenGL扩展</string>
-  <string name="gpu_shader_version">Shader版本</string>   
+  <string name="gpu_shader_version">Shader版本</string>  
+  <string name="su_indicator">超级权限图标</string>
+  <string name="su_indicator_summary_on">当Root权限激活时状态栏显示图标</string>
+  <string name="su_indicator_summary_off">当Root权限激活时状态栏不显示图标</string>
+
 </resources>

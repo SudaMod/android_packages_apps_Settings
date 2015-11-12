@@ -41,4 +41,9 @@
     <string name="gpu_gl_extensions">OpenGL extensions</string>
     <string name="gpu_shader_version">Shader version</string>
 
+    <!-- Superuser indicator on status bar -->
+    <string name="su_indicator">Superuser indicator</string>
+    <string name="su_indicator_summary_on">Superuser indicator is visible when a session is active</string>
+    <string name="su_indicator_summary_off">Toggle to show superuser indicator when a session is active</string>
+
 </resources>
