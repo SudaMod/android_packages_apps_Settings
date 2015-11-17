@@ -14,6 +14,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="show_network_speed_title">状态栏网速</string>
+  <string name="show_network_speed_summary">在状态栏显示当前网速</string>
+  <string name="status_bar_network_traffic_style_disable">禁用</string>
+  <string name="status_bar_network_traffic_style_up">显示上传速度</string>
+  <string name="status_bar_network_traffic_style_down">显示下载速度</string>
+  <string name="status_bar_network_traffic_style_all">显示上传和下载速度</string>
   <string name="suda_version">SudaMod版本</string>
   <string name="suda_version_default">未知</string>
   <string name="advanced_device_info_title">高级信息</string>
