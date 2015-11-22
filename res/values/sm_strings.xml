@@ -18,6 +18,9 @@
     <string name="suda_version">SudaMod Version</string>
     <string name="suda_version_default">Unknow</string>
 
+    <!-- Development settings -->
+    <string name="dexopt_lazy">Lazy dexopt</string>
+
     <!-- Show network speed -->
     <string name="show_network_speed_title">Network speed</string>
     <string name="show_network_speed_summary">Show network speed in status bar</string>
