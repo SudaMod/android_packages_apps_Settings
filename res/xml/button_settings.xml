@@ -59,11 +59,6 @@
             android:fragment="com.android.settings.cyanogenmod.NavBar"
             android:title="@string/navigation_bar_title" />
 
-        <PreferenceScreen
-            android:key="navigation_bar_ring"
-            android:fragment="com.android.settings.cyanogenmod.NavRing"
-            android:title="@string/navigation_ring_title" />
-
         <ListPreference
             android:key="navigation_recents_long_press"
             android:dialogTitle="@string/navigation_bar_recents_title"
@@ -255,7 +250,8 @@
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
             android:key="volume_keys_control_ring_stream"
             android:title="@string/volume_keys_control_ring_stream_title"
-            android:summary="@string/volume_keys_control_ring_stream_summary"/>
+            android:summaryOn="@string/volume_keys_control_ring_stream_summary_on"
+            android:summaryOff="@string/volume_keys_control_ring_stream_summary_off" />
 
         <ListPreference
             android:key="volume_key_cursor_control"

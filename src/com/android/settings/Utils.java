@@ -372,8 +372,10 @@ public final class Utils {
                     }
 
                     // Set icon, title and summary for the preference
-                    tile.iconRes = icon;
-                    tile.iconPkg = resolveInfo.activityInfo.packageName;
+                    if (icon != 0) {
+                        tile.iconRes = icon;
+                        tile.iconPkg = resolveInfo.activityInfo.packageName;
+                    }
                     tile.title = title;
                     tile.summary = summary;
                     // Replace the intent with this specific activity
@@ -717,6 +719,11 @@ public final class Utils {
     public static boolean hasMultipleUsers(Context context) {
         return ((UserManager) context.getSystemService(Context.USER_SERVICE))
                 .getUsers().size() > 1;
+    }
+
+    public static boolean isRestrictedProfile(Context context) {
+        UserManager um = (UserManager) context.getSystemService(Context.USER_SERVICE);
+        return um.getUserInfo(um.getUserHandle()).isRestricted();
     }
 
     private static int getScreenType(Context context) {
