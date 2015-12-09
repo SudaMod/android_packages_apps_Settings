@@ -290,9 +290,15 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             mHits[mHits.length-1] = SystemClock.uptimeMillis();
             if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
                 Intent intent = new Intent(Intent.ACTION_MAIN);
+<<<<<<< HEAD
                 intent.putExtra("is_sm", true);
                 intent.setClassName("android",
                         com.android.internal.app.SMPlatLogoActivity.class.getName());
+=======
+                intent.putExtra("is_cm", true);
+                intent.setClassName("android",
+                        com.android.internal.app.PlatLogoActivity.class.getName());
+>>>>>>> b5500240eb1f5685ce5ea22eb195a16b1832be76
                 try {
                     startActivity(intent);
                 } catch (Exception e) {
