@@ -15,6 +15,8 @@
 -->
 
 <resources>
+    <color name="theme_primary">#ff0288d1</color>
+
     <color name="black">#000</color>
     <color name="red">#F00</color>
     <color name="blue">#00F</color>
@@ -74,6 +76,7 @@
 
     <color name="card_background">#ffffffff</color>
 
+    <color name="dashboard_background_color">@drawable/dashboard_background</color>
     <color name="switchbar_background_color">#ff90caf9</color>
     <color name="switch_accent_color">#ff0288d1</color>
 
