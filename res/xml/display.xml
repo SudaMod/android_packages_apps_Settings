@@ -159,13 +159,6 @@
                 settings:keywords="@string/keywords_recents_show_searchbar"
                 android:defaultValue="true" />
 
-        <!-- Double tap 2 sleep on lockscreen -->
-        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-            android:key="double_tap_sleep_anywhere"
-            android:title="@string/double_tap_sleep_anywhere_title"
-            android:summary="@string/double_tap_sleep_anywhere_summary"
-            settings:advanced="true"/>
-
     </PreferenceCategory>
 
     <PreferenceCategory
