@@ -152,24 +152,6 @@
                 android:summary="@string/summary_font_size"
                 android:dialogTitle="@string/dialog_title_font_size" />
 
-        <!-- Weather -->
-        <PreferenceCategory
-            android:key="status_bar_show_weather_category"
-            android:title="@string/status_bar_show_weather_category" >
-
-            <com.android.settings.cyanogenmod.CMSystemSettingSwitchPreference
-                android:key="status_bar_show_weather"
-                android:title="@string/status_bar_show_weather_title"
-                android:summary="@string/status_bar_show_weather_summary"
-                android:defaultValue="true" />
-
-            <PreferenceScreen
-                android:key="lockscreen_weather"
-                android:title="@string/lock_screen_weather_settings_title"
-                android:fragment="com.android.settings.temasek.LockScreenWeatherSettings" />
-
-        </PreferenceCategory>
-
         <!-- Search in Recents -->
         <com.android.settings.cyanogenmod.CMSystemSettingSwitchPreference
                 android:key="recents_show_search_bar"
