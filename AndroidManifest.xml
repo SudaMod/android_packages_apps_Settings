@@ -2364,7 +2364,7 @@
         </receiver>
 
         <!-- PhoneLocationLookup -->
-        <activity android:name=".sudamod.LocationLookup"
+        <!-- <activity android:name=".sudamod.LocationLookup"
                android:icon="@mipmap/ic_location"
                android:label="@string/phonelocation"
                android:excludeFromRecents="true" >
@@ -2372,7 +2372,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> -->
 
         <receiver android:name=".profiles.SetupDefaultProfileReceiver">
             <intent-filter>
