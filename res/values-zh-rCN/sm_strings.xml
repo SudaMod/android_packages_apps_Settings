@@ -228,7 +228,6 @@
   <string name="timeout_1000">1s</string>
   <string name="timeout_500">0.5s</string>
   <string name="show_chinese_date">锁屏显示农历</string>
-  <string name="show_traffic_notification">显示锁屏期间所耗流量</string>
   <string name="camera_sounds_title">相机、截屏声音</string>
   <string name="double_tap_sleep_nav_bar_title">双击锁屏</string>
   <string name="double_tap_sleep_nav_bar_summary">双击导航栏空白处锁屏</string> 
