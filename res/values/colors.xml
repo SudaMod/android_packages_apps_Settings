@@ -76,7 +76,6 @@
 
     <color name="card_background">#ffffffff</color>
 
-    <color name="dashboard_background_color">@drawable/dashboard_background</color>
     <color name="switchbar_background_color">#ff90caf9</color>
     <color name="switch_accent_color">#ff0288d1</color>
 
