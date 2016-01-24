@@ -41,11 +41,6 @@
     <string name="gpu_gl_extensions">OpenGL extensions</string>
     <string name="gpu_shader_version">Shader version</string>
 
-    <!-- Superuser indicator on status bar -->
-    <string name="su_indicator">Superuser indicator</string>
-    <string name="su_indicator_summary_on">Superuser indicator is visible when a session is active</string>
-    <string name="su_indicator_summary_off">Toggle to show superuser indicator when a session is active</string>
-
     <!-- Captive Portal -->
     <string name="captive_portal_detection">Captive portal detection</string>
     <string name="captive_portal_detection_summary">If disabled, a connection to google servers is not required in order to detect data connection.</string>	

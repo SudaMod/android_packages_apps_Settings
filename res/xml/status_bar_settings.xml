@@ -83,11 +83,4 @@
         android:entries="@array/status_bar_quick_qs_pulldown_entries"
         android:entryValues="@array/status_bar_quick_qs_pulldown_values" />
 
-     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-        android:key="show_su_indicator"
-        android:title="@string/su_indicator"
-        android:summaryOn="@string/su_indicator_summary_on"
-        android:summaryOff="@string/su_indicator_summary_off"
-        android:defaultValue="true" />
-
 </PreferenceScreen>
