@@ -57,14 +57,6 @@
             <intent android:action="android.settings.SHOW_MANUAL" />
         </PreferenceScreen>
 
-        <!-- Anonymous statistics - (CMStats) -->
-        <PreferenceScreen
-            android:key="cmstats"
-            android:title="@string/anonymous_statistics_title"
-            android:summary="@string/anonymous_statistics_summary"
-            android:fragment="com.android.settings.cmstats.AnonymousStats" >
-        </PreferenceScreen>
-
         <!-- Legal Information -->
         <PreferenceScreen
                 android:key="container"
@@ -111,12 +103,6 @@
                 style="?android:preferenceInformationStyle"
                 android:title="@string/suda_version"
                 android:summary="@string/suda_version_default" />
-
-        <!-- CyanogenMod API Version -->
-        <Preference android:key="mod_api_level"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/mod_api_level"
-                android:summary="@string/mod_api_level_default" />
 
         <!-- Security patch level -->
         <Preference android:key="security_patch"
