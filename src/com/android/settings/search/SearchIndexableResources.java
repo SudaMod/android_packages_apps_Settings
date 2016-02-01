@@ -43,6 +43,7 @@ import com.android.settings.location.LocationSettings;
 import com.android.settings.location.ScanningSettings;
 import com.android.settings.net.DataUsageMeteredSettings;
 import com.android.settings.notification.NotificationManagerSettings;
+import com.android.settings.sudamod.GestureSettings;
 import com.android.settings.notification.OtherSoundSettings;
 import com.android.settings.notification.SoundSettings;
 import com.android.settings.notification.ZenModePrioritySettings;
@@ -302,6 +303,13 @@ public final class SearchIndexableResources {
                         NO_DATA_RES_ID,
                         LegalSettings.class.getName(),
                         R.drawable.ic_settings_about));
+
+        sResMap.put(GestureSettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(GestureSettings.class.getName()),
+                        R.xml.gesture_settings,
+                        GestureSettings.class.getName(),
+                        R.drawable.ic_settings_gestures));
 
         sResMap.put(WifiCallingSettings.class.getName(),
                 new SearchIndexableResource(

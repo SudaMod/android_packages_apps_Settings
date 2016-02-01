@@ -33,6 +33,13 @@
   <string name="gpu_gl_version">OpenGL版本</string>
   <string name="gpu_gl_extensions">OpenGL扩展</string>
   <string name="gpu_shader_version">Shader版本</string>  
+  <string name="gesture_direct_title">手势和体感</string>  
+  <string name="gesture_title">手势</string>  
+  <string name="direct_control_title">体感</string>
+  <string name="shake_clean_recent">晃动清理最近任务</string>
+  <string name="shake_clean_recent_summary">最近任务界面通过晃动清理</string>
+  <string name="shake_clean_notification">晃动清理通知</string>
+  <string name="shake_clean_notification_summary">通知栏通知晃动清理</string>
   <string name="captive_portal_detection">网络状况检测</string>
   <string name="captive_portal_detection_summary">如果状态栏有感叹号，可关闭网络状况检测</string>
   <string name="mod_version_type">类型</string>

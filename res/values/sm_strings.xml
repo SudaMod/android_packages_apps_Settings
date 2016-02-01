@@ -25,6 +25,13 @@
     <string name="status_bar_network_traffic_style_up">Outgoing</string>
     <string name="status_bar_network_traffic_style_down">Incoming</string>
     <string name="status_bar_network_traffic_style_all">Outgoing and incoming</string>
+    <!-- Gesture and Direct Control -->  
+    <string name="gesture_title">Gesture</string>
+    <string name="gesture_direct_title">Gesture and Direct Control</string>  
+    <string name="shake_clean_recent">Clean by shake</string>
+    <string name="shake_clean_recent_summary">Clean recent task by shake</string>
+    <string name="shake_clean_notification">Clean by shake</string>
+    <string name="shake_clean_notification_summary">Clean notification by shake</string>
     <!-- Advanced Device Info -->
     <string name="advanced_device_info_title">Advanced information</string>
     <string name="advanced_device_info_summary">Information about CPU, GPU etc.</string>
