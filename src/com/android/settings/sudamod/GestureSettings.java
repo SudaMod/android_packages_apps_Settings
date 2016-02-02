@@ -71,6 +71,9 @@ public class GestureSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.gesture_settings);
 
+        // update or remove gesture activity
+        Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
+                getPreferenceScreen(), KEY_GESTURES);
 
         final PreferenceCategory category_gesture = (PreferenceCategory) findPreference(CATEGORY_GESTURES);
         final PreferenceCategory category_direct_control = (PreferenceCategory) findPreference(CATEGORY_DIRECT_CONTROL);
