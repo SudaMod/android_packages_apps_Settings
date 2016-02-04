@@ -48,6 +48,9 @@
     <string name="gpu_gl_extensions">OpenGL extensions</string>
     <string name="gpu_shader_version">Shader version</string>
 
+    <!-- clock second-->
+    <string name="clock_second_title">Time display seconds</string>
+    <string name="clock_second_summary">Let the time accurate to seconds</string>
     <!-- Captive Portal -->
     <string name="captive_portal_detection">Captive portal detection</string>
     <string name="captive_portal_detection_summary">If disabled, a connection to google servers is not required in order to detect data connection.</string>	

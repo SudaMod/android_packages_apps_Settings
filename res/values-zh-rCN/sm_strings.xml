@@ -40,6 +40,8 @@
   <string name="shake_clean_recent_summary">最近任务界面通过晃动清理</string>
   <string name="shake_clean_notification">晃动清理通知</string>
   <string name="shake_clean_notification_summary">通知栏通知晃动清理</string>
+  <string name="clock_second_title">时间显示秒</string>
+  <string name="clock_second_summary">让时间精确到秒</string>
   <string name="captive_portal_detection">网络状况检测</string>
   <string name="captive_portal_detection_summary">如果状态栏有感叹号，可关闭网络状况检测</string>
   <string name="mod_version_type">类型</string>
