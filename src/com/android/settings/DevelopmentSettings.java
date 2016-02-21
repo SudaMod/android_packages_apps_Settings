@@ -1794,16 +1794,10 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         pokeSystemProperties();
     }
 
-    private static void resetUpdateRecoveryOptions() {
+    private void resetUpdateRecoveryOptions() {
         // User builds should update recovery by default
         if ("user".equals(Build.TYPE)) {
             SystemProperties.set(UPDATE_RECOVERY_PROPERTY, "true");
-        }
-    }
-
-    public static void initializeUpdateRecoveryOption() {
-        if (TextUtils.isEmpty(SystemProperties.get(UPDATE_RECOVERY_PROPERTY))) {
-            resetUpdateRecoveryOptions();
         }
     }
 
