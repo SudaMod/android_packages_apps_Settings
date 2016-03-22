@@ -103,7 +103,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_AUTO_ROTATE = "auto_rotate";
     private static final String KEY_NIGHT_MODE = "night_mode";
     private static final String KEY_CAMERA_GESTURE = "camera_gesture";
-    private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
     private static final String KEY_DISPLAY_ROTATION = "display_rotation";
     private static final String KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
@@ -122,7 +121,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private Preference mScreenSaverPreference;
     private SwitchPreference mAccelerometer;
     private SwitchPreference mDozePreference;
-    private SwitchPreference mProximityCheckOnWakePreference;
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mWakeWhenPluggedOrUnplugged;
 
@@ -263,21 +261,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mNightModePreference.setOnPreferenceChangeListener(this);
         }
 
-        mProximityCheckOnWakePreference = (SwitchPreference) findPreference(KEY_PROXIMITY_WAKE);
-        boolean proximityCheckOnWake = getResources().getBoolean(
-                org.cyanogenmod.platform.internal.R.bool.config_proximityCheckOnWake);
-        if (!proximityCheckOnWake) {
-            if (displayPrefs != null && mProximityCheckOnWakePreference != null) {
-                displayPrefs.removePreference(mProximityCheckOnWakePreference);
-            }
-            CMSettings.System.putInt(getContentResolver(), CMSettings.System.PROXIMITY_ON_WAKE, 0);
-        } else {
-            boolean proximityCheckOnWakeDefault = getResources().getBoolean(
-                    org.cyanogenmod.platform.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
-            mProximityCheckOnWakePreference.setChecked(CMSettings.System.getInt(getContentResolver(),
-                    CMSettings.System.PROXIMITY_ON_WAKE,
-                    (proximityCheckOnWakeDefault ? 1 : 0)) == 1);
-        }
 
         mWakeWhenPluggedOrUnplugged =
                 (SwitchPreference) findPreference(KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
@@ -755,10 +738,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     }
                     if (!Utils.isDozeAvailable(context)) {
                         result.add(KEY_DOZE);
-                    }
-                    if (!context.getResources().getBoolean(
-                            org.cyanogenmod.platform.internal.R.bool.config_proximityCheckOnWake)) {
-                        result.add(KEY_PROXIMITY_WAKE);
                     }
                     if (!isCameraGestureAvailable(context.getResources())) {
                         result.add(KEY_CAMERA_GESTURE);

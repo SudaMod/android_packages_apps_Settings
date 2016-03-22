@@ -49,6 +49,7 @@ import com.android.settings.Utils;
 
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import cyanogenmod.providers.CMSettings;
 
 public class GestureSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
@@ -60,9 +61,11 @@ public class GestureSettings extends SettingsPreferenceFragment implements
     private static final String KEY_GESTURES = "device_specific_gesture_settings";
     private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
     private static final String KEY_LIFT_TO_WAKE = "lift_to_wake";
+    private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
 
     private SwitchPreference mTapToWake;
     private SwitchPreference mLiftToWakePreference;
+    private SwitchPreference mProximityCheckOnWakePreference;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -96,6 +99,22 @@ public class GestureSettings extends SettingsPreferenceFragment implements
                 category_direct_control.removePreference(mLiftToWakePreference);
                 mLiftToWakePreference = null;
             }
+        }
+
+        mProximityCheckOnWakePreference = (SwitchPreference) findPreference(KEY_PROXIMITY_WAKE);
+        boolean proximityCheckOnWake = getResources().getBoolean(
+                org.cyanogenmod.platform.internal.R.bool.config_proximityCheckOnWake);
+        if (!proximityCheckOnWake) {
+            if (category_direct_control != null && mProximityCheckOnWakePreference != null) {
+                category_direct_control.removePreference(mProximityCheckOnWakePreference);
+            }
+            CMSettings.System.putInt(getContentResolver(), CMSettings.System.PROXIMITY_ON_WAKE, 0);
+        } else {
+            boolean proximityCheckOnWakeDefault = getResources().getBoolean(
+                    org.cyanogenmod.platform.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
+            mProximityCheckOnWakePreference.setChecked(CMSettings.System.getInt(getContentResolver(),
+                    CMSettings.System.PROXIMITY_ON_WAKE,
+                    (proximityCheckOnWakeDefault ? 1 : 0)) == 1);
         }
     }
 
@@ -181,7 +200,10 @@ public class GestureSettings extends SettingsPreferenceFragment implements
                     if (!isLiftToWakeAvailable(context)) {
                         result.add(KEY_LIFT_TO_WAKE);
                     }
-
+                    if (!context.getResources().getBoolean(
+                            org.cyanogenmod.platform.internal.R.bool.config_proximityCheckOnWake)) {
+                        result.add(KEY_PROXIMITY_WAKE);
+                    }
                     return result;
                 }
         };
