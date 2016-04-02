@@ -82,6 +82,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, OnPreferenceClickListener, Indexable {
     private static final String TAG = "DisplaySettings";
 
+    // When this system property is set to 0, WFD is forcibly disabled on boot.
+    // When this system property is set to 1, WFD is forcibly enabled on boot.
+    // Otherwise WFD is enabled according to the value of config_enableWifiDisplay.
+    private static final String FORCE_WIFI_DISPLAY_ENABLE = "persist.debug.wfd.enable";
+
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
 
@@ -90,6 +95,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_CATEGORY_INTERFACE = "interface";
 
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
+    private static final String KEY_WIFI_DISPLAY = "wifi_display";
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_SCREEN_SAVER = "screensaver";
     private static final String KEY_AUTO_BRIGHTNESS = "auto_brightness";
@@ -125,6 +131,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mWakeWhenPluggedOrUnplugged;
     private SwitchPreference mProximityWakePreference;
+    private PreferenceScreen mWifiDisplayPreference;
 
 
     // ListView Animations Preference
@@ -170,7 +177,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (mAccelerometer != null) {
             mAccelerometer.setPersistent(false);
         }
-
         // ListView Animations
         mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);
         int listviewanimation = Settings.System.getInt(resolver,
@@ -186,6 +192,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
         mListViewInterpolator.setOnPreferenceChangeListener(this);
 
+
+        mWifiDisplayPreference = (PreferenceScreen) findPreference(KEY_WIFI_DISPLAY);
+        if (mWifiDisplayPreference != null
+                && !getResources().getBoolean(
+                        com.android.internal.R.bool.config_enableWifiDisplay)
+                && (SystemProperties.getInt(FORCE_WIFI_DISPLAY_ENABLE, -1) != 1)) {
+            displayPrefs.removePreference(mWifiDisplayPreference);
+        }
 
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
         if (mScreenSaverPreference != null
@@ -764,6 +778,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     }
                     if (!Utils.isDozeAvailable(context)) {
                         result.add(KEY_DOZE_FRAGMENT);
+                    }
+                    if (!context.getResources().getBoolean(
+                                 com.android.internal.R.bool.config_enableWifiDisplay) &&
+                            (SystemProperties.getInt(FORCE_WIFI_DISPLAY_ENABLE, -1) != 1)) {
+                        result.add(KEY_WIFI_DISPLAY);
                     }
                     return result;
                 }

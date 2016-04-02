@@ -25,15 +25,18 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.PendingIntent;
 import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.pm.UserInfo;
 import android.os.Bundle;
 import android.os.Process;
 import android.os.UserManager;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
+import android.provider.Settings;
 import android.security.KeyStore;
 import android.util.EventLog;
 import android.util.Log;
@@ -47,6 +50,7 @@ import com.android.settings.ChooseLockGesture;
 import android.widget.TextView;
 
 import com.android.internal.widget.LockPatternUtils;
+import com.android.settings.notification.RedactionInterstitial;
 
 import java.util.List;
 
@@ -571,10 +575,40 @@ public class ChooseLockGeneric extends SettingsActivity {
             } else if (quality == DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED) {
                 mChooseLockSettingsHelper.utils().clearLock(false);
                 mChooseLockSettingsHelper.utils().setLockScreenDisabled(disabled);
+                maybeShowRedactionInterstitial();
+                if (!disabled) {
+                    // If there is a third party keyguard component set and the lockscreen is
+                    // still enabled (i.e. swipe) then we want to be in PASSWORD_QUALITY_UNSECURED
+                    // mode.  Reapply component to make this happen.
+                    ComponentName cn = mLockPatternUtils.getThirdPartyKeyguardComponent();
+                    if (cn != null) {
+                        try {
+                            mLockPatternUtils.setThirdPartyKeyguard(cn);
+                        } catch (PackageManager.NameNotFoundException | SecurityException e) {
+                            Log.w(TAG, "Failed to reset third party keyguard: " + cn, e);
+                        }
+                    }
+                }
                 getActivity().setResult(Activity.RESULT_OK);
                 finish();
             } else {
                 finish();
+            }
+        }
+
+        private void maybeShowRedactionInterstitial() {
+            // do nothing if lock screen disabled
+            if (mLockPatternUtils.isLockScreenDisabled()) return;
+
+            final boolean enabled = Settings.Secure.getInt(getContentResolver(),
+                    Settings.Secure.LOCK_SCREEN_SHOW_NOTIFICATIONS, 0) != 0;
+            final boolean show = Settings.Secure.getInt(getContentResolver(),
+                    Settings.Secure.LOCK_SCREEN_ALLOW_PRIVATE_NOTIFICATIONS, 1) != 0;
+            if (!(enabled && show)) {
+                Intent intent = RedactionInterstitial.createStartIntent(getActivity());
+                if (intent != null) {
+                    startActivity(intent);
+                }
             }
         }
 

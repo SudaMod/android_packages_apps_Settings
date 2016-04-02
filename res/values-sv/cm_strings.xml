@@ -131,6 +131,9 @@
   <string name="volbtn_cursor_control_on_reverse">Volym upp/ned flyttar markören höger/vänster</string>
   <string name="swap_volume_buttons_title">Orientera om</string>
   <string name="swap_volume_buttons_summary">Växla volymknappar när skärmen är roterad</string>
+  <string name="volume_keys_control_ring_stream_title">Kontrollera ringvolym</string>
+  <string name="volume_keys_control_ring_stream_summary_on">Volymknapparna kontrollerar ringsignalsvolym</string>
+  <string name="volume_keys_control_ring_stream_summary_off">Volymknapparna styr mediavolym</string>
   <string name="power_end_call_title">Avsluta samtal</string>
   <string name="power_end_call_summary">Tryck på avstängningsknappen kommer att avsluta pågående samtal</string>
   <string name="button_wake_title">Väck upp enhet</string>
@@ -142,7 +145,7 @@
   <string name="keyboard_backlight_enabled">Lys upp tangentbord</string>
   <string name="button_backlight_seekbar_title">Knappljusstyrka</string>
   <string name="keyboard_backlight_seekbar_title">Tangetbordsljusstyrka</string>
-  <string name="backlight_timeout_title">Tidsgräns för knappljus</string>
+  <string name="backlight_timeout_title">Timeout för belysning</string>
   <string name="backlight_timeout_unlimited">Stäng inte av</string>
   <string name="backlight_summary_disabled">Inaktiverat</string>
   <string name="backlight_summary_enabled_with_timeout">Aktiverat i <xliff:g id="timeout">%s</xliff:g></string>
@@ -247,6 +250,7 @@
   <string name="privacy_guard_reset_text">Återställ behörigheter?</string>
   <string name="privacy_guard_help_text">På denna skärm kan du välja vilka appar som integritetsskyddet ska vara aktivt för genom att trycka på dem. Valda appar kommer inte att få tillgång till dina personliga data som kontakter, meddelanden eller samtalslistan. Långtryck på en app visar appens detaljer.\n\nInbyggda appar visas inte som standard men kan visas genom att välja det i alternativmenyn.</string>
   <string name="privacy_guard_manager_show_system_apps">Visa inbyggda appar</string>
+  <string name="privacy_guard_notification_title">Visa avisering</string>
   <string name="app_ops_btn_text">Ändra</string>
   <string name="increasing_ring_volume_option_title">Ökande ljudvolym</string>
   <string name="increasing_ring_min_volume_title">Startvolym</string>
@@ -340,6 +344,9 @@
   <string name="notification_light_default_value">Standard</string>
   <string name="notification_light_missed_call_title">Missat samtal</string>
   <string name="notification_light_voicemail_title">Telefonsvarare</string>
+  <string name="notification_light_screen_on">Aviseringsljus med skärmen på</string>
+  <string name="notification_light_use_multiple_leds">Flera lysdioder</string>
+  <string name="keywords_lights_brightness_level">dimma lysdioder ljusstyrka</string>
   <string name="notification_ringtone_title_cm">Aviseringssignal</string>
   <string name="headset_connect_player_title">Öppna musikapp</string>
   <string name="headset_connect_player_summary">Öppna standardmusikapp när hörlurar kopplas in</string>
@@ -480,6 +487,7 @@
   <string name="ok">OK</string>
   <string name="profile_menu_delete_title">Ta bort</string>
   <string name="profile_action_none">Lämna oförändrad</string>
+  <string name="profile_action_system">Systemstandard</string>
   <string name="profile_action_disable">Stäng av</string>
   <string name="profile_action_enable">Aktivera</string>
   <string name="profile_trigger_a2dp_connect">Vid A2DP-anslutning</string>
@@ -680,6 +688,9 @@
   <string name="settings_cmlicense_activity_title">CyanogenMod Juridik</string>
   <string name="lockpattern_settings_enable_error_path_title">Visa mönster vid fel</string>
   <string name="lockpattern_settings_enable_dots_title">Visa mönsterpunkter</string>
+  <string name="lock_directly_show_password">Visa lösenordsinmatningen direkt</string>
+  <string name="lock_directly_show_pattern">Visa mönsterinmatningen direkt</string>
+  <string name="lock_directly_show_pin">Visa PIN-inmatningen direkt</string>
   <string name="unlock_quick_unlock_control_title">Snabb upplåsning</string>
   <string name="unlock_quick_unlock_control_summary">Lås upp automatiskt när rätt PIN/lösenord har angivits</string>
   <string name="unlock_scramble_pin_layout_title">Kasta om layout</string>
@@ -698,6 +709,7 @@
   <string name="status_bar_show_weather_summary">Visa vädret över snabbinställningspanelen</string>
   <string name="qs_category_title">Snabbinställningspanel</string>
   <string name="qs_brightness_slider_title">Visa reglage för ljusstyrka</string>
+  <string name="qs_hide_tiles_with_sensitive_data">Dölj känsliga brickor när skärmen är låst</string>
   <string name="qs_order_title">Välj och ordna brickor</string>
   <string name="add_qs">Lägg till en ny bricka</string>
   <string name="qs_action_delete">Radera</string>
@@ -720,11 +732,13 @@
   <string name="qs_tile_compass">Kompass</string>
   <string name="qs_tile_lockscreen">Låsskärm</string>
   <string name="qs_tile_lte">LTE</string>
-  <string name="qs_tile_screen_timeout">Skärmtidsgräns</string>
+  <string name="qs_tile_volume_panel">Volympanel</string>
+  <string name="qs_tile_screen_timeout">Timeout för skärm</string>
   <string name="qs_tile_usb_tether">USB-sammanlänkning</string>
   <string name="qs_tile_heads_up">Heads up</string>
   <string name="qs_tile_ambient_display">Ambient display</string>
   <string name="qs_tile_sync">Synk</string>
+  <string name="qs_tile_battery_saver">Strömsparläge</string>
   <string name="qs_dynamic_tile_next_alarm">Nästa alarm</string>
   <string name="qs_dynamic_tile_ime_selector">IME-väljare</string>
   <string name="qs_dynamic_tile_su">Root-åtkomst</string>
@@ -815,6 +829,8 @@
   <string name="interruptions_ignore_while_media_title">Undvik ljuddämpning</string>
   <string name="interruptions_ignore_while_media_summary">Minska inte ljudstyrkan för media när en avisering tas emot</string>
   <string name="none_is_silent_title">Stäng aldrig av larm</string>
+  <string name="none_is_silent_summary_on">Larm ignoreras inte i tyst läge</string>
+  <string name="none_is_silent_summary_off">Larm ignoreras i tyst läge</string>
   <string name="allow_lights_title">Tillåt aviseringsljus</string>
   <string name="live_display_summary">Optimera din skärm baserad på dygnets tidpunkt och omgivande förhållanden för att förbättra läsbarhet och minska belastningen på ögonen</string>
   <string name="live_display_mode">Visningsläge</string>
@@ -831,10 +847,17 @@
   <string name="live_display_enhance_color_summary">Förbättra färglyster på hudtoner, landskap och andra bilder</string>
   <string name="live_display_color_profile_title">Färgprofil</string>
   <string name="live_display_color_profile_standard_title">Standard</string>
+  <string name="live_display_color_profile_standard_summary">Exakta färger och kritvitt</string>
   <string name="live_display_color_profile_natural_title">Naturlig</string>
+  <string name="live_display_color_profile_natural_summary">Realistiska färger och hudnära toner</string>
   <string name="live_display_color_profile_dynamic_title">Dynamisk</string>
+  <string name="live_display_color_profile_dynamic_summary">Förbättrade färger och kritvitt</string>
   <string name="live_display_color_profile_cinema_title">Biograf</string>
+  <string name="live_display_color_profile_cinema_summary">Perfekt färgåtergivning för media</string>
   <string name="live_display_color_profile_astronomy_title">Astronomi</string>
+  <string name="live_display_color_profile_astronomy_summary">Djupt röd för att bevara mörkerseendet</string>
+  <string name="live_display_color_profile_basic_title">Grundläggande</string>
+  <string name="live_display_color_profile_basic_summary">Använd skärmen okalibrerad</string>
   <string name="battery_saver_threshold">Batterisparningströskel</string>
   <string name="battery_saver_summary">Minska prestanda och begränsa bakgrundsdata</string>
   <string name="battery_saver_summary_unavailable">Inte tillgängligt under laddning</string>
@@ -881,6 +904,10 @@ inkluderar en unik identifikation,
   <string name="factory_reset_warning_text_reset_now">ÅTERSTÄLL NU</string>
   <string name="factory_reset_warning_text_message">Alla dina konton, appar, appdata och systeminställningar kommer tas bort från denna enhet. Detta kan inte ångras.</string>
   <string name="wifi_show_all">Visa alla</string>
+  <string name="wifi_show_protected">Visa skyddade nätverk</string>
+  <string name="wifi_show_open">Visa öppna nätverk</string>
+  <string name="wifi_empty_list_protected">Inga skyddade Wi\u2011Fi nätverk</string>
+  <string name="wifi_empty_list_open">Inga öppna Wi\u2011Fi nätverk</string>
   <string name="wifi_setting_countrycode_title">Wi\u2011Fi-regionskod</string>
   <string name="wifi_setting_countrycode_summary">Ange regionskoden för Wi\u2011Fi</string>
   <string name="wifi_setting_countrycode_error">Det uppstod ett problem vid inställningen av regionskoden.</string>
@@ -906,11 +933,15 @@ inkluderar en unik identifikation,
   <string name="fingerprint_dialog_title_rename">Redigera fingeravtryck</string>
   <string name="fingerprint_dialog_name_label">Fingeravtrycksnamn</string>
   <string name="fingerprint_dialog_title_max_fingers_reached">Maximalt antal fingeravtryck uppnått</string>
+  <string name="fingerprint_dialog_msg_max_fingers_reached">Du kan bara registrera <xliff:g id="finger" example="5">%d</xliff:g> fingeravtryck. Ta bort ett befintlig fingeravtryck.</string>
+  <string name="fingerprint_title_manage_fingerprints"><xliff:g id="finger">%d</xliff:g> av <xliff:g id="max">%d</xliff:g> fingeravtryck registrerade</string>
+  <string name="manage_fingerprints_description">Med fingeravtryck kan du snabbt låsa upp telefonen och ta bilder.</string>
   <string name="fingerprint_enrollment_introduction_title">Hitta din avläsare</string>
   <string name="fingerprint_enrollment_introduction_instructions">Fingertrycksavläsare är placerad på fram- eller baksidan av din telefon.</string>
   <string name="fingerprint_enrollment_scan_title">Håll i 3 sekunder</string>
   <string name="fingerprint_enrollment_scan_instructions">Placera ditt indexfinger på fingeravtrycksavläsaren för att börja konfigurering. Lyft ditt finger när du känner en vibration.</string>
   <string name="fingerprint_enrollment_error_title_wrong_sensor">Försök igen</string>
+  <string name="fingerprint_enrollment_error_message">Placera ditt finger med ett stadigt tryck på fingeravtrycksavläsaren för att säkerställa en korrekt inskanning. Säkerställ också att du använder samma finger som tidigare. Lyft fingret när du känner en vibration.</string>
   <string name="fingerprint_enrollment_scan_instructions">Placera ditt indexfinger på fingeravtrycksavläsaren för att börja konfigurering. Lyft ditt finger när du känner en vibration.</string>
   <string name="fingerprint_enrollment_break_title">Fortsätt med nuvarande grepp</string>
   <string name="fingerprint_enrollment_break_instructions">Fortsätt för att fånga kanterna av ditt avtryck. Lyft fingret när du känner en vibration.</string>
@@ -937,6 +968,7 @@ inkluderar en unik identifikation,
   <string name="fingerprint_enrollment_error_title_3">Hmm, något gick fel</string>
   <string name="fingerprint_enrollment_error_title_4">Försök igen</string>
   <string name="fingerprint_enrollment_error_title_5">Oj, det var uppstod ett fel</string>
+  <string name="lockscreen_settings_and_fingerprint">Låsskärmen &amp; fingeravtryck</string>
   <string name="menu_stats_reset">Återställ statistik</string>
   <string name="reset_stats_msg">Statistiken för batterihistorik kommer att återställas</string>
   <string name="dock_battery_not_present">Dockningsstationsbatteri hittades inte</string>
@@ -944,7 +976,25 @@ inkluderar en unik identifikation,
   <string name="battery_info_status_charging_dock_usb">Laddar över dockningsstationens USB</string>
   <string name="setup_lock_pattern_size_title">Mönsterkomplexitet</string>
   <string name="setup_lock_pattern_size_details">Hur många noder vill du använda med ditt mönster? Ju fler noder, desto mer komplext kan mönstret bli.</string>
+  <string name="lto_download_data_wifi_only">Ladda ner GPS-assisterad data</string>
+  <string name="lto_download_data_wifi_only_on">Över alla nätverk</string>
+  <string name="lto_download_data_wifi_only_off">Endast över Wi\u2011Fi nätverk</string>
   <string name="keep_screen_on_never">Aldrig</string>
+  <string name="keep_screen_on_debugging">Under USB-felsökning</string>
   <string name="keep_screen_on_charging">Under laddning</string>
   <string name="contributors_cloud_fragment_title">Bidragsgivare</string>
+  <string name="contributors_cloud_loading_message">Laddar bidragsgivares data\u2026</string>
+  <string name="contributors_cloud_failed_message">Kan inte ladda bidragsgivares data</string>
+  <string name="contributor_info_menu">Bidragsgivarinformation</string>
+  <string name="contributor_info_msg">
+        <![CDATA[<b>Namn:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
+                 <b>Smeknamn:</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+                 <b>Commits:</b> <xliff:g id="commits">%3$s</xliff:g><br/><br/>
+                 <b>Rang:</b> <xliff:g id="rank">%4$s</xliff:g>]]></string>
+  <string name="contributions_info_menu">Bidragsinformation</string>
+  <string name="contributions_info_msg">
+        <![CDATA[<b>Totalt antal bidragsgivare:</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
+                 <b>Totalt antal commits:</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
+                 <b>Senaste uppdatering:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
+  <string name="quick_settings_reset_message">Återställ snabbinställningsbrickor?</string>
 </resources>
