@@ -51,6 +51,20 @@
     <!-- clock second-->
     <string name="clock_second_title">Time display seconds</string>
     <string name="clock_second_summary">Let the time accurate to seconds</string>
+
+    <!-- Recents panel settings -->
+    <string name="recents_options">Recents Options</string>    
+    <string name="recents_options_title">Recents Options Settings</string>
+    <string name="recents_panel_settings">Recents panel settings</string>
+    <string name="show_clear_all_recents_button_title">Clear All Button Tweaks</string>
+    <string name="show_clear_all_recents_button_summary">Show clear all button on recents panel</string>
+    <string name="recents_clear_all_location_title">Clear all recents location</string>
+    <string name="recents_clear_all_location_top_right">Top right</string>
+    <string name="recents_clear_all_location_top_left">Top left</string>
+    <string name="recents_clear_all_location_top_center">Top center</string>    
+    <string name="recents_clear_all_location_bottom_right">Bottom right</string>
+    <string name="recents_clear_all_location_bottom_left">Bottom left</string>
+    <string name="recents_clear_all_location_bottom_center">Bottom center</string>
     <!-- Captive Portal -->
     <string name="captive_portal_detection">Captive portal detection</string>
     <string name="captive_portal_detection_summary">If disabled, a connection to google servers is not required in order to detect data connection.</string>	

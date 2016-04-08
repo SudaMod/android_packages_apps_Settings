@@ -30,6 +30,17 @@
         android:persistent="false" />
 
     <PreferenceCategory
+        android:key="recents_options"
+        android:title="@string/recents_options" >
+
+    <PreferenceScreen
+        android:key="recents_panel"
+        android:title="@string/recents_options_title"
+        android:fragment="com.android.settings.sudamod.RecentsSettings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="navigation_bar_category"
         android:title="@string/navigation_bar_category" >
 
