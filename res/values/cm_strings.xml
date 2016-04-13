@@ -612,13 +612,6 @@
     <string name="color_green_title">Green</string>
     <string name="color_blue_title">Blue</string>
 
-    <!-- Hardware tunables - Gamma calibration -->
-    <string name="gamma_tuning_title_head">Gamma calibration</string>
-    <string name="gamma_tuning_summary_head">Tweak gamma values</string>
-    <string name="gamma_tuning_control_set_header">Group <xliff:g id="index">%d</xliff:g></string> <!-- used if no name provided by overlay -->
-    <string name="gamma_tuning_contrast">Contrast</string>
-    <string name="gamma_tuning_brightness">Brightness</string>
-    <string name="gamma_tuning_saturation">Saturation</string>
 
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Launch music app</string>
@@ -1181,4 +1174,6 @@
     <string name="restrict_cellular_access_dialog_title">Restrict cellular data access?</string>
     <string name="restrict_cellular_access_dialog_summary">This feature may cause an app that depends on network access to stop working when only cellular networks are available.\n\nYou can find more appropriate data usage controls in the settings available within the app.</string>
 
+    <!-- Label for settings shortcut: carrier selection -->
+    <string name="shortcut_carrier_title">Network operators</string>
 </resources>
