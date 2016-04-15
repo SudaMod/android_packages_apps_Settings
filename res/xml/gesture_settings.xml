@@ -34,8 +34,8 @@
 
         <SwitchPreference
             android:key="double_tap_wake_gesture"
-                android:title="@string/tap_to_wake"
-                android:summary="@string/tap_to_wake_summary" />
+                android:title="@string/double_tap_to_wake_title"
+                android:summary="@string/double_tap_to_wake_summary" />
 
         <!-- Double tap to sleep -->
         <com.android.settings.cyanogenmod.CMSystemSettingSwitchPreference
