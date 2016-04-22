@@ -105,4 +105,8 @@
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
 
+     <!-- Lockscreen show Charging Current -->
+    <string name="lock_screen_show_current">Charging Current</string>
+    <string name="lock_screen_show_current_summary">Show Charging Current rate on lock screen</string>
+
 </resources>
