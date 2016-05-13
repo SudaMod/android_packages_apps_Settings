@@ -28,6 +28,18 @@
     <string name="status_bar_network_traffic_style_up">Outgoing</string>
     <string name="status_bar_network_traffic_style_down">Incoming</string>
     <string name="status_bar_network_traffic_style_all">Outgoing and incoming</string>
+
+    <!-- Show carrier label and custom -->
+    <string name="show_status_bar_carrier_title">Status bar carrier</string>
+    <string name="show_status_bar_carrier_summary">Show carrier in status bar</string>
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="show_carrier_speed_title">Operators of font size</string>
+    <string name="carrier_size_style_normal">Normal</string>
+    <string name="carrier_size_style_small">Small</string>
+    <string name="carrier_size_style_big">Big</string>
+
     <!-- Gesture and Direct Control -->  
     <string name="gesture_title">Gesture</string>
     <string name="gesture_direct_title">Gesture and Direct Control</string>  
