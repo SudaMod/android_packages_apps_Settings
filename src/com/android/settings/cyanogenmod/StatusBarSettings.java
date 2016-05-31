@@ -116,6 +116,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         if (TelephonyManager.getDefault().isMultiSimEnabled()) {
             prefSet.removePreference(mStatusBarCarrier);
             prefSet.removePreference(mCustomCarrierLabel);
+            prefSet.removePreference(mCarrierSize);
         } else {
             updateCustomLabelTextSummary();
         }
