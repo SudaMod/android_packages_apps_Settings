@@ -516,7 +516,7 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
                 mSwitch.setVisibility(View.GONE);
             } else {
                 mSwitch.setVisibility(View.VISIBLE);
-                mSwitch.setEnabled(!isAirplaneModeOn());
+                mSwitch.setEnabled(!isAirplaneModeOn() && isCurrentSubValid());
             }
         }
 
@@ -743,7 +743,6 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
             dismissDialog(sAlertDialog);
             dismissDialog(sProgressDialog);
             AlertDialog.Builder builder = new AlertDialog.Builder(mContext)
-                    .setIcon(android.R.drawable.ic_dialog_alert)
                     .setTitle(title);
 
             switch(dialogId) {
