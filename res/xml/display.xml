@@ -65,6 +65,11 @@
                 android:summary="@string/camera_gesture_desc"
                 android:persistent="false" />
 
+        <!-- Prevent accidental wake-up -->
+        <com.android.settings.cyanogenmod.CMSystemSettingSwitchPreference
+                android:key="proximity_on_wake"
+                android:title="@string/proximity_wake_title"
+                android:summary="@string/proximity_wake_summary" />
 
         <!-- Seconds before sleep -->
         <ListPreference
