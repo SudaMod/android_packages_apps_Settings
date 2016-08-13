@@ -573,11 +573,6 @@
   <string name="display_rotation_180_title">180 stupnjeva</string>
   <string name="display_rotation_270_title">270 stupnjeva</string>
   <!-- Display settings.  Screen color. -->
-  <string name="screencolor">Boja zaslona</string>
-  <string name="screencolor_summary">Podešavanje nijansi zaslona, zasićenje, kontrasta ili intenziteta</string>
-  <string name="custom_screencolor">Prilagođena boja zaslona</string>
-  <string name="screencolor_save">Spremi</string>
-  <string name="screencolor_cancel">Odustani</string>
   <string name="restore_preview">Vidi zadanu sliku</string>
   <string name="selectnewfile_menu">Pogledaj novu sliku iz galerije</string>
   <string name="selectfile_menu">Prikaz slike iz galerije</string>
@@ -586,9 +581,6 @@
   <string name="saturation_str">Zasićenost: <xliff:g id="saturation_value">%1$s </xliff:g></string>
   <string name="contrast_str">Kontrast: <xliff:g id="contrast_value">%1$s </xliff:g></string>
   <string name="intensity_str">Intenzitet: <xliff:g id="intensity_str_value">%1$s</xliff:g></string>
-  <string name="screen_color_standard">Standardno</string>
-  <string name="screen_color_vivid">Živopisno</string>
-  <string name="screen_color_custom">Prilagođeno</string>
   <!-- LiveDisplay -->
   <string name="live_display_summary">Prilagođuje zaslon prema vremenu dana i okolini za poboljšanje čitljivosti i smanjenje naprezanja očiju.</string>
   <string name="live_display_mode">Način prikaza</string>
@@ -695,7 +687,7 @@
   <string name="status_bar_title">Statusna traka</string>
   <string name="status_bar_toggle_brightness">Kontrola svjetline</string>
   <string name="status_bar_toggle_brightness_summary">Prilagodite svjetlinu klizanjem po statusnoj traci</string>
-  <string name="status_bar_notif_count_title">Pokaži broj obavijesti</string>
+  <string name="status_bar_notif_count_title">Prikaži broj obavijesti</string>
   <string name="status_bar_notif_count_summary">Prikaži broj neriješenih obavijesti</string>
   <string name="status_bar_quick_qs_pulldown_title">Brzo potezanje</string>
   <string name="status_bar_quick_qs_pulldown_summary">%1$s rub trake stanja povlači dolje Brze postavke</string>
@@ -710,7 +702,7 @@
   <string name="status_bar_clock_style_left">Lijevi</string>
   <string name="status_bar_clock_style_center">Centar</string>
   <string name="status_bar_clock_style_hidden">Skriveno</string>
-  <string name="status_bar_am_pm_title">AM/PM stil</string>
+  <string name="status_bar_am_pm_title">Stil AM/PM-a</string>
   <string name="status_bar_am_pm_info">24-satni oblik je omogućen</string>
   <string name="status_bar_am_pm_normal">Normalno</string>
   <string name="status_bar_am_pm_small">Malen</string>
