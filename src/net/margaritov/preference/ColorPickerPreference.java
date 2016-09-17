@@ -84,10 +84,8 @@ public class ColorPickerPreference extends Preference implements
         }
     }
 
-    @Override
     protected void onBindView(View view) {
         mView = view;
-        super.onBindView(view);
 
         widgetFrameView = ((LinearLayout) view
                 .findViewById(android.R.id.widget_frame));
