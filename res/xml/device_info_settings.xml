@@ -84,7 +84,7 @@
 
         <!-- LineageOS version -->
         <org.lineageos.internal.preference.deviceinfo.LineageVersionPreference
-                android:key="lineage_version" />
+                android:key="sm_version" />
 
         <!-- LineageOS API version -->
         <org.lineageos.internal.preference.deviceinfo.LineageAPIVersionPreference
