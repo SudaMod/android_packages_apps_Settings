@@ -64,4 +64,11 @@
   <string name="listview_overshoot_interpolator">快速到达终点超出一小步然后回到终点</string>
   <string name="listview_anticipate_overshoot_interpolator">到达终点超出一小步然后回到终点</string>
   <string name="listview_bounce_interpolator">到达终点产生弹球效果，弹几下回到终点</string>
+
+    <string name="show_network_speed_title">状态栏网速</string>
+    <string name="show_network_speed_summary">在状态栏显示当前网速</string>
+    <string name="status_bar_network_traffic_style_disable">禁用</string>
+    <string name="status_bar_network_traffic_style_up">显示上传速度</string>
+    <string name="status_bar_network_traffic_style_down">显示下载速度</string>
+    <string name="status_bar_network_traffic_style_all">显示上传和下载速度</string>
 </resources>

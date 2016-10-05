@@ -98,4 +98,19 @@
         <item>6</item>
         <item>7</item>
     </string-array>
+
+    <!-- show network traffic -->
+     <string-array name="entries_status_bar_network_traffic_style" translatable="false">
+         <item>@string/status_bar_network_traffic_style_disable</item>
+         <item>@string/status_bar_network_traffic_style_up</item>
+         <item>@string/status_bar_network_traffic_style_down</item>
+         <item>@string/status_bar_network_traffic_style_all</item>
+     </string-array>
+ 
+     <string-array name="values_status_bar_network_traffic_style" translatable="false">
+         <item>0</item>
+         <item>1</item>
+         <item>2</item>
+         <item>3</item>
+     </string-array>
 </resources>
