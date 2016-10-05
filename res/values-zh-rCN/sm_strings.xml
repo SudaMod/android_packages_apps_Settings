@@ -23,4 +23,10 @@
     <string name="keyguard_toggle_torch_summary">电源键开关手电筒</string>
     <string name="three_finger_gesture_title">三指截屏</string>
     <string name="three_finger_gesture_summary">三指滑屏截屏</string>
+    <!-- long press back to kill configurable timeout -->
+    <string name="kill_app_longpress_timeout_title">返回键强行关闭延迟</string>
+    <string name="timeout_2000">2 秒 (默认)</string>
+    <string name="timeout_1500">1,5 秒</string>
+    <string name="timeout_1000">1 秒</string>
+    <string name="timeout_500">0,5 秒</string>
 </resources>
