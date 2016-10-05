@@ -80,6 +80,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
 
+    private static final String PREF_TRANSPARENT_VOLUME_DIALOG = "transparent_volume_dialog";
 	private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
     private static final String THREE_FINGER_GESTURE = "three_finger_gesture";
     private static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
@@ -114,6 +115,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mThreeFingerGesture;
 
     private SeekBarPreference mQSShadeAlpha;
+    private SeekBarPreference mVolumeDialogAlpha;
+
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.DISPLAY;
@@ -143,6 +146,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_TRANSPARENT_SHADE, 255);
         mQSShadeAlpha.setValue(qSShadeAlpha / 1);
         mQSShadeAlpha.setOnPreferenceChangeListener(this);
+
+        // Volume dialog alpha
+        mVolumeDialogAlpha = (SeekBarPreference) findPreference(PREF_TRANSPARENT_VOLUME_DIALOG);
+        int volumeDialogAlpha = Settings.System.getInt(getContentResolver(),
+                Settings.System.TRANSPARENT_VOLUME_DIALOG, 255);
+        mVolumeDialogAlpha.setValue(volumeDialogAlpha / 1);
+        mVolumeDialogAlpha.setOnPreferenceChangeListener(this);
 
         mKeyguardToggleTorch =
                 (SwitchPreference) findPreference(KEYGUARD_TOGGLE_TORCH);
@@ -485,6 +495,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             int alpha = (Integer) objValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.QS_TRANSPARENT_SHADE, alpha * 1);
+        }
+        if (preference == mVolumeDialogAlpha) {
+          int alpha = (Integer) objValue;
+          Settings.System.putInt(getContentResolver(),
+                  Settings.System.TRANSPARENT_VOLUME_DIALOG, alpha * 1);
         }
         if (preference == mKeyguardToggleTorch) {
             Settings.System.putInt(getContentResolver(),

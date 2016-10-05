@@ -31,4 +31,5 @@
     <string name="timeout_500">0,5 秒</string>
     <!-- QS shade transparency -->
     <string name="qs_transparent_shade">QS面板透明度</string>
+    <string name="volume_dialog_transparency">音量面板对话框的透明度</string>
 </resources>
