@@ -159,4 +159,15 @@
 
     </PreferenceCategory>
 
+        <PreferenceCategory
+            android:key="keyguard_toggle_torch_title_options"
+            android:title="@string/keyguard_toggle_torch_title" >
+
+            <SwitchPreference
+            	android:key="keyguard_toggle_torch"
+            	android:title="@string/keyguard_toggle_torch_title"
+            	android:summary="@string/keyguard_toggle_torch_summary"
+            	android:defaultValue="false" />
+
+        </PreferenceCategory>
 </PreferenceScreen>
