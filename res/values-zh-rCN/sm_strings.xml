@@ -32,4 +32,13 @@
     <!-- QS shade transparency -->
     <string name="qs_transparent_shade">QS面板透明度</string>
     <string name="volume_dialog_transparency">音量面板对话框的透明度</string>
+    <string name="show_status_bar_carrier_title">运营商名称</string>
+    <string name="show_status_bar_carrier_summary">在状态栏显示运营商名称</string>
+    <string name="custom_carrier_label_title">自定义运营商名称</string>
+    <string name="custom_carrier_label_explain">请输入新的运营商名称，留空为恢复默认运营商名称。</string>
+    <string name="custom_carrier_label_notset">当前没有设置运营商名称</string>
+    <string name="show_carrier_speed_title">运营商字体大小</string>
+    <string name="carrier_size_style_normal">正常</string>
+    <string name="carrier_size_style_small">小</string>
+    <string name="carrier_size_style_big">大</string>
 </resources>
