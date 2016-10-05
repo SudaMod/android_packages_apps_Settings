@@ -235,6 +235,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private static final String DEVELOPMENT_TOOLS = "development_tools";
 
+	private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final int RESULT_DEBUG_APP = 1000;
     private static final int RESULT_MOCK_LOCATION_APP = 1001;
 
@@ -333,6 +334,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private SwitchPreference mColorTemperaturePreference;
 
     private SwitchPreference mUpdateRecoveryPreference;
+
+    private SwitchPreference mKillAppLongpressBack;
 
     private ListPreference mRootAccess;
     private Object mSelectedRootValue;
@@ -507,6 +510,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                 SHOW_ALL_ANRS_KEY);
         mAllPrefs.add(mShowAllANRs);
         mResetSwitchPrefs.add(mShowAllANRs);
+
+        mKillAppLongpressBack = findAndInitSwitchPref(KILL_APP_LONGPRESS_BACK);
 
         Preference hdcpChecking = findPreference(HDCP_CHECKING_KEY);
         if (hdcpChecking != null) {
@@ -703,6 +708,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             setPrefsEnabledState(mLastEnabledState);
         }
         mSwitchBar.show();
+        updateKillAppLongpressBackOptions();
 
         if (mColorModePreference != null) {
             mColorModePreference.startListening();
@@ -992,6 +998,17 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             hdcpChecking.setSummary(summaries[index]);
             hdcpChecking.setOnPreferenceChangeListener(this);
         }
+    }
+
+    private void writeKillAppLongpressBackOptions() {
+        CMSettings.Secure.putInt(getActivity().getContentResolver(),
+                CMSettings.Secure.KILL_APP_LONGPRESS_BACK,
+                mKillAppLongpressBack.isChecked() ? 1 : 0);
+    }
+
+    private void updateKillAppLongpressBackOptions() {
+        mKillAppLongpressBack.setChecked(CMSettings.Secure.getInt(
+            getActivity().getContentResolver(), CMSettings.Secure.KILL_APP_LONGPRESS_BACK, 0) != 0);
     }
 
     private void updatePasswordSummary() {
@@ -2191,6 +2208,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             } else {
                 Utils.setOemUnlockEnabled(getActivity(), false);
             }
+        } else if (preference == mKillAppLongpressBack) {
+            writeKillAppLongpressBackOptions();
         } else if (preference == mMockLocationAppPref) {
             Intent intent = new Intent(getActivity(), AppPicker.class);
             intent.putExtra(AppPicker.EXTRA_REQUESTIING_PERMISSION,
