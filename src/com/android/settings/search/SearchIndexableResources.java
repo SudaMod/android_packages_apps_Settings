@@ -17,6 +17,7 @@
 package com.android.settings.search;
 
 import android.provider.SearchIndexableResource;
+import com.android.settings.cypher.fragments.StatusbarSettings;
 import com.android.settings.DateTimeSettings;
 import com.android.settings.DevelopmentSettings;
 import com.android.settings.DeviceInfoSettings;
@@ -326,6 +327,12 @@ public final class SearchIndexableResources {
                         R.xml.zen_mode_visual_interruptions_settings,
                         ZenModeVisualInterruptionSettings.class.getName(),
                         R.drawable.ic_settings_notifications));
+		sResMap.put(StatusbarSettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(StatusbarSettings.class.getName()),
+                        NO_DATA_RES_ID,
+                        StatusbarSettings.class.getName(),
+                        R.drawable.ic_settings_statusbar));
     }
 
     private SearchIndexableResources() {
