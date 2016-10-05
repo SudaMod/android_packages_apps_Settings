@@ -77,6 +77,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
 
+    private static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
     private static final String KEY_CATEGORY_DISPLAY = "display";
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
@@ -104,6 +105,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mCameraGesturePreference;
     private SwitchPreference mCameraDoubleTapPowerGesturePreference;
+    private SwitchPreference mKeyguardToggleTorch;
 
     @Override
     protected int getMetricsCategory() {
@@ -127,6 +129,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                         com.android.internal.R.bool.config_dreamsSupported) == false) {
             getPreferenceScreen().removePreference(mScreenSaverPreference);
         }
+
+        mKeyguardToggleTorch =
+                (SwitchPreference) findPreference(KEYGUARD_TOGGLE_TORCH);
+        mKeyguardToggleTorch.setChecked((Settings.System.getInt(resolver,
+                Settings.System.KEYGUARD_TOGGLE_TORCH, 0) == 1));
+        mKeyguardToggleTorch.setOnPreferenceChangeListener(this);
 
         mScreenTimeoutPreference = (TimeoutListPreference) findPreference(KEY_SCREEN_TIMEOUT);
 
@@ -471,6 +479,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED,
                     value ? 0 : 1 /* Backwards because setting is for disabling */);
+        }
+        if (preference == mKeyguardToggleTorch) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.KEYGUARD_TOGGLE_TORCH,
+                    (Boolean) objValue ? 1 : 0);
         }
         if (preference == mNightModePreference) {
             try {

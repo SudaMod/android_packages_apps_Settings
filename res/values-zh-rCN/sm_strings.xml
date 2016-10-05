@@ -19,4 +19,6 @@
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">返回键杀死应用程序</string>
     <string name="kill_app_longpress_back_summary">通过长时间按下返回键杀死前台应用程序</string>
+    <string name="keyguard_toggle_torch_title">开关手电筒</string>
+    <string name="keyguard_toggle_torch_summary">电源键开关手电筒</string>
 </resources>
