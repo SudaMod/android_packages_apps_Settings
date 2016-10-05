@@ -236,6 +236,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private static final String DEVELOPMENT_TOOLS = "development_tools";
 
 	private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
+	private static final String KILL_APP_LONGPRESS_TIMEOUT = "kill_app_longpress_timeout";
+
     private static final int RESULT_DEBUG_APP = 1000;
     private static final int RESULT_MOCK_LOCATION_APP = 1001;
 
@@ -337,6 +339,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private SwitchPreference mKillAppLongpressBack;
 
+    private ListPreference mKillAppLongpressTimeout;
     private ListPreference mRootAccess;
     private Object mSelectedRootValue;
     private PreferenceScreen mDevelopmentTools;
@@ -510,6 +513,10 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                 SHOW_ALL_ANRS_KEY);
         mAllPrefs.add(mShowAllANRs);
         mResetSwitchPrefs.add(mShowAllANRs);
+
+        // Back long press timeout
+        mKillAppLongpressTimeout = addListPreference(KILL_APP_LONGPRESS_TIMEOUT);
+        mKillAppLongpressTimeout.setOnPreferenceChangeListener(this);
 
         mKillAppLongpressBack = findAndInitSwitchPref(KILL_APP_LONGPRESS_BACK);
 
@@ -709,6 +716,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         }
         mSwitchBar.show();
         updateKillAppLongpressBackOptions();
+        updateKillAppLongpressTimeoutOptions();
 
         if (mColorModePreference != null) {
             mColorModePreference.startListening();
@@ -1009,6 +1017,33 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private void updateKillAppLongpressBackOptions() {
         mKillAppLongpressBack.setChecked(CMSettings.Secure.getInt(
             getActivity().getContentResolver(), CMSettings.Secure.KILL_APP_LONGPRESS_BACK, 0) != 0);
+    }
+
+    private void writeKillAppLongpressTimeoutOptions(Object newValue) {
+        int index = mKillAppLongpressTimeout.findIndexOfValue((String) newValue);
+        int value = Integer.valueOf((String) newValue);
+        Settings.Secure.putInt(getActivity().getContentResolver(),
+                Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT, value);
+        mKillAppLongpressTimeout.setSummary(mKillAppLongpressTimeout.getEntries()[index]);
+    }
+
+    private void updateKillAppLongpressTimeoutOptions() {
+        String value = Settings.Secure.getString(getActivity().getContentResolver(),
+                Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT);
+        if (value == null) {
+            value = "";
+        }
+
+        CharSequence[] values = mKillAppLongpressTimeout.getEntryValues();
+        for (int i = 0; i < values.length; i++) {
+            if (value.contentEquals(values[i])) {
+                mKillAppLongpressTimeout.setValueIndex(i);
+                mKillAppLongpressTimeout.setSummary(mKillAppLongpressTimeout.getEntries()[i]);
+                return;
+            }
+        }
+        mKillAppLongpressTimeout.setValueIndex(0);
+        mKillAppLongpressTimeout.setSummary(mKillAppLongpressTimeout.getEntries()[0]);
     }
 
     private void updatePasswordSummary() {
@@ -2385,6 +2420,9 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             return true;
         } else if (preference == mAppProcessLimit) {
             writeAppProcessLimitOptions(newValue);
+            return true;
+        } else if (preference == mKillAppLongpressTimeout) {
+            writeKillAppLongpressTimeoutOptions(newValue);
             return true;
         } else if (preference == mSimulateColorSpace) {
             writeSimulateColorSpace(newValue);
