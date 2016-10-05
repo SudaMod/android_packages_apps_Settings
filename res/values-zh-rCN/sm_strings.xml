@@ -71,4 +71,34 @@
     <string name="status_bar_network_traffic_style_up">显示上传速度</string>
     <string name="status_bar_network_traffic_style_down">显示下载速度</string>
     <string name="status_bar_network_traffic_style_all">显示上传和下载速度</string>
+
+    <!-- Statusbar base -->
+    <string name="statusbar_settings_title">状态栏时钟</string>
+    <string name="statusbar_settings_title_summary">状态栏时钟和日期的自定义数组</string>
+    <!-- Status bar - Clock -->
+    <string name="status_bar_clock_title">时钟和日期</string>
+    <string name="status_bar_clock_style_title">位置</string>
+    <string name="status_bar_clock_style_right">右侧</string>
+    <string name="status_bar_clock_style_left">左侧</string>
+    <string name="status_bar_clock_style_center">中心</string>
+    <string name="status_bar_clock_style_hidden">隐藏</string>
+    <string name="status_bar_am_pm_title">上午/下午</string>
+    <string name="status_bar_am_pm_info">启用24小时时钟</string>
+    <string name="status_bar_am_pm_normal">正常</string>
+    <string name="status_bar_am_pm_small">小</string>
+    <string name="status_bar_am_pm_hidden">隐藏</string>
+	<!-- Statusbar - Date -->
+    <string name="clock_date_display">日期</string>
+    <string name="clock_date_display_summary">显示时钟前的自定义日期</string>
+    <string name="clock_date_display_none">不显示</string>
+    <string name="clock_date_display_small">小字体</string>
+    <string name="clock_date_display_normal">正常字体</string>
+    <string name="clock_date_style">日期格式</string>
+    <string name="clock_date_style_normal">正常</string>
+    <string name="clock_date_style_lowercase">小写字母</string>
+    <string name="clock_date_style_uppercase">大写字母</string>
+    <string name="clock_date_format_custom">java格式的自定义</string>
+    <string name="clock_date_format">日期格式</string>
+    <string name="clock_date_string_edittext_title">日期格式必须是：MM/dd/yy</string>
+    <string name="clock_date_string_edittext_summary">输入字符串</string>
 </resources>
