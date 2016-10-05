@@ -22,4 +22,6 @@
     <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back button</string>
      <string name="keyguard_toggle_torch_title">Switch flashlight</string>
      <string name="keyguard_toggle_torch_summary">Power key switch flashligh</string>
+     <string name="three_finger_gesture_title">Three screenshots</string>
+     <string name="three_finger_gesture_summary">Three finger sliding screen screenshot</string>
 </resources>

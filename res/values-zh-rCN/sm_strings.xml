@@ -21,4 +21,6 @@
     <string name="kill_app_longpress_back_summary">通过长时间按下返回键杀死前台应用程序</string>
     <string name="keyguard_toggle_torch_title">开关手电筒</string>
     <string name="keyguard_toggle_torch_summary">电源键开关手电筒</string>
+    <string name="three_finger_gesture_title">三指截屏</string>
+    <string name="three_finger_gesture_summary">三指滑屏截屏</string>
 </resources>
