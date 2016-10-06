@@ -98,7 +98,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 	private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
     private static final String THREE_FINGER_GESTURE = "three_finger_gesture";
     private static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
-    private static final String STATUS_BAR_NETWORK_TRAFFIC_STYLE = "status_bar_network_traffic_style";
     private static final String KEY_CATEGORY_DISPLAY = "display";
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
@@ -129,7 +128,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mKeyguardToggleTorch;
     private SwitchPreference mThreeFingerGesture;
 
-    private ListPreference mStatusBarNetworkTraffic;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
 
@@ -213,14 +211,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Settings.System.TRANSPARENT_VOLUME_DIALOG, 255);
         mVolumeDialogAlpha.setValue(volumeDialogAlpha / 1);
         mVolumeDialogAlpha.setOnPreferenceChangeListener(this);
-
-        mStatusBarNetworkTraffic = (ListPreference) findPreference(STATUS_BAR_NETWORK_TRAFFIC_STYLE);
-        int networkTrafficStyle = Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_NETWORK_TRAFFIC_STYLE, 3);
-        mStatusBarNetworkTraffic.setValue(String.valueOf(networkTrafficStyle));
-        mStatusBarNetworkTraffic
-                .setSummary(mStatusBarNetworkTraffic.getEntry());
-        mStatusBarNetworkTraffic.setOnPreferenceChangeListener(this);
 
         mKeyguardToggleTorch =
                 (SwitchPreference) findPreference(KEYGUARD_TOGGLE_TORCH);
@@ -566,16 +556,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(getContentResolver(), CAMERA_GESTURE_DISABLED,
                     value ? 0 : 1 /* Backwards because setting is for disabling */);
         }
-        if (preference == mStatusBarNetworkTraffic) {
-	    String newValue = (String) objValue;
-             int networkTrafficStyle = Integer.valueOf((String) newValue);
-             int index = mStatusBarNetworkTraffic
-                     .findIndexOfValue((String) newValue);
-             Settings.System.putInt(getContentResolver(),
-                     Settings.System.STATUS_BAR_NETWORK_TRAFFIC_STYLE,
-                     networkTrafficStyle);
-             mStatusBarNetworkTraffic.setSummary(mStatusBarNetworkTraffic
-                     .getEntries()[index]);
+        if (preference == mCameraDoubleTapPowerGesturePreference) {
+            boolean value = (Boolean) objValue;
+            Settings.Secure.putInt(getContentResolver(), CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED,
+                    value ? 0 : 1 /* Backwards because setting is for disabling */);
         }
         if (preference == mQSShadeAlpha) {
             int alpha = (Integer) objValue;
@@ -600,11 +584,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
           int alpha = (Integer) objValue;
           Settings.System.putInt(getContentResolver(),
                   Settings.System.TRANSPARENT_VOLUME_DIALOG, alpha * 1);
-        }
-        if (preference == mCameraDoubleTapPowerGesturePreference) {
-            boolean value = (Boolean) objValue;
-            Settings.Secure.putInt(getContentResolver(), CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED,
-                    value ? 0 : 1 /* Backwards because setting is for disabling */);
         }
         if (preference == mKeyguardToggleTorch) {
             Settings.System.putInt(getContentResolver(),
