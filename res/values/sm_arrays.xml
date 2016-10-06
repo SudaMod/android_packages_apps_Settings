@@ -32,19 +32,6 @@
         <item>500</item>
     </string-array>
 
-     <!-- carrier size -->
-     <string-array name="entries_carrier_size_style" translatable="false">
-         <item>@string/carrier_size_style_normal</item>
-         <item>@string/carrier_size_style_small</item>
-         <item>@string/carrier_size_style_big</item>
-     </string-array>
- 
-     <string-array name="values_carrier_size_style" translatable="false">
-         <item>5</item>
-         <item>4</item>
-         <item>6</item>
-     </string-array>
-
     <!-- Listview animation -->
     <string-array name="listview_animation_entries" translatable="false">
         <item>@string/listview_off</item>
