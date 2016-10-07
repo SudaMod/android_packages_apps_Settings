@@ -62,7 +62,4 @@
     <string name="listview_overshoot_interpolator">Overshoot</string>
     <string name="listview_anticipate_overshoot_interpolator">Anticipate overshoot</string>
     <string name="listview_bounce_interpolator">Bounce</string>
-    <!-- SU indicator -->
-    <string name="show_su_indicator_title">Enable SU icon</string>
-    <string name="show_su_indicator_summary">Option to enable or disable native superuser icon</string>
 </resources>
