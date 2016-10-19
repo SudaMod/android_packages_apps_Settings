@@ -533,15 +533,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             removePreference(COLOR_TEMPERATURE_KEY);
             mColorTemperaturePreference = null;
         }
-
-        if (!getResources().getBoolean(R.bool.config_enableRecoveryUpdater)) {
-            removePreference(mUpdateRecovery);
-            mUpdateRecovery = null;
-            if (SystemProperties.getBoolean(UPDATE_RECOVERY_PROPERTY, false)) {
-                SystemProperties.set(UPDATE_RECOVERY_PROPERTY, "false");
-                pokeSystemProperties();
-            }
-        }
     }
 
     private void updateServerTextSummary() {
