@@ -38,11 +38,6 @@
     <bool name="config_allow_edit_carrier_enabled" translatable="false">false</bool>
 
     <bool name="config_regional_display_icc_id_enable">false</bool>
-
-    <!-- Config voice over lte in wireless settings begin -->
-    <bool name="config_voice_over_lte_enabled">false</bool>
-    <!-- Config voice over lte in wireless settings end -->
-
     <!-- When true enable color temperature setting. -->
     <bool name="config_enableColorTemperature">false</bool>
 
@@ -68,20 +63,22 @@
 
     <bool name="config_regional_usb_tethering_quick_start_enable">false</bool>
     <bool name="config_regional_hotspot_tether_help_enable">false</bool>
-    <bool name="config_show_dialog_open_wifi_when_tethering_open">false</bool>
-    <bool name="config_regional_account_check_dialog_enable">false</bool>
-    <!-- Tethering & Mobile HotSpots display summary on Tmoblie -->
-    <bool name="config_tethering_settings_display_summary_Tmobile">false</bool>
 
-    <!-- Config to enable/disable wifi call notification -->
-    <bool name="config_regional_wifi_calling_notificaion_enable">false</bool>
-    <bool name="wifi_call_enhanced_setting">false</bool>
+    <!-- Fully-qualified class name for the implementation of the FeatureFactory to be instantiated. -->
+    <string name="config_featureFactory" translatable="false">com.android.settings.overlay.FeatureFactoryImpl</string>
 
-    <!-- Config to show/hide Collect and diagnostics Preference UI option -->
-    <bool name="config_collect_diagnostics_enabled">false</bool>
+    <!-- Package name and fully-qualified class name for the wallpaper picker activity. -->
+    <string name="config_wallpaper_picker_package" translatable="false">com.android.settings</string>
+    <string name="config_wallpaper_picker_class" translatable="false">com.android.settings.Settings$WallpaperSettingsActivity</string>
 
-    <bool name="config_regional_hotspot_show_broadcast_ssid_checkbox">false</bool>
-    <bool name="config_regional_hotspot_show_maximum_connection_enable">false</bool>
-    <string-array translatable="false" name="carrier_operator_list">
-    </string-array>
+    <!-- Backup settings to launch -->
+    <string name="config_backup_settings_intent" translatable="false"></string>
+
+    <!-- Double twist sensor name and vendor used by gesture setting -->
+    <string name="gesture_double_twist_sensor_name" translatable="false"></string>
+    <string name="gesture_double_twist_sensor_vendor" translatable="false"></string>
+
+    <!-- When true enable gesture setting. -->
+    <bool name="config_gesture_settings_enabled">false</bool>
+
 </resources>

@@ -28,7 +28,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -36,13 +35,11 @@ import android.content.res.Configuration;
 import android.nfc.NfcAdapter;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.support.v14.preference.PreferenceFragment;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceManager;
-import android.telephony.CarrierConfigManager;
 import android.text.TextUtils;
 import android.transition.TransitionManager;
 import android.util.Log;
@@ -54,6 +51,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SearchView;
+
 import com.android.internal.util.ArrayUtils;
 import com.android.settings.Settings.WifiSettingsActivity;
 import com.android.settings.accessibility.AccessibilitySettings;
@@ -72,10 +70,10 @@ import com.android.settings.applications.NotificationApps;
 import com.android.settings.applications.ProcessStatsSummary;
 import com.android.settings.applications.ProcessStatsUi;
 import com.android.settings.applications.UsageAccessDetails;
-import com.android.settings.applications.WriteSettingsDetails;
 import com.android.settings.applications.VrListenerSettings;
+import com.android.settings.applications.WriteSettingsDetails;
 import com.android.settings.bluetooth.BluetoothSettings;
-import com.android.settings.dashboard.DashboardSummary;
+import com.android.settings.dashboard.DashboardContainerFragment;
 import com.android.settings.dashboard.SearchResultsSummary;
 import com.android.settings.datausage.DataUsageSummary;
 import com.android.settings.deviceinfo.ImeiInformation;
@@ -85,9 +83,11 @@ import com.android.settings.deviceinfo.PublicVolumeSettings;
 import com.android.settings.deviceinfo.SimStatus;
 import com.android.settings.deviceinfo.Status;
 import com.android.settings.deviceinfo.StorageSettings;
+import com.android.settings.display.NightDisplaySettings;
 import com.android.settings.fuelgauge.BatterySaverSettings;
 import com.android.settings.fuelgauge.PowerUsageDetail;
 import com.android.settings.fuelgauge.PowerUsageSummary;
+import com.android.settings.gestures.GestureSettings;
 import com.android.settings.inputmethod.AvailableVirtualKeyboardFragment;
 import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.inputmethod.KeyboardLayoutPickerFragment;
@@ -133,6 +133,7 @@ import com.android.settingslib.drawer.DashboardCategory;
 import com.android.settingslib.drawer.SettingsDrawerActivity;
 import com.android.settingslib.drawer.Tile;
 
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -231,10 +232,6 @@ public class SettingsActivity extends SettingsDrawerActivity
 
     private static final String ACTION_TIMER_SWITCH = "qualcomm.intent.action.TIMER_SWITCH";
 
-    private static final String LTE_4G_FRAGMENT = "com.android.settings.Lte4GEnableSetting";
-    private static final String PROFILEMGR_MAIN_FRAGMENT = "com.android.settings.ProfileMgrMain";
-    private static final String MOBILENETWORK_FRAGMENT = "com.android.settings.MobileNetworkMain";
-    private static final String SYSTEM_UPDATE = "android.settings.SystemUpdateActivity";
     private String mFragmentClass;
     private String mActivityAction;
 
@@ -246,12 +243,9 @@ public class SettingsActivity extends SettingsDrawerActivity
             //wireless_section
             WifiSettingsActivity.class.getName(),
             Settings.BluetoothSettingsActivity.class.getName(),
-            Settings.MobileNetworkMainActivity.class.getName(),
-            Settings.TetherSettingsActivity.class.getName(),
             Settings.DataUsageSummaryActivity.class.getName(),
             Settings.RoamingSettingsActivity.class.getName(),
             Settings.SimSettingsActivity.class.getName(),
-            Settings.Lte4GEnableActivity.class.getName(),
             Settings.WirelessSettingsActivity.class.getName(),
             //device_section
             Settings.HomeSettingsActivity.class.getName(),
@@ -260,8 +254,8 @@ public class SettingsActivity extends SettingsDrawerActivity
             Settings.StorageSettingsActivity.class.getName(),
             Settings.ManageApplicationsActivity.class.getName(),
             Settings.PowerUsageSummaryActivity.class.getName(),
+            Settings.GestureSettingsActivity.class.getName(),
             //personal_section
-            Settings.ProfileMgrMainActivity.class.getName(),
             Settings.LocationSettingsActivity.class.getName(),
             Settings.SecuritySettingsActivity.class.getName(),
             Settings.InputMethodAndLanguageSettingsActivity.class.getName(),
@@ -274,8 +268,6 @@ public class SettingsActivity extends SettingsDrawerActivity
             Settings.PrintSettingsActivity.class.getName(),
             Settings.PaymentSettingsActivity.class.getName(),
             Settings.TimerSwitchSettingsActivity.class.getName(),
-            Settings.SystemUpdateActivity.class.getName(),
-            Settings.OtherDeviceFunctionsSettingsActivity.class.getName(),
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -289,7 +281,6 @@ public class SettingsActivity extends SettingsDrawerActivity
             WifiP2pSettings.class.getName(),
             VpnSettings.class.getName(),
             DateTimeSettings.class.getName(),
-            OtherDeviceFunctionsSettings.class.getName(),
             LocaleListEditor.class.getName(),
             InputMethodAndLanguageSettings.class.getName(),
             AvailableVirtualKeyboardFragment.class.getName(),
@@ -324,6 +315,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             PowerUsageSummary.class.getName(),
             AccountSyncSettings.class.getName(),
             AccountSettings.class.getName(),
+            GestureSettings.class.getName(),
             CryptKeeperSettings.class.getName(),
             DataUsageSummary.class.getName(),
             DreamSettings.class.getName(),
@@ -371,6 +363,8 @@ public class SettingsActivity extends SettingsDrawerActivity
             TestingSettings.class.getName(),
             WifiAPITest.class.getName(),
             WifiInfo.class.getName(),
+            MasterClear.class.getName(),
+            NightDisplaySettings.class.getName(),
     };
 
 
@@ -422,7 +416,6 @@ public class SettingsActivity extends SettingsDrawerActivity
     private boolean mIsShowingDashboard;
     private boolean mIsShortcut;
 
-    private int mMainContentId = R.id.main_content;
     private ViewGroup mContent;
 
     private SearchView mSearchView;
@@ -447,12 +440,7 @@ public class SettingsActivity extends SettingsDrawerActivity
 
     @Override
     public boolean onPreferenceStartFragment(PreferenceFragment caller, Preference pref) {
-        // Override the fragment title for Wallpaper settings
-        CharSequence title = pref.getTitle();
-        if (pref.getFragment().equals(WallpaperTypeSettings.class.getName())) {
-            title = getString(R.string.wallpaper_settings_fragment_title);
-        }
-        startPreferencePanel(pref.getFragment(), pref.getExtras(), -1, title,
+        startPreferencePanel(pref.getFragment(), pref.getExtras(), -1, pref.getTitle(),
                 null, 0);
         return true;
     }
@@ -603,7 +591,7 @@ public class SettingsActivity extends SettingsDrawerActivity
         setContentView(mIsShowingDashboard ?
                 R.layout.settings_main_dashboard : R.layout.settings_main_prefs);
 
-        mContent = (ViewGroup) findViewById(mMainContentId);
+        mContent = (ViewGroup) findViewById(R.id.main_content);
 
         getFragmentManager().addOnBackStackChangedListener(this);
 
@@ -659,7 +647,7 @@ public class SettingsActivity extends SettingsDrawerActivity
                 // Show Search affordance
                 mDisplaySearch = true;
                 mInitialTitleResId = R.string.dashboard_title;
-                switchToFragment(DashboardSummary.class.getName(), null, false, false,
+                switchToFragment(DashboardContainerFragment.class.getName(), null, false, false,
                         mInitialTitleResId, mInitialTitle, false);
             }
         }
@@ -732,12 +720,11 @@ public class SettingsActivity extends SettingsDrawerActivity
                 + " ms");
     }
 
-    /**
-     * Sets the id of the view continaing the main content. Should be called before calling super's
-     * onCreate.
-     */
-    protected void setMainContentId(int contentId) {
-        mMainContentId = contentId;
+    public void setDisplaySearchMenu(boolean displaySearch) {
+        if (displaySearch != mDisplaySearch) {
+            mDisplaySearch = displaySearch;
+            invalidateOptionsMenu();
+        }
     }
 
     private void setTitleFromIntent(Intent intent) {
@@ -775,7 +762,7 @@ public class SettingsActivity extends SettingsDrawerActivity
         setTitleFromBackStack();
     }
 
-    private int setTitleFromBackStack() {
+    private void setTitleFromBackStack() {
         final int count = getFragmentManager().getBackStackEntryCount();
 
         if (count == 0) {
@@ -784,13 +771,11 @@ public class SettingsActivity extends SettingsDrawerActivity
             } else {
                 setTitle(mInitialTitle);
             }
-            return 0;
+            return;
         }
 
         FragmentManager.BackStackEntry bse = getFragmentManager().getBackStackEntryAt(count - 1);
         setTitleFromBackStackEntry(bse);
-
-        return count;
     }
 
     private void setTitleFromBackStackEntry(FragmentManager.BackStackEntry bse) {
@@ -1033,7 +1018,7 @@ public class SettingsActivity extends SettingsDrawerActivity
      */
     public void startPreferenceFragment(Fragment fragment, boolean push) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(mMainContentId, fragment);
+        transaction.replace(R.id.main_content, fragment);
         if (push) {
             transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             transaction.addToBackStack(BACK_STACK_PREFS);
@@ -1048,37 +1033,6 @@ public class SettingsActivity extends SettingsDrawerActivity
      */
     private Fragment switchToFragment(String fragmentName, Bundle args, boolean validate,
             boolean addToBackStack, int titleResId, CharSequence title, boolean withTransition) {
-        if (LTE_4G_FRAGMENT.equals(fragmentName)) {
-            Intent newIntent = new Intent("android.settings.SETTINGS");
-            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(newIntent);
-            finish();
-            return null;
-        }
-
-        if (PROFILEMGR_MAIN_FRAGMENT.equals(fragmentName)) {
-            Intent profilemgrIntent = new Intent();
-            profilemgrIntent.setAction("com.codeaurora.STARTPROFILE");
-            profilemgrIntent.setPackage("com.android.profile");
-            startActivity(profilemgrIntent);
-            finish();
-            return null;
-        }
-        if (MOBILENETWORK_FRAGMENT.equals(fragmentName)) {
-            Intent mobileNetworkIntent = new Intent();
-            mobileNetworkIntent.setAction("android.settings.DATA_ROAMING_SETTINGS");
-            mobileNetworkIntent.setPackage("com.qualcomm.qti.networksetting");
-            startActivity(mobileNetworkIntent);
-            finish();
-            return null;
-        }
-
-
-        if (SYSTEM_UPDATE.equals(fragmentName)) {
-            SystemUpdateHandle ();
-            return null;
-        }
-
 
         if (validate && !isValidFragment(fragmentName)) {
             throw new IllegalArgumentException("Invalid fragment for this activity: "
@@ -1086,7 +1040,7 @@ public class SettingsActivity extends SettingsDrawerActivity
         }
         Fragment f = Fragment.instantiate(this, fragmentName, args);
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(mMainContentId, f);
+        transaction.replace(R.id.main_content, f);
         if (withTransition) {
             TransitionManager.beginDelayedTransition(mContent);
         }
@@ -1101,38 +1055,6 @@ public class SettingsActivity extends SettingsDrawerActivity
         transaction.commitAllowingStateLoss();
         getFragmentManager().executePendingTransactions();
         return f;
-    }
-
-    public void SystemUpdateHandle () {
-        CarrierConfigManager configManager =
-                (CarrierConfigManager) getBaseContext().getSystemService(
-                        Context.CARRIER_CONFIG_SERVICE);
-        PersistableBundle b = configManager.getConfig();
-        if (b.getBoolean(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_BOOL)) {
-            Utils.ciActionOnSysUpdate(getBaseContext(),b);
-        }
-        // internal build don't handle system update, use gms for reference design
-        Intent newIntent = new Intent("android.settings.SYSTEM_UPDATE_SETTINGS");
-        PackageManager pm = getBaseContext().getPackageManager();
-        List<ResolveInfo> list = pm.queryIntentActivities(
-                newIntent, 0);
-        int listSize = list.size();
-         for (int j = 0; j < listSize; j++) {
-            ResolveInfo resolveInfo = list.get(j);
-            int flags = resolveInfo.activityInfo.applicationInfo.flags;
-            if ((flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
-                // Replace the intent with this specific
-                // activity
-                newIntent = new Intent().setClassName(
-                        resolveInfo.activityInfo.packageName,
-                        resolveInfo.activityInfo.name);
-                newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(newIntent);
-                finish();
-                return;
-            }
-
-        }
     }
 
     private void updateTilesList() {
@@ -1160,27 +1082,6 @@ public class SettingsActivity extends SettingsDrawerActivity
                 Settings.BluetoothSettingsActivity.class.getName()),
                 pm.hasSystemFeature(PackageManager.FEATURE_BLUETOOTH), isAdmin, pm);
 
-        //visible in RJIL
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.TetherSettingsActivity.class.getName()),
-                ((getResources().getBoolean(R.bool.config_settings_rjil_layout))&&
-                pm.hasSystemFeature(PackageManager.FEATURE_WIFI)), isAdmin, pm);
-
-        //visible in RJIL
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.MobileNetworkMainActivity.class.getName()),
-                ((getResources().getBoolean(R.bool.config_settings_rjil_layout))&&
-                pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)), isAdmin, pm);
-
-        //disable accessibility in RJIL
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.AccessibilitySettingsActivity.class.getName()),
-                !getResources().getBoolean(R.bool.config_settings_rjil_layout), isAdmin, pm);
-
-        setTileEnabled(new ComponentName(packageName,
-                Settings.Lte4GEnableActivity.class.getName()),
-                getResources().getBoolean(R.bool.config_4gsettings_enabled), isAdmin, pm);
-
         setTileEnabled(new ComponentName(packageName,
                 Settings.DataUsageSummaryActivity.class.getName()),
                 Utils.isBandwidthControlEnabled(), isAdmin, pm);
@@ -1202,37 +1103,23 @@ public class SettingsActivity extends SettingsDrawerActivity
                 UserHandle.MU_ENABLED && UserManager.supportsMultipleUsers()
                 && !Utils.isMonkeyRunning(), isAdmin, pm);
 
+        setTileEnabled(new ComponentName(packageName,
+                        Settings.WirelessSettingsActivity.class.getName()),
+                !UserManager.isDeviceInDemoMode(this), isAdmin, pm);
+
+        setTileEnabled(new ComponentName(packageName,
+                        Settings.DateTimeSettingsActivity.class.getName()),
+                !UserManager.isDeviceInDemoMode(this), isAdmin, pm);
         NfcAdapter adapter = NfcAdapter.getDefaultAdapter(this);
         setTileEnabled(new ComponentName(packageName,
                         Settings.PaymentSettingsActivity.class.getName()),
                 pm.hasSystemFeature(PackageManager.FEATURE_NFC)
                         && pm.hasSystemFeature(PackageManager.FEATURE_NFC_HOST_CARD_EMULATION)
                         && adapter != null && adapter.isEnabled(), isAdmin, pm);
-        //PrintSettingsActivity disable in RJIL
+
         setTileEnabled(new ComponentName(packageName,
                 Settings.PrintSettingsActivity.class.getName()),
-                (!getResources().getBoolean(R.bool.config_settings_rjil_layout))
-                &&pm.hasSystemFeature(PackageManager.FEATURE_PRINTING), isAdmin, pm);
-
-        //deviceinfo disable in RJIL
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.DeviceInfoSettingsActivity.class.getName()),
-                !getResources().getBoolean(R.bool.config_settings_rjil_layout), isAdmin, pm);
-
-        //other settings visible in RJIL
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.OtherDeviceFunctionsSettingsActivity.class.getName()),
-                getResources().getBoolean(R.bool.config_settings_rjil_layout), isAdmin, pm);
-
-        //SystemUPdate visible in RJIL
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.SystemUpdateActivity.class.getName()),
-                getResources().getBoolean(R.bool.config_settings_rjil_layout), isAdmin, pm);
-
-
-        setTileEnabled(new ComponentName(packageName,
-                Settings.ProfileMgrMainActivity.class.getName()),
-                getResources().getBoolean(R.bool.config_profilemgrmain_enabled), isAdmin, pm);
+                pm.hasSystemFeature(PackageManager.FEATURE_PRINTING), isAdmin, pm);
 
         final boolean showDev = mDevelopmentPreferences.getBoolean(
                     DevelopmentSettings.PREF_SHOW, android.os.Build.TYPE.equals("eng"))
@@ -1269,6 +1156,23 @@ public class SettingsActivity extends SettingsDrawerActivity
                 }
             }
         }
+
+        String backupIntent = getResources().getString(R.string.config_backup_settings_intent);
+        boolean useDefaultBackup = TextUtils.isEmpty(backupIntent);
+        setTileEnabled(new ComponentName(packageName,
+                Settings.PrivacySettingsActivity.class.getName()), useDefaultBackup, isAdmin, pm);
+        boolean hasBackupActivity = false;
+        if (!useDefaultBackup) {
+            try {
+                intent = Intent.parseUri(backupIntent, 0);
+                hasBackupActivity = !getPackageManager().queryIntentActivities(intent, 0).isEmpty();
+            } catch (URISyntaxException e) {
+                Log.e(LOG_TAG, "Invalid backup intent URI!", e);
+            }
+        }
+        setTileEnabled(new ComponentName(packageName,
+                BackupSettingsActivity.class.getName()), hasBackupActivity, isAdmin, pm);
+
     }
 
     private void setTileEnabled(ComponentName component, boolean enabled, boolean isAdmin,
@@ -1367,10 +1271,11 @@ public class SettingsActivity extends SettingsDrawerActivity
         if (mSearchResultsFragment != null) {
             return;
         }
-        Fragment current = getFragmentManager().findFragmentById(mMainContentId);
+        Fragment current = getFragmentManager().findFragmentById(R.id.main_content);
         if (current != null && current instanceof SearchResultsSummary) {
             mSearchResultsFragment = (SearchResultsSummary) current;
         } else {
+            setContentHeaderView(null);
             mSearchResultsFragment = (SearchResultsSummary) switchToFragment(
                     SearchResultsSummary.class.getName(), null, false, true,
                     R.string.search_results_title, null, true);
