@@ -55,4 +55,7 @@
     <string name="listview_overshoot_interpolator">快速到达终点超出一小步然后回到终点</string>
     <string name="listview_anticipate_overshoot_interpolator">到达终点超出一小步然后回到终点</string>
     <string name="listview_bounce_interpolator">到达终点产生弹球效果，弹几下回到终点</string>
+    <!-- Double tap to sleep on lockscreen -->
+    <string name="double_tap_sleep_anywhere_title">双击睡眠</string>
+    <string name="double_tap_sleep_anywhere_summary">双击锁屏任意处关闭屏幕</string>
 </resources>
