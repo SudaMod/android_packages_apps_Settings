@@ -110,12 +110,12 @@
                 android:title="@string/tap_to_wake"
                 android:summary="@string/tap_to_wake_summary" />
 
-        <!-- Double tap to sleep -->
+        <!-- Double tap 2 sleep on lockscreen -->
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
-                android:key="double_tap_sleep_gesture"
-                android:title="@string/double_tap_to_sleep_title"
-                android:summary="@string/double_tap_to_sleep_summary"
-                android:defaultValue="true" />
+            android:key="double_tap_sleep_anywhere"
+            android:title="@string/double_tap_sleep_anywhere_title"
+            android:summary="@string/double_tap_sleep_anywhere_summary"
+            settings:defaultValue="true"/>
 
         <!-- Prevent accidental wake-up -->
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
