@@ -306,6 +306,9 @@
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 
+    <!-- [CHAR LIMIT=100] Notification Importance slider: very low importance level description -->
+    <string name="notification_importance_very_low">No full screen interruption, peeking, sound, or vibration. Show at the bottom of the notification list. Hide from lock screen.</string>
+
     <!-- Stylus Icon -->
     <string name="stylus_icon_enabled_title">Show icon when using stylus</string>
     <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
@@ -331,4 +334,28 @@
     <string name="increasing_ring_volume_option_title">Increasing ring volume</string>
     <string name="increasing_ring_min_volume_title">Start volume</string>
     <string name="increasing_ring_ramp_up_time_title">Ramp-up time</string>
+
+    <!-- Allow vibration in zen mode -->
+    <string name="zen_mode_vibration">Vibration</string>
+    <string name="zen_mode_vibration_never">Don\'t vibrate</string>
+    <string name="zen_mode_vibration_calls_only">Only vibrate for calls</string>
+    <string name="zen_mode_vibration_calls_and_notifications">Vibrate for calls and notifications</string>
+
+    <!-- Notification sound timeout -->
+    <string name="app_notification_sound_timeout_title">Minimum time between notification sounds</string>
+    <string name="app_notification_sound_timeout_summary_template">Allow sounds or vibration no more than once every <xliff:g id="duration">%1$s</xliff:g></string>
+    <string name="app_notification_sound_timeout_value_none">No restriction</string>
+    <string name="app_notification_sound_timeout_value_10_seconds">10 seconds</string>
+    <string name="app_notification_sound_timeout_value_30_seconds">30 seconds</string>
+    <string name="app_notification_sound_timeout_value_1_minute">1 minute</string>
+    <string name="app_notification_sound_timeout_value_5_minutes">5 minutes</string>
+    <string name="app_notification_sound_timeout_value_15_minutes">10 minutes</string>
+    <string name="app_notification_sound_timeout_value_30_minutes">30 minutes</string>
+
+    <!-- MSIM SIM status -->
+    <string name="sim_card_status_title">SIM %d status</string>
+    <string name="sim_card_lock_settings_title">SIM %d lock settings</string>
+    <string name="sim_card_summary_empty">SIM not inserted</string>
+    <string name="sim_mobile_network_settings_category_title">Mobile network settings</string>
+    <string name="sim_mobile_network_settings_title">SIM %d settings</string>
 </resources>

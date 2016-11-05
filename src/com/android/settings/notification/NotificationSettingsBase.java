@@ -41,6 +41,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import static android.service.notification.NotificationListenerService.Ranking.importanceToLevel;
+
 import static com.android.settings.notification.RestrictedDropDownPreference.RestrictedItem;
 import static com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 
@@ -54,6 +56,7 @@ abstract public class NotificationSettingsBase extends SettingsPreferenceFragmen
     protected static final String KEY_IMPORTANCE = "importance";
     protected static final String KEY_BLOCK = "block";
     protected static final String KEY_SILENT = "silent";
+    protected static final String KEY_SOUND_TIMEOUT = "sound_timeout";
 
     protected PackageManager mPm;
     protected UserManager mUm;
@@ -69,6 +72,7 @@ abstract public class NotificationSettingsBase extends SettingsPreferenceFragmen
     protected RestrictedDropDownPreference mVisibilityOverride;
     protected RestrictedSwitchPreference mBlock;
     protected RestrictedSwitchPreference mSilent;
+    protected RestrictedDropDownPreference mSoundTimeout;
     protected EnforcedAdmin mSuspendedAppsAdmin;
     protected boolean mShowSlider = false;
 
@@ -152,6 +156,9 @@ abstract public class NotificationSettingsBase extends SettingsPreferenceFragmen
         if (mVisibilityOverride != null) {
             mVisibilityOverride.setDisabledByAdmin(mSuspendedAppsAdmin);
         }
+        if (mSoundTimeout != null) {
+            mSoundTimeout.setDisabledByAdmin(mSuspendedAppsAdmin);
+        }
     }
 
     protected void setupImportancePrefs(boolean isSystemApp, int importance, boolean banned) {
@@ -161,16 +168,16 @@ abstract public class NotificationSettingsBase extends SettingsPreferenceFragmen
             mImportance.setDisabledByAdmin(mSuspendedAppsAdmin);
             mImportance.setMinimumProgress(
                     isSystemApp ? Ranking.IMPORTANCE_MIN : Ranking.IMPORTANCE_NONE);
-            mImportance.setMax(Ranking.IMPORTANCE_MAX);
-            mImportance.setProgress(importance);
+            mImportance.setMax(importanceToLevel(Ranking.IMPORTANCE_MAX));
+            mImportance.setImportance(importance);
             mImportance.setAutoOn(importance == Ranking.IMPORTANCE_UNSPECIFIED);
             mImportance.setCallback(new ImportanceSeekBarPreference.Callback() {
                 @Override
-                public void onImportanceChanged(int progress, boolean fromUser) {
+                public void onImportanceChanged(int importance, boolean fromUser) {
                     if (fromUser) {
-                        mBackend.setImportance(mPkg, mUid, progress);
+                        mBackend.setImportance(mPkg, mUid, importance);
                     }
-                    updateDependents(progress);
+                    updateDependents(importance);
                 }
             });
         } else {
@@ -265,6 +272,43 @@ abstract public class NotificationSettingsBase extends SettingsPreferenceFragmen
                 return true;
             }
         });
+    }
+
+    protected void setupSoundTimeoutPref(long timeout) {
+        mSoundTimeout.setDisabledByAdmin(mSuspendedAppsAdmin);
+        mSoundTimeout.setValue(Long.toString(timeout));
+        updateSoundTimeoutSummary(timeout);
+
+        mSoundTimeout.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                long value = Long.valueOf((String) newValue);
+                if (!mBackend.setNotificationSoundTimeout(mPkgInfo.packageName, mUid, value)) {
+                    return false;
+                }
+                updateSoundTimeoutSummary(value);
+                return true;
+            }
+        });
+    }
+
+    private void updateSoundTimeoutSummary(long value) {
+        if (value == 0) {
+            mSoundTimeout.setSummary(R.string.app_notification_sound_timeout_value_none);
+        } else {
+            final CharSequence[] entries = mSoundTimeout.getEntries();
+            final CharSequence[] values = mSoundTimeout.getEntryValues();
+            CharSequence summary = null;
+            for (int i = 0; i < values.length; i++) {
+                long timeout = Long.parseLong(values[i].toString());
+                if (timeout == value) {
+                    summary = getString(R.string.app_notification_sound_timeout_summary_template,
+                            entries[i]);
+                    break;
+                }
+            }
+            mSoundTimeout.setSummary(summary);
+        }
     }
 
     private void setRestrictedIfNotificationFeaturesDisabled(CharSequence entry,
