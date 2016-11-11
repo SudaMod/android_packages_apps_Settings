@@ -254,9 +254,9 @@
     <!-- Memory -->
     <string name="memory_startup_apps_title">Apps started on boot</string>
 
-    <!-- Advanced reboot options -->
-    <string name="advanced_reboot_title">Advanced reboot</string>
-    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for rebooting into recovery, bootloader or performing a soft reboot</string>
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_title">Advanced restart</string>
+    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for restarting into recovery, bootloader or performing a soft restart</string>
 
     <!-- PIN scramble -->
     <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
@@ -358,4 +358,11 @@
     <string name="sim_card_summary_empty">SIM not inserted</string>
     <string name="sim_mobile_network_settings_category_title">Mobile network settings</string>
     <string name="sim_mobile_network_settings_title">SIM %d settings</string>
+
+    <!-- NFC PreferenceCategory title -->
+    <string name="nfc_title_category">NFC</string>
+
+    <!-- Notification importance -->
+    <string name="tuner_full_importance_settings">Power notification controls</string>
+
 </resources>
