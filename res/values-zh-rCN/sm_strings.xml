@@ -130,4 +130,35 @@
   <string name="listview_overshoot_interpolator">越过</string>
   <string name="listview_anticipate_overshoot_interpolator">预测和越过</string>
   <string name="listview_bounce_interpolator">反弹</string>
+  <!-- XOSP Blur personalizations -->
+  <string name="settings_blur_cat">系统界面模糊</string>
+  <string name="settings_blur_sum">系统界面背景模糊设置</string>
+  <string name="blurred_status_bar_expanded_enabled_pref">模糊状态栏背景</string>
+  <string name="blurred_status_bar_expanded_enabled_pref_summary">对快速设置下栏进行高斯模糊</string>
+  <string name="translucent_notifications_pref">半透明通知</string>
+  <string name="translucent_notifications_pref_summary">设置通知背景半透明度</string>
+  <string name="translucent_quick_settings_pref">透明化拓展状态栏</string>
+  <string name="translucent_quick_settings_pref_summary">快速设置背景透明</string>
+  <string name="transluency_level_universal">透明度</string>
+  <string name="blurred_recent_app_enabled_pref">模糊化最近应用界面</string>
+  <string name="blurred_recent_app_enabled_pref_summary">最近应用界面模糊</string>
+  <string name="blur_light_color">亮色图片滤镜</string>
+  <string name="blur_dark_color">暗色图片滤镜</string>
+  <string name="blur_mixed_color">混合图片滤镜</string>
+  <string name="blur_notice">请注意！</string>
+  <string name="blur_notice_summary">模糊设置将在锁屏状态下禁用！仅半透明通知可用！</string>
+  <string name="blur_colors_notice">如何使用这些颜色？</string>
+  <string name="blur_colors_notice_summary">这些颜色是从模糊背景中取到的颜色而不是普通的灰色。您现在可以选择你喜欢的颜色。\n我们提供了三个滤镜：一个用于浅色背景，一个用于深色背景，一个用于中等亮度背景。\n那么这些颜色是如何工作的？\n简单，如标题所示，浅色滤镜将用于较浅的背景，深色滤镜用于深色背景，混合滤镜将用于不太暗也不太亮的背景。\n设置的颜色将用于两个界面：状态栏及最近任务。</string>
+  <string name="blur_expstatus_cat">拓展状态栏</string>
+  <string name="blur_notifications_cat">通知</string>
+  <string name="blur_qs_cat">快速设置</string>
+  <string name="blur_recents_cat">最近应用</string>
+  <string name="blur_colors_cat">模糊滤镜</string>
+  <string name="blur_notices_cat">公告</string>
+  <string name="blurred_scale">模糊级别</string>
+  <string name="blurred_scale_summary">图像模糊度</string>
+  <string name="blurred_radius">模糊半径：</string>
+  <string name="blurred_radius_summary">模糊量</string>
+  <string name="blur_cat_notice">提示</string>
+  <string name="blur_cat_notice_summary">模糊设置在使用输入法期间被禁用！仅启用半透明通知！</string>
 </resources>

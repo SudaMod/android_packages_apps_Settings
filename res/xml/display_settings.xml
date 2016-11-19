@@ -173,12 +173,16 @@
             android:title="@string/animation_title" 
             android:fragment="com.crdroid.settings.fragments.AnimationSettings" />
 
+        <Preference
+            android:key="blur"
+            android:title="@string/settings_blur_cat"
+            android:fragment="com.crdroid.settings.fragments.BlurPersonalizations" />
+
     <com.android.settings.sudamod.SystemSettingSwitchPreference
         android:key="disable_stk_dialog_auto_open"
         android:title="@string/show_stk_dialog_title"
         android:summary="@string/show_stk_dialog_summary"
         android:defaultValue="false" />
-
 
     <PreferenceCategory android:key="transparent__shade"
         android:title="@string/qs_transparent_shade">
