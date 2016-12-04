@@ -42,7 +42,7 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceCategory;
-import com.android.settings.sdhz150.SeekBarPreference;
+import com.android.settings.sudamod.SeekBarPreference;
 import android.text.TextUtils;
 import android.util.Log;
 
