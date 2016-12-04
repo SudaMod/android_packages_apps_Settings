@@ -21,8 +21,6 @@
     <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back
         button
     </string>
-    <string name="keyguard_toggle_torch_title">Switch flashlight</string>
-    <string name="keyguard_toggle_torch_summary">Power key switch flashligh</string>
     <!-- long press back to kill configurable timeout -->
     <string name="kill_app_longpress_timeout_title">Long press back button timeout</string>
     <string name="timeout_2000">2 seconds (default)</string>
