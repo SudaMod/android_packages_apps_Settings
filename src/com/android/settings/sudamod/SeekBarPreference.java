@@ -14,7 +14,7 @@
  * limitations under the License
  */
 
-package com.android.settings.sdhz150;
+package com.android.settings.sudamod;
 
 import android.content.Context;
 import android.content.res.TypedArray;
