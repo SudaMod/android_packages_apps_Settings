@@ -86,7 +86,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String PREF_TRANSPARENT_VOLUME_DIALOG = "transparent_volume_dialog";
 	private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
 
-    private static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
     private static final String KEY_CATEGORY_DISPLAY = "display";
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
@@ -113,8 +112,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mTapToWakePreference;
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mCameraGesturePreference;
-    private SwitchPreference mCameraDoubleTapPowerGesturePreference;
-    private SwitchPreference mKeyguardToggleTorch;
 
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
@@ -173,11 +170,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mVolumeDialogAlpha.setValue(volumeDialogAlpha / 1);
         mVolumeDialogAlpha.setOnPreferenceChangeListener(this);
 
-        mKeyguardToggleTorch =
-                (SwitchPreference) findPreference(KEYGUARD_TOGGLE_TORCH);
-        mKeyguardToggleTorch.setChecked((Settings.System.getInt(resolver,
-                Settings.System.KEYGUARD_TOGGLE_TORCH, 0) == 1));
-        mKeyguardToggleTorch.setOnPreferenceChangeListener(this);
 
         mScreenTimeoutPreference = (TimeoutListPreference) findPreference(KEY_SCREEN_TIMEOUT);
         mFontSizePref = findPreference(KEY_FONT_SIZE);
@@ -527,11 +519,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
           int alpha = (Integer) objValue;
           Settings.System.putInt(getContentResolver(),
                   Settings.System.TRANSPARENT_VOLUME_DIALOG, alpha * 1);
-        }
-        if (preference == mKeyguardToggleTorch) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.KEYGUARD_TOGGLE_TORCH,
-                    (Boolean) objValue ? 1 : 0);
         }
         if (preference == mNightModePreference) {
             try {

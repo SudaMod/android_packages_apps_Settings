@@ -166,17 +166,6 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory 
-        android:key="keyguard_toggle_torch_title_options"
-        android:title="@string/keyguard_toggle_torch_title">
-
-        <SwitchPreference android:defaultValue="false"
-            android:key="keyguard_toggle_torch"
-            android:summary="@string/keyguard_toggle_torch_summary"
-            android:title="@string/keyguard_toggle_torch_title" />
-
-        </PreferenceCategory>
-
     <PreferenceCategory android:key="transparent__shade"
         android:title="@string/qs_transparent_shade">
 
@@ -214,6 +203,5 @@
             android:key="listview_interpolator" android:title="@string/listview_interpolator_title" />
 
     </PreferenceCategory>
-
 
 </PreferenceScreen>
