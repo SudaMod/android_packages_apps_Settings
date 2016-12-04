@@ -166,46 +166,37 @@
 
     </PreferenceCategory>
 
-        <PreferenceCategory
-            android:key="keyguard_toggle_torch_title_options"
-            android:title="@string/keyguard_toggle_torch_title" >
+    <PreferenceCategory 
+        android:key="keyguard_toggle_torch_title_options"
+        android:title="@string/keyguard_toggle_torch_title">
 
-            <SwitchPreference
-            	android:key="keyguard_toggle_torch"
-            	android:title="@string/keyguard_toggle_torch_title"
-            	android:summary="@string/keyguard_toggle_torch_summary"
-            	android:defaultValue="false" />
-
-            <SwitchPreference
-            	android:key="three_finger_gesture"
-            	android:title="@string/three_finger_gesture_title"
-            	android:summary="@string/three_finger_gesture_summary"
-            	android:defaultValue="false" />
+        <SwitchPreference android:defaultValue="false"
+            android:key="keyguard_toggle_torch"
+            android:summary="@string/keyguard_toggle_torch_summary"
+            android:title="@string/keyguard_toggle_torch_title" />
 
         </PreferenceCategory>
 
-      <PreferenceCategory
-         android:key="transparent__shade"
-         android:title="@string/qs_transparent_shade" >
+    <PreferenceCategory android:key="transparent__shade"
+        android:title="@string/qs_transparent_shade">
 
         <com.android.settings.sudamod.SeekBarPreference
             android:key="qs_transparent_shade"
+            android:max="255" android:persistent="false"
             android:title="@string/qs_transparent_shade"
-            android:max="255"
             settings:min="0"
-	    settings:units=""
-            android:persistent="false" />
+            settings:units="" />
 
         <com.android.settings.sudamod.SeekBarPreference
             android:key="transparent_volume_dialog"
-            android:title="@string/volume_dialog_transparency"
             android:max="255"
+            android:persistent="false"
+            android:title="@string/volume_dialog_transparency"
             settings:min="0"
-	    settings:units=""
-            android:persistent="false" />
+            settings:units="" />
 
-     </PreferenceCategory>
 
+    </PreferenceCategory>
 
     <PreferenceCategory android:key="animation_prefs"
         android:title="@string/animation_settings_title">
@@ -223,5 +214,6 @@
             android:key="listview_interpolator" android:title="@string/listview_interpolator_title" />
 
     </PreferenceCategory>
+
 
 </PreferenceScreen>

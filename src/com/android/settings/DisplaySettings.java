@@ -85,7 +85,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
     private static final String PREF_TRANSPARENT_VOLUME_DIALOG = "transparent_volume_dialog";
 	private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
-    private static final String THREE_FINGER_GESTURE = "three_finger_gesture";
+
     private static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
     private static final String KEY_CATEGORY_DISPLAY = "display";
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
@@ -115,7 +115,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mCameraGesturePreference;
     private SwitchPreference mCameraDoubleTapPowerGesturePreference;
     private SwitchPreference mKeyguardToggleTorch;
-    private SwitchPreference mThreeFingerGesture;
 
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
@@ -179,12 +178,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mKeyguardToggleTorch.setChecked((Settings.System.getInt(resolver,
                 Settings.System.KEYGUARD_TOGGLE_TORCH, 0) == 1));
         mKeyguardToggleTorch.setOnPreferenceChangeListener(this);
-
-        mThreeFingerGesture =
-                (SwitchPreference) findPreference(THREE_FINGER_GESTURE);
-        mThreeFingerGesture.setChecked((Settings.System.getInt(resolver,
-                Settings.System.THREE_FINGER_GESTURE, 0) == 1));
-        mThreeFingerGesture.setOnPreferenceChangeListener(this);
 
         mScreenTimeoutPreference = (TimeoutListPreference) findPreference(KEY_SCREEN_TIMEOUT);
         mFontSizePref = findPreference(KEY_FONT_SIZE);
@@ -538,11 +531,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (preference == mKeyguardToggleTorch) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.KEYGUARD_TOGGLE_TORCH,
-                    (Boolean) objValue ? 1 : 0);
-        }
-        if (preference == mThreeFingerGesture) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.THREE_FINGER_GESTURE,
                     (Boolean) objValue ? 1 : 0);
         }
         if (preference == mNightModePreference) {

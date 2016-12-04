@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2015 The SudaMod Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2015 The SudaMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -24,8 +23,6 @@
     </string>
     <string name="keyguard_toggle_torch_title">Switch flashlight</string>
     <string name="keyguard_toggle_torch_summary">Power key switch flashligh</string>
-    <string name="three_finger_gesture_title">Three screenshots</string>
-    <string name="three_finger_gesture_summary">Three finger sliding screen screenshot</string>
     <!-- long press back to kill configurable timeout -->
     <string name="kill_app_longpress_timeout_title">Long press back button timeout</string>
     <string name="timeout_2000">2 seconds (default)</string>
@@ -55,6 +52,8 @@
 
     <!-- Double tap to sleep on lockscreen -->
     <string name="double_tap_sleep_anywhere_title">Double-tap to sleep</string>
-    <string name="double_tap_sleep_anywhere_summary">Double tap lockscreen to put the device to sleep</string>
+    <string name="double_tap_sleep_anywhere_summary">Double tap lockscreen to put the device to
+        sleep
+    </string>
 
 </resources>
