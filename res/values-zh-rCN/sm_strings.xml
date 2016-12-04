@@ -16,23 +16,17 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="suda_version">SudaMod版本</string>
     <string name="suda_version_default">未知</string>
-    <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">返回键杀死应用程序</string>
     <string name="kill_app_longpress_back_summary">通过长时间按下返回键杀死前台应用程序</string>
     <string name="keyguard_toggle_torch_title">开关手电筒</string>
     <string name="keyguard_toggle_torch_summary">电源键开关手电筒</string>
-    <string name="three_finger_gesture_title">三指截屏</string>
-    <string name="three_finger_gesture_summary">三指滑屏截屏</string>
-    <!-- long press back to kill configurable timeout -->
     <string name="kill_app_longpress_timeout_title">返回键强行关闭延迟</string>
     <string name="timeout_2000">2 秒 (默认)</string>
     <string name="timeout_1500">1,5 秒</string>
     <string name="timeout_1000">1 秒</string>
     <string name="timeout_500">0,5 秒</string>
-    <!-- QS shade transparency -->
     <string name="qs_transparent_shade">QS面板透明度</string>
     <string name="volume_dialog_transparency">音量面板对话框的透明度</string>
-    <!-- Listview animation -->
     <string name="animation_settings_title">动画</string>
     <string name="listview_animation_title">列表动画</string>
     <string name="listview_off">关闭</string>
@@ -55,7 +49,6 @@
     <string name="listview_overshoot_interpolator">快速到达终点超出一小步然后回到终点</string>
     <string name="listview_anticipate_overshoot_interpolator">到达终点超出一小步然后回到终点</string>
     <string name="listview_bounce_interpolator">到达终点产生弹球效果，弹几下回到终点</string>
-    <!-- Double tap to sleep on lockscreen -->
     <string name="double_tap_sleep_anywhere_title">双击睡眠</string>
     <string name="double_tap_sleep_anywhere_summary">双击锁屏任意处关闭屏幕</string>
 </resources>
