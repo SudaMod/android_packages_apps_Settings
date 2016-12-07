@@ -41,6 +41,9 @@ import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
+import cyanogenmod.hardware.CMHardwareManager;
+import cyanogenmod.providers.CMSettings;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -209,8 +212,16 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
             pref.init(this);
         }
 
-        mBootSounds = (SwitchPreference) findPreference(KEY_BOOT_SOUNDS);
-        mBootSounds.setChecked(SystemProperties.getBoolean(PROPERTY_BOOT_SOUNDS, true));
+        if (mContext.getResources().getBoolean(R.bool.has_boot_sounds)) {
+            mBootSounds = (SwitchPreference) findPreference(KEY_BOOT_SOUNDS);
+            mBootSounds.setChecked(SystemProperties.getBoolean(PROPERTY_BOOT_SOUNDS, true));
+        } else {
+            removePreference(KEY_BOOT_SOUNDS);
+        }
+        final CMHardwareManager hardware = CMHardwareManager.getInstance(mContext);
+        if (!hardware.isSupported(CMHardwareManager.FEATURE_VIBRATOR)) {
+            removePreference(CMSettings.Secure.VIBRATOR_INTENSITY);
+        }
     }
 
     @Override
@@ -227,7 +238,7 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mBootSounds) {
+        if (mBootSounds != null && preference == mBootSounds) {
             SystemProperties.set(PROPERTY_BOOT_SOUNDS, mBootSounds.isChecked() ? "1" : "0");
             return false;
         } else {
