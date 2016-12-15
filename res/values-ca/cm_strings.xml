@@ -552,7 +552,7 @@
   <string name="double_tap_to_sleep_summary">Pica dues vegades a la barra d\'estat per apagar la pantalla</string>
   <!-- Proximity wake -->
   <string name="proximity_wake_title">Evita l\'encesa accidental</string>
-  <string name="proximity_wake_summary">Comprova el sensor de proximitat abans d\'encendre la pantalla</string>
+  <string name="proximity_wake_summary">Comprova el sensor de proximitat abans dels despertars provocats per gestos</string>
   <!-- Turn on display when power connected; turn off display when power disconnected -->
   <string name="wake_when_plugged_or_unplugged_title">Encén en endollar</string>
   <string name="wake_when_plugged_or_unplugged_summary">Encén la pantalla en connectar o desconnectar d\'una font d\'energia</string>
@@ -870,7 +870,7 @@
   <string name="preview_device_title">Dispositiu</string>
   <string name="preview_version_title">Versió</string>
   <string name="preview_country_title">País</string>
-  <string name="preview_carrier_title">Portadora</string>
+  <string name="preview_carrier_title">Operadora</string>
   <string name="stats_collection_title">Recollida d\'estadístiques</string>
   <string name="stats_collection_summary">Quan està activat, permet la recollida de mètriques</string>
   <!-- Protected apps lockpattern reset button -->
@@ -950,6 +950,11 @@
   <string name="zen_mode_summary_selected_callers">trucades seleccionades</string>
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_messages, but part of a list, so lower case if needed -->
   <string name="zen_mode_summary_selected_messages">missatges seleccionats</string>
+  <!-- Allow vibration in zen mode -->
+  <string name="zen_mode_vibration">Vibració</string>
+  <string name="zen_mode_vibration_never">No vibris</string>
+  <string name="zen_mode_vibration_calls_only">Només vibra per a les trucades</string>
+  <string name="zen_mode_vibration_calls_and_notifications">Vibra per a les trucades i les notificacions</string>
   <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
   <!-- SAR information -->
   <string name="maximum_head_level">Cap: %1$s W/kg</string>
@@ -987,8 +992,8 @@
   <string name="hotstpot_inactivity_timeout_1_minute">1 minut</string>
   <string name="hotstpot_inactivity_timeout_5_minutes">5 minuts</string>
   <string name="hotstpot_inactivity_timeout_10_minutes">10 minuts</string>
-  <string name="hotstpot_inactivity_timeout_never_summary_text">El punt d\'accés portàtil Wi\u2011Fi no s\'apagarà mai</string>
-  <string name="hotstpot_inactivity_timeout_summary_text">El punt d\'accés portàtil Wi\u2011Fi s\'apagarà després de <xliff:g id="timeout">%1$s</xliff:g></string>
+  <string name="hotstpot_inactivity_timeout_never_summary_text">El punt d\'accés Wi\u2011Fi portàtil no s\'apagarà mai</string>
+  <string name="hotstpot_inactivity_timeout_summary_text">El punt d\'accés Wi\u2011Fi portàtil s\'apagarà després de <xliff:g id="timeout">%1$s</xliff:g></string>
   <!-- Live lock screen -->
   <!-- Live lock screen title -->
   <string name="live_lock_screen_title">Pantalla de bloqueig animada</string>
@@ -1055,6 +1060,16 @@
   <string name="app_notification_show_on_keyguard_summary">Mostra les notificacions d\'aquesta aplicació a la pantalla de bloqueig</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">Deshabilita les notificacions persistents a la pantalla de bloqueig</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">No mostris mai notificacions persistents d\'aquesta aplicació a la pantalla de bloqueig</string>
+  <!-- Notification sound timeout -->
+  <string name="app_notification_sound_timeout_title">Temps mínim entre els sons de notificació</string>
+  <string name="app_notification_sound_timeout_summary_template">Permet sons o vibració no més d\'una vegada cada <xliff:g id="duration">%1$s</xliff:g></string>
+  <string name="app_notification_sound_timeout_value_none">Sense restricció</string>
+  <string name="app_notification_sound_timeout_value_10_seconds">10 segons</string>
+  <string name="app_notification_sound_timeout_value_30_seconds">30 segons</string>
+  <string name="app_notification_sound_timeout_value_1_minute">1 minut</string>
+  <string name="app_notification_sound_timeout_value_5_minutes">5 minuts</string>
+  <string name="app_notification_sound_timeout_value_15_minutes">10 minuts</string>
+  <string name="app_notification_sound_timeout_value_30_minutes">30 minuts</string>
   <!-- CmRadioInfo -->
   <string name="cm_radio_info_label">Control millorat de la ràdio</string>
   <!-- Radio Control (IMS/MBN etc.) -->

@@ -525,7 +525,6 @@
   <string name="double_tap_to_sleep_summary">輕點兩次狀態欄來關閉螢幕</string>
   <!-- Proximity wake -->
   <string name="proximity_wake_title">防止意外喚醒</string>
-  <string name="proximity_wake_summary">喚醒螢幕前檢查接近感應器</string>
   <!-- Turn on display when power connected; turn off display when power disconnected -->
   <string name="wake_when_plugged_or_unplugged_title">接上或移除電源時喚醒</string>
   <string name="wake_when_plugged_or_unplugged_summary">連接或拔除電源時開啟螢幕</string>
@@ -887,6 +886,7 @@
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_callers, but part of a list, so lower case if needed -->
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_messages, but part of a list, so lower case if needed -->
   <string name="zen_mode_summary_selected_messages">已選的訊息</string>
+  <!-- Allow vibration in zen mode -->
   <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
   <!-- SAR information -->
   <string name="maximum_head_level">頭部：%1$s W/kg</string>
@@ -962,6 +962,7 @@
   <string name="app_notification_show_on_keyguard_summary">在鎖定畫面中顯示此應用程式的通知</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">在鎖屏上停用持久通知</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">在鎖屏上不再顯示來自此應用程式的持久通知</string>
+  <!-- Notification sound timeout -->
   <!-- CmRadioInfo -->
   <string name="cm_radio_info_label">加強無線管理</string>
   <!-- Radio Control (IMS/MBN etc.) -->

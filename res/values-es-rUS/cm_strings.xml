@@ -543,7 +543,6 @@
   <string name="double_tap_to_sleep_summary">Apagar la pantalla mediante un doble toque sobre la barra de estado</string>
   <!-- Proximity wake -->
   <string name="proximity_wake_title">Prevenir activación accidental</string>
-  <string name="proximity_wake_summary">Comprobar el sensor de proximidad antes de encender la pantalla</string>
   <!-- Turn on display when power connected; turn off display when power disconnected -->
   <string name="wake_when_plugged_or_unplugged_title">Activar con cargador</string>
   <string name="wake_when_plugged_or_unplugged_summary">Encender la pantalla al conectar o desconectar el cargador</string>
@@ -934,6 +933,7 @@
   <string name="zen_mode_summary_selected_callers">llamadores seleccionados</string>
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_messages, but part of a list, so lower case if needed -->
   <string name="zen_mode_summary_selected_messages">mensajes seleccionados</string>
+  <!-- Allow vibration in zen mode -->
   <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
   <!-- SAR information -->
   <string name="maximum_head_level">Cabeza: %1$s W/kg</string>
@@ -1038,6 +1038,7 @@
   <string name="app_notification_show_on_keyguard_summary">Mostrar notificaciones de esta aplicación en la pantalla bloqueada</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">Desactivar notificaciones persistentes en la pantalla bloqueada</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">No mostrar nunca notificaciones persistentes de esta aplicación en la pantalla bloqueada</string>
+  <!-- Notification sound timeout -->
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
   <!-- Lock screen wallpaper -->

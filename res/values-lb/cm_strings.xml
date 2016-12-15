@@ -520,7 +520,6 @@
   <string name="double_tap_to_sleep_summary">Zweemol drécken op der Statusläischt mécht de Schierm aus</string>
   <!-- Proximity wake -->
   <string name="proximity_wake_title">Onbeofsiichtegt waakreg maache verhënneren</string>
-  <string name="proximity_wake_summary">Virum waakreg maachen de Proximitéitssensor iwwerpréiwen</string>
   <!-- Turn on display when power connected; turn off display when power disconnected -->
   <string name="wake_when_plugged_or_unplugged_title">Beim Astieche waakreg maachen</string>
   <string name="wake_when_plugged_or_unplugged_summary">De Schierm uschalte wann eng Stroumquell ugeschloss oder getrennt gëtt</string>
@@ -874,6 +873,7 @@
   <!-- [CHAR LIMIT=50] Like zen_mode_events, but part of a list, so lower case if needed -->
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_callers, but part of a list, so lower case if needed -->
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_messages, but part of a list, so lower case if needed -->
+  <!-- Allow vibration in zen mode -->
   <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
   <!-- SAR information -->
   <string name="maximum_head_level">Kapp: %1$s W/kg</string>
@@ -934,6 +934,7 @@
   <string name="app_notification_show_on_keyguard_summary">Notifikatioune vun dëser App op dem Spärschierm uweisen</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">Dauerhaft Notifikatiounen op de Spärschierm desaktivéieren</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">Ni dauerhaft Notifikatiounen op de Spärschierm uweisen</string>
+  <!-- Notification sound timeout -->
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
   <!-- Lock screen wallpaper -->

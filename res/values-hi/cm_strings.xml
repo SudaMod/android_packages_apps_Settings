@@ -473,7 +473,6 @@
   <string name="double_tap_to_sleep_summary">डिस्प्ले को बंद करने के लिए स्थिति पट्टी पर दो बार टैप करें</string>
   <!-- Proximity wake -->
   <string name="proximity_wake_title">ग़लती से जगाए जाने को रोकें</string>
-  <string name="proximity_wake_summary">स्क्रीन को जगाने से पहले निकटता सेंसर को जाँचें</string>
   <!-- Turn on display when power connected; turn off display when power disconnected -->
   <string name="wake_when_plugged_or_unplugged_title">प्लग करने पर जागना</string>
   <string name="wake_when_plugged_or_unplugged_summary">पावर स्रोत से कनेक्ट करते समय या उससे डिसकनेक्ट करते समय स्क्रीन को चालू करें</string>
@@ -797,6 +796,7 @@
   <!-- [CHAR LIMIT=50] Like zen_mode_events, but part of a list, so lower case if needed -->
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_callers, but part of a list, so lower case if needed -->
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_messages, but part of a list, so lower case if needed -->
+  <!-- Allow vibration in zen mode -->
   <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
   <!-- SAR information -->
   <string name="maximum_head_level">शीर्ष: %1$s W/kg</string>
@@ -856,6 +856,7 @@
   <string name="app_notification_show_on_keyguard_summary">इस ऐप की अधिसूचनाओं को लॉक स्क्रीन पर दिखाएँ</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">लॉक स्क्रीन पर बने रहने वाली अधिसूचनाओं को अक्षम करें</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">इस ऐप की अधिसूचनाओं को कभी भी लॉक स्क्रीन पर नहीं दिखाएँ</string>
+  <!-- Notification sound timeout -->
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
   <!-- Lock screen wallpaper -->

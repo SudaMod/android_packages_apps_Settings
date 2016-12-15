@@ -540,7 +540,6 @@
   <string name="double_tap_to_sleep_summary">ಪ್ರದರ್ಶನವನ್ನು ಆಫ್ ಮಾಡಲು ಸ್ಟೇಟಸ್ ಬಾರ್‍ ಮೇಲೆ ದ್ವಿಗುಣ-ಸ್ಪರ್ಶಿಸಿ</string>
   <!-- Proximity wake -->
   <string name="proximity_wake_title">ಆಕಸ್ಮಿಕವಾಗಿ ಎಚ್ಚರವಾಗುವಿಕೆಯನ್ನು ತಡೆ</string>
-  <string name="proximity_wake_summary">ಪರದೆಯನ್ನು ಎಚ್ಚರಿಸುವ ಮೊದಲು ಸಾಮೀಪ್ಯ ಸಂವೇದಕವನ್ನು ಪರಿಶೀಲಿಸು</string>
   <!-- Turn on display when power connected; turn off display when power disconnected -->
   <string name="wake_when_plugged_or_unplugged_title">ಪ್ಲಗ್‍ಮಾಡಿದಾಗ ಎಚ್ಚರವಾಗು</string>
   <string name="wake_when_plugged_or_unplugged_summary">ವಿದ್ಯುತ್ ಮೂಲವನ್ನು ಸಂಪರ್ಕಿಸಿದಾಗ ಅಥವಾ ಅಸಂಪರ್ಕಿಸಿದಾಗ ಪರದೆಯನ್ನು ಆನ್ ಮಾಡು</string>
@@ -932,6 +931,7 @@
   <string name="zen_mode_summary_selected_callers">ಆಯ್ಕೆಮಾಡಲಾದ ಕರೆದಾರರು</string>
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_messages, but part of a list, so lower case if needed -->
   <string name="zen_mode_summary_selected_messages">ಆಯ್ಕೆ ಮಾಡಿದ ಸಂದೇಶಗಳು</string>
+  <!-- Allow vibration in zen mode -->
   <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
   <!-- SAR information -->
   <string name="maximum_head_level">Head: %1$s W/kg</string>
@@ -1005,6 +1005,7 @@
   <string name="app_notification_show_on_keyguard_summary">ಲಾಕ್ ಪರದೆಯಲ್ಲಿ ಈ ಆಪ್‍ನಿಂದ ಅಧಿಸೂಚನೆಗಳನ್ನು ಪ್ರದರ್ಶಿಸು</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">ಲಾಕ್ ಪರದೆಯಲ್ಲಿ ನಿರಂತರ ಅಧಿಸೂಚನೆಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸು</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">ಲಾಕ್ ಪರದೆಯಲ್ಲಿ ಎಂದಿಗೂ ಈ ಆಪ್‍ನಿಂದ ನಿರಂತರ ಅಧಿಸೂಚನೆಗಳನ್ನು ಪ್ರದರ್ಶಿಸಬೇಡ</string>
+  <!-- Notification sound timeout -->
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
   <!-- Lock screen wallpaper -->

@@ -540,7 +540,6 @@
   <string name="double_tap_to_sleep_summary">প্রদর্শন অফ কৰিবলৈ ষ্টেটাছ বাৰত দুবাৰ ক্লিক কৰক</string>
   <!-- Proximity wake -->
   <string name="proximity_wake_title">দুৰ্ঘটনাক্ৰমে ৱেক-আপ হোৱাটো প্ৰতিৰোধ কৰক</string>
-  <string name="proximity_wake_summary">স্ক্ৰীণ ৱেক আপ কৰাৰ আগতে প্ৰ\'ক্সিমিটী চেনচৰ পৰীক্ষা কৰক</string>
   <!-- Turn on display when power connected; turn off display when power disconnected -->
   <string name="wake_when_plugged_or_unplugged_title">প্লাগ কৰিলে ৱেক কৰক</string>
   <string name="wake_when_plugged_or_unplugged_summary">পাৱাৰ উৎসৰ সৈতে সংযোগ কৰিলে বা সংযোগহীন কৰিলে স্ক্ৰীণ অন কৰক</string>
@@ -930,6 +929,7 @@
   <string name="zen_mode_summary_selected_callers">নিৰ্বাচিত কলাৰসকল</string>
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_messages, but part of a list, so lower case if needed -->
   <string name="zen_mode_summary_selected_messages">নিৰ্বাচিত বাৰ্তা</string>
+  <!-- Allow vibration in zen mode -->
   <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
   <!-- SAR information -->
   <string name="maximum_head_level">মূৰ: %1$s W/kg</string>
@@ -1003,6 +1003,7 @@
   <string name="app_notification_show_on_keyguard_summary">এই এপ্প্‌ৰ পৰা অধিসূচনা লক স্ক্ৰীণত প্ৰদৰ্শন কৰক</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">লক স্ক্ৰীণত নেৰানেপেৰা অধিসূচনা অক্ষম কৰক</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">এই এপ্প্‌ৰ পৰা নেৰানেপেৰা অধিসূচনা লক স্ক্ৰীণত নেদেখুৱাব</string>
+  <!-- Notification sound timeout -->
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
   <!-- Lock screen wallpaper -->

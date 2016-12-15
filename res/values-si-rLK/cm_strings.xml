@@ -353,7 +353,6 @@
   <string name="double_tap_to_sleep_title">දෙවරක් තට්ටුකර නිදිකරවන්න</string>
   <!-- Proximity wake -->
   <string name="proximity_wake_title">අහඹු අවදි වීම් වළක්වන්න</string>
-  <string name="proximity_wake_summary">තිරය අවදි කිරීමට පෙර සන්නිකර්ෂණ සංවේදකය පරීක්ෂා කරන්න</string>
   <!-- Turn on display when power connected; turn off display when power disconnected -->
   <string name="wake_when_plugged_or_unplugged_title">පේණුගත කලවිට ඇහැරවන්න</string>
   <string name="wake_when_plugged_or_unplugged_summary">බල මූලාශ්‍රය සම්බන්ධ කිරීමේදී හෝ විසන්ධි කිරීමේදී තිරය ඇහැරවන්න</string>
@@ -521,6 +520,7 @@
   <!-- [CHAR LIMIT=50] Like zen_mode_events, but part of a list, so lower case if needed -->
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_callers, but part of a list, so lower case if needed -->
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_messages, but part of a list, so lower case if needed -->
+  <!-- Allow vibration in zen mode -->
   <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
   <!-- SAR information -->
   <string name="maximum_head_level">හිස: %1$s W/kg</string>
@@ -553,6 +553,7 @@
   <!-- title for lock screen blur preference -->
   <!-- title for lock screen weather preference -->
   <!-- Per app controls for LP keyguard notifications -->
+  <!-- Notification sound timeout -->
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
   <!-- Lock screen wallpaper -->

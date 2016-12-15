@@ -345,7 +345,6 @@
   <string name="double_tap_to_sleep_title">Lai iemidzinātu, veiciet dubultu piesitienu</string>
   <!-- Proximity wake -->
   <string name="proximity_wake_title">Novērsiet nejaušu pamodināšanu</string>
-  <string name="proximity_wake_summary">Pirms pamodināt ekrānu, pārbaudīt tuvuma sensoru</string>
   <!-- Turn on display when power connected; turn off display when power disconnected -->
   <string name="wake_when_plugged_or_unplugged_title">Pamodināt, iespraužot vadu</string>
   <string name="wake_when_plugged_or_unplugged_summary">Pievienojot, vai atvienojot no barošanas avota, ieslēgt ekrānu</string>
@@ -513,6 +512,7 @@
   <!-- [CHAR LIMIT=50] Like zen_mode_events, but part of a list, so lower case if needed -->
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_callers, but part of a list, so lower case if needed -->
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_messages, but part of a list, so lower case if needed -->
+  <!-- Allow vibration in zen mode -->
   <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
   <!-- SAR information -->
   <string name="maximum_head_level">Galva: %1$s W/kg</string>
@@ -545,6 +545,7 @@
   <!-- title for lock screen blur preference -->
   <!-- title for lock screen weather preference -->
   <!-- Per app controls for LP keyguard notifications -->
+  <!-- Notification sound timeout -->
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
   <!-- Lock screen wallpaper -->

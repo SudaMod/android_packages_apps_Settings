@@ -448,7 +448,6 @@
   <string name="double_tap_to_sleep_summary">按兩下狀態列來關閉顯示器</string>
   <!-- Proximity wake -->
   <string name="proximity_wake_title">防止意外喚醒</string>
-  <string name="proximity_wake_summary">喚醒畫面前檢查傳感器</string>
   <!-- Turn on display when power connected; turn off display when power disconnected -->
   <string name="wake_when_plugged_or_unplugged_title">當接上喚醒</string>
   <string name="wake_when_plugged_or_unplugged_summary">當連接或拔除電源時開啓螢幕</string>
@@ -773,6 +772,7 @@
   <!-- [CHAR LIMIT=50] Like zen_mode_events, but part of a list, so lower case if needed -->
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_callers, but part of a list, so lower case if needed -->
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_messages, but part of a list, so lower case if needed -->
+  <!-- Allow vibration in zen mode -->
   <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
   <!-- SAR information -->
   <string name="maximum_head_level">頭：%1$s W/kg</string>
@@ -831,6 +831,7 @@
   <string name="app_notification_show_on_keyguard_summary">在鎖定螢幕中顯示此應用程式的通知</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">在鎖定螢幕上停用持久通知</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">在鎖定螢幕上不再顯示來自此應用程式的持久通知</string>
+  <!-- Notification sound timeout -->
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
   <!-- Lock screen wallpaper -->

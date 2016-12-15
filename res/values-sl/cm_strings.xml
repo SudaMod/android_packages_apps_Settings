@@ -215,7 +215,7 @@
   <string name="profile_tabs_bluetooth">Bluetooth</string>
   <string name="profile_tabs_nfc">NFC</string>
   <string name="profile_triggers_header">Sprožilci, ki bodo omogočili ta profil</string>
-  <string name="profile_setup_setup_triggers_title">1. korak: Dodajanje sprožilcev</string>
+  <string name="profile_setup_setup_triggers_title">1. korak: dodajanje sprožilcev</string>
   <string name="profile_setup_setup_triggers_title_config">Spreminjanje sprožilcev: <xliff:g id="profile_name">%1$s </xliff:g></string>
   <string name="profile_setup_actions_title">Korak 2: Nastavitev dejanj</string>
   <string name="profile_setup_actions_title_config">Ponovna nastavitev dejanj</string>
@@ -268,7 +268,7 @@
   <string name="pulse_speed_slow">Počasna</string>
   <string name="pulse_speed_very_slow">Zelo počasna</string>
   <!-- Battery light settings -->
-  <string name="battery_light_title">Lučka baterije</string>
+  <string name="battery_light_title">Lučka za baterijo</string>
   <string name="battery_low_pulse_title">Utripaj, če je bat. skoraj prazna</string>
   <string name="battery_light_list_title">Barve</string>
   <string name="battery_light_low_color_title">Nizko stanje bat.</string>
@@ -295,7 +295,7 @@
   <!-- Setting checkbox title for Whether to enable Android debugging support on the phone. -->
   <string name="enable_adb_cm">Razhroščevanje Android</string>
   <!-- Setting checkbox summary for Whether to enable Android debugging support on the phone -->
-  <string name="enable_adb_summary_cm">Omogoči vmesnik Android Debug Bridge (ADB)</string>
+  <string name="enable_adb_summary_cm">Omogoči vmesnik Androidov most za razhroščevanje (ADB)</string>
   <!-- Android debugging over WiFi -->
   <string name="adb_over_network">ADB preko omrežja</string>
   <string name="adb_over_network_summary">Omogoči razhroščevanje TCP/IP preko omrežnih vmesnikov (Wi\u2011Fi, omrežja USB). Ta nastavitev se ob ponovnem zagonu ponastavi</string>
@@ -556,7 +556,7 @@
   <string name="double_tap_to_sleep_summary">Dvakrat tapnite na vrstico stanja, da izklopite zaslon</string>
   <!-- Proximity wake -->
   <string name="proximity_wake_title">Prepreči nenamerno bujenje</string>
-  <string name="proximity_wake_summary">Pred bujenjem zaslona preveri tipalo bližine</string>
+  <string name="proximity_wake_summary">Pred bujenjem zaslona s potezami preveri tipalo bližine</string>
   <!-- Turn on display when power connected; turn off display when power disconnected -->
   <string name="wake_when_plugged_or_unplugged_title">Zbudi ob priključitvi napajalnika</string>
   <string name="wake_when_plugged_or_unplugged_summary">Vklopi zaslon ob priključitvi/izključitvi napajanja</string>
@@ -630,7 +630,7 @@
   <string name="adj_contrast_title">Kontrast</string>
   <!-- Whether to display IME switcher notifcation -->
   <string name="ime_switcher_notify">Ikona izbirnika</string>
-  <string name="ime_switcher_notify_summary">Prikaži ikono izbirnika metode za vnos</string>
+  <string name="ime_switcher_notify_summary">Prikaži ikono izbirnika načina vnosa</string>
   <!-- Heads up -->
   <string name="heads_up_notifications">Obvestila na zaslonu</string>
   <string name="summary_heads_up_enabled">Pojavna obvestila so omogočena</string>
@@ -774,7 +774,7 @@
   <!-- lock screen visualizer -->
   <string name="lockscreen_visualizer_title">Prikaži predočilnik glasbe</string>
   <!-- lock screen disabled by QS tile warning -->
-  <string name="lockscreen_disabled_by_qs_tile_title">Onemogočeno s ploščico hitrih nastavitev</string>
+  <string name="lockscreen_disabled_by_qs_tile_title">Onemogočeno s ploščico Hitrih nastavitev</string>
   <string name="lockscreen_disabled_by_qs_tile_summary">Tapnite, da omogočite zaklenjen zaslon</string>
   <string name="lockscreen_disabled_by_qs_tile_summary_enabled">Zaklepanje zaslona omogočeno!</string>
   <!-- Battery saver -->
@@ -801,8 +801,8 @@
   <string name="expanded_hide_both">Skrij oboje</string>
   <string name="expanded_nothing_to_show">Za dodajanje prilagojenih nastavitev za posamezno aplikacijo za razširjeno stanje nastavite \'Omogočeno za vse\' v izklopljen položaj</string>
   <string name="expanded_enabled_for_all">Omogočeno za vse</string>
-  <string name="expanded_desktop_style">Razširjen slog namizja</string>
-  <string name="expanded_desktop_style_description">Izberite privzeti razširjen slog namizja</string>
+  <string name="expanded_desktop_style">Slog razširjenega namizja</string>
+  <string name="expanded_desktop_style_description">Izberite privzeti slog razširjenega namizja</string>
   <string name="expanded_desktop_title">Možnosti razširjenega namizja</string>
   <!-- Kill app long-press back -->
   <string name="kill_app_longpress_back">Gumb Nazaj uniči aplikacijo</string>
@@ -961,6 +961,11 @@
   <string name="zen_mode_summary_selected_callers">izbrani klicatelji</string>
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_messages, but part of a list, so lower case if needed -->
   <string name="zen_mode_summary_selected_messages">izbrana sporočila</string>
+  <!-- Allow vibration in zen mode -->
+  <string name="zen_mode_vibration">Vibriranje</string>
+  <string name="zen_mode_vibration_never">Ne vibriraj</string>
+  <string name="zen_mode_vibration_calls_only">Vibriraj samo za klice</string>
+  <string name="zen_mode_vibration_calls_and_notifications">Vibriraj za klice in obvestila</string>
   <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
   <!-- SAR information -->
   <string name="maximum_head_level">Glava: %1$s W/kg</string>
@@ -1066,6 +1071,16 @@
   <string name="app_notification_show_on_keyguard_summary">Na zaklenjenem zaslonu prikaži obvestila iz te aplikacije</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">Onem. vztr. obv. na zas. za zakl.</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">Nikoli ne prikaži vztrajnih obvestil iz te aplikacije na zaklenjenem zaslonu</string>
+  <!-- Notification sound timeout -->
+  <string name="app_notification_sound_timeout_title">Najmanjši čas med zvoki obvestil</string>
+  <string name="app_notification_sound_timeout_summary_template">Najmanjši čas med zvoki ali vibriranji: <xliff:g id="duration">%1$s</xliff:g></string>
+  <string name="app_notification_sound_timeout_value_none">Brez omejitev</string>
+  <string name="app_notification_sound_timeout_value_10_seconds">10 s</string>
+  <string name="app_notification_sound_timeout_value_30_seconds">30 s</string>
+  <string name="app_notification_sound_timeout_value_1_minute">1 min.</string>
+  <string name="app_notification_sound_timeout_value_5_minutes">5 min.</string>
+  <string name="app_notification_sound_timeout_value_15_minutes">10 min.</string>
+  <string name="app_notification_sound_timeout_value_30_minutes">30 min.</string>
   <!-- CmRadioInfo -->
   <string name="cm_radio_info_label">Izboljšan nadzor oddajnika</string>
   <!-- Radio Control (IMS/MBN etc.) -->

@@ -540,7 +540,6 @@
   <string name="double_tap_to_sleep_summary">ഡിസ്പ്ലേ ഓഫ് ചെയ്യുന്നതിന് സ്റ്റാറ്റസ് ബാറിൽ ഇരട്ട-അമര്‍ത്തല്‍ ചെയ്യുക</string>
   <!-- Proximity wake -->
   <string name="proximity_wake_title">യാദൃച്ഛികമായി സജീവമാകുന്നത് തടയുക</string>
-  <string name="proximity_wake_summary">സ്ക്രീൻ സജീവമാകുന്നതിന് മുമ്പ് പ്രോക്സിമിറ്റി സെൻസർ പരിശോധിക്കുക</string>
   <!-- Turn on display when power connected; turn off display when power disconnected -->
   <string name="wake_when_plugged_or_unplugged_title">വേക്ക് ഓൺ പ്ലഗ്</string>
   <string name="wake_when_plugged_or_unplugged_summary">ഒരു ഊര്‍ജ്ജ സ്രോതസ്സില്‍ ബന്ധിപ്പിക്കുമ്പോള്‍ അല്ലെങ്കില്‍ വിച്ഛേദിക്കുമ്പോൾ സ്ക്രീന്‍ ഓണ്‍ ചെയ്യുക</string>
@@ -900,7 +899,6 @@
   <string name="duplicate_apn_error_message">ഈ APN ഇതിനകം നിലവിലുണ്ട്. നിരസിക്കുക അല്ലെങ്കിൽ പരാമീറ്ററുകളും മാറ്റുക.</string>
   <string name="sim_enabler_summary"><xliff:g id="displayName">%1$s</xliff:g> is <xliff:g id="status" example="disabled">%2$s</xliff:g></string>
   <string name="sim_disabled">അപ്രാപ്തമാക്കി</string>
-  <string name="sim_missing">നഷ്ടപ്പെട്ടിരിക്കുന്നു അല്ലെങ്കിൽ കേടുപറ്റി</string>
   <string name="sim_enabler_need_disable_sim">SIM കാർഡ് നിര്‍ജീവമാക്കുന്നതാണ്. നിങ്ങൾക്ക് തുടരണോ?</string>
   <string name="sim_enabler_will_disable_sim_title">ശ്രദ്ധിക്കുക</string>
   <string name="sim_enabler_need_switch_data_service">ഈ SIM അപ്രാപ്തമാക്കുകയും ഡാറ്റ സേവനങ്ങൾക്കായി SIM <xliff:g id="slotid">%1$s</xliff:g> ഉപയോഗിക്കുന്നതുമാണ്. നിങ്ങൾ തുടരണമെന്ന് ഉറപ്പാണോ?</string>
@@ -930,6 +928,7 @@
   <string name="zen_mode_summary_selected_callers">തിരഞ്ഞെടുത്ത കോളർമാർ</string>
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_messages, but part of a list, so lower case if needed -->
   <string name="zen_mode_summary_selected_messages">തിരഞ്ഞെടുത്ത സന്ദേശങ്ങൾ</string>
+  <!-- Allow vibration in zen mode -->
   <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
   <!-- SAR information -->
   <string name="maximum_head_level">ഹെഡ്: %1$s W/kg</string>
@@ -1004,6 +1003,7 @@
   <string name="app_notification_show_on_keyguard_summary">ലോക്ക് സ്ക്രീനിൽ ഈ ആപ്ലിക്കേഷനിൽ നിന്ന് അറിയിപ്പുകൾ ദൃശ്യമാക്കുക</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">ലോക്ക് സ്ക്രീനിൽ തുടര്‍ച്ചയായുള്ള അറിയിപ്പ് അപ്രാപ്തമാക്കുക</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">ലോക്ക് സ്ക്രീനിൽ ഈ ആപ്ലിക്കേഷനിൽ നിന്ന് തുടരെയുള്ള അറിയിപ്പുകള്‍ ദൃശ്യമാക്കരുത്</string>
+  <!-- Notification sound timeout -->
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
   <!-- Lock screen wallpaper -->

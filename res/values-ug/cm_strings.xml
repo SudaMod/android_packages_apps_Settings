@@ -540,7 +540,6 @@
   <string name="double_tap_to_sleep_summary">ئېكراننى تاقاش ئۈچۈن ھالەت بالداقنى قوش چېكىڭ</string>
   <!-- Proximity wake -->
   <string name="proximity_wake_title">تاسادىپىي ئويغىتىشنىڭ ئالدىنى ئېلىش</string>
-  <string name="proximity_wake_summary">ئېكراننى قوزغىتىشتىن ئىلگىرى ئارىلىق سەزگۈچنى تەكشۈرىدۇ</string>
   <!-- Turn on display when power connected; turn off display when power disconnected -->
   <string name="wake_when_plugged_or_unplugged_title">چېتىلغاندا ئويغات</string>
   <string name="wake_when_plugged_or_unplugged_summary">توكقا چېتىلغان ياكى ئۈزۈلگەندە ئېكراننى ئاچىدۇ</string>
@@ -936,6 +935,7 @@
   <string name="zen_mode_summary_selected_callers">تاللانغان كىشىدىن كەلگەن تېلېفون</string>
   <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_messages, but part of a list, so lower case if needed -->
   <string name="zen_mode_summary_selected_messages">تاللانغان ئۇچۇر</string>
+  <!-- Allow vibration in zen mode -->
   <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
   <!-- SAR information -->
   <string name="maximum_head_level">باش: %1$s W/kg</string>
@@ -1017,6 +1017,7 @@
   <string name="app_notification_show_on_keyguard_summary">قۇلۇپ ئېكراندا بۇ ئەپنىڭ ئۇقتۇرۇشلىرىنى كۆرسىتىدۇ</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">قۇلۇپ ئېكراندا دائىملىق ئۇقتۇرۇشنى چەكلەيدۇ</string>
   <string name="app_notification_no_ongoing_on_keyguard_summary">قۇلۇپ ئېكراندا بۇ ئەپنىڭ دائىملىق ئۇقتۇرۇشىنى مەڭگۈ كۆرسەتمەيدۇ</string>
+  <!-- Notification sound timeout -->
   <!-- CmRadioInfo -->
   <!-- Radio Control (IMS/MBN etc.) -->
   <!-- Lock screen wallpaper -->
