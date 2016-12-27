@@ -87,18 +87,18 @@
   <string name="profiles_add">Toevoegen</string>
   <string name="profile_menu_delete">Verwijderen</string>
   <string name="profile_settings_title">Profiel</string>
-  <string name="profile_empty_list_profiles_off">Om systeemprofielen te gebruiken, schakelt u Profielen in</string>
+  <string name="profile_empty_list_profiles_off">Om systeemprofielen te gebruiken, schakelt u Profielen in.</string>
   <string name="profile_trigger_configure">Trigger instellen</string>
   <string name="profile_write_nfc_tag">Schrijven naar NFC-tag</string>
   <string name="profile_write_touch_tag">Raak tag aan om te schrijven</string>
   <string name="profile_write_success">Tag succesvol geschreven</string>
   <string name="profile_write_failed">Tag schrijven mislukt</string>
-  <string name="profile_selected">Geselecteerd profiel: %1$s</string>
+  <string name="profile_selected">Gekozen profiel: %1$s</string>
   <string name="profile_nfc_text">Een profiel naar een NFC-tag schrijven maakt het mogelijk een profiel te kiezen door de tag aan te raken. Een tweede keer aanraken selecteert het vorig gekozen profiel.</string>
   <string name="profile_unknown_nfc_tag">Onbekend profiel</string>
   <string name="profile_add_nfc_text">Deze NFC-tag verwijst naar een onbekend profiel. Door deze NFC-tag toe te wijzen aan een bestaand profiel wordt het kiezen van het profiel mogelijk.</string>
   <string name="profile_select">Profiel kiezen</string>
-  <string name="profile_remove_dialog_message">Profiel verwijderen %1$s?</string>
+  <string name="profile_remove_dialog_message">Profiel %1$s verwijderen?</string>
   <string name="profile_populate_profile_from_state">Profiel instellen met behulp van huidige apparaatinstellingen?</string>
   <string name="profile_menu_fill_from_state">Huidige apparaatinstellingen importeren</string>
   <string name="profile_remove_current_profile">Kan huidige profiel niet verwijderen.</string>
@@ -287,7 +287,7 @@
   <!-- Lights settings, LED notification -->
   <string name="led_notification_title">Verlichtingsinstellingen</string>
   <string name="led_notification_text">LED-verlichting ingeschakeld door instellingen</string>
-  <string name="notification_light_no_apps_summary">Om controle per app toe te voegen, activeer %1$s en klik \'\u002b\' op de menubalk</string>
+  <string name="notification_light_no_apps_summary">Om controle per app toe te voegen, activeer %1$s en tik \'\u002b\' op de menubalk</string>
   <!-- Setting checkbox title for Whether to enable Android debugging support on the phone. -->
   <string name="enable_adb_cm">Android-foutopsporing</string>
   <!-- Setting checkbox summary for Whether to enable Android debugging support on the phone -->
@@ -496,7 +496,7 @@
   <string name="camera_launch_summary">Lang indrukken en loslaten om camera te openen</string>
   <string name="volbtn_music_controls_title">Muziek beheren</string>
   <string name="volbtn_music_controls_summary">Bij scherm uit door nummers spoelen door volumeknoppen lang in te drukken</string>
-  <string name="volbtn_cursor_control_title">Toetsenbordcursor beheren</string>
+  <string name="volbtn_cursor_control_title">Toetsenbordcursor</string>
   <string name="volbtn_cursor_control_off">Uitgeschakeld</string>
   <string name="volbtn_cursor_control_on">Volume omhoog/omlaag beweegt cursor naar links/rechts</string>
   <string name="volbtn_cursor_control_on_reverse">Volume omhoog/omlaag beweegt cursor naar rechts/links</string>
@@ -552,6 +552,7 @@
   <string name="double_tap_to_sleep_summary">Dubbeltikken op de statusbalk voor slaapstand</string>
   <!-- Proximity wake -->
   <string name="proximity_wake_title">Per ongeluk ontwaken voorkomen</string>
+  <string name="proximity_wake_summary">Nabijheidssensor gebruiken voorafgaand aan ontwaken door gebaren</string>
   <!-- Turn on display when power connected; turn off display when power disconnected -->
   <string name="wake_when_plugged_or_unplugged_title">Ontwaken door lader</string>
   <string name="wake_when_plugged_or_unplugged_summary">Scherm aan bij het aansluiten of loskoppelen van een lader</string>
@@ -786,7 +787,7 @@
   <string name="notification_ringtone_title_cm">Meldingstoon</string>
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Geavanceerd herstarten</string>
-  <string name="advanced_reboot_summary">Indien ontgrendeld, opties tonen in het afsluitmenu voor herstarten naar recovery of bootloader of het uitvoeren van een soft reboot</string>
+  <string name="advanced_reboot_summary">Indien ontgrendeld, opties tonen in het afsluitmenu voor herstarten naar recovery of bootloader of het uitvoeren van een snelle herstart</string>
   <string name="category_interface">Uiterlijk</string>
   <!-- Expanded desktop -->
   <string name="power_menu_expanded_desktop">Uitgebreid bureaublad</string>
@@ -894,7 +895,7 @@
   <string name="contributor_info_menu">Informatie over bijdragers</string>
   <string name="contributor_info_msg">
         <![CDATA[<b>Naam:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
-                 <b>Alias::</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+                 <b>Alias:</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
                  <b>Commits:</b> <xliff:g id="commits">%3$s</xliff:g>]]></string>
   <string name="contributions_info_menu">Informatie over bijdragers</string>
   <string name="contributions_info_msg">
