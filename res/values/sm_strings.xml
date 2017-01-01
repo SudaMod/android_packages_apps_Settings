@@ -30,28 +30,9 @@
     <!-- QS shade transparency -->
     <string name="qs_transparent_shade">QS shade transparency</string>
     <string name="volume_dialog_transparency">Volume dialog transparency</string>
-
-    <string name="animation_settings_title">Animations</string>
-
-    <!-- ListView animation -->
-    <string name="listview_animation_title">ListView animation</string>
-    <string name="listview_off">Off</string>
-    <string name="listview_wave_left">Wave (left)</string>
-    <string name="listview_wave_right">Wave (right)</string>
-    <string name="listview_alpha">Alpha</string>
-    <string name="listview_scale">Scale</string>
-    <string name="listview_stack_top">Stack (top)</string>
-    <string name="listview_stack_bottom">Stack (bottom)</string>
-    <string name="listview_unfold">Unfold</string>
-    <string name="listview_fold">Fold</string>
-    <string name="listview_translate_left">Translate (left)</string>
-    <string name="listview_translate_right">Translate (right)</string>
-    <string name="listview_rotate">Rotate</string>
-
     <!-- Double tap to sleep on lockscreen -->
     <string name="double_tap_sleep_anywhere_title">Double-tap to sleep</string>
     <string name="double_tap_sleep_anywhere_summary">Double tap lockscreen to put the device to
         sleep
     </string>
-
 </resources>
