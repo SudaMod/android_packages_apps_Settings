@@ -131,6 +131,12 @@
                 android:defaultValue="false"
                 cm:requiresFeature="cmhardware:FEATURE_HIGH_TOUCH_SENSITIVITY" />
 
+        <com.android.settings.sudamod.SystemSettingSwitchPreference
+	            android:key="lockscreen_battery_info"
+	            android:title="@string/lockscreen_battery_info_title"
+	            android:summary="@string/lockscreen_battery_info_summary"
+	            android:defaultValue="true" />
+
         <!-- Expanded desktop -->
         <org.cyanogenmod.internal.cmparts.CMPartsPreference
                 android:key="expanded_desktop_settings" />
