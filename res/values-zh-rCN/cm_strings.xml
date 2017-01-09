@@ -394,4 +394,9 @@
   <!-- Status bar - double tap to sleep -->
   <string name="status_bar_double_tap_to_sleep_title">双击以睡眠</string>
   <string name="status_bar_double_tap_to_sleep_summary">双击状态栏以关闭屏幕显示</string>
+    <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
+    <string name="show_cpu_info">显示CPU信息</string>
+    <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
+    <string name="show_cpu_info_summary">覆盖屏幕显示目前的CPU信息</string>
+>>>>>>> f750ef5... (2/2)add show cpu info
 </resources>
