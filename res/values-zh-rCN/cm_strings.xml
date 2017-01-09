@@ -362,4 +362,8 @@
   <!-- Heads-up -->
   <string name="heads_up_notifications_enabled_title">浮动通知</string>
   <string name="heads_up_notifications_enabled_summary">在一个小的浮动窗口中显示优先通知</string>
+    <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
+    <string name="show_cpu_info">显示CPU信息</string>
+    <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
+    <string name="show_cpu_info_summary">覆盖屏幕显示目前的CPU信息</string>
 </resources>
