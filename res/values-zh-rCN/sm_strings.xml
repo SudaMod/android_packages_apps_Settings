@@ -27,4 +27,7 @@
     <string name="volume_dialog_transparency">音量面板对话框的透明度</string>
     <string name="double_tap_sleep_anywhere_title">双击睡眠</string>
     <string name="double_tap_sleep_anywhere_summary">双击锁屏任意处关闭屏幕</string>
+    <string name="show_chinese_date">锁屏显示农历</string>
+    <string name="unlock_quick_unlock_control_title">快速解锁</string>
+    <string name="unlock_quick_unlock_control_summary">当输入正确的 PIN 码或密码后自动解锁</string>
 </resources>

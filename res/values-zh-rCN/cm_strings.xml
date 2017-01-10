@@ -51,7 +51,7 @@
   <!-- About phone screen, build date -->
   <string name="build_date">编译日期</string>
   <!-- CM Updater -->
-  <string name="cmupdate_settings_title">LineageOS 更新</string>
+  <string name="cmupdate_settings_title">SudaMod 更新</string>
   <!-- Names of categories of app ops tabs - extension of AOSP -->
   <string name="app_ops_categories_location">位置</string>
   <string name="app_ops_categories_personal">个人</string>
@@ -394,6 +394,11 @@
   <!-- Status bar - double tap to sleep -->
   <string name="status_bar_double_tap_to_sleep_title">双击以睡眠</string>
   <string name="status_bar_double_tap_to_sleep_summary">双击状态栏以关闭屏幕显示</string>
+  <string name="crypt_keeper_change_password_title">更改密码</string>
+  <string name="crypt_keeper_change_password_summary">使用设备加密方式更改密码</string>
+  <string name="crypt_keeper_choose_your_password_header">设置密码</string>
+  <string name="crypt_keeper_replace_password_title">重置密码</string>
+  <string name="crypt_keeper_replace_password_summary">删除单独的加密密码</string>
     <string name="lockscreen_battery_info_title">锁屏充电信息</string>
     <string name="lockscreen_battery_info_summary">在锁屏显示目前的充电电压和温度</string>
 </resources>

@@ -68,4 +68,9 @@
             android:title="@string/lockscreen_blur_enabled_title"
             cm:requiresConfig="@*android:bool/config_uiBlurEnabled" />
 
+       <com.android.settings.sudamod.SystemSettingSwitchPreference
+            android:key="lockscreen_quick_unlock_control"
+            android:title="@string/unlock_quick_unlock_control_title"
+            android:summary="@string/unlock_quick_unlock_control_summary" />
+
 </PreferenceScreen>
