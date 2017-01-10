@@ -51,7 +51,7 @@
   <!-- About phone screen, build date -->
   <string name="build_date">编译日期</string>
   <!-- CM Updater -->
-  <string name="cmupdate_settings_title">LineageOS 更新</string>
+  <string name="cmupdate_settings_title">SudaMod 更新</string>
   <!-- Names of categories of app ops tabs - extension of AOSP -->
   <string name="app_ops_categories_location">位置</string>
   <string name="app_ops_categories_personal">个人</string>
@@ -362,6 +362,11 @@
   <!-- Heads-up -->
   <string name="heads_up_notifications_enabled_title">浮动通知</string>
   <string name="heads_up_notifications_enabled_summary">在一个小的浮动窗口中显示优先通知</string>
+  <string name="crypt_keeper_change_password_title">更改密码</string>
+  <string name="crypt_keeper_change_password_summary">使用设备加密方式更改密码</string>
+  <string name="crypt_keeper_choose_your_password_header">设置密码</string>
+  <string name="crypt_keeper_replace_password_title">重置密码</string>
+  <string name="crypt_keeper_replace_password_summary">删除单独的加密密码</string>
   <!-- Category title for Charging sounds -->
   <string name="power_notifications_category_title">充电声音</string>
   <!-- Sound settings, Charging sounds enable/disable, setting check box label -->
