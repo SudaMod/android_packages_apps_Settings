@@ -423,6 +423,7 @@
     <string name="crypt_keeper_choose_your_password_header">Set encryption password</string>
     <string name="crypt_keeper_replace_password_title">Replace encryption password</string>
     <string name="crypt_keeper_replace_password_summary">Remove the separate encryption password</string>
+<<<<<<< HEAD
     <!-- Category title for Charging sounds -->
     <string name="power_notifications_category_title">Charging sounds</string>
     <!-- Sound settings, Charging sounds enable/disable, setting check box label -->
@@ -441,4 +442,25 @@
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen battery info</string>
     <string name="lockscreen_battery_info_summary">Display negotiated charger max current-voltage and battery temperature on lockscreen while charging</string>
+=======
+
+    <!-- Per-app data restrictions -->
+    <string name="data_usage_app_restrict_data_category_title">Cellular data access</string>
+    <string name="data_usage_app_restrict_wifi_category_title">Wi\u2011Fi data access</string>
+    <!-- Title for switch to block app data usage [CHAR LIMIT=30] -->
+    <string name="data_usage_app_restrict_all_data_title">Disable all cellular data access</string>
+    <!-- Summary for switch to block app data usage [CHAR LIMIT=NONE] -->
+    <string name="data_usage_app_restrict_all_data_summary">Prevent any use of data access via cellular networks</string>
+    <!-- Title for switch to block app data usage [CHAR LIMIT=30] -->
+    <string name="data_usage_app_restrict_all_wifi_title">Disable all Wi\u2011Fi data access</string>
+    <!-- Summary for switch to block app data usage [CHAR LIMIT=NONE] -->
+    <string name="data_usage_app_restrict_all_wifi_summary">Prevent any use of data access via Wi\u2011Fi networks</string>
+
+    <!-- Volume link notification -->
+    <string name="volume_link_notification_title">Link ringtone &amp; notification volumes</string>
+
+    <!-- Launch music player when headset is connected -->
+    <string name="headset_connect_player_title">Launch music player</string>
+    <string name="headset_connect_player_summary">Launch the default music player when a headset is connected</string>
+>>>>>>> 12d5131a119e6a975e125266822168a36376a5ad
 </resources>
