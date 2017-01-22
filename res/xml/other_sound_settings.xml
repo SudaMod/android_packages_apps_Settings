@@ -30,10 +30,10 @@
             android:key="screen_locking_sounds"
             android:title="@string/screen_locking_sounds_title" />
 
-    <!-- Charging sounds mod by wuyi
+    <!-- Charging sounds -->
     <SwitchPreference
             android:key="charging_sounds"
-            android:title="@string/charging_sounds_title" /> -->
+            android:title="@string/charging_sounds_title" />
 
     <!-- Custom charging sounds -->
     <org.cyanogenmod.internal.cmparts.CMPartsPreference
@@ -85,23 +85,4 @@
             android:title="@string/emergency_tone_title"
             android:summary="%s" />
 
-    <PreferenceCategory
-            android:title="@string/power_notifications_category_title"/>
-
-    <SwitchPreference
-            android:key="power_notifications"
-            android:title="@string/power_notifications_enable_title"
-            android:summary="@string/power_notifications_enable_summary"
-            android:defaultValue="false" />
-
-    <SwitchPreference
-            android:key="power_notifications_vibrate"
-            android:title="@string/power_notifications_vibrate_title"
-            android:defaultValue="false"
-            android:dependency="power_notifications" />
-
-    <Preference
-            android:key="power_notifications_ringtone"
-            android:title="@string/power_notifications_ringtone_title"
-            android:dependency="power_notifications" />
 </PreferenceScreen>
