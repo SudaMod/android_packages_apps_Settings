@@ -41,4 +41,5 @@
     <string name="qs_layout_category">快速设置磁贴行和列配置</string>
     <string name="qs_rows_portrait_title">磁贴显示行数（纵向）</string>
     <string name="qs_columns_title">磁贴列数</string>
+    <string name="shake_clean_notification">通知栏通知晃动清理</string>
 </resources>
