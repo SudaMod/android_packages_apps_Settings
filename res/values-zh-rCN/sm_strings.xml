@@ -46,4 +46,6 @@
     <string name="shake_clean_notification_summary">通知栏通知晃动清理</string>
     <string name="three_finger_gesture">三指截屏</string>
     <string name="three_finger_gesture_summary">从上至下滑动三根手指截屏</string>
+    <string name="show_stk_dialog_title">STK对话框</string>
+    <string name="show_stk_dialog_summary">开启STK对话框</string>
 </resources>
