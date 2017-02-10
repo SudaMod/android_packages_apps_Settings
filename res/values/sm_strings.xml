@@ -48,12 +48,6 @@
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen battery info</string>
     <string name="lockscreen_battery_info_summary">Display negotiated charger max current-voltage and battery temperature on lockscreen while charging</string>
-    <!-- Quick settings tiles columns and rows config -->
-    <string name="qs_layout_category">Rows and columns</string>
-    <string name="qs_rows_portrait_title">Rows (portrait)</string>
-    <string name="qs_columns_title">Columns</string>
-    <string name="shake_clean_notification">Notification bar notification shaking cleaning</string>
-
     <string name="gesture_title">Gesture</string>
     <string name="gesture_direct_title">Gesture and Direct Control</string>
     <string name="shake_clean_recent">Clean by shake</string>
