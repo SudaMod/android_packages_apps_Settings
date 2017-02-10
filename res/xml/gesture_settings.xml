@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2016 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,9 +17,11 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:lineage="http://schemas.android.com/apk/res/cyanogenmod.platform"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:title="@string/gesture_preference_title" settings:keywords="@string/keywords_gesture">
+    android:title="@string/gesture_preference_title"
+    settings:keywords="@string/keywords_gesture">
 
-    <PreferenceCategory android:key="category_gestures" android:title="@string/gesture_title">
+    <PreferenceCategory android:key="category_gestures"
+        android:title="@string/gesture_title">
         <org.cyanogenmod.internal.cmparts.CMPartsPreference
             android:key="touchscreen_gesture_settings"
             lineage:requiresFeature="cmhardware:FEATURE_TOUCHSCREEN_GESTURES" />
@@ -30,31 +33,37 @@
             settings:animation="@raw/gesture_fingerprint_swipe"
             settings:preview="@drawable/gesture_fingerprint_swipe" />
 
-        <com.android.settings.gestures.GesturePreference android:key="gesture_double_tap_power"
+        <com.android.settings.gestures.GesturePreference
+            android:key="gesture_double_tap_power"
             android:summary="@string/double_tap_power_for_camera_summary"
             android:title="@string/double_tap_power_for_camera_title"
             settings:animation="@raw/gesture_double_tap"
             settings:preview="@drawable/gesture_double_tap" />
 
-        <com.android.settings.gestures.GesturePreference android:key="gesture_double_twist"
+        <com.android.settings.gestures.GesturePreference
+            android:key="gesture_double_twist"
             android:summary="@string/double_twist_for_camera_mode_summary"
             android:title="@string/double_twist_for_camera_mode_title"
-            settings:animation="@raw/gesture_twist" settings:preview="@drawable/gesture_twist" />
+            settings:animation="@raw/gesture_twist"
+            settings:preview="@drawable/gesture_twist" />
 
-        <com.android.settings.gestures.GesturePreference android:key="gesture_double_tap_screen"
+        <com.android.settings.gestures.GesturePreference
+            android:key="gesture_double_tap_screen"
             android:summary="@string/ambient_display_summary"
             android:title="@string/ambient_display_title"
             settings:animation="@raw/gesture_ambient_tap"
             settings:preview="@drawable/gesture_ambient_tap" />
 
-        <com.android.settings.gestures.GesturePreference android:key="gesture_pick_up"
+        <com.android.settings.gestures.GesturePreference
+            android:key="gesture_pick_up"
             android:summary="@string/ambient_display_pickup_summary"
             android:title="@string/ambient_display_pickup_title"
             settings:animation="@raw/gesture_ambient_lift"
             settings:preview="@drawable/gesture_ambient_lift" />
 
         <!-- Double tap to sleep -->
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:defaultValue="true"
+        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+            android:defaultValue="true"
             android:key="double_tap_sleep_gesture"
             android:summary="@string/status_bar_double_tap_to_sleep_summary"
             android:title="@string/status_bar_double_tap_to_sleep_title" />
@@ -75,14 +84,17 @@
     </PreferenceCategory>
 
 
-    <PreferenceCategory android:key="direct_control" android:title="@string/direct_control_title">
+    <PreferenceCategory android:key="direct_control"
+        android:title="@string/direct_control_title">
 
-        <com.android.settings.sudamod.SystemSettingSwitchPreference android:defaultValue="true"
+        <com.android.settings.sudamod.SystemSettingSwitchPreference
+            android:defaultValue="true"
             android:key="shake_clean_recent"
-            android:summary="@string/shake_clean_recent_summary" android:title="@string/shake_clean_recent" />
+            android:summary="@string/shake_clean_recent_summary"
+            android:title="@string/shake_clean_recent" />
 
-
-        <com.android.settings.sudamod.SystemSettingSwitchPreference android:defaultValue="true"
+        <com.android.settings.sudamod.SystemSettingSwitchPreference
+            android:defaultValue="true"
             android:key="shake_clean_notification"
             android:summary="@string/shake_clean_notification_summary"
             android:title="@string/shake_clean_notification" />
