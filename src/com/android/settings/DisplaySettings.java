@@ -96,15 +96,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private static final String KEY_WALLPAPER = "wallpaper";
     private static final String KEY_VR_DISPLAY_PREF = "vr_display_pref";
-    private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
-    private static final String PREF_COLUMNS = "qs_columns";
 
     private Preference mFontSizePref;
 
     private TimeoutListPreference mScreenTimeoutPreference;
     private ListPreference mNightModePreference;
-    private ListPreference mRowsPortrait;
-    private ListPreference mQsColumns;
     private Preference mScreenSaverPreference;
     private SwitchPreference mLiftToWakePreference;
     private SwitchPreference mDozePreference;
@@ -137,19 +133,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             getPreferenceScreen().removePreference(mScreenSaverPreference);
         }
 
-        mRowsPortrait = (ListPreference) findPreference(PREF_ROWS_PORTRAIT);
-        int rowsPortrait = Settings.Secure.getInt(getContentResolver(),
-                Settings.Secure.QS_ROWS_PORTRAIT, 3);
-        mRowsPortrait.setValue(String.valueOf(rowsPortrait));
-        mRowsPortrait.setSummary(mRowsPortrait.getEntry());
-        mRowsPortrait.setOnPreferenceChangeListener(this);
-
-        mQsColumns = (ListPreference) findPreference(PREF_COLUMNS);
-        int columnsQs = Settings.Secure.getInt(getContentResolver(),
-                Settings.Secure.QS_COLUMNS, 3);
-        mQsColumns.setValue(String.valueOf(columnsQs));
-        mQsColumns.setSummary(mQsColumns.getEntry());
-        mQsColumns.setOnPreferenceChangeListener(this);
 
         // QS shade alpha
         mQSShadeAlpha = (SeekBarPreference) findPreference(PREF_QS_TRANSPARENT_SHADE);
@@ -478,20 +461,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
           int alpha = (Integer) objValue;
           Settings.System.putInt(getContentResolver(),
                   Settings.System.TRANSPARENT_VOLUME_DIALOG, alpha * 1);
-        }
-        if (preference == mRowsPortrait) {
-            int intValue = Integer.valueOf((String) objValue);
-            int index = mRowsPortrait.findIndexOfValue((String) objValue);
-            Settings.Secure.putInt(getContentResolver(),
-                    Settings.Secure.QS_ROWS_PORTRAIT, intValue);
-            preference.setSummary(mRowsPortrait.getEntries()[index]);
-        }
-        if (preference == mQsColumns) {
-            int intValue = Integer.valueOf((String) objValue);
-            int index = mQsColumns.findIndexOfValue((String) objValue);
-            Settings.Secure.putInt(getContentResolver(),
-                    Settings.Secure.QS_COLUMNS, intValue);
-            preference.setSummary(mQsColumns.getEntries()[index]);
         }
         if (preference == mNightModePreference) {
             try {
