@@ -36,4 +36,8 @@
     <string name="show_cpu_info_summary">覆盖屏幕显示目前的CPU信息</string>
     <string name="lockscreen_battery_info_title">锁屏充电信息</string>
     <string name="lockscreen_battery_info_summary">在锁屏显示目前的充电电压和温度</string>
+    <!-- Quick settings tiles columns and rows config -->
+    <string name="qs_layout_category">快速设置磁贴行和列配置</string>
+    <string name="qs_rows_portrait_title">磁贴显示行数（纵向）</string>
+    <string name="qs_columns_title">磁贴列数</string>
 </resources>
