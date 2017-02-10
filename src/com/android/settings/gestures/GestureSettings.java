@@ -23,8 +23,12 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
+import android.provider.Settings;
 import android.provider.Settings.Secure;
+import static android.provider.Settings.Secure.DOUBLE_TAP_TO_WAKE;
+import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -57,6 +61,9 @@ public class GestureSettings extends SettingsPreferenceFragment implements
     private static final String PREF_KEY_DOUBLE_TAP_SCREEN = "gesture_double_tap_screen";
     private static final String DEBUG_DOZE_COMPONENT = "debug.doze.component";
 
+    private static final String CATEGORY_GESTURES = "category_gestures";
+    private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
+
     private List<GesturePreference> mPreferences;
 
     private AmbientDisplayConfiguration mAmbientConfig;
@@ -67,6 +74,7 @@ public class GestureSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.gesture_settings);
         Context context = getActivity();
         mPreferences = new ArrayList();
+        final PreferenceCategory category_gesture = (PreferenceCategory) findPreference(CATEGORY_GESTURES);
 
         // Double tap power for camera
         if (isCameraDoubleTapPowerGestureAvailable(getResources())) {
@@ -74,7 +82,7 @@ public class GestureSettings extends SettingsPreferenceFragment implements
                     getContentResolver(), Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 0);
             addPreference(PREF_KEY_DOUBLE_TAP_POWER, cameraDisabled == 0);
         } else {
-            removePreference(PREF_KEY_DOUBLE_TAP_POWER);
+            category_gesture.removePreference(findPreference(PREF_KEY_DOUBLE_TAP_POWER));
         }
 
         // Ambient Display
@@ -83,20 +91,20 @@ public class GestureSettings extends SettingsPreferenceFragment implements
             boolean pickup = mAmbientConfig.pulseOnPickupEnabled(UserHandle.myUserId());
             addPreference(PREF_KEY_PICK_UP, pickup);
         } else {
-            removePreference(PREF_KEY_PICK_UP);
+            category_gesture.removePreference(findPreference(PREF_KEY_PICK_UP));
         }
         if (mAmbientConfig.pulseOnDoubleTapAvailable()) {
             boolean doubleTap = mAmbientConfig.pulseOnDoubleTapEnabled(UserHandle.myUserId());
             addPreference(PREF_KEY_DOUBLE_TAP_SCREEN, doubleTap);
         } else {
-            removePreference(PREF_KEY_DOUBLE_TAP_SCREEN);
+            category_gesture.removePreference(findPreference(PREF_KEY_DOUBLE_TAP_SCREEN));
         }
 
         // Fingerprint slide for notifications
         if (isSystemUINavigationAvailable(context)) {
             addPreference(PREF_KEY_SWIPE_DOWN_FINGERPRINT, isSystemUINavigationEnabled(context));
         } else {
-            removePreference(PREF_KEY_SWIPE_DOWN_FINGERPRINT);
+            category_gesture.removePreference(findPreference(PREF_KEY_SWIPE_DOWN_FINGERPRINT));
         }
 
         // Double twist for camera mode
@@ -105,7 +113,16 @@ public class GestureSettings extends SettingsPreferenceFragment implements
                     getContentResolver(), Secure.CAMERA_DOUBLE_TWIST_TO_FLIP_ENABLED, 1);
             addPreference(PREF_KEY_DOUBLE_TWIST, doubleTwistEnabled != 0);
         } else {
-            removePreference(PREF_KEY_DOUBLE_TWIST);
+            category_gesture.removePreference(findPreference(PREF_KEY_DOUBLE_TWIST));
+        }
+
+
+        if (isTapToWakeAvailable(getResources())) {
+            int double2wake = Secure.getInt(
+                    getContentResolver(), Secure.DOUBLE_TAP_TO_WAKE, 1);
+            addPreference(KEY_TAP_TO_WAKE, double2wake != 0);
+        } else {
+            category_gesture.removePreference(findPreference(KEY_TAP_TO_WAKE));
         }
 
     }
@@ -169,6 +186,8 @@ public class GestureSettings extends SettingsPreferenceFragment implements
         } else if (PREF_KEY_DOUBLE_TWIST.equals(key)) {
             Secure.putInt(getContentResolver(),
                     Secure.CAMERA_DOUBLE_TWIST_TO_FLIP_ENABLED, enabled ? 1 : 0);
+        } else if (KEY_TAP_TO_WAKE.equals(key)) {
+            Secure.putInt(getContentResolver(), DOUBLE_TAP_TO_WAKE, enabled ? 1 : 0);
         }
         return true;
     }
@@ -201,6 +220,10 @@ public class GestureSettings extends SettingsPreferenceFragment implements
     private static boolean isDoubleTwistAvailable(Context context) {
         return hasSensor(context, R.string.gesture_double_twist_sensor_name,
                 R.string.gesture_double_twist_sensor_vendor);
+    }
+
+    private static boolean isTapToWakeAvailable(Resources res) {
+        return res.getBoolean(com.android.internal.R.bool.config_supportDoubleTapWake);
     }
 
     private static boolean hasSensor(Context context, int nameResId, int vendorResId) {
@@ -260,6 +283,9 @@ public class GestureSettings extends SettingsPreferenceFragment implements
                 }
                 if (!isDoubleTwistAvailable(context)) {
                     result.add(PREF_KEY_DOUBLE_TWIST);
+                }
+                if (!isTapToWakeAvailable(context.getResources())) {
+                    result.add(KEY_TAP_TO_WAKE);
                 }
                 return result;
             }

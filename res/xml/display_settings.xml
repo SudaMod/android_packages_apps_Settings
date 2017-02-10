@@ -105,11 +105,6 @@
                 android:summary="@string/wake_when_plugged_or_unplugged_summary"
                 android:defaultValue="@*android:bool/config_unplugTurnsOnScreen" />
 
-        <SwitchPreference
-                android:key="tap_to_wake"
-                android:title="@string/tap_to_wake"
-                android:summary="@string/tap_to_wake_summary" />
-
         <!-- Double tap 2 sleep on lockscreen -->
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
             android:key="double_tap_sleep_anywhere"
@@ -174,11 +169,6 @@
 
     <PreferenceCategory android:key="transparent__shade"
         android:title="@string/qs_transparent_shade">
-
-        <com.android.settings.sudamod.SystemSettingSwitchPreference
-	 	android:key="shake_clean_notification"
-	 	android:title="@string/shake_clean_notification"
-	 	android:defaultValue="true" />
 
         <com.android.settings.sudamod.SeekBarPreference
             android:key="qs_transparent_shade"
