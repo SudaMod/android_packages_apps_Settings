@@ -53,4 +53,14 @@
     <string name="qs_rows_portrait_title">Rows (portrait)</string>
     <string name="qs_columns_title">Columns</string>
     <string name="shake_clean_notification">Notification bar notification shaking cleaning</string>
+
+    <string name="gesture_title">Gesture</string>
+    <string name="gesture_direct_title">Gesture and Direct Control</string>
+    <string name="shake_clean_recent">Clean by shake</string>
+    <string name="shake_clean_recent_summary">Clean recent task by shake</string>
+    <string name="shake_clean_notification">Clean by shake</string>
+    <string name="shake_clean_notification_summary">Clean notification by shake</string>
+    <string name="three_finger_gesture">Three finger gesture</string>
+    <string name="three_finger_gesture_summary">Three finger sliding screen screenshot</string>
+    <string name="direct_control_title">Direct control</string>
 </resources>

@@ -41,5 +41,14 @@
     <string name="qs_layout_category">快速设置磁贴行和列配置</string>
     <string name="qs_rows_portrait_title">磁贴显示行数（纵向）</string>
     <string name="qs_columns_title">磁贴列数</string>
-    <string name="shake_clean_notification">通知栏通知晃动清理</string>
+    <string name="gesture_direct_title">手势和体感</string>
+    <string name="gesture_title">手势</string>
+    <string name="direct_control_title">体感</string>
+    <string name="shake_clean_recent">晃动清理最近任务</string>
+    <string name="shake_clean_recent_summary">最近任务界面通过晃动清理</string>
+    <string name="shake_clean_notification">晃动清理通知</string>
+    <string name="shake_clean_notification_summary">通知栏通知晃动清理</string>
+    <string name="three_finger_gesture">三指截屏</string>
+    <string name="three_finger_gesture_summary">从上至下滑动三根手指截屏</string>
+
 </resources>
