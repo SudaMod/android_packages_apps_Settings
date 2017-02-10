@@ -52,4 +52,5 @@
     <string name="qs_layout_category">Rows and columns</string>
     <string name="qs_rows_portrait_title">Rows (portrait)</string>
     <string name="qs_columns_title">Columns</string>
+    <string name="shake_clean_notification">Notification bar notification shaking cleaning</string>
 </resources>
