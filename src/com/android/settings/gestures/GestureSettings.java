@@ -119,7 +119,7 @@ public class GestureSettings extends SettingsPreferenceFragment implements
 
         if (isTapToWakeAvailable(getResources())) {
             int double2wake = Secure.getInt(
-                    getContentResolver(), Secure.DOUBLE_TAP_TO_WAKE, 1);
+                    getContentResolver(), Secure.DOUBLE_TAP_TO_WAKE, 0);
             addPreference(KEY_TAP_TO_WAKE, double2wake != 0);
         } else {
             category_gesture.removePreference(findPreference(KEY_TAP_TO_WAKE));
