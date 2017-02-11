@@ -86,10 +86,6 @@
         <org.lineageos.internal.preference.deviceinfo.LineageVersionPreference
                 android:key="sm_version" />
 
-        <!-- LineageOS API version -->
-        <org.lineageos.internal.preference.deviceinfo.LineageAPIVersionPreference
-                android:key="lineage_api_level" />
-
         <!-- Security patch level -->
         <Preference android:key="security_patch"
                 android:title="@string/security_patch"
