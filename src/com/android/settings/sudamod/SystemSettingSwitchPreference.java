@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 WUYI
+ * Copyright (C) 2014 The CyanogenMod project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@
 package com.android.settings.sudamod;
 
 import android.content.Context;
-import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
+import android.support.v14.preference.SwitchPreference;
 import android.util.AttributeSet;
 
 public class SystemSettingSwitchPreference extends SwitchPreference {
@@ -56,7 +56,7 @@ public class SystemSettingSwitchPreference extends SwitchPreference {
                 getKey(), defaultReturnValue ? 1 : 0) != 0;
     }
 
-	@Override
+    @Override
     protected boolean isPersisted() {
         // Using getString instead of getInt so we can simply check for null
         // instead of catching an exception. (All values are stored as strings.)
