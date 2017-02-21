@@ -82,8 +82,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String QGP_VERSION_PATH = "/persist/speccfg/qgpversion";
     private static final String KEY_MOD_VERSION = "mod_version";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
-    private static final String KEY_QGP_VERSION = "qgp_version";
-    private static final String PROPERTY_QGP_VERSION = "persist.qgp.version";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
