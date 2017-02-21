@@ -447,11 +447,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(getContentResolver(), CAMERA_GESTURE_DISABLED,
                     value ? 0 : 1 /* Backwards because setting is for disabling */);
         }
-        if (preference == mCameraDoubleTapPowerGesturePreference) {
-            boolean value = (Boolean) objValue;
-            Settings.Secure.putInt(getContentResolver(), CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED,
-                    value ? 0 : 1 /* Backwards because setting is for disabling */);
-        }
         if (preference == mQSShadeAlpha) {
             int alpha = (Integer) objValue;
             Settings.System.putInt(getContentResolver(),
