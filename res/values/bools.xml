@@ -100,4 +100,7 @@
 
     <!--Whether help links are defined. -->
     <bool name="config_has_help">false</bool>
+
+    <!-- Whether notify user that switch data service -->
+    <bool name="confirm_to_switch_data_service">false</bool>
 </resources>
