@@ -234,10 +234,11 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private static final String OTA_DISABLE_AUTOMATIC_UPDATE_KEY = "ota_disable_automatic_update";
 
-    private static final String DEVELOPMENT_TOOLS = "development_tools";
+    private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
 
-	private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
-	private static final String KILL_APP_LONGPRESS_TIMEOUT = "kill_app_longpress_timeout";
+    private static final String KILL_APP_LONGPRESS_TIMEOUT = "kill_app_longpress_timeout";
+
+    private static final String DEVELOPMENT_TOOLS = "development_tools";
 
     private static final int RESULT_DEBUG_APP = 1000;
     private static final int RESULT_MOCK_LOCATION_APP = 1001;
