@@ -30,11 +30,6 @@
     <!-- QS shade transparency -->
     <string name="qs_transparent_shade">QS shade transparency</string>
     <string name="volume_dialog_transparency">Volume dialog transparency</string>
-    <!-- Double tap to sleep on lockscreen -->
-    <string name="double_tap_sleep_anywhere_title">Double-tap to sleep</string>
-    <string name="double_tap_sleep_anywhere_summary">Double tap lockscreen to put the device to
-        sleep
-    </string>
     <!-- Show Chinese Date -->
     <string name="show_chinese_date">Show Chinese Date</string>
     <!-- Quick unlock -->
