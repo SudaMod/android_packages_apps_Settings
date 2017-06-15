@@ -23,14 +23,14 @@
 
     <color name="memory_used">#F00</color>
     <color name="memory_avail">@color/material_empty_color_light</color>
-    <color name="memory_apps_usage">#00796B</color>
+    <color name="memory_apps_usage">#0288d1</color>
     <color name="memory_downloads">#3367D6</color>
     <color name="memory_dcim">#0097A7</color>
     <color name="memory_music">#689F38</color>
     <color name="memory_cache">#283593</color>
     <color name="memory_misc">#7B1FA2</color>
-    <color name="memory_user_light">#479392</color>
-    <color name="memory_user_dark">#316665</color>
+    <color name="memory_user_light">#0288d1</color>
+    <color name="memory_user_dark">#0288d1</color>
 
     <color name="crypt_keeper_clock_background">#ff9a9a9a</color>
     <color name="crypt_keeper_clock_foreground">#ff666666</color>
@@ -80,9 +80,9 @@
     <color name="fab_shape">?android:attr/colorAccent</color>
     <color name="voice_interaction_highlight">#33b5e5</color>
 
-    <drawable name="fp_enrollment_header_landscape">#009688</drawable>
+    <drawable name="fp_enrollment_header_landscape">#0288d1</drawable>
 
-    <color name="memory_normal">#ff009587</color>
+    <color name="memory_normal">#ff0288d1</color>
     <color name="memory_moderate">#ffF3B300</color>
     <color name="memory_low">#ffff9700</color>
     <color name="memory_critical">#ffff5621</color>
@@ -92,7 +92,7 @@
     <color name="zen_rule_name_warning">@*android:color/system_error</color>
 
     <!-- Accent color that matches the settings launcher icon -->
-    <color name="icon_accent">#ffabffec</color>
+    <color name="icon_accent">#ff0288d1</color>
 
     <color name="importance_icon_tint">#8a000000</color>
     <color name="importance_disabled_tint">#4d000000</color>
