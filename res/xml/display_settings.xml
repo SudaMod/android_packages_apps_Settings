@@ -105,11 +105,6 @@
                 android:summary="@string/wake_when_plugged_or_unplugged_summary"
                 android:defaultValue="@*android:bool/config_unplugTurnsOnScreen" />
 
-        <SwitchPreference
-                android:key="tap_to_wake"
-                android:title="@string/tap_to_wake"
-                android:summary="@string/tap_to_wake_summary" />
-
         <!-- Prevent accidental wake-up -->
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
                 android:key="proximity_on_wake"
