@@ -49,8 +49,15 @@
 
     <!-- Dashboard suggestions -->
     <string name="dashboard_category">设置界面修改</string>
+    <string name="dashboard_suggestions_title">建议</string>
+    <string name="summary_dashboard_suggestions_enabled">面板建议已启用</string>
+    <string name="summary_dashboard_suggestions_disabled">面板建议已禁用</string>
     <string name="remove_tile_summaries_title">关闭摘要</string>
     <string name="remove_tile_summaries_summary">删除在标题下方显示的摘要</string>
+    <string name="dashboard_conditions_title">状态</string>
+    <string name="summary_dashboard_conditions_enabled">仪表板条件被启用</string>
+    <string name="summary_dashboard_conditions_disabled">仪表板条件被禁用</string>
+
     <string name="dashboard_summary_double_lines_title">面板摘要行</string>
     <string name="dashboard_summary_double_lines_summary_on">多行显示面板摘要</string>
     <string name="dashboard_summary_double_lines_summary_off">多行显示面板摘要</string>
