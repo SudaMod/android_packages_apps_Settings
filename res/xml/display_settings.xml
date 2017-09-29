@@ -200,6 +200,13 @@
             android:title="@string/dashboard_category">
 
         <com.android.settings.sudamod.SystemSettingSwitchPreference
+            android:key="disable_suggestions"
+            android:title="@string/dashboard_suggestions_title"
+            android:summaryOn="@string/summary_dashboard_suggestions_enabled"
+            android:summaryOff="@string/summary_dashboard_suggestions_disabled"
+            android:defaultValue="true" />
+
+        <com.android.settings.sudamod.SystemSettingSwitchPreference
             android:key="remove_tile_summary"
             android:title="@string/remove_tile_summaries_title"
             android:summary="@string/remove_tile_summaries_summary"
