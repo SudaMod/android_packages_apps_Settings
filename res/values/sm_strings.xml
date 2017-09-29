@@ -57,6 +57,8 @@
 
     <!-- Dashboard suggestions -->
     <string name="dashboard_category">Dashboard options</string>
+    <string name="remove_tile_summaries_title">Remove tile summaries</string>
+    <string name="remove_tile_summaries_summary">Remove tiles summaries that display underneath tile titles</string>
     <string name="dashboard_summary_double_lines_title">Dashboard summary lines</string>
     <string name="dashboard_summary_double_lines_summary_on">Show dashboard tile summaries in more lines</string>
     <string name="dashboard_summary_double_lines_summary_off">Show dashboard tile summaries in 1 line</string>

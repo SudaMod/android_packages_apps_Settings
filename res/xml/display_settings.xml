@@ -200,6 +200,12 @@
             android:title="@string/dashboard_category">
 
         <com.android.settings.sudamod.SystemSettingSwitchPreference
+            android:key="remove_tile_summary"
+            android:title="@string/remove_tile_summaries_title"
+            android:summary="@string/remove_tile_summaries_summary"
+            android:defaultValue="false" />
+	    
+        <com.android.settings.sudamod.SystemSettingSwitchPreference
             android:key="dashboard_summary_double_lines"
             android:title="@string/dashboard_summary_double_lines_title"
             android:summaryOn="@string/dashboard_summary_double_lines_summary_on"
