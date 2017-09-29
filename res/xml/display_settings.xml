@@ -199,6 +199,15 @@
             android:key="dashboard_category"
             android:title="@string/dashboard_category">
 
+        <ListPreference
+            android:key="dashboard_columns"
+            android:title="@string/dashboard_columns_title"
+            android:dialogTitle="@string/dashboard_columns_dialog_title"
+            android:entries="@array/dashboard_columns_entries"
+            android:entryValues="@array/dashboard_columns_values"
+            android:summary="@string/dashboard_columns_summary"
+            android:persistent="false" />
+
         <com.android.settings.sudamod.SystemSettingSwitchPreference
             android:key="disable_suggestions"
             android:title="@string/dashboard_suggestions_title"
@@ -211,7 +220,7 @@
             android:title="@string/remove_tile_summaries_title"
             android:summary="@string/remove_tile_summaries_summary"
             android:defaultValue="false" />
-	    
+
         <com.android.settings.sudamod.SystemSettingSwitchPreference
             android:key="disable_dashboard_conditions"
             android:title="@string/dashboard_conditions_title"
@@ -227,4 +236,5 @@
             android:defaultValue="false" />
 
             </PreferenceCategory>
+
 </PreferenceScreen>
