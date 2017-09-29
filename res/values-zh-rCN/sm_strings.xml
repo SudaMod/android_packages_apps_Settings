@@ -46,4 +46,11 @@
     <string name="three_finger_gesture_summary">从上至下滑动三根手指截屏</string>
     <string name="show_stk_dialog_title">STK对话框</string>
     <string name="show_stk_dialog_summary">开启STK对话框</string>
+
+    <!-- Dashboard suggestions -->
+    <string name="dashboard_category">设置界面修改</string>
+    <string name="dashboard_summary_double_lines_title">面板摘要行</string>
+    <string name="dashboard_summary_double_lines_summary_on">多行显示面板摘要</string>
+    <string name="dashboard_summary_double_lines_summary_off">多行显示面板摘要</string>
+
 </resources>

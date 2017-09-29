@@ -195,5 +195,16 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+            android:key="dashboard_category"
+            android:title="@string/dashboard_category">
 
+        <com.android.settings.sudamod.SystemSettingSwitchPreference
+            android:key="dashboard_summary_double_lines"
+            android:title="@string/dashboard_summary_double_lines_title"
+            android:summaryOn="@string/dashboard_summary_double_lines_summary_on"
+            android:summaryOff="@string/dashboard_summary_double_lines_summary_off"
+            android:defaultValue="false" />
+
+            </PreferenceCategory>
 </PreferenceScreen>

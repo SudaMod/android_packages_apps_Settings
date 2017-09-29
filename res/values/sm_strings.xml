@@ -54,4 +54,11 @@
     <string name="direct_control_title">Direct control</string>
     <string name="show_stk_dialog_title">STK dialog box</string>
     <string name="show_stk_dialog_summary">Open the STK dialog box</string>
+
+    <!-- Dashboard suggestions -->
+    <string name="dashboard_category">Dashboard options</string>
+    <string name="dashboard_summary_double_lines_title">Dashboard summary lines</string>
+    <string name="dashboard_summary_double_lines_summary_on">Show dashboard tile summaries in more lines</string>
+    <string name="dashboard_summary_double_lines_summary_off">Show dashboard tile summaries in 1 line</string>
+
 </resources>
