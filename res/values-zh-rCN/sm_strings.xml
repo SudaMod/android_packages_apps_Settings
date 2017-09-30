@@ -49,25 +49,25 @@
 
     <!-- Dashboard suggestions -->
     <string name="dashboard_category">设置界面修改</string>
-    <string name="dashboard_suggestions_title">建议</string>
-    <string name="summary_dashboard_suggestions_enabled">面板建议已启用</string>
-    <string name="summary_dashboard_suggestions_disabled">面板建议已禁用</string>
-    <string name="remove_tile_summaries_title">关闭摘要</string>
-    <string name="remove_tile_summaries_summary">删除在标题下方显示的摘要</string>
-    <string name="dashboard_conditions_title">状态</string>
-    <string name="summary_dashboard_conditions_enabled">仪表板条件被启用</string>
-    <string name="summary_dashboard_conditions_disabled">仪表板条件被禁用</string>
+    <string name="dashboard_suggestions_title">设置建议</string>
+    <string name="summary_dashboard_suggestions_enabled">设置建议已启用</string>
+    <string name="summary_dashboard_suggestions_disabled">设置建议已禁用</string>
+    <string name="remove_tile_summaries_title">摘要关闭</string>
+    <string name="remove_tile_summaries_summary">关闭标题下方的摘要</string>
+    <string name="dashboard_conditions_title">顶部状态</string>
+    <string name="summary_dashboard_conditions_enabled">顶部状态信息已启用</string>
+    <string name="summary_dashboard_conditions_disabled">顶部状态信息已禁用</string>
 
     <!-- Dashboard columns -->
     <string name="dashboard_columns_title">面板列数</string>
     <string name="dashboard_columns_summary">更改设置界面的列数</string>
     <string name="dashboard_columns_dialog_title">选择列数</string>
-    <string name="dashboard_columns_default">一（两横排）</string>
-    <string name="dashboard_columns_two">两（三横排）</string>
-    <string name="dashboard_columns_three">三（四横排）</string>
+    <string name="dashboard_columns_default">一列</string>
+    <string name="dashboard_columns_two">两列</string>
+    <string name="dashboard_columns_three">三列</string>
 
-    <string name="dashboard_summary_double_lines_title">面板摘要行</string>
+    <string name="dashboard_summary_double_lines_title">多行摘要</string>
     <string name="dashboard_summary_double_lines_summary_on">多行显示面板摘要</string>
-    <string name="dashboard_summary_double_lines_summary_off">多行显示面板摘要</string>
+    <string name="dashboard_summary_double_lines_summary_off">单行显示面板摘要</string>
 
 </resources>
