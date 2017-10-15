@@ -70,4 +70,21 @@
     <string name="dashboard_summary_double_lines_summary_on">多行显示面板摘要</string>
     <string name="dashboard_summary_double_lines_summary_off">单行显示面板摘要</string>
 
+  <!-- AOKP custom system animations -->
+  <string name="animation_title">动画</string>
+  <string name="system_animation_title">系统动画</string>
+  <string name="activity_open_title">活动打开动画</string>
+  <string name="activity_close_title">活动关闭动画</string>
+  <string name="task_open_title">任务打开动画</string>
+  <string name="task_open_behind_title">任务后台打开动画</string>
+  <string name="task_close_title">任务关闭动画</string>
+  <string name="task_move_to_front_title">切换到前台动画</string>
+  <string name="task_move_to_back_title">切换到后台动画</string>
+  <string name="wallpaper_open_title">壁纸打开动画</string>
+  <string name="wallpaper_close_title">壁纸关闭动画</string>
+  <string name="wallpaper_intra_open_title">壁纸内部打开动画</string>
+  <string name="wallpaper_intra_close_title">壁纸内部关闭动画</string>
+  <string name="animation_duration_title">动画时长</string>
+  <string name="system_animation_summary">自定义系统中每个窗口的动画</string>
+  <string name="animation_duration_default">默认</string>
 </resources>

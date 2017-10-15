@@ -167,6 +167,10 @@
 
     </PreferenceCategory>
 
+    <PreferenceScreen
+        android:key="system_animation"
+        android:title="@string/system_animation_title"
+        android:fragment="com.crdroid.settings.fragments.AnimationControls" />
 
     <com.android.settings.sudamod.SystemSettingSwitchPreference
         android:key="disable_stk_dialog_auto_open"
