@@ -78,7 +78,6 @@
     <string name="dashboard_summary_double_lines_summary_on">Show dashboard tile summaries in more lines</string>
     <string name="dashboard_summary_double_lines_summary_off">Show dashboard tile summaries in 1 line</string>
 
-
     <!-- Custom System Animations -->
     <string name="animation_title">Animations</string>  
     <string name="system_animation_title">System animations</string>
