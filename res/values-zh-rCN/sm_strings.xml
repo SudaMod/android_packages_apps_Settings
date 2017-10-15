@@ -87,4 +87,24 @@
   <string name="animation_duration_title">动画时长</string>
   <string name="system_animation_summary">自定义系统中每个窗口的动画</string>
   <string name="animation_duration_default">默认</string>
+
+  <!-- Toast Animation -->
+  <string name="toast_animation_title">Toast 通知动画</string>
+  <string name="toast_animation_test">动画效果展示</string>
+  <string name="toast_none_animation">无</string>
+  <string name="toast_default_animation">默认</string>
+  <string name="toast_fade_animation">渐变</string>
+  <string name="toast_SlideRight_animation">向右滑动</string>
+  <string name="toast_SlideLeft_animation">向左滑动</string>
+  <string name="toast_Xylon_animation">Xylon 动画</string>
+  <string name="toast_Toko_animation">Toko 动画</string>
+  <string name="toast_Tn_animation">Tn 动画</string>
+  <string name="toast_Honami_animation">Honami 动画</string>
+  <string name="toast_FastFade_animation">快速渐变</string>
+  <string name="toast_GrowFade_animation">缓慢渐变</string>
+  <string name="toast_GrowFadeCenter_animation">中心缓慢渐变</string>
+  <string name="toast_GrowFadeBottom_animation">从底部缓慢淡出淡入</string>
+  <string name="toast_Translucent_animation">半透明动画</string>
+  <string name="toast_SlideLeftRight_animation">滑动(左至右)</string>
+  <string name="toast_SlideRightLeft_animation">滑动(右至左)</string>
 </resources>
