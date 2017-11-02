@@ -27,8 +27,6 @@
     <string name="timeout_1500">1.5 seconds</string>
     <string name="timeout_1000">1 second</string>
     <string name="timeout_500">0.5 second</string>
-    <!-- QS shade transparency -->
-    <string name="qs_transparent_shade">QS shade transparency</string>
     <!-- Show Chinese Date -->
     <string name="show_chinese_date">Show Chinese Date</string>
     <!-- Quick unlock -->

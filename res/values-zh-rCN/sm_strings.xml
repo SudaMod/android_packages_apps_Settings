@@ -23,7 +23,6 @@
     <string name="timeout_1500">1.5 秒</string>
     <string name="timeout_1000">1 秒</string>
     <string name="timeout_500">0.5 秒</string>
-    <string name="qs_transparent_shade">QS面板透明度</string>
     <string name="show_chinese_date">锁屏显示农历</string>
     <string name="unlock_quick_unlock_control_title">快速解锁</string>
     <string name="unlock_quick_unlock_control_summary">当输入正确的 PIN 码或密码后自动解锁</string>
