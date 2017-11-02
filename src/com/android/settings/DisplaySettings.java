@@ -80,7 +80,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
 
-    private static final String PREF_TRANSPARENT_VOLUME_DIALOG = "transparent_volume_dialog";
 	private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
 
     private static final String KEY_CATEGORY_DISPLAY = "display";
@@ -112,8 +111,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mCameraGesturePreference;
 
     private SeekBarPreference mQSShadeAlpha;
-    private SeekBarPreference mVolumeDialogAlpha;
-
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.DISPLAY;
@@ -144,14 +141,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_TRANSPARENT_SHADE, 255);
         mQSShadeAlpha.setValue(qSShadeAlpha / 1);
         mQSShadeAlpha.setOnPreferenceChangeListener(this);
-
-        // Volume dialog alpha
-        mVolumeDialogAlpha = (SeekBarPreference) findPreference(PREF_TRANSPARENT_VOLUME_DIALOG);
-        int volumeDialogAlpha = Settings.System.getInt(getContentResolver(),
-                Settings.System.TRANSPARENT_VOLUME_DIALOG, 255);
-        mVolumeDialogAlpha.setValue(volumeDialogAlpha / 1);
-        mVolumeDialogAlpha.setOnPreferenceChangeListener(this);
-
 
         mScreenTimeoutPreference = (TimeoutListPreference) findPreference(KEY_SCREEN_TIMEOUT);
         mFontSizePref = findPreference(KEY_FONT_SIZE);
@@ -461,11 +450,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             int alpha = (Integer) objValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.QS_TRANSPARENT_SHADE, alpha * 1);
-        }
-        if (preference == mVolumeDialogAlpha) {
-          int alpha = (Integer) objValue;
-          Settings.System.putInt(getContentResolver(),
-                  Settings.System.TRANSPARENT_VOLUME_DIALOG, alpha * 1);
         }
         if (preference == mDashboardColumns) {
             Settings.System.putInt(getContentResolver(), Settings.System.DASHBOARD_COLUMNS,

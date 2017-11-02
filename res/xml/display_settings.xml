@@ -194,14 +194,6 @@
             settings:min="0"
             settings:units="" />
 
-        <com.android.settings.sudamod.SeekBarPreference
-            android:key="transparent_volume_dialog"
-            android:max="255"
-            android:persistent="false"
-            android:title="@string/volume_dialog_transparency"
-            settings:min="0"
-            settings:units="" />
-
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -29,7 +29,6 @@
     <string name="timeout_500">0.5 second</string>
     <!-- QS shade transparency -->
     <string name="qs_transparent_shade">QS shade transparency</string>
-    <string name="volume_dialog_transparency">Volume dialog transparency</string>
     <!-- Show Chinese Date -->
     <string name="show_chinese_date">Show Chinese Date</string>
     <!-- Quick unlock -->
