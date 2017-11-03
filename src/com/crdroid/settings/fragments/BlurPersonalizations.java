@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.android.settings.kangdroid.KangDroidSeekBarPreference;
+import com.android.settings.sudamod.SeekBarPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class BlurPersonalizations extends SettingsPreferenceFragment
@@ -40,12 +40,12 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
     private SwitchPreference mRecentsSett;
 
     //Transluency,Radius and Scale
-    private KangDroidSeekBarPreference mScale;
-    private KangDroidSeekBarPreference mRadius;
-    private KangDroidSeekBarPreference mRecentsRadius;
-    private KangDroidSeekBarPreference mRecentsScale;
-    private KangDroidSeekBarPreference mQuickSettPerc;
-    private KangDroidSeekBarPreference mNotSettPerc;
+    private SeekBarPreference mScale;
+    private SeekBarPreference mRadius;
+    private SeekBarPreference mRecentsRadius;
+    private SeekBarPreference mRecentsScale;
+    private SeekBarPreference mQuickSettPerc;
+    private SeekBarPreference mNotSettPerc;
 
     //Colors
     private ColorPickerPreference mDarkBlurColor;
@@ -76,11 +76,11 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
         mExpand.setChecked((Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_EXPANDED_ENABLED_PREFERENCE_KEY, 0) == 1));
 
-        mScale = (KangDroidSeekBarPreference) findPreference("statusbar_blur_scale");
+        mScale = (SeekBarPreference) findPreference("statusbar_blur_scale");
         mScale.setValue(Settings.System.getInt(resolver, Settings.System.BLUR_SCALE_PREFERENCE_KEY, 10));
         mScale.setOnPreferenceChangeListener(this);
 
-        mRadius = (KangDroidSeekBarPreference) findPreference("statusbar_blur_radius");
+        mRadius = (SeekBarPreference) findPreference("statusbar_blur_radius");
         mRadius.setValue(Settings.System.getInt(resolver, Settings.System.BLUR_RADIUS_PREFERENCE_KEY, 5));
         mRadius.setOnPreferenceChangeListener(this);
 
@@ -92,11 +92,11 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
         mQuickSett.setChecked((Settings.System.getInt(resolver,
                 Settings.System.TRANSLUCENT_QUICK_SETTINGS_PREFERENCE_KEY, 0) == 1));
 
-        mQuickSettPerc = (KangDroidSeekBarPreference) findPreference("quick_settings_transluency");
+        mQuickSettPerc = (SeekBarPreference) findPreference("quick_settings_transluency");
         mQuickSettPerc.setValue(Settings.System.getInt(resolver, Settings.System.TRANSLUCENT_QUICK_SETTINGS_PERCENTAGE_PREFERENCE_KEY, 60));
         mQuickSettPerc.setOnPreferenceChangeListener(this);
 
-        /*mNotSettPerc = (KangDroidSeekBarPreference) findPreference("notifications_transluency");
+        /*mNotSettPerc = (SeekBarPreference) findPreference("notifications_transluency");
         mNotSettPerc.setValue(Settings.System.getInt(resolver, Settings.System.TRANSLUCENT_NOTIFICATIONS_PERCENTAGE_PREFERENCE_KEY, 60));
         mNotSettPerc.setOnPreferenceChangeListener(this);*/
 
@@ -104,11 +104,11 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
         mRecentsSett.setChecked((Settings.System.getInt(resolver,
                 Settings.System.RECENT_APPS_ENABLED_PREFERENCE_KEY, 0) == 1));
 
-        mRecentsScale = (KangDroidSeekBarPreference) findPreference("recents_blur_scale");
+        mRecentsScale = (SeekBarPreference) findPreference("recents_blur_scale");
         mRecentsScale.setValue(Settings.System.getInt(resolver, Settings.System.RECENT_APPS_SCALE_PREFERENCE_KEY, 6));
         mRecentsScale.setOnPreferenceChangeListener(this);
 
-        mRecentsRadius = (KangDroidSeekBarPreference) findPreference("recents_blur_radius");
+        mRecentsRadius = (SeekBarPreference) findPreference("recents_blur_radius");
         mRecentsRadius.setValue(Settings.System.getInt(resolver, Settings.System.RECENT_APPS_RADIUS_PREFERENCE_KEY, 3));
         mRecentsRadius.setOnPreferenceChangeListener(this);
 

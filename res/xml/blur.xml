@@ -62,20 +62,20 @@
             android:summary="@string/blurred_status_bar_expanded_enabled_pref_summary"
             android:defaultValue="false" />
 
-        <com.android.settings.kangdroid.KangDroidSeekBarPreference
+        <com.android.settings.sudamod.SeekBarPreference
             android:key="statusbar_blur_scale"
             android:title="@string/blurred_scale"
             android:summary="@string/blurred_scale_summary"
-            android:max="20"
+            settings:max="20"
             settings:min="1"
             android:dependency="blurred_status_bar_expanded_enabled_pref"
             android:defaultValue="10" />
 
-        <com.android.settings.kangdroid.KangDroidSeekBarPreference
+        <com.android.settings.sudamod.SeekBarPreference
             android:key="statusbar_blur_radius"
             android:title="@string/blurred_radius"
             android:summary="@string/blurred_radius_summary"
-            android:max="25"
+            settings:max="25"
             settings:min="1"
             android:dependency="blurred_status_bar_expanded_enabled_pref"
             android:defaultValue="5" />
@@ -91,10 +91,10 @@
             android:summary="@string/translucent_notifications_pref_summary"
             android:defaultValue="false" />
 
-        <com.android.settings.kangdroid.KangDroidSeekBarPreference
+        <com.android.settings.sudamod.SeekBarPreference
             android:key="notifications_transluency"
             android:title="@string/transluency_level_universal"
-            android:max="100"
+            settings:max="100"
             settings:min="0"
             android:dependency="translucent_notifications_pref"
             android:defaultValue="60" />
@@ -110,10 +110,10 @@
             android:summary="@string/translucent_quick_settings_pref_summary"
             android:defaultValue="false" />
 
-        <com.android.settings.kangdroid.KangDroidSeekBarPreference
+        <com.android.settings.sudamod.SeekBarPreference
             android:key="quick_settings_transluency"
             android:title="@string/transluency_level_universal"
-            android:max="100"
+            settings:max="100"
             settings:min="0"
             android:dependency="translucent_quick_settings_pref"
             android:defaultValue="60" />
@@ -129,20 +129,20 @@
             android:summary="@string/blurred_recent_app_enabled_pref_summary"
             android:defaultValue="false" />
 
-        <com.android.settings.kangdroid.KangDroidSeekBarPreference
+        <com.android.settings.sudamod.SeekBarPreference
             android:key="recents_blur_scale"
             android:title="@string/blurred_scale"
             android:summary="@string/blurred_scale_summary"
-            android:max="20"
+            settings:max="20"
             settings:min="1"
             android:dependency="blurred_recent_app_enabled_pref"
             android:defaultValue="6" />
 
-        <com.android.settings.kangdroid.KangDroidSeekBarPreference
+        <com.android.settings.sudamod.SeekBarPreference
             android:key="recents_blur_radius"
             android:title="@string/blurred_radius"
             android:summary="@string/blurred_radius_summary"
-            android:max="25"
+            settings:max="25"
             settings:min="1"
             android:dependency="blurred_recent_app_enabled_pref"
             android:defaultValue="3" />

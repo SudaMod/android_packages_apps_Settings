@@ -42,7 +42,6 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceCategory;
-import com.android.settings.sudamod.SeekBarPreference;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -80,9 +79,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
 
-    private static final String PREF_TRANSPARENT_VOLUME_DIALOG = "transparent_volume_dialog";
-	private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
-
     private static final String KEY_CATEGORY_DISPLAY = "display";
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
@@ -111,9 +107,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mCameraGesturePreference;
 
-    private SeekBarPreference mQSShadeAlpha;
-    private SeekBarPreference mVolumeDialogAlpha;
-
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.DISPLAY;
@@ -136,22 +129,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                         com.android.internal.R.bool.config_dreamsSupported) == false) {
             getPreferenceScreen().removePreference(mScreenSaverPreference);
         }
-
-
-        // QS shade alpha
-        mQSShadeAlpha = (SeekBarPreference) findPreference(PREF_QS_TRANSPARENT_SHADE);
-        int qSShadeAlpha = Settings.System.getInt(getContentResolver(),
-                Settings.System.QS_TRANSPARENT_SHADE, 255);
-        mQSShadeAlpha.setValue(qSShadeAlpha / 1);
-        mQSShadeAlpha.setOnPreferenceChangeListener(this);
-
-        // Volume dialog alpha
-        mVolumeDialogAlpha = (SeekBarPreference) findPreference(PREF_TRANSPARENT_VOLUME_DIALOG);
-        int volumeDialogAlpha = Settings.System.getInt(getContentResolver(),
-                Settings.System.TRANSPARENT_VOLUME_DIALOG, 255);
-        mVolumeDialogAlpha.setValue(volumeDialogAlpha / 1);
-        mVolumeDialogAlpha.setOnPreferenceChangeListener(this);
-
 
         mScreenTimeoutPreference = (TimeoutListPreference) findPreference(KEY_SCREEN_TIMEOUT);
         mFontSizePref = findPreference(KEY_FONT_SIZE);
@@ -456,16 +433,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), CAMERA_GESTURE_DISABLED,
                     value ? 0 : 1 /* Backwards because setting is for disabling */);
-        }
-        if (preference == mQSShadeAlpha) {
-            int alpha = (Integer) objValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.QS_TRANSPARENT_SHADE, alpha * 1);
-        }
-        if (preference == mVolumeDialogAlpha) {
-          int alpha = (Integer) objValue;
-          Settings.System.putInt(getContentResolver(),
-                  Settings.System.TRANSPARENT_VOLUME_DIALOG, alpha * 1);
         }
         if (preference == mDashboardColumns) {
             Settings.System.putInt(getContentResolver(), Settings.System.DASHBOARD_COLUMNS,

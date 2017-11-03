@@ -27,9 +27,6 @@
     <string name="timeout_1500">1.5 seconds</string>
     <string name="timeout_1000">1 second</string>
     <string name="timeout_500">0.5 second</string>
-    <!-- QS shade transparency -->
-    <string name="qs_transparent_shade">QS shade transparency</string>
-    <string name="volume_dialog_transparency">Volume dialog transparency</string>
     <!-- Show Chinese Date -->
     <string name="show_chinese_date">Show Chinese Date</string>
     <!-- Quick unlock -->
@@ -139,4 +136,46 @@
     <string name="listview_overshoot_interpolator">Overshoot</string>
     <string name="listview_anticipate_overshoot_interpolator">Anticipate and overshoot</string>
     <string name="listview_bounce_interpolator">Bounce</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Set</string>
+    <string name="color_default">Default</string>
+
+    <!-- XOSP Blur personalizations -->
+    <string name="settings_blur_cat">Blur</string>
+    <string name="blurred_status_bar_expanded_enabled_pref">Blur statusbar background</string>
+    <string name="blurred_status_bar_expanded_enabled_pref_summary">Blur the background when you pull down the status bar</string>
+    <string name="translucent_notifications_pref">Translucent notifications</string>
+    <string name="translucent_notifications_pref_summary">Set the background of notifications translucent</string>
+    <string name="translucent_quick_settings_pref">Blurred quick settings</string>
+    <string name="translucent_quick_settings_pref_summary">Blur the QS tiles and background</string>
+    <string name="transluency_level_universal">Translucency level</string>
+    <string name="blurred_recent_app_enabled_pref">Blurred recent apps</string>
+    <string name="blurred_recent_app_enabled_pref_summary">Blur the background of recent apps window</string>
+    <string name="blur_light_color">Light image color filter</string>
+    <string name="blur_dark_color">Dark image color filter</string>
+    <string name="blur_mixed_color">Mixed image color filter</string>
+    <string name="blur_notice">About blur</string>
+    <string name="blur_notice_summary">Blur personalizations are disabled during keyguard view. Only translucent notifications are enabled.</string>
+    <string name="blur_colors_notice">What are these colors doing?</string>
+    <string name="blur_colors_notice_summary">These colors are the ones tiniting the BlurBackground. Instead of the normal Grey, you can now choose the colors in the way you like.\nThere are three color filters: One used for light backgrounds, one used for Dark backgrounds and one used for light/dark backgrounds.\nSo how these colors work?\nSimple, as the titles say, the Light filter will be used for Lighter backgrounds, Dark filter for dark backgrounds and the mixed filter one will be used for backgrounds not too dark but neither too light.\nThese colors are used for both BlurBackgrounds: StatusBar and RecentsApps window</string>
+    <string name="blur_expstatus_cat">Expanded statusBar </string>
+    <string name="blur_notifications_cat">Notifications</string>
+    <string name="blur_qs_cat">Quick settings</string>
+    <string name="blur_recents_cat">Recent apps</string> 
+    <string name="blur_colors_cat">Blur color filters</string>
+    <string name="blur_notices_cat">Notices</string>
+    <string name="blurred_scale">Blur scale</string>
+    <string name="blurred_scale_summary">Quality of blur image</string>
+    <string name="blurred_radius">Blur radius</string>
+    <string name="blurred_radius_summary">Amount of blur</string>
+    <string name="blur_cat_notice">Notice</string>
+    <string name="blur_cat_notice_summary">Blur personalizations are disabled during keyguard view. Only translucent notifications are enabled.</string>
+
 </resources>

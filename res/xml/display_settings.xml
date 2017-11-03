@@ -184,26 +184,6 @@
         android:summary="@string/show_stk_dialog_summary"
         android:defaultValue="false" />
 
-    <PreferenceCategory android:key="transparent__shade"
-        android:title="@string/qs_transparent_shade">
-
-        <com.android.settings.sudamod.SeekBarPreference
-            android:key="qs_transparent_shade"
-            android:max="255" android:persistent="false"
-            android:title="@string/qs_transparent_shade"
-            settings:min="0"
-            settings:units="" />
-
-        <com.android.settings.sudamod.SeekBarPreference
-            android:key="transparent_volume_dialog"
-            android:max="255"
-            android:persistent="false"
-            android:title="@string/volume_dialog_transparency"
-            settings:min="0"
-            settings:units="" />
-
-    </PreferenceCategory>
-
     <PreferenceCategory
         android:key="dashboard_category"
         android:title="@string/dashboard_category">
