@@ -179,6 +179,4 @@
   <string name="app_ops_reset_confirm_title">確認重設計數器</string>
   <string name="app_ops_reset_confirm_mesg">您確定要重設計數器？</string>
   <string name="ok">確定</string>
-  <!-- LineageOS legal -->
-  <string name="lineagelicense_title">LineageOS 法律條款</string>
 </resources>
