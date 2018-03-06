@@ -20,4 +20,7 @@
     <string name="fp_unlock_keystore_summary">重启后无需使用PIN/密码/图案，指纹直接解锁设备</string>
     <string name="three_finger_gesture">三指截屏</string>
     <string name="three_finger_gesture_summary">滑动三指截屏</string>
+    <!-- Fingerprint authentication vibration -->
+    <string name="fprint_sucess_vib_title">指纹验证震动</string>
+    <string name="fprint_sucess_vib_summary">指纹验证成功后震动</string>
 </resources>
