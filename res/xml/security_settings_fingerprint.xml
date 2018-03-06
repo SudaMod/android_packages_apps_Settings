@@ -16,13 +16,5 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/security_settings_fingerprint_preference_title">
+    android:title="@string/security_settings_fingerprint_preference_title"/>
 
-
-    <com.android.settings.sudamod.SystemSettingSwitchPreference
-        android:key="fingerprint_success_vib"
-        android:title="@string/fprint_sucess_vib_title"
-        android:summary="@string/fprint_sucess_vib_summary"
-        android:defaultValue="true" />
-
-</PreferenceScreen>
