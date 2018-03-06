@@ -18,4 +18,6 @@
     <!-- Fingerprint unlock keystore -->
     <string name="fp_unlock_keystore_title">指纹解锁</string>
     <string name="fp_unlock_keystore_summary">重启后无需使用PIN/密码/图案，指纹直接解锁设备</string>
+    <string name="three_finger_gesture">三指截屏</string>
+    <string name="three_finger_gesture_summary">滑动三指截屏</string>
 </resources>
