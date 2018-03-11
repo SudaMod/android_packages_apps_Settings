@@ -18,6 +18,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/lockscreen_settings_title">
 
+    <com.android.settings.sudamod.SystemSettingSwitchPreference
+        android:key="lockscreen_battery_info"
+        android:title="@string/lockscreen_battery_info_title"
+        android:summary="@string/lockscreen_battery_info_summary"
+        android:defaultValue="true" />
+ 
     <com.android.settings.notification.RestrictedDropDownPreference
         android:key="security_setting_lock_screen_notif"
         android:title="@string/lock_screen_notifications_title"

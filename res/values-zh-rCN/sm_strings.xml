@@ -25,4 +25,7 @@
     <string name="fprint_sucess_vib_summary">指纹验证成功后震动</string>
     <string name="unlock_quick_unlock_control_title">快速解锁</string>
     <string name="unlock_quick_unlock_control_summary">当输入正确的 PIN 码或密码后自动解锁</string>
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">锁屏充电信息</string>
+    <string name="lockscreen_battery_info_summary">在锁屏显示目前的充电电压和温度</string>
 </resources>
