@@ -18,11 +18,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- [CHAR LIMIT=NONE] Device Info screen. Countdown for user taps to enable development settings -->
-  <plurals name="show_dev_countdown_cm">
-    <item quantity="one">Залишився <xliff:g id="step_count">%1$d</xliff:g> крок для включення налаштувань для розробників.</item>
-    <item quantity="few">Залишилось <xliff:g id="step_count">%1$d</xliff:g> кроки для включення налаштувань для розробників.</item>
-    <item quantity="other">Залишилось <xliff:g id="step_count">%1$d</xliff:g> кроків до увімкнення налаштувань для розробників.</item>
-  </plurals>
   <!-- [CHAR LIMIT=NONE] Device Info screen. Confirmation that developer settings are enabled -->
   <string name="show_dev_on_cm">Ви увімкнули налаштування розробника!</string>
   <!-- [CHAR LIMIT=NONE] Device Info screen. Okay we get it, stop pressing, you already have it on -->
@@ -63,6 +58,7 @@
   <string name="app_ops_categories_background">Фоновий режим</string>
   <string name="app_ops_categories_bootup">Завантаження</string>
   <string name="app_ops_categories_su">Root-доступ</string>
+  <string name="app_ops_categories_other">Інше</string>
   <!-- User display names for app ops codes - extension of AOSP -->
   <string name="app_ops_summaries_coarse_location">приблизне місцезнаходження</string>
   <string name="app_ops_summaries_fine_location">точне місцезнаходження</string>
@@ -214,6 +210,7 @@
   <string name="app_ops_allowed_count">Дозволено <xliff:g id="count" example="2 times">%s</xliff:g></string>
   <string name="app_ops_ignored_count">Заборонено <xliff:g id="count" example="2 times">%s</xliff:g></string>
   <string name="app_ops_both_count">Дозволено <xliff:g id="count">%1$s</xliff:g>, заборонено <xliff:g id="count">%2$s</xliff:g></string>
+  <string name="app_ops_no_blockable_permissions">Відсутні дозволи для блокування</string>
   <!-- App ops menu options -->
   <string name="app_ops_show_user_apps">Показати користувацькі програми</string>
   <string name="app_ops_show_system_apps">Показати системні програми</string>

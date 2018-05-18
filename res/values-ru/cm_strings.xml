@@ -21,6 +21,7 @@
   <plurals name="show_dev_countdown_cm">
     <item quantity="one">Нажмите ещё <xliff:g id="step_count">%1$d</xliff:g> раз, чтобы включить настройки для разработчиков.</item>
     <item quantity="few">Нажмите ещё <xliff:g id="step_count">%1$d</xliff:g> раза, чтобы включить настройки для разработчиков.</item>
+    <item quantity="many">Нажмите ещё <xliff:g id="step_count">%1$d</xliff:g> раз, чтобы включить настройки для разработчиков.</item>
     <item quantity="other">Нажмите ещё <xliff:g id="step_count">%1$d</xliff:g> раз, чтобы включить настройки для разработчиков.</item>
   </plurals>
   <!-- [CHAR LIMIT=NONE] Device Info screen. Confirmation that developer settings are enabled -->
@@ -63,6 +64,7 @@
   <string name="app_ops_categories_background">Фоновый режим</string>
   <string name="app_ops_categories_bootup">Загрузка</string>
   <string name="app_ops_categories_su">Суперпользователь</string>
+  <string name="app_ops_categories_other">Другое</string>
   <!-- User display names for app ops codes - extension of AOSP -->
   <string name="app_ops_summaries_coarse_location">приблизительное местоположение</string>
   <string name="app_ops_summaries_fine_location">точное местоположение</string>
