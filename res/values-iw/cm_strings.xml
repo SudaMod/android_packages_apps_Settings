@@ -30,7 +30,9 @@
   <string name="show_dev_already_cm">אין צורך. כבר הפעלת את אפשרויות המפתח.</string>
   <!-- Hardware info -->
   <!-- Label for device's hardware platform value [CHAR LIMIT=40] -->
+  <string name="platform_revision">פלטפורמה</string>
   <!-- Label for device's hardware ram size [CHAR LIMIT=40] -->
+  <string name="total_ram">סך הכל זיכרון RAM</string>
   <!-- Launch Dev Tools -->
   <string name="development_tools_title">כלי פיתוח</string>
   <!-- Advanced restart options -->
@@ -101,6 +103,8 @@
   <string name="security_settings_fingerprint_sensor_location_front">חלק הקדמי</string>
   <string name="security_settings_fingerprint_sensor_location_left">צד שמאל</string>
   <string name="security_settings_fingerprint_sensor_location_right">צד ימין</string>
+  <!-- Hostname setting -->
+  <string name="device_hostname">שם הרשת עבור המכשיר</string>
   <!-- Increasing ring tone volume -->
   <string name="increasing_ring_volume_option_title">עוצמת צלצול מתגברת</string>
   <string name="increasing_ring_min_volume_title">עוצמה התחלתית</string>

@@ -28,7 +28,9 @@
   <string name="show_dev_already_cm">Non è necessario, hai già attivato le impostazioni di sviluppo.</string>
   <!-- Hardware info -->
   <!-- Label for device's hardware platform value [CHAR LIMIT=40] -->
+  <string name="platform_revision">Piattaforma</string>
   <!-- Label for device's hardware ram size [CHAR LIMIT=40] -->
+  <string name="total_ram">RAM totale</string>
   <!-- Launch Dev Tools -->
   <string name="development_tools_title">Strumenti di sviluppo</string>
   <!-- Advanced restart options -->
@@ -99,6 +101,8 @@
   <string name="security_settings_fingerprint_sensor_location_front">anteriore</string>
   <string name="security_settings_fingerprint_sensor_location_left">sinistra</string>
   <string name="security_settings_fingerprint_sensor_location_right">destra</string>
+  <!-- Hostname setting -->
+  <string name="device_hostname">Hostname dispositivo</string>
   <!-- Increasing ring tone volume -->
   <string name="increasing_ring_volume_option_title">Suoneria incrementale</string>
   <string name="increasing_ring_min_volume_title">Volume iniziale</string>

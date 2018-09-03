@@ -29,7 +29,9 @@ Vous êtes maintenant à <xliff:g id="step_count">%1$d</xliff:g> étapes de l\'a
   <string name="show_dev_already_cm">Inutile, vous avez déjà activé les paramètres de développement.</string>
   <!-- Hardware info -->
   <!-- Label for device's hardware platform value [CHAR LIMIT=40] -->
+  <string name="platform_revision">Plate-forme</string>
   <!-- Label for device's hardware ram size [CHAR LIMIT=40] -->
+  <string name="total_ram">Mémoire RAM totale</string>
   <!-- Launch Dev Tools -->
   <string name="development_tools_title">Outils de développement</string>
   <!-- Advanced restart options -->
@@ -100,6 +102,8 @@ Vous êtes maintenant à <xliff:g id="step_count">%1$d</xliff:g> étapes de l\'a
   <string name="security_settings_fingerprint_sensor_location_front">la façade</string>
   <string name="security_settings_fingerprint_sensor_location_left">le côté gauche</string>
   <string name="security_settings_fingerprint_sensor_location_right">le côté droit</string>
+  <!-- Hostname setting -->
+  <string name="device_hostname">Nom d\'hôte de l\'appareil</string>
   <!-- Increasing ring tone volume -->
   <string name="increasing_ring_volume_option_title">Sonnerie progressive</string>
   <string name="increasing_ring_min_volume_title">Volume de démarrage</string>
