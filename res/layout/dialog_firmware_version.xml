@@ -41,7 +41,7 @@
             style="@style/device_info_dialog_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@*lineageos.platform:string/lineage_version"/>
+            android:text="@string/sm_version"/>
         <org.lineageos.internal.preference.deviceinfo.LineageVersionTextView
             style="@style/device_info_dialog_value"
             android:layout_width="match_parent"
